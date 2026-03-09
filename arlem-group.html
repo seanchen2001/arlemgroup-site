@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arlem Group</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg:         #0E0C0A;
+  --bg2:        #141210;
+  --bg3:        #1C1916;
+  --border:     #2A2520;
+  --gold:       #C9923F;
+  --gold-light: #E8B06A;
+  --gold-dim:   #7A5728;
+  --text:       #D4C9BB;
+  --text-mid:   #8C7D6E;
+  --text-dim:   #4A4038;
+  --white:      #F0EAE1;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Instrument Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 52px;
+  height: 60px;
+  background: rgba(14,12,10,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.nav-logo span { color: var(--gold); }
+
+.nav-links { display: flex; gap: 36px; list-style: none; }
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--white); }
+
+.nav-contact {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: color 0.2s;
+  border: 1px solid var(--gold-dim);
+  padding: 8px 20px;
+}
+
+.nav-contact:hover { color: var(--gold-light); border-color: var(--gold-light); }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 52px;
+  padding-right: 52px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.hero-bg-text {
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(120px, 18vw, 280px);
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1px var(--border);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;
+}
+
+.hero-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-label::before {
+  content: '';
+  display: block;
+  width: 32px; height: 1px;
+  background: var(--gold);
+}
+
+.hero-headline {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(44px, 6vw, 80px);
+  font-weight: 700;
+  line-height: 1.0;
+  color: var(--white);
+  margin-bottom: 28px;
+  letter-spacing: -0.02em;
+}
+
+.hero-headline .muted { color: var(--text-mid); font-weight: 400; }
+
+.hero-sub {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-mid);
+  max-width: 500px;
+  margin-bottom: 52px;
+}
+
+.hero-sub strong { color: var(--text); font-weight: 500; }
+
+.hero-actions { display: flex; gap: 16px; align-items: center; }
+
+.btn-gold {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--bg);
+  background: var(--gold);
+  padding: 13px 32px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.btn-gold:hover { background: var(--gold-light); }
+
+.btn-outline {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text-mid);
+  border: 1px solid var(--border);
+  padding: 13px 32px;
+  text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
+  display: flex; align-items: center; gap: 8px;
+}
+
+.btn-outline:hover { color: var(--white); border-color: var(--text-dim); }
+.btn-outline::after { content: '↓'; }
+
+.hero-stats {
+  position: absolute;
+  bottom: 40px;
+  right: 52px;
+  display: flex;
+  gap: 48px;
+}
+
+.hero-stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-stat-num span { color: var(--gold); }
+
+.hero-stat-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ── PORTFOLIO ── */
+.portfolio {
+  padding: 100px 52px;
+  border-bottom: 1px solid var(--border);
+}
+
+.portfolio-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 56px;
+}
+
+.portfolio-header-left {}
+
+.section-tag {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.portfolio-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 3vw, 44px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.portfolio-header-right {
+  font-size: 13px;
+  color: var(--text-mid);
+  max-width: 260px;
+  text-align: right;
+  line-height: 1.7;
+}
+
+/* Business cards — stacked list style */
+.business-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+}
+
+.business-card {
+  display: grid;
+  grid-template-columns: 80px 1fr 1fr 180px;
+  align-items: center;
+  gap: 40px;
+  padding: 36px 40px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+  cursor: default;
+  position: relative;
+}
+
+.business-card:last-child { border-bottom: none; }
+.business-card:hover { background: var(--bg2); }
+
+.business-card::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: var(--gold);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s;
+}
+
+.business-card:hover::before { transform: scaleY(1); }
+
+.bc-index {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+}
+
+.bc-main {}
+
+.bc-tag {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.bc-name {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+
+.bc-geo {
+  font-size: 12px;
+  color: var(--text-dim);
+  letter-spacing: 0.04em;
+}
+
+.bc-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-mid);
+}
+
+.bc-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.bc-status {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bc-status::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+}
+
+.status-live {
+  color: #5A9E6F;
+  border: 1px solid #2A4A34;
+  background: #0D1F14;
+}
+
+.status-live::before { background: #5A9E6F; box-shadow: 0 0 6px #5A9E6F; }
+
+.status-building {
+  color: var(--gold);
+  border: 1px solid var(--gold-dim);
+  background: #1A1208;
+}
+
+.status-building::before { background: var(--gold); }
+
+.bc-link {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s, color 0.2s;
+  opacity: 0;
+  transition: opacity 0.2s, gap 0.2s;
+}
+
+.business-card:hover .bc-link { opacity: 1; }
+.bc-link:hover { gap: 10px; color: var(--gold-light); }
+.bc-link::after { content: '→'; }
+
+/* ── ABOUT ── */
+.about {
+  padding: 100px 52px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+
+.about-left {}
+
+.about-left .section-tag { margin-bottom: 16px; }
+
+.about-left h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
+
+.about-left p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-mid);
+  margin-bottom: 16px;
+}
+
+.about-left p strong { color: var(--text); font-weight: 500; }
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+}
+
+.about-item {
+  padding: 24px 28px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.about-item:last-child { border-bottom: none; }
+
+.about-item-icon {
+  font-size: 18px;
+  width: 32px;
+  flex-shrink: 0;
+  padding-top: 1px;
+}
+
+.about-item-content {}
+
+.about-item-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.about-item-text {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--text-mid);
+}
+
+/* ── HOW WE WORK ── */
+.how {
+  padding: 100px 52px;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+}
+
+.how-header {
+  display: flex;
+  gap: 100px;
+  align-items: flex-start;
+  margin-bottom: 64px;
+}
+
+.how-header-left { flex-shrink: 0; }
+.how-header-left .section-tag { margin-bottom: 12px; }
+
+.how-header-left h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.how-header-right {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-mid);
+  padding-top: 48px;
+  max-width: 480px;
+}
+
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--border);
+}
+
+.how-step {
+  padding: 36px 28px;
+  border-right: 1px solid var(--border);
+  position: relative;
+}
+
+.how-step:last-child { border-right: none; }
+
+.how-step-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--border);
+  line-height: 1;
+  margin-bottom: 20px;
+  transition: color 0.3s;
+}
+
+.how-step:hover .how-step-num { color: var(--gold-dim); }
+
+.how-step h4 {
+  font-family: 'Syne', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.how-step p {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--text-mid);
+}
+
+/* ── CONTACT ── */
+.contact {
+  padding: 100px 52px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.contact-left .section-tag { margin-bottom: 16px; }
+
+.contact-left h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(28px, 3vw, 42px);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+}
+
+.contact-left p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-mid);
+  margin-bottom: 36px;
+}
+
+.contact-info { display: flex; flex-direction: column; gap: 14px; }
+
+.contact-info-row {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 14px;
+}
+
+.contact-info-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  width: 80px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.contact-info-val {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.contact-form { display: flex; flex-direction: column; gap: 0; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: 16px 20px;
+}
+
+.form-field.full-width {
+  grid-column: 1 / -1;
+  border-right: none;
+}
+
+.form-field:nth-child(even) { border-right: none; }
+
+.form-field label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font-family: 'Instrument Sans', sans-serif;
+  font-size: 14px;
+  color: var(--white);
+  background: transparent;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder { color: var(--text-dim); }
+
+.form-field select option { background: var(--bg2); color: var(--white); }
+.form-field textarea { resize: none; min-height: 80px; }
+
+.form-submit {
+  font-family: 'Syne', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--bg);
+  background: var(--gold);
+  border: none;
+  padding: 18px 28px;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-align: left;
+  margin-top: 0;
+}
+
+.form-submit:hover { background: var(--gold-light); }
+
+/* ── FOOTER ── */
+footer {
+  padding: 28px 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border);
+  background: var(--bg2);
+}
+
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+
+.footer-logo span { color: var(--gold); }
+
+.footer-links { display: flex; gap: 28px; list-style: none; }
+
+.footer-links a {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+  letter-spacing: 0.04em;
+}
+
+.footer-links a:hover { color: var(--text); }
+
+.footer-copy {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+/* ── ANIMATIONS ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hero { padding: 80px 24px 60px; }
+  .hero-stats { position: static; margin-top: 48px; flex-wrap: wrap; gap: 28px; }
+  .hero-bg-text { display: none; }
+  .portfolio { padding: 60px 24px; }
+  .portfolio-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .portfolio-header-right { text-align: left; }
+  .business-card { grid-template-columns: 1fr; gap: 12px; padding: 28px 24px; }
+  .bc-index { display: none; }
+  .bc-right { align-items: flex-start; }
+  .bc-link { opacity: 1; }
+  .about { grid-template-columns: 1fr; padding: 60px 24px; gap: 40px; }
+  .how { padding: 60px 24px; }
+  .how-header { flex-direction: column; gap: 16px; }
+  .how-header-right { padding-top: 0; }
+  .how-steps { grid-template-columns: 1fr 1fr; }
+  .how-step:nth-child(2n) { border-right: none; }
+  .how-step:nth-child(n+3) { border-top: 1px solid var(--border); }
+  .contact { grid-template-columns: 1fr; padding: 60px 24px; gap: 48px; }
+  footer { flex-direction: column; gap: 16px; padding: 24px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Arlem<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-contact">Get in touch</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text">ARLEM</div>
+  <div class="hero-inner">
+    <div class="hero-label">Holding Company · Est. 2026</div>
+    <h1 class="hero-headline">
+      A portfolio of<br>
+      <span class="muted">businesses</span><br>
+      built to last.
+    </h1>
+    <p class="hero-sub">
+      Arlem Group is a founder-led holding company. We build <strong>focused, independent businesses</strong> in fragmented markets — raw materials, specialty foods, and technology. Each brand earns its place.
+    </p>
+    <div class="hero-actions">
+      <a href="#portfolio" class="btn-gold">View Portfolio</a>
+      <a href="#about" class="btn-outline">Our approach</a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-num">3<span>+</span></div>
+      <div class="hero-stat-label">Active Verticals</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">32<span>+</span></div>
+      <div class="hero-stat-label">Countries</div>
+    </div>
+    <div>
+      <div class="hero-stat-num">B2B</div>
+      <div class="hero-stat-label">Focus</div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="portfolio-header fade-up">
+    <div class="portfolio-header-left">
+      <div class="section-tag">Portfolio</div>
+      <h2>Our businesses</h2>
+    </div>
+    <div class="portfolio-header-right">
+      Each company operates independently with its own brand, relationships, and P&L.
+    </div>
+  </div>
+
+  <div class="business-list fade-up">
+
+    <div class="business-card">
+      <div class="bc-index">01</div>
+      <div class="bc-main">
+        <div class="bc-tag">Raw Materials · Trade</div>
+        <div class="bc-name">Arlem Hides</div>
+        <div class="bc-geo">Argentina → Asia · Europe</div>
+      </div>
+      <div class="bc-desc">
+        Sourcing and trading premium Argentine bovine hides to tanneries across Asia and Europe. Wet blue, salted, and crust leather. Consistent quality, reliable volume.
+      </div>
+      <div class="bc-right">
+        <div class="bc-status status-live">Live</div>
+        <a href="#contact" class="bc-link">Become a buyer</a>
+      </div>
+    </div>
+
+    <div class="business-card">
+      <div class="bc-index">02</div>
+      <div class="bc-main">
+        <div class="bc-tag">Food · Ingredients</div>
+        <div class="bc-name">Arlem Foods</div>
+        <div class="bc-geo">Japan · South America → Global</div>
+      </div>
+      <div class="bc-desc">
+        Specialty food ingredients — from Japanese ceremonial matcha to South American superfoods. Private label, co-branded, and bulk supply programs for SMBs and brands.
+      </div>
+      <div class="bc-right">
+        <div class="bc-status status-live">Live</div>
+        <a href="#contact" class="bc-link">Partner with us</a>
+      </div>
+    </div>
+
+    <div class="business-card">
+      <div class="bc-index">03</div>
+      <div class="bc-main">
+        <div class="bc-tag">Technology · SaaS</div>
+        <div class="bc-name">Arlem Tech</div>
+        <div class="bc-geo">Latin America · Emerging Markets</div>
+      </div>
+      <div class="bc-desc">
+        SaaS and automation tools for businesses in emerging markets. Accounting platforms, workflow automation, and operational software built for cross-border complexity.
+      </div>
+      <div class="bc-right">
+        <div class="bc-status status-building">Building</div>
+        <a href="#contact" class="bc-link">Learn more</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-left fade-up">
+    <div class="section-tag">About</div>
+    <h2>Operator-led.<br>Market-driven.</h2>
+    <p>Arlem Group is built on a simple idea: <strong>the best businesses are built by people who understand the market from the inside.</strong> We don't just invest — we operate.</p>
+    <p>Every business in the portfolio starts with a real gap — fragmented supply, underserved buyers, or industries where the intermediary adds zero value. We plug in, build relationships, and create something that compounds.</p>
+    <p>The holding structure exists for one reason: <strong>to let each brand be bold, and to let us pivot fast when something isn't working.</strong></p>
+  </div>
+  <div class="about-right fade-up">
+    <div class="about-item">
+      <div class="about-item-icon">🌍</div>
+      <div class="about-item-content">
+        <div class="about-item-title">International by default</div>
+        <div class="about-item-text">Operations across Argentina, Europe, Asia, and North America. We speak the language — literally and commercially — in every market we enter.</div>
+      </div>
+    </div>
+    <div class="about-item">
+      <div class="about-item-icon">⚙️</div>
+      <div class="about-item-content">
+        <div class="about-item-title">Hands-on operators</div>
+        <div class="about-item-text">We get our hands dirty. Every deal is negotiated directly, every supplier relationship is ours. No layers between us and the market.</div>
+      </div>
+    </div>
+    <div class="about-item">
+      <div class="about-item-icon">📐</div>
+      <div class="about-item-content">
+        <div class="about-item-title">Lean until proven</div>
+        <div class="about-item-text">Every vertical starts with a pilot. One container. One client. Validate the economics before committing capital at scale.</div>
+      </div>
+    </div>
+    <div class="about-item">
+      <div class="about-item-icon">🔁</div>
+      <div class="about-item-content">
+        <div class="about-item-title">Built to pivot</div>
+        <div class="about-item-text">If a business doesn't work, we cut it. The holding structure exists precisely to keep us honest about what earns its place in the portfolio.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="how">
+  <div class="how-header fade-up">
+    <div class="how-header-left">
+      <div class="section-tag">How we work</div>
+      <h2>The playbook.</h2>
+    </div>
+    <div class="how-header-right">
+      Every business in the Arlem portfolio follows the same four-step model. It keeps us disciplined, keeps costs low, and keeps us from falling in love with bad ideas.
+    </div>
+  </div>
+  <div class="how-steps fade-up">
+    <div class="how-step">
+      <div class="how-step-num">01</div>
+      <h4>Find the gap</h4>
+      <p>Fragmented markets. High information asymmetry. Buyers who can't find reliable suppliers, or suppliers who can't reach global buyers.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">02</div>
+      <h4>Build the brand</h4>
+      <p>Each vertical gets its own identity, positioning, and network. Focused brands win trust faster than generalist intermediaries.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">03</div>
+      <h4>Pilot first</h4>
+      <p>One container. One client. One product. Validate the unit economics before allocating capital. No exceptions.</p>
+    </div>
+    <div class="how-step">
+      <div class="how-step-num">04</div>
+      <h4>Scale or kill</h4>
+      <p>If it works, we double down. If it doesn't, we cut it clean. The holding structure gives us permission to be ruthless.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-left fade-up">
+    <div class="section-tag">Contact</div>
+    <h2>Work with us.</h2>
+    <p>Buyer, supplier, or potential partner — if you're serious, we'll respond within 48 hours.</p>
+    <div class="contact-info">
+      <div class="contact-info-row">
+        <span class="contact-info-label">Email</span>
+        <span class="contact-info-val">info@arlemgroup.com</span>
+      </div>
+      <div class="contact-info-row">
+        <span class="contact-info-label">Offices</span>
+        <span class="contact-info-val">Buenos Aires · Miami · Taipei</span>
+      </div>
+      <div class="contact-info-row">
+        <span class="contact-info-label">Response</span>
+        <span class="contact-info-val">Within 48 hours</span>
+      </div>
+    </div>
+  </div>
+  <div class="contact-form fade-up">
+    <div class="form-row">
+      <div class="form-field">
+        <label>First name</label>
+        <input type="text" placeholder="—">
+      </div>
+      <div class="form-field">
+        <label>Last name</label>
+        <input type="text" placeholder="—">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-field">
+        <label>Company</label>
+        <input type="text" placeholder="—">
+      </div>
+      <div class="form-field">
+        <label>Email</label>
+        <input type="email" placeholder="—">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-field full-width">
+        <label>I'm reaching out about</label>
+        <select>
+          <option value="">Select</option>
+          <option>Arlem Hides — Raw Materials</option>
+          <option>Arlem Foods — Ingredients</option>
+          <option>Arlem Tech — Technology</option>
+          <option>Partnership / Investment</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-field full-width">
+        <label>Message</label>
+        <textarea placeholder="What are you looking for?"></textarea>
+      </div>
+    </div>
+    <button class="form-submit">Send message →</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Arlem<span>.</span></div>
+  <ul class="footer-links">
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="mailto:info@arlemgroup.com">info@arlemgroup.com</a></li>
+  </ul>
+  <div class="footer-copy">© 2026 Arlem Group</div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 120);
+      }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
