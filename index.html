@@ -351,70 +351,156 @@ section { padding: 120px 56px; }
 
 .portfolio-card {
   background: var(--white);
-  padding: 48px 40px;
   position: relative;
-  transition: background 0.3s;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: default;
 }
 
-.portfolio-card:hover { background: var(--cream); }
+/* ── CARD IMAGE ── */
+.card-image {
+  position: relative;
+  width: 100%;
+  height: 148px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s ease, filter 0.45s ease;
+  filter: brightness(0.82) saturate(0.8);
+}
+
+.card-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(175deg, rgba(26,23,20,0.08) 0%, rgba(26,23,20,0.52) 100%);
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 100% 60% at 50% 120%,
+    rgba(201,144,63,0.65) 0%,
+    rgba(176,120,48,0.25) 45%,
+    transparent 70%
+  );
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.45s ease;
+}
+
+.portfolio-card:hover .card-image img {
+  transform: scale(1.06);
+  filter: brightness(0.95) saturate(1.08);
+}
+.portfolio-card:hover .card-image::before { opacity: 0.5; }
+.portfolio-card:hover .card-image::after  { opacity: 1; }
+
+/* ── CARD CONTENT — compact ── */
+.card-content {
+  padding: 16px 18px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  transition: background 0.3s;
+  gap: 4px;
+}
+
+.portfolio-card:hover .card-content { background: var(--cream); }
 
 .card-number {
   font-family: 'DM Mono', monospace;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 300;
   color: var(--ink-light);
   letter-spacing: 0.1em;
-  margin-bottom: 48px;
+  margin-bottom: 0;
 }
 
 .card-category {
   font-family: 'DM Mono', monospace;
   font-size: 10px;
   font-weight: 300;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--ink-light);
-  margin-bottom: 14px;
+  color: var(--amber);
 }
 
 .card-name {
   font-family: 'DM Sans', sans-serif;
-  font-size: 22px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 500;
   letter-spacing: -0.01em;
   color: var(--ink);
-  margin-bottom: 18px;
 }
 
+/* desc + tags hidden by default, revealed on hover */
 .card-desc {
-  font-size: 14px;
+  font-size: 12.5px;
   font-weight: 300;
-  line-height: 1.75;
+  line-height: 1.7;
   color: var(--ink-mid);
-  margin-bottom: 36px;
+  margin-top: 4px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.35s ease, margin-top 0.3s ease;
 }
 
-.card-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.portfolio-card:hover .card-desc {
+  max-height: 160px;
+  opacity: 1;
+  margin-top: 8px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease 0.05s, opacity 0.35s ease 0.05s;
+}
+
+.portfolio-card:hover .card-tags {
+  max-height: 80px;
+  opacity: 1;
+}
 
 .card-tag {
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 300;
   letter-spacing: 0.06em;
   color: var(--ink-mid);
   background: var(--cream2);
-  padding: 5px 12px;
+  padding: 4px 10px;
 }
 
 .card-status {
   position: absolute;
-  top: 48px; right: 40px;
+  top: 148px;
+  right: 0;
   font-family: 'DM Mono', monospace;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 4px 12px;
+  padding: 3px 10px;
+  z-index: 10;
 }
 
 .status-live { color: #4A7C59; background: rgba(74,124,89,0.08); }
@@ -761,41 +847,62 @@ footer {
     <p class="portfolio-sub" data-i18n="portfolio.sub">Each business built around the same principle — find fragmented, underserved markets and execute with speed.</p>
   </div>
   <div class="portfolio-grid reveal">
+
+    <!-- CARD 1: HISA Matcha -->
     <div class="portfolio-card">
-      <span class="card-status status-live" data-i18n="card.live">Live</span>
-      <div class="card-number">01</div>
-      <div class="card-category" data-i18n="card2.cat">Food & Ingredients</div>
-      <div class="card-name">HISA Matcha</div>
-      <p class="card-desc" data-i18n="card2.desc">Ceremonial matcha for high-end shops. Private label, co-branded, and bulk supply programs for SMBs and brands. Current focus: Japanese matcha distributed to café chains and food service operators across Latin America and Europe under the HISA MATCHA brand.</p>
-      <div class="card-tags">
-        <span class="card-tag">Japan · Europe · LATAM</span>
-        <span class="card-tag">B2B</span>
+      <div class="card-image">
+        <!-- Replace src with your matcha image URL -->
+        <img src="/matcha.jpg" alt="HISA Matcha">      </div>
+      <div class="card-content">
+        <span class="card-status status-live" data-i18n="card.live">Live</span>
+        <div class="card-number">01</div>
+        <div class="card-category" data-i18n="card2.cat">Food & Ingredients</div>
+        <div class="card-name">HISA Matcha</div>
+        <p class="card-desc" data-i18n="card2.desc">Ceremonial matcha for high-end shops. Private label, co-branded, and bulk supply programs for SMBs and brands. Current focus: Japanese matcha distributed to café chains and food service operators across Latin America and Europe under the HISA MATCHA brand.</p>
+        <div class="card-tags">
+          <span class="card-tag">Japan · Europe · LATAM</span>
+          <span class="card-tag">B2B</span>
+        </div>
       </div>
     </div>
 
+    <!-- CARD 2: Arlem Devs -->
     <div class="portfolio-card">
-      <span class="card-status status-live" data-i18n="card.live">Live</span>
-      <div class="card-number">02</div>
-      <div class="card-category" data-i18n="card3.cat">Technology</div>
-      <div class="card-name">Arlem Devs</div>
-      <p class="card-desc" data-i18n="card3.desc">Financial infrastructure for operators in emerging markets. Current product: a fully automated platform purpose-built for Argentine ALYCs and boutique trading desks.</p>
-      <div class="card-tags">
-        <span class="card-tag">SaaS</span>
-        <span class="card-tag">Argentina</span>
-        <span class="card-tag">ALYCs</span>
+      <div class="card-image">
+        <!-- Replace src with your tech/dev image URL -->
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Arlem Devs">
+      </div>
+      <div class="card-content">
+        <span class="card-status status-live" data-i18n="card.live">Live</span>
+        <div class="card-number">02</div>
+        <div class="card-category" data-i18n="card3.cat">Technology</div>
+        <div class="card-name">Arlem Devs</div>
+        <p class="card-desc" data-i18n="card3.desc">Financial infrastructure for operators in emerging markets. Current product: a fully automated platform purpose-built for Argentine ALYCs and boutique trading desks.</p>
+        <div class="card-tags">
+          <span class="card-tag">SaaS</span>
+          <span class="card-tag">Argentina</span>
+          <span class="card-tag">ALYCs</span>
+        </div>
       </div>
     </div>
 
+    <!-- CARD 3: Arlem Hides -->
     <div class="portfolio-card">
-      <span class="card-status status-building" data-i18n="card.building">Building</span>
-      <div class="card-number">03</div>
-      <div class="card-category" data-i18n="card1.cat">Raw Materials</div>
-      <div class="card-name">Arlem Hides</div>
-      <p class="card-desc" data-i18n="card1.desc">Bovine and buffalo hides sourced from South American frigoríficos, traded to tanneries in China, Europe, and India. End-to-end logistics, quality grading, and customs clearance.</p>
-      <div class="card-tags">
-        <span class="card-tag">Bovine hides</span>
-        <span class="card-tag">Argentina</span>
-        <span class="card-tag">China · EU</span>
+      <div class="card-image">
+        <!-- Replace src with your hides/leather image URL -->
+        <img src="https://images.unsplash.com/photo-1516762689617-e1cffcef479d?w=800&q=80" alt="Arlem Hides">
+      </div>
+      <div class="card-content">
+        <span class="card-status status-building" data-i18n="card.building">Building</span>
+        <div class="card-number">03</div>
+        <div class="card-category" data-i18n="card1.cat">Raw Materials</div>
+        <div class="card-name">Arlem Hides</div>
+        <p class="card-desc" data-i18n="card1.desc">Bovine and buffalo hides sourced from South American frigoríficos, traded to tanneries in China, Europe, and India. End-to-end logistics, quality grading, and customs clearance.</p>
+        <div class="card-tags">
+          <span class="card-tag">Bovine hides</span>
+          <span class="card-tag">Argentina</span>
+          <span class="card-tag">China · EU</span>
+        </div>
       </div>
     </div>
 
