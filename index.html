@@ -708,10 +708,10 @@ footer {
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
-      <button class="lang-btn active" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" onclick="setLang('es')">ES</button>
-      <button class="lang-btn" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" onclick="setLang('zh')">中文</button>
+      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+      <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">中文</button>
     </div>
     <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in touch →</a>
   </div>
@@ -1127,7 +1127,7 @@ let currentLang = 'en';
 
 function setLang(lang) {
   currentLang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('onclick') === `setLang('${lang}')`));
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.getAttribute('data-lang') === lang));
   // Apply Chinese font when needed
   document.body.style.fontFamily = lang === 'zh' ? "'Noto Sans SC', 'DM Sans', sans-serif" : "'DM Sans', sans-serif";
   document.querySelectorAll('[data-i18n]').forEach(el => {
