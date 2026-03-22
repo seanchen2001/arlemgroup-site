@@ -80,7 +80,63 @@ nav {
 }
 
 .nav-links a:hover { color: var(--ink); }
-.nav-link-hisa { color: var(--amber) !important; }
+
+/* Portfolio dropdown */
+.nav-has-dropdown { position: relative; }
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  background: var(--white);
+  border: 1px solid var(--border);
+  min-width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 200;
+}
+
+.nav-has-dropdown:hover .nav-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: background 0.15s;
+  gap: 20px;
+}
+.nav-dropdown-item:last-child { border-bottom: none; }
+.nav-dropdown-item:hover { background: var(--cream2); }
+
+.nav-dropdown-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.nav-dropdown-status {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  white-space: nowrap;
+}
+.nav-dropdown-status.live { color: #4A7C59; background: rgba(74,124,89,0.08); }
+.nav-dropdown-status.building { color: var(--amber); background: rgba(176,120,48,0.08); }
+.nav-dropdown-item.disabled { pointer-events: none; opacity: 0.45; }
 
 .nav-right { display: flex; align-items: center; gap: 24px; }
 
@@ -819,10 +875,25 @@ footer {
     Arlem<span>.</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
+    <li class="nav-has-dropdown">
+      <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+      <div class="nav-dropdown">
+        <a href="hisa-matcha.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-name">HISA Matcha</span>
+          <span class="nav-dropdown-status live">Live</span>
+        </a>
+        <div class="nav-dropdown-item disabled">
+          <span class="nav-dropdown-name">Arlem Devs</span>
+          <span class="nav-dropdown-status live">Live</span>
+        </div>
+        <div class="nav-dropdown-item disabled">
+          <span class="nav-dropdown-name">Coming Soon</span>
+          <span class="nav-dropdown-status building">Building</span>
+        </div>
+      </div>
+    </li>
     <li><a href="#process" data-i18n="nav.approach">Approach</a></li>
     <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-    <li><a href="hisa-matcha.html" class="nav-link-hisa">HISA Matcha ↗</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
