@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Arlem Group</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1714'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' fill='%23B07830' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -80,6 +80,7 @@ nav {
 }
 
 .nav-links a:hover { color: var(--ink); }
+.nav-link-hisa { color: var(--amber) !important; }
 
 .nav-right { display: flex; align-items: center; gap: 24px; }
 
@@ -821,13 +822,13 @@ footer {
     <li><a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a></li>
     <li><a href="#process" data-i18n="nav.approach">Approach</a></li>
     <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="hisa-matcha.html" class="nav-link-hisa">HISA Matcha ↗</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
       <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
       <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
       <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" data-lang="zh" onclick="setLang('zh')">中文</button>
     </div>
     <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in touch →</a>
   </div>
@@ -1138,27 +1139,6 @@ const i18n = {
     "contact.email.label":"Email","contact.hq.label":"Siège","contact.offices.label":"Bureaux","contact.ops.label":"Opérations","contact.ops.value":"pays",
     "form.name":"Nom","form.company":"Société","form.email":"Email","form.topic":"Sujet","form.message":"Message","form.general":"Renseignement général","form.submit":"Envoyer →"
   },
-  zh: {
-    "nav.portfolio":"业务组合","nav.approach":"运营方法","nav.contact":"联系我们","nav.cta":"立即联系 →",
-    "hero.eyebrow":"全球大宗商品与贸易","hero.line1":"我们寻找","hero.line2":"市场空白。","hero.line3":"我们填补它们。",
-    "hero.sub":"Arlem Group 深耕原材料、食品原料与科技领域，将被忽视的市场与有需求的供应链紧密相连。",
-    "hero.cta1":"我们的业务","hero.cta2":"运营方式",
-    "stats.countries":"活跃国家","stats.verticals":"业务板块","stats.offices":"办事处","stats.hq":"总部所在地",
-    "portfolio.title":"三大板块。\n一套运营模式。",
-    "portfolio.sub":"每项业务遵循同一原则——发现碎片化、被忽视的市场，以速度实现落地执行。",
-    "card.live":"运营中","card.building":"建设中",
-    "card1.cat":"原材料","card1.desc":"从南美冷冻厂采购牛皮与水牛皮，销往中国、欧洲和印度的制革厂。提供全流程物流、质量分级及清关服务。",
-    "card2.cat":"食品与原料","card2.desc":"面向高端消费市场的特色食品原料。当前重点：以 HISA MATCHA 品牌向拉丁美洲咖啡连锁及餐饮运营商分销日本抹茶。",
-    "card3.cat":"科技","card3.desc":"为新兴市场运营商提供金融基础设施。当前产品：专为阿根廷 ALYC 及精品交易台设计的会计与 PnL 管理平台。",
-    "process.title":"我们的\n运营方式。","process.sub":"没有企业手册。我们以精简架构、高速执行，在每个进入的市场保持直接参与。",
-    "step1.title":"识别市场空白","step1.desc":"我们寻找信息不对称导致定价低效的市场——那些被机构玩家忽视的大宗商品、地区或供应链。",
-    "step2.title":"实地验证","step2.desc":"在任何资金流动之前，我们核实整个交易流程：供应商可靠性、物流、海关及买方需求。绝不依赖纸面尽职调查。",
-    "step3.title":"执行首单","step3.desc":"从小规模入手，验证流程可行，建立信任关系。第一笔交易即是概念验证。",
-    "step4.title":"构建基础设施","step4.desc":"一旦路径得到验证，我们即系统化运营——物流合作伙伴、定价框架与操作流程，使贸易规模化成为可能。",
-    "contact.title":"携手\n合作。","contact.sub":"无论您是供应商、买方还是潜在合作伙伴——我们是直接的人。告诉我们您在做什么。",
-    "contact.email.label":"邮箱","contact.hq.label":"总部","contact.offices.label":"办事处","contact.ops.label":"运营覆盖","contact.ops.value":"个国家",
-    "form.name":"姓名","form.company":"公司","form.email":"邮箱","form.topic":"主题","form.message":"留言","form.general":"一般咨询","form.submit":"发送消息 →"
-  }
 };
 
 let currentLang = 'en';
@@ -1168,9 +1148,7 @@ function setLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(b => {
     b.classList.toggle('active', b.getAttribute('data-lang') === lang);
   });
-  document.body.style.fontFamily = lang === 'zh'
-    ? "'Noto Sans SC', 'DM Sans', sans-serif"
-    : "'DM Sans', sans-serif";
+  document.body.style.fontFamily = "'DM Sans', sans-serif";
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     const val = i18n[lang] && i18n[lang][key];

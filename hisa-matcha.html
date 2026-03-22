@@ -70,6 +70,23 @@ nav {
 }
 .nav-links a:hover { color: var(--ink); }
 
+.nav-right {
+  display: flex; align-items: center; gap: 20px;
+}
+.lang-toggle {
+  display: flex; align-items: center;
+  border: 1px solid var(--border); overflow: hidden;
+}
+.lang-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--ink-light);
+  background: transparent; border: none;
+  padding: 6px 12px; cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.lang-btn.active { background: var(--ink); color: var(--white); }
 .nav-back {
   font-family: 'DM Mono', monospace;
   font-size: 11px; font-weight: 400;
@@ -91,7 +108,7 @@ nav {
   position: absolute; inset: 0;
   background-image: url('images/hisa-hero.jpg');
   background-size: cover;
-  background-position: center top;
+  background-position: center center;
   z-index: 0;
 }
 
@@ -726,13 +743,20 @@ footer {
     Arlem<span>.</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#producto">Producto</a></li>
-    <li><a href="#distribucion">Distribución</a></li>
-    <li><a href="#calidad">Calidad</a></li>
-    <li><a href="#aplicaciones">Aplicaciones</a></li>
-    <li><a href="#contacto">Contacto</a></li>
+    <li><a href="#producto" data-i18n="nav.producto">Producto</a></li>
+    <li><a href="#distribucion" data-i18n="nav.dist">Distribución</a></li>
+    <li><a href="#calidad" data-i18n="nav.calidad">Calidad</a></li>
+    <li><a href="#aplicaciones" data-i18n="nav.apps">Aplicaciones</a></li>
+    <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
   </ul>
-  <a href="index.html" class="nav-back">← Arlem Group</a>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+      <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+    </div>
+    <a href="index.html" class="nav-back" data-i18n="nav.back">← Arlem Group</a>
+  </div>
 </nav>
 
 <!-- ─── HERO ─── -->
@@ -747,28 +771,28 @@ footer {
 
   <div class="hero-content">
     <div class="hero-eyebrow">HISA Matcha &nbsp;·&nbsp; Shizuoka, Japan &nbsp;·&nbsp; Premium Grade</div>
-    <h1 class="hero-headline">
+    <h1 class="hero-headline" data-i18n="hero.headline">
       Matcha japonés.<br>
       Para la <em>cafetería</em><br>
       de verdad.
     </h1>
-    <p class="hero-sub">
+    <p class="hero-sub" data-i18n="hero.sub">
       Matcha premium de Shizuoka, distribuido a cafeterías y operadores de food service en América Latina y Europa. Programas mayoristas y minoristas bajo la marca HISA.
     </p>
     <div class="hero-actions">
-      <a href="#contacto" class="btn-primary">Consultar distribución</a>
-      <a href="#aplicaciones" class="btn-ghost">Ver aplicaciones</a>
+      <a href="#contacto" class="btn-primary" data-i18n="hero.cta1">Consultar distribución</a>
+      <a href="#aplicaciones" class="btn-ghost" data-i18n="hero.cta2">Ver aplicaciones</a>
     </div>
   </div>
 </section>
 
 <!-- ─── PRODUCTO ─── -->
 <section id="producto">
-  <div class="section-label reveal">Producto</div>
+  <div class="section-label reveal" data-i18n="sec.producto">Producto</div>
   <div class="producto-grid">
     <div class="producto-text reveal">
-      <h2>Maki Matcha.<br>Nuestro <em>SKU flagship</em>.</h2>
-      <p>
+      <h2 data-i18n="prod.h2">Maki Matcha.<br>Nuestro <em>SKU flagship</em>.</h2>
+      <p data-i18n="prod.desc">
         Un matcha de Shizuoka con perfil vegetal pronunciado y final seco y estructurado. Notas de achicoria y nuez verde aportan profundidad, mientras que el meadow silvestre suma un carácter verde y vivo. Directo y expresivo — se mantiene perfectamente en leche y preparaciones culinarias.
       </p>
       <div class="specs-table">
@@ -804,20 +828,16 @@ footer {
     </div>
     <div class="producto-image reveal">
       <img src="images/hisa-powder.jpg" alt="Maki Matcha — polvo premium de Shizuoka">
-      <div class="producto-image-label">
-        <span>record: 002</span>
-        <span>sourced by: hisa matcha · 2026</span>
-      </div>
     </div>
   </div>
 </section>
 
 <!-- ─── DISTRIBUCIÓN ─── -->
 <section id="distribucion">
-  <div class="section-label reveal">Distribución</div>
+  <div class="section-label reveal" data-i18n="sec.dist">Distribución</div>
   <div class="dist-header reveal">
-    <h2>Dos modelos.<br>Un solo estándar.</h2>
-    <p>Programas diseñados para operadores de distintas escalas, desde cadenas hasta cafeterías independientes.</p>
+    <h2 data-i18n="dist.h2">Dos modelos.<br>Un solo estándar.</h2>
+    <p data-i18n="dist.sub">Programas diseñados para operadores de distintas escalas, desde cadenas hasta cafeterías independientes.</p>
   </div>
   <div class="dist-grid reveal">
 
@@ -847,7 +867,7 @@ footer {
         Programa para cafeterías independientes y retail de especialidad. Pedidos de menor volumen con packaging de marca HISA Matcha, listo para usar en barra o reventa.
       </p>
       <div class="dist-features">
-        <div class="dist-feature">Presentaciones de 100g y 250g bajo marca HISA</div>
+        <div class="dist-feature">Presentaciones de 30g y 50g bajo marca HISA</div>
         <div class="dist-feature">Packaging terminado, listo para barra o góndola</div>
         <div class="dist-feature">Soporte de producto y guía de preparación</div>
         <div class="dist-feature">Pedidos recurrentes con logística simplificada</div>
@@ -860,10 +880,10 @@ footer {
 
 <!-- ─── CALIDAD ─── -->
 <section id="calidad">
-  <div class="section-label reveal">Calidad</div>
+  <div class="section-label reveal" data-i18n="sec.calidad">Calidad</div>
   <div class="calidad-header reveal">
-    <h2>Tres grados.<br>Nosotros vivimos en el del medio.</h2>
-    <p>El matcha se clasifica según la calidad de la hoja, el proceso de cultivo y el perfil de sabor resultante. HISA Matcha trabaja exclusivamente con grado premium.</p>
+    <h2 data-i18n="cal.h2">Tres grados.<br>Nosotros vivimos en el del medio.</h2>
+    <p data-i18n="cal.sub">El matcha se clasifica según la calidad de la hoja, el proceso de cultivo y el perfil de sabor resultante. HISA Matcha trabaja exclusivamente con grado premium.</p>
   </div>
   <div class="calidad-grid reveal">
 
@@ -954,10 +974,10 @@ footer {
 
 <!-- ─── APLICACIONES ─── -->
 <section id="aplicaciones">
-  <div class="section-label reveal">Aplicaciones</div>
+  <div class="section-label reveal" data-i18n="sec.apps">Aplicaciones</div>
   <div class="aplicaciones-header reveal">
-    <h2>Lo que podés hacer<br>con HISA en barra.</h2>
-    <p>Un portfolio de preparaciones para cafeterías. Cada una diseñada para mostrar el matcha premium en su mejor versión.</p>
+    <h2 data-i18n="apps.h2">Lo que podés hacer<br>con HISA en barra.</h2>
+    <p data-i18n="apps.sub">Un portfolio de preparaciones para cafeterías. Cada una diseñada para mostrar el matcha premium en su mejor versión.</p>
   </div>
 
   <!-- Featured photos -->
@@ -1051,12 +1071,12 @@ footer {
 
 <!-- ─── CONTACTO ─── -->
 <section id="contacto">
-  <div class="section-label reveal">Contacto</div>
+  <div class="section-label reveal" data-i18n="sec.contacto">Contacto</div>
   <div class="contacto-inner reveal">
 
     <div class="contacto-left">
-      <h2>¿Querés distribuir<br><em>HISA Matcha</em>?</h2>
-      <p>Ya sea para una cafetería, una cadena o distribución regional — escribinos y armamos el programa que mejor se adapte a tu operación.</p>
+      <h2 data-i18n="con.h2">¿Querés distribuir<br><em>HISA Matcha</em>?</h2>
+      <p data-i18n="con.sub">Ya sea para una cafetería, una cadena o distribución regional — escribinos y armamos el programa que mejor se adapte a tu operación.</p>
 
       <div class="contacto-channels">
         <a href="mailto:hola@arlemgroup.com" class="contacto-channel">
@@ -1112,7 +1132,80 @@ footer {
 </footer>
 
 <script>
-// Scroll reveal
+// ─── i18n ───
+const i18n = {
+  es: {
+    "nav.back":"← Arlem Group",
+    "nav.producto":"Producto","nav.dist":"Distribución","nav.calidad":"Calidad","nav.apps":"Aplicaciones","nav.contacto":"Contacto",
+    "hero.headline":"Matcha japonés.<br>Para la <em>cafetería</em><br>de verdad.",
+    "hero.sub":"Matcha premium de Shizuoka, distribuido a cafeterías y operadores de food service en América Latina y Europa. Programas mayoristas y minoristas bajo la marca HISA.",
+    "hero.cta1":"Consultar distribución","hero.cta2":"Ver aplicaciones",
+    "sec.producto":"Producto","sec.dist":"Distribución","sec.calidad":"Calidad","sec.apps":"Aplicaciones","sec.contacto":"Contacto",
+    "prod.h2":"Maki Matcha.<br>Nuestro <em>SKU flagship</em>.",
+    "prod.desc":"Un matcha de Shizuoka con perfil vegetal pronunciado y final seco y estructurado. Notas de achicoria y nuez verde aportan profundidad, mientras que el meadow silvestre suma un carácter verde y vivo. Directo y expresivo — se mantiene perfectamente en leche y preparaciones culinarias.",
+    "dist.h2":"Dos modelos.<br>Un solo estándar.",
+    "dist.sub":"Programas diseñados para operadores de distintas escalas, desde cadenas hasta cafeterías independientes.",
+    "cal.h2":"Tres grados.<br>Nosotros vivimos en el del medio.",
+    "cal.sub":"El matcha se clasifica según la calidad de la hoja, el proceso de cultivo y el perfil de sabor resultante. HISA Matcha trabaja exclusivamente con grado premium.",
+    "apps.h2":"Lo que podés hacer<br>con HISA en barra.",
+    "apps.sub":"Un portfolio de preparaciones para cafeterías. Cada una diseñada para mostrar el matcha premium en su mejor versión.",
+    "con.h2":"¿Querés distribuir<br><em>HISA Matcha</em>?",
+    "con.sub":"Ya sea para una cafetería, una cadena o distribución regional — escribinos y armamos el programa que mejor se adapte a tu operación."
+  },
+  en: {
+    "nav.back":"← Arlem Group",
+    "nav.producto":"Product","nav.dist":"Distribution","nav.calidad":"Quality","nav.apps":"Applications","nav.contacto":"Contact",
+    "hero.headline":"Japanese matcha.<br>For the real<br><em>craft café</em>.",
+    "hero.sub":"Premium matcha from Shizuoka, distributed to cafés and food service operators across Latin America and Europe. Wholesale and retail programs under the HISA brand.",
+    "hero.cta1":"Inquire about distribution","hero.cta2":"See applications",
+    "sec.producto":"Product","sec.dist":"Distribution","sec.calidad":"Quality","sec.apps":"Applications","sec.contacto":"Contact",
+    "prod.h2":"Maki Matcha.<br>Our <em>flagship SKU</em>.",
+    "prod.desc":"A Shizuoka matcha with a bold vegetal profile and structured, dry finish. Notes of chicory and green walnut bring depth and slight bitterness, while wild meadow adds a fresh, untamed green character. Direct and expressive — it holds its presence beautifully in milk and culinary preparations.",
+    "dist.h2":"Two models.<br>One standard.",
+    "dist.sub":"Programs designed for operators of different scales, from chains to independent cafés.",
+    "cal.h2":"Three grades.<br>We live in the middle one.",
+    "cal.sub":"Matcha is classified by leaf quality, cultivation process, and the resulting flavor profile. HISA Matcha works exclusively with premium grade.",
+    "apps.h2":"What you can make<br>with HISA at the bar.",
+    "apps.sub":"A portfolio of preparations for cafés. Each one designed to show premium matcha at its best.",
+    "con.h2":"Want to distribute<br><em>HISA Matcha</em>?",
+    "con.sub":"Whether for a single café, a chain, or regional distribution — reach out and we'll put together the right program for your operation."
+  },
+  fr: {
+    "nav.back":"← Arlem Group",
+    "nav.producto":"Produit","nav.dist":"Distribution","nav.calidad":"Qualité","nav.apps":"Applications","nav.contacto":"Contact",
+    "hero.headline":"Matcha japonais.<br>Pour le vrai<br><em>café de spécialité</em>.",
+    "hero.sub":"Matcha premium de Shizuoka, distribué aux cafés et opérateurs de restauration en Amérique latine et en Europe. Programmes en gros et au détail sous la marque HISA.",
+    "hero.cta1":"Demande de distribution","hero.cta2":"Voir les applications",
+    "sec.producto":"Produit","sec.dist":"Distribution","sec.calidad":"Qualité","sec.apps":"Applications","sec.contacto":"Contact",
+    "prod.h2":"Maki Matcha.<br>Notre <em>SKU phare</em>.",
+    "prod.desc":"Un matcha de Shizuoka au profil végétal prononcé et à la finale sèche et structurée. Des notes de chicorée et de noix verte apportent de la profondeur, tandis que le meadow sauvage ajoute un caractère vert et vivant. Direct et expressif — il se tient parfaitement dans le lait et les préparations culinaires.",
+    "dist.h2":"Deux modèles.<br>Un seul standard.",
+    "dist.sub":"Des programmes conçus pour des opérateurs de différentes échelles, des chaînes aux cafés indépendants.",
+    "cal.h2":"Trois grades.<br>Nous vivons dans celui du milieu.",
+    "cal.sub":"Le matcha est classifié selon la qualité de la feuille, le processus de culture et le profil aromatique qui en résulte. HISA Matcha travaille exclusivement avec du matcha de grade premium.",
+    "apps.h2":"Ce que vous pouvez faire<br>avec HISA au bar.",
+    "apps.sub":"Un portfolio de préparations pour les cafés. Chacune conçue pour mettre en valeur le matcha premium dans sa meilleure version.",
+    "con.h2":"Vous souhaitez distribuer<br><em>HISA Matcha</em>?",
+    "con.sub":"Que ce soit pour un café, une chaîne ou une distribution régionale — contactez-nous et nous construirons le programme adapté à votre opération."
+  }
+};
+
+let currentLang = 'es';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.querySelectorAll('.lang-btn').forEach(b => {
+    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+  });
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    const val = i18n[lang] && i18n[lang][key];
+    if (!val) return;
+    el.innerHTML = val;
+  });
+}
+
+// ─── Scroll reveal ───
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
