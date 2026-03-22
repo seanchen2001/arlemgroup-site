@@ -84,19 +84,9 @@ nav {
 /* Portfolio dropdown */
 .nav-has-dropdown { position: relative; }
 
-/* Invisible bridge that fills the gap so hover doesn't break */
-.nav-has-dropdown::after {
-  content: '';
-  position: absolute;
-  top: 100%;
-  left: -20px;
-  right: -20px;
-  height: 14px;
-}
-
 .nav-dropdown {
   position: absolute;
-  top: calc(100% + 14px);
+  top: calc(100% + 12px);
   left: 50%;
   transform: translateX(-50%) translateY(-4px);
   background: var(--white);
@@ -108,7 +98,7 @@ nav {
   z-index: 200;
 }
 
-.nav-has-dropdown:hover .nav-dropdown {
+.nav-has-dropdown.is-open .nav-dropdown {
   opacity: 1;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0);
@@ -1237,6 +1227,15 @@ function setLang(lang) {
     el.innerHTML = val.replace(/\n/g, '<br>');
   });
 }
+
+// ─── Dropdown ───
+document.querySelectorAll('.nav-has-dropdown').forEach(item => {
+  let timer;
+  const open  = () => { clearTimeout(timer); item.classList.add('is-open'); };
+  const close = () => { timer = setTimeout(() => item.classList.remove('is-open'), 180); };
+  item.addEventListener('mouseenter', open);
+  item.addEventListener('mouseleave', close);
+});
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
