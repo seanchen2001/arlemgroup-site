@@ -506,23 +506,23 @@ section { padding: 120px 56px; }
   text-align: right; line-height: 1.7;
 }
 
-/* Featured photos — editorial 4-image grid */
+/* Featured photos — editorial 3-col × 2-row grid */
 .aplicaciones-photos {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 300px 300px 360px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 280px 280px;
   gap: 1px; background: var(--border);
   border: 1px solid var(--border);
   margin-bottom: 1px;
 }
-/* tonic: left col, spans rows 1+2 */
+/* tonic: left col, spans both rows (tall portrait) */
 .aplicaciones-photos .photo-card:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
-/* pour: top-right */
+/* pour: centre top */
 .aplicaciones-photos .photo-card:nth-child(2) { grid-column: 2; grid-row: 1; }
-/* dirty: mid-right */
+/* dirty: centre bottom */
 .aplicaciones-photos .photo-card:nth-child(3) { grid-column: 2; grid-row: 2; }
-/* latte: full-width bottom */
-.aplicaciones-photos .photo-card:nth-child(4) { grid-column: 1 / 3; grid-row: 3; }
+/* latte: right col, spans both rows (tall portrait) */
+.aplicaciones-photos .photo-card:nth-child(4) { grid-column: 3; grid-row: 1 / 3; }
 
 .photo-card {
   position: relative; overflow: hidden;
@@ -745,7 +745,7 @@ footer {
   .aplicaciones-header p { text-align: left; max-width: 100%; }
   .aplicaciones-photos {
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 320px);
+    grid-template-rows: repeat(4, 300px);
   }
   .aplicaciones-photos .photo-card:nth-child(1),
   .aplicaciones-photos .photo-card:nth-child(2),
@@ -753,7 +753,7 @@ footer {
   .aplicaciones-photos .photo-card:nth-child(4) {
     grid-column: 1; grid-row: auto;
   }
-  .photo-card { height: 320px; }
+  .photo-card { height: 300px; }
   .menu-grid { grid-template-columns: 1fr 1fr; }
   .contacto-inner { grid-template-columns: 1fr; gap: 48px; }
   footer { flex-direction: column; gap: 12px; padding: 20px 24px; text-align: center; }
@@ -801,7 +801,7 @@ footer {
 
   <div class="hero-badge">
     <div class="hero-badge-num">HISA</div>
-    <div>Matcha · Japan · 2026</div>
+    <div>Matcha + Japan + 2026</div>
   </div>
 
   <div class="hero-content">
@@ -841,7 +841,7 @@ footer {
         </div>
         <div class="spec-row">
           <span class="spec-key">Cultivar</span>
-          <span class="spec-val">Yabukita · Tsuyuhikari · Okumidori</span>
+          <span class="spec-val">Yabukita + Tsuyuhikari + Okumidori</span>
         </div>
         <div class="spec-row">
           <span class="spec-key">Molienda</span>
@@ -853,7 +853,7 @@ footer {
         </div>
         <div class="spec-row">
           <span class="spec-key">Ideal para</span>
-          <span class="spec-val"><strong>Latte · Horneado</strong></span>
+          <span class="spec-val"><strong>Latte + Horneado</strong></span>
         </div>
         <div class="spec-row">
           <span class="spec-key">Grado</span>
@@ -880,7 +880,7 @@ footer {
     <div class="dist-card">
       <div class="dist-card-num">01</div>
       <div class="dist-card-title" data-i18n="dist.01.title">Mayorista</div>
-      <div class="dist-card-subtitle" data-i18n="dist.01.sub">Wholesale · B2B</div>
+      <div class="dist-card-subtitle" data-i18n="dist.01.sub">Wholesale + B2B</div>
       <p class="dist-card-desc" data-i18n="dist.01.desc">
         Programa de suministro para cadenas de cafeterías, operadores de food service, marcas propias y distribuidores. Volúmenes a escala con packaging neutral o co-branded bajo acuerdo.
       </p>
@@ -897,7 +897,7 @@ footer {
     <div class="dist-card">
       <div class="dist-card-num">02</div>
       <div class="dist-card-title" data-i18n="dist.02.title">Minorista</div>
-      <div class="dist-card-subtitle" data-i18n="dist.02.sub">Retail · Specialty</div>
+      <div class="dist-card-subtitle" data-i18n="dist.02.sub">Retail + Specialty</div>
       <p class="dist-card-desc" data-i18n="dist.02.desc">
         Programa para cafeterías independientes y retail de especialidad. Pedidos de menor volumen con packaging de marca HISA Matcha, listo para usar en barra o reventa.
       </p>
@@ -1024,7 +1024,7 @@ footer {
       <div class="photo-card-label">
         <div class="photo-card-num">01</div>
         <div class="photo-card-name">Matcha Tonic</div>
-        <div class="photo-card-desc">Matcha · Tonic Water · Ice · Citrus</div>
+        <div class="photo-card-desc">Matcha + Tonic Water + Ice + Citrus</div>
       </div>
     </div>
     <!-- 02 Pour: top right -->
@@ -1034,7 +1034,7 @@ footer {
       <div class="photo-card-label">
         <div class="photo-card-num">02</div>
         <div class="photo-card-name">Iced Matcha Latte</div>
-        <div class="photo-card-desc">Ice · Matcha · Milk</div>
+        <div class="photo-card-desc">Ice + Matcha + Milk</div>
       </div>
     </div>
     <!-- 03 Dirty: mid right -->
@@ -1044,7 +1044,7 @@ footer {
       <div class="photo-card-label">
         <div class="photo-card-num">03</div>
         <div class="photo-card-name">Dirty Matcha</div>
-        <div class="photo-card-desc">Espresso · Matcha · Milk</div>
+        <div class="photo-card-desc">Espresso + Matcha + Milk</div>
       </div>
     </div>
     <!-- 04 Latte: full-width bottom -->
@@ -1054,7 +1054,7 @@ footer {
       <div class="photo-card-label">
         <div class="photo-card-num">04</div>
         <div class="photo-card-name">Matcha Latte</div>
-        <div class="photo-card-desc">Matcha · Steamed Milk</div>
+        <div class="photo-card-desc">Matcha + Steamed Milk</div>
       </div>
     </div>
   </div>
@@ -1065,25 +1065,25 @@ footer {
     <div class="menu-card">
       <div class="menu-card-num">05</div>
       <div class="menu-card-name">Matcha Smoothie</div>
-      <p class="menu-card-desc">Matcha · Banana · Oat Milk · Ice</p>
+      <p class="menu-card-desc">Matcha + Banana + Oat Milk + Ice</p>
     </div>
 
     <div class="menu-card">
       <div class="menu-card-num">06</div>
       <div class="menu-card-name">Matcha Cold Brew</div>
-      <p class="menu-card-desc">Matcha · Cold Water</p>
+      <p class="menu-card-desc">Matcha + Cold Water</p>
     </div>
 
     <div class="menu-card">
       <div class="menu-card-num">07</div>
       <div class="menu-card-name">Matcha Baked Goods</div>
-      <p class="menu-card-desc">Matcha · Pastry</p>
+      <p class="menu-card-desc">Matcha + Pastry</p>
     </div>
 
     <div class="menu-card">
       <div class="menu-card-num">08</div>
       <div class="menu-card-name">Soft Serve</div>
-      <p class="menu-card-desc">Matcha · Ice Cream Base</p>
+      <p class="menu-card-desc">Matcha + Ice Cream Base</p>
     </div>
 
   </div>
@@ -1126,7 +1126,7 @@ footer {
     <div class="contacto-right">
       <div class="contacto-info-item">
         <div class="contacto-info-label">Mercados activos</div>
-        <div class="contacto-info-value">América Latina · Europa</div>
+        <div class="contacto-info-value">América Latina + Europa</div>
       </div>
       <div class="contacto-info-item">
         <div class="contacto-info-label">Origen del producto</div>
@@ -1134,7 +1134,7 @@ footer {
       </div>
       <div class="contacto-info-item">
         <div class="contacto-info-label">Programas disponibles</div>
-        <div class="contacto-info-value">Mayorista · Minorista<br>Private Label · Co-branding</div>
+        <div class="contacto-info-value">Mayorista + Minorista<br>Private Label + Co-branding</div>
       </div>
       <div class="contacto-info-item">
         <div class="contacto-info-label">Operado por</div>
@@ -1154,7 +1154,7 @@ footer {
     </svg>
     Arlem<span>.</span>
   </a>
-  <span class="footer-copy">© 2026 Arlem Group · HISA Matcha</span>
+  <span class="footer-copy">© 2026 Arlem Group + HISA Matcha</span>
   <a href="index.html" class="footer-back">← Volver al grupo</a>
 </footer>
 
@@ -1178,10 +1178,10 @@ const i18n = {
     "apps.sub":"Un portfolio de preparaciones para cafeterías. Cada una diseñada para mostrar el matcha premium en su mejor versión.",
     "con.h2":"¿Querés distribuir<br><em>HISA Matcha</em>?",
     "con.sub":"Ya sea para una cafetería, una cadena o distribución regional — escribinos y armamos el programa que mejor se adapte a tu operación.",
-    "dist.01.title":"Mayorista","dist.01.sub":"Wholesale · B2B",
+    "dist.01.title":"Mayorista","dist.01.sub":"Wholesale + B2B",
     "dist.01.desc":"Programa de suministro para cadenas de cafeterías, operadores de food service, marcas propias y distribuidores. Volúmenes a escala con packaging neutral o co-branded bajo acuerdo.",
     "dist.01.f1":"Suministro a granel en bolsas de 1kg, 5kg y 10kg","dist.01.f2":"Programas de marca propia (private label)","dist.01.f3":"Co-branding disponible bajo acuerdo","dist.01.f4":"Entrega directa a cadena de suministro","dist.01.f5":"Foco: LATAM y Europa",
-    "dist.02.title":"Minorista","dist.02.sub":"Retail · Specialty",
+    "dist.02.title":"Minorista","dist.02.sub":"Retail + Specialty",
     "dist.02.desc":"Programa para cafeterías independientes y retail de especialidad. Pedidos de menor volumen con packaging de marca HISA Matcha, listo para usar en barra o reventa.",
     "dist.02.f1":"Presentaciones de 30g y 50g bajo marca HISA","dist.02.f2":"Packaging terminado, listo para barra o góndola","dist.02.f3":"Soporte de producto y guía de preparación","dist.02.f4":"Pedidos recurrentes con logística simplificada","dist.02.f5":"Ideal para specialty cafés y tiendas gourmet",
     "cal.badge":"Nuestro grado",
@@ -1207,10 +1207,10 @@ const i18n = {
     "apps.sub":"A portfolio of preparations for cafés. Each one designed to show premium matcha at its best.",
     "con.h2":"Want to distribute<br><em>HISA Matcha</em>?",
     "con.sub":"Whether for a single café, a chain, or regional distribution — reach out and we'll put together the right program for your operation.",
-    "dist.01.title":"Wholesale","dist.01.sub":"Wholesale · B2B",
+    "dist.01.title":"Wholesale","dist.01.sub":"Wholesale + B2B",
     "dist.01.desc":"Supply program for café chains, food service operators, private labels and distributors. Scale volumes with neutral or co-branded packaging by agreement.",
     "dist.01.f1":"Bulk supply in 1kg, 5kg and 10kg bags","dist.01.f2":"Private label programs","dist.01.f3":"Co-branding available by agreement","dist.01.f4":"Direct delivery to supply chain","dist.01.f5":"Focus: LATAM and Europe",
-    "dist.02.title":"Retail","dist.02.sub":"Retail · Specialty",
+    "dist.02.title":"Retail","dist.02.sub":"Retail + Specialty",
     "dist.02.desc":"Program for independent cafés and specialty retail. Lower-volume orders with HISA Matcha branded packaging, ready for bar use or resale.",
     "dist.02.f1":"30g and 50g formats under the HISA brand","dist.02.f2":"Finished packaging, ready for bar or shelf","dist.02.f3":"Product support and preparation guide","dist.02.f4":"Recurring orders with simplified logistics","dist.02.f5":"Ideal for specialty cafés and gourmet stores",
     "cal.badge":"Our grade",
@@ -1236,10 +1236,10 @@ const i18n = {
     "apps.sub":"Un portfolio de préparations pour les cafés. Chacune conçue pour mettre en valeur le matcha premium dans sa meilleure version.",
     "con.h2":"Vous souhaitez distribuer<br><em>HISA Matcha</em>?",
     "con.sub":"Que ce soit pour un café, une chaîne ou une distribution régionale — contactez-nous et nous construirons le programme adapté à votre opération.",
-    "dist.01.title":"Vente en gros","dist.01.sub":"Vente en gros · B2B",
+    "dist.01.title":"Vente en gros","dist.01.sub":"Vente en gros + B2B",
     "dist.01.desc":"Programme d'approvisionnement pour les chaînes de cafés, opérateurs de restauration, marques propres et distributeurs. Volumes à l'échelle avec packaging neutre ou co-brandé sur accord.",
     "dist.01.f1":"Fourniture en vrac en sacs de 1kg, 5kg et 10kg","dist.01.f2":"Programmes de marque propre (private label)","dist.01.f3":"Co-branding disponible sur accord","dist.01.f4":"Livraison directe à la chaîne d'approvisionnement","dist.01.f5":"Focus : LATAM et Europe",
-    "dist.02.title":"Vente au détail","dist.02.sub":"Détail · Spécialité",
+    "dist.02.title":"Vente au détail","dist.02.sub":"Détail + Spécialité",
     "dist.02.desc":"Programme pour les cafés indépendants et le commerce de spécialité. Commandes de plus petit volume avec packaging de marque HISA Matcha, prêt pour une utilisation au bar ou la revente.",
     "dist.02.f1":"Formats 30g et 50g sous la marque HISA","dist.02.f2":"Packaging fini, prêt pour le bar ou le rayon","dist.02.f3":"Support produit et guide de préparation","dist.02.f4":"Commandes récurrentes avec logistique simplifiée","dist.02.f5":"Idéal pour les cafés de spécialité et les épiceries fines",
     "cal.badge":"Notre grade",
