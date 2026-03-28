@@ -1,13 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HISA Matcha — Arlem Group</title>
+<title>HISA Matcha — Matcha Japonés Premium para Cafeterías | Arlem Group</title>
+<meta name="description" content="HISA Matcha distribuye matcha japonés premium de Shizuoka para cafeterías, baristas y food service en Argentina y América Latina. Programas mayoristas y minoristas.">
+<meta name="keywords" content="matcha argentina, matcha para cafeterías, matcha japonés, matcha premium, distribuidor matcha argentina, matcha LATAM, matcha latte, matcha wholesale, matcha al por mayor, hisa matcha, arlem group">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://arlemgroup.com/hisa-matcha.html">
+<meta name="geo.region" content="AR">
+<meta name="geo.placename" content="Argentina">
+<meta name="ICBM" content="-34.6037, -58.3816">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Arlem Group">
+<meta property="og:title" content="HISA Matcha — Matcha Japonés Premium para Cafeterías">
+<meta property="og:description" content="Matcha premium de Shizuoka distribuido a cafeterías y operadores de food service en Argentina y América Latina. Programas mayoristas y minoristas.">
+<meta property="og:url" content="https://arlemgroup.com/hisa-matcha.html">
+<meta property="og:image" content="https://arlemgroup.com/images/hisa-latte.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HISA Matcha — Matcha Japonés Premium para Cafeterías">
+<meta name="twitter:description" content="Matcha premium de Shizuoka distribuido a cafeterías en Argentina y LATAM.">
+<meta name="twitter:image" content="https://arlemgroup.com/images/hisa-latte.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1714'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' fill='%23B07830' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
 
 :root {
   --cream:      #F5F0E8;
@@ -102,14 +129,91 @@ nav {
   transition: background 0.15s, color 0.15s;
 }
 .lang-btn.active { background: var(--ink); color: var(--white); }
-.nav-back {
+.nav-cta {
   font-family: 'DM Mono', monospace;
   font-size: 11px; font-weight: 400;
   letter-spacing: 0.06em;
   color: var(--amber); text-decoration: none;
   transition: color 0.2s;
 }
-.nav-back:hover { color: var(--amber-soft); }
+.nav-cta:hover { color: var(--amber-soft); }
+
+/* Portfolio dropdown */
+.nav-has-dropdown { position: relative; }
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  background: var(--white);
+  border: 1px solid var(--border);
+  min-width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 200;
+}
+.nav-has-dropdown.is-open .nav-dropdown {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+.nav-dropdown-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: background 0.15s;
+  gap: 20px;
+}
+.nav-dropdown-item:last-child { border-bottom: none; }
+.nav-dropdown-item:hover { background: var(--cream2); }
+.nav-dropdown-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px; font-weight: 500;
+  color: var(--ink); letter-spacing: 0; text-transform: none;
+}
+.nav-dropdown-status {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; font-weight: 400;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 2px 7px; white-space: nowrap;
+}
+.nav-dropdown-status.live { color: #4A7C59; background: rgba(74,124,89,0.08); }
+.nav-dropdown-status.building { color: var(--amber); background: rgba(176,120,48,0.08); }
+.nav-dropdown-item.disabled { pointer-events: none; opacity: 0.45; }
+
+/* Side section dots */
+.section-dots {
+  position: fixed;
+  right: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.dot {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--ink);
+  opacity: 0.2;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+.dot.active {
+  opacity: 0.9;
+  transform: scale(1.5);
+}
+@media (max-width: 768px) {
+  .section-dots { display: none; }
+}
 
 /* ─── HERO ─── */
 .hero {
@@ -763,6 +867,39 @@ footer {
   .hero-headline { font-size: 38px; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "name": "HISA Matcha",
+      "description": "Matcha japonés premium de Shizuoka, distribuido a cafeterías y food service en Argentina y América Latina.",
+      "brand": {
+        "@type": "Brand",
+        "name": "HISA Matcha"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "areaServed": ["AR", "LATAM", "EU"],
+        "businessFunction": "https://schema.org/Wholesale"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "Arlem Group",
+      "url": "https://arlemgroup.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+13392139573",
+        "contactType": "sales",
+        "availableLanguage": ["Spanish", "English", "French"]
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -778,11 +915,25 @@ footer {
     Arlem<span>.</span>
   </a>
   <ul class="nav-links">
-    <li><a href="#producto" data-i18n="nav.producto">Producto</a></li>
-    <li><a href="#distribucion" data-i18n="nav.dist">Distribución</a></li>
-    <li><a href="#calidad" data-i18n="nav.calidad">Calidad</a></li>
-    <li><a href="#aplicaciones" data-i18n="nav.apps">Aplicaciones</a></li>
-    <li><a href="#contacto" data-i18n="nav.contacto">Contacto</a></li>
+    <li class="nav-has-dropdown">
+      <a href="index.html#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+      <div class="nav-dropdown">
+        <a href="hisa-matcha.html" class="nav-dropdown-item">
+          <span class="nav-dropdown-name">HISA Matcha</span>
+          <span class="nav-dropdown-status live">Live</span>
+        </a>
+        <div class="nav-dropdown-item disabled">
+          <span class="nav-dropdown-name">Arlem Devs</span>
+          <span class="nav-dropdown-status live">Live</span>
+        </div>
+        <div class="nav-dropdown-item disabled">
+          <span class="nav-dropdown-name">Coming Soon</span>
+          <span class="nav-dropdown-status building">Building</span>
+        </div>
+      </div>
+    </li>
+    <li><a href="index.html#process" data-i18n="nav.approach">Approach</a></li>
+    <li><a href="#contacto" data-i18n="nav.contact">Contact</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
@@ -790,12 +941,12 @@ footer {
       <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
       <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
     </div>
-    <a href="index.html" class="nav-back" data-i18n="nav.back">← Arlem Group</a>
+    <a href="#contacto" class="nav-cta" data-i18n="nav.cta">Get in touch →</a>
   </div>
 </nav>
 
 <!-- ─── HERO ─── -->
-<section class="hero">
+<section class="hero" id="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
 
@@ -1176,7 +1327,7 @@ footer {
 // ─── i18n ───
 const i18n = {
   es: {
-    "nav.back":"← Arlem Group",
+    "nav.portfolio":"Portfolio","nav.approach":"Proceso","nav.contact":"Contacto","nav.cta":"Hablar →",
     "nav.producto":"Producto","nav.dist":"Distribución","nav.calidad":"Calidad","nav.apps":"Aplicaciones","nav.contacto":"Contacto",
     "hero.headline":"Matcha japonés.<br>Para la <em>cafetería</em><br>de verdad.",
     "hero.sub":"Matcha premium de Shizuoka, distribuido a cafeterías y operadores de food service en América Latina y Europa. Programas mayoristas y minoristas bajo la marca HISA.",
@@ -1205,7 +1356,7 @@ const i18n = {
     "cal.attr.color":"Color","cal.attr.flavor":"Sabor","cal.attr.use":"Uso","cal.attr.price":"Precio relativo"
   },
   en: {
-    "nav.back":"← Arlem Group",
+    "nav.portfolio":"Portfolio","nav.approach":"Approach","nav.contact":"Contact","nav.cta":"Get in touch →",
     "nav.producto":"Product","nav.dist":"Distribution","nav.calidad":"Quality","nav.apps":"Applications","nav.contacto":"Contact",
     "hero.headline":"Japanese matcha.<br>For the real<br><em>craft café</em>.",
     "hero.sub":"Premium matcha from Shizuoka, distributed to cafés and food service operators across Latin America and Europe. Wholesale and retail programs under the HISA brand.",
@@ -1234,7 +1385,7 @@ const i18n = {
     "cal.attr.color":"Color","cal.attr.flavor":"Flavor","cal.attr.use":"Use","cal.attr.price":"Relative price"
   },
   fr: {
-    "nav.back":"← Arlem Group",
+    "nav.portfolio":"Portfolio","nav.approach":"Processus","nav.contact":"Contact","nav.cta":"Nous contacter →",
     "nav.producto":"Produit","nav.dist":"Distribution","nav.calidad":"Qualité","nav.apps":"Applications","nav.contacto":"Contact",
     "hero.headline":"Matcha japonais.<br>Pour le vrai<br><em>café de spécialité</em>.",
     "hero.sub":"Matcha premium de Shizuoka, distribué aux cafés et opérateurs de restauration en Amérique latine et en Europe. Programmes en gros et au détail sous la marque HISA.",
@@ -1290,7 +1441,41 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ─── Section dot nav ───
+const dots = document.querySelectorAll('.dot');
+const snapSections = document.querySelectorAll('section[id]');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      dots.forEach(d => d.classList.toggle('active', d.dataset.section === id));
+    }
+  });
+}, { threshold: 0.5 });
+
+snapSections.forEach(s => sectionObserver.observe(s));
+
+// ─── Dropdown ───
+document.querySelectorAll('.nav-has-dropdown').forEach(item => {
+  let timer;
+  const open  = () => { clearTimeout(timer); item.classList.add('is-open'); };
+  const close = () => { timer = setTimeout(() => item.classList.remove('is-open'), 180); };
+  item.addEventListener('mouseenter', open);
+  item.addEventListener('mouseleave', close);
+});
 </script>
+
+<!-- Side dot nav -->
+<nav class="section-dots" aria-label="Page sections">
+  <a class="dot" href="#hero"         data-section="hero"         title="Inicio"></a>
+  <a class="dot" href="#producto"     data-section="producto"     title="Producto"></a>
+  <a class="dot" href="#distribucion" data-section="distribucion" title="Distribución"></a>
+  <a class="dot" href="#calidad"      data-section="calidad"      title="Calidad"></a>
+  <a class="dot" href="#aplicaciones" data-section="aplicaciones" title="Aplicaciones"></a>
+  <a class="dot" href="#contacto"     data-section="contacto"     title="Contacto"></a>
+</nav>
 
 <a href="https://wa.me/13392139573" target="_blank" class="whatsapp-fab" aria-label="WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white">
