@@ -27,11 +27,15 @@
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html {
+html { height: 100%; }
+body {
+  height: 100vh;
+  overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 section {
+  min-height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
@@ -78,7 +82,7 @@ body {
 }
 
 /* ─── NAV ─── */
-nav {
+nav:not(.section-dots) {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 56px;
@@ -194,24 +198,65 @@ nav {
   z-index: 400;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+  align-items: flex-end;
 }
 .dot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.dot-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  opacity: 0.22;
+  transition: opacity 0.3s ease, color 0.3s ease;
+  white-space: nowrap;
+}
+.dot-circle {
   display: block;
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--ink);
-  opacity: 0.2;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-  text-decoration: none;
+  opacity: 0.25;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease, transform 0.15s ease, background 0.3s ease;
 }
-.dot.active {
-  opacity: 0.9;
-  transform: scale(1.5);
+.dot.active .dot-label {
+  opacity: 1;
+  color: var(--amber);
 }
-@media (max-width: 768px) {
+.dot.active .dot-circle {
+  opacity: 1;
+  background: var(--amber);
+  transform: scale(1.4);
+}
+
+/* On dark sections — flip to light */
+.section-dots.on-dark .dot-label {
+  color: var(--white);
+  opacity: 0.3;
+}
+.section-dots.on-dark .dot-circle {
+  background: var(--white);
+  opacity: 0.3;
+}
+.section-dots.on-dark .dot.active .dot-label {
+  color: var(--amber-pale);
+  opacity: 1;
+}
+.section-dots.on-dark .dot.active .dot-circle {
+  background: var(--amber-pale);
+}
+
+
+@media (max-width: 480px) {
   .section-dots { display: none; }
 }
 
@@ -946,7 +991,7 @@ footer {
 </nav>
 
 <!-- ─── HERO ─── -->
-<section class="hero" id="hero">
+<section class="hero" id="hero" data-dark="true">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
 
@@ -1065,7 +1110,7 @@ footer {
 </section>
 
 <!-- ─── CALIDAD ─── -->
-<section id="calidad">
+<section id="calidad" data-dark="true">
   <div class="section-label reveal" data-i18n="sec.calidad">Calidad</div>
   <div class="calidad-header reveal">
     <h2 data-i18n="cal.h2">Tres grados.<br>Nosotros vivimos en el del medio.</h2>
@@ -1442,20 +1487,77 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// ─── Section dot nav ───
-const dots = document.querySelectorAll('.dot');
-const snapSections = document.querySelectorAll('section[id]');
+// ─── Section dot nav + scroll snap ───
+const snapSections = Array.from(document.querySelectorAll('section[id]'));
+let currentIdx = 0;
+let isSnapping = false;
 
-const sectionObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      dots.forEach(d => d.classList.toggle('active', d.dataset.section === id));
-    }
+function activateDot(idx) {
+  // Query fresh — dot nav HTML is below this script block
+  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+}
+
+function goToSection(idx) {
+  if (idx < 0 || idx >= snapSections.length || isSnapping) return;
+  isSnapping = true;
+  currentIdx = idx;
+  activateDot(idx);
+  snapSections[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
+  setTimeout(() => { isSnapping = false; }, 900);
+}
+
+// Dot click handlers — delegated on document since nav HTML is parsed after this script
+document.addEventListener('click', (e) => {
+  const dot = e.target.closest('.dot');
+  if (!dot) return;
+  e.preventDefault();
+  const idx = Array.from(document.querySelectorAll('.dot')).indexOf(dot);
+  if (idx !== -1) goToSection(idx);
+});
+
+// Sync active dot on scroll — find which section top is closest to viewport top
+function updateActiveDot() {
+  const scrollY = document.documentElement.scrollTop;
+  let closest = 0;
+  let minDist = Infinity;
+  snapSections.forEach((s, i) => {
+    const dist = Math.abs(s.offsetTop - scrollY);
+    if (dist < minDist) { minDist = dist; closest = i; }
   });
-}, { threshold: 0.5 });
+  currentIdx = closest;
+  activateDot(closest);
+  // Dark section detection
+  const isDark = snapSections[closest]?.dataset.dark === 'true';
+  document.querySelector('.section-dots')?.classList.toggle('on-dark', isDark);
+}
 
-snapSections.forEach(s => sectionObserver.observe(s));
+document.addEventListener('scroll', updateActiveDot, { passive: true });
+
+// Activate on load
+setTimeout(updateActiveDot, 100);
+
+// ─── Dock magnification ───
+document.addEventListener('DOMContentLoaded', () => {
+  const dotNav = document.querySelector('.section-dots');
+  if (!dotNav) return;
+  dotNav.addEventListener('mousemove', (e) => {
+    const allDots = Array.from(document.querySelectorAll('.dot'));
+    let closestIdx = 0, minDist = Infinity;
+    allDots.forEach((dot, i) => {
+      const r = dot.getBoundingClientRect();
+      const dist = Math.abs(e.clientY - (r.top + r.height / 2));
+      if (dist < minDist) { minDist = dist; closestIdx = i; }
+    });
+    allDots.forEach((dot, i) => {
+      const d = Math.abs(i - closestIdx);
+      const s = 1 + 0.85 * Math.exp(-(d * d) / (2 * 1.8 * 1.8));
+      dot.querySelector('.dot-circle').style.transform = `scale(${s.toFixed(3)})`;
+    });
+  });
+  dotNav.addEventListener('mouseleave', () => {
+    document.querySelectorAll('.dot .dot-circle').forEach(c => { c.style.transform = ''; });
+  });
+});
 
 // ─── Dropdown ───
 document.querySelectorAll('.nav-has-dropdown').forEach(item => {
@@ -1469,12 +1571,12 @@ document.querySelectorAll('.nav-has-dropdown').forEach(item => {
 
 <!-- Side dot nav -->
 <nav class="section-dots" aria-label="Page sections">
-  <a class="dot" href="#hero"         data-section="hero"         title="Inicio"></a>
-  <a class="dot" href="#producto"     data-section="producto"     title="Producto"></a>
-  <a class="dot" href="#distribucion" data-section="distribucion" title="Distribución"></a>
-  <a class="dot" href="#calidad"      data-section="calidad"      title="Calidad"></a>
-  <a class="dot" href="#aplicaciones" data-section="aplicaciones" title="Aplicaciones"></a>
-  <a class="dot" href="#contacto"     data-section="contacto"     title="Contacto"></a>
+  <a class="dot" href="#hero"         data-section="hero">         <span class="dot-label">Inicio</span>        <span class="dot-circle"></span></a>
+  <a class="dot" href="#producto"     data-section="producto">     <span class="dot-label">Producto</span>      <span class="dot-circle"></span></a>
+  <a class="dot" href="#distribucion" data-section="distribucion"> <span class="dot-label">Distribución</span> <span class="dot-circle"></span></a>
+  <a class="dot" href="#calidad"      data-section="calidad">      <span class="dot-label">Calidad</span>       <span class="dot-circle"></span></a>
+  <a class="dot" href="#aplicaciones" data-section="aplicaciones"> <span class="dot-label">Aplicaciones</span> <span class="dot-circle"></span></a>
+  <a class="dot" href="#contacto"     data-section="contacto">     <span class="dot-label">Contacto</span>     <span class="dot-circle"></span></a>
 </nav>
 
 <a href="https://wa.me/13392139573" target="_blank" class="whatsapp-fab" aria-label="WhatsApp">
