@@ -35,9 +35,15 @@ body {
   scroll-behavior: smooth;
 }
 section {
-  min-height: 100vh;
+  height: 100vh;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  overflow: hidden;
+}
+#aplicaciones {
+  height: auto;
+  min-height: 100vh;
+  overflow: visible;
 }
 
 :root {
@@ -262,7 +268,7 @@ nav:not(.section-dots) {
 
 /* ─── HERO ─── */
 .hero {
-  min-height: 100vh;
+  height: 100vh;
   position: relative;
   display: flex; align-items: flex-end;
   overflow: hidden;
@@ -371,13 +377,13 @@ nav:not(.section-dots) {
 }
 
 /* ─── SHARED SECTION ─── */
-section { padding: 120px 56px; }
+section { padding: 60px 56px; }
 
 .section-label {
   font-family: 'DM Mono', monospace;
   font-size: 10px; font-weight: 300;
   letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--amber); margin-bottom: 60px;
+  color: var(--amber); margin-bottom: 32px;
   display: flex; align-items: center; gap: 16px;
 }
 .section-label::before {
@@ -394,7 +400,7 @@ section { padding: 120px 56px; }
 .producto-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 48px;
   align-items: center;
 }
 
@@ -410,7 +416,7 @@ section { padding: 120px 56px; }
 
 .producto-text p {
   font-size: 15px; font-weight: 300; line-height: 1.85;
-  color: var(--ink-mid); margin-bottom: 48px;
+  color: var(--ink-mid); margin-bottom: 20px;
 }
 
 .specs-table {
@@ -418,7 +424,7 @@ section { padding: 120px 56px; }
 }
 .spec-row {
   display: flex; justify-content: space-between; align-items: baseline;
-  padding: 13px 0;
+  padding: 8px 0;
   border-bottom: 1px solid var(--border);
 }
 .spec-key {
@@ -437,6 +443,7 @@ section { padding: 120px 56px; }
 .producto-image {
   position: relative; overflow: hidden;
   aspect-ratio: 3/4;
+  max-height: calc(100vh - 160px);
 }
 .producto-image img {
   width: 100%; height: 100%;
@@ -461,7 +468,7 @@ section { padding: 120px 56px; }
 
 .dist-header {
   display: flex; align-items: flex-end;
-  justify-content: space-between; margin-bottom: 64px;
+  justify-content: space-between; margin-bottom: 28px;
 }
 .dist-header h2 {
   font-family: 'DM Sans', sans-serif;
@@ -483,7 +490,7 @@ section { padding: 120px 56px; }
 
 .dist-card {
   background: var(--white);
-  padding: 48px 40px;
+  padding: 28px 32px;
   transition: background 0.25s;
 }
 .dist-card:hover { background: var(--cream2); }
@@ -492,7 +499,7 @@ section { padding: 120px 56px; }
   font-family: 'DM Mono', monospace;
   font-size: 10px; font-weight: 300;
   color: var(--ink-light); letter-spacing: 0.1em;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
 }
 .dist-card-title {
   font-family: 'DM Sans', sans-serif;
@@ -504,11 +511,11 @@ section { padding: 120px 56px; }
   font-family: 'DM Mono', monospace;
   font-size: 10px; font-weight: 300;
   letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--amber); margin-bottom: 28px;
+  color: var(--amber); margin-bottom: 12px;
 }
 .dist-card-desc {
   font-size: 14px; font-weight: 300; line-height: 1.8;
-  color: var(--ink-mid); margin-bottom: 36px;
+  color: var(--ink-mid); margin-bottom: 14px;
 }
 
 .dist-features {
@@ -517,7 +524,7 @@ section { padding: 120px 56px; }
 }
 .dist-feature {
   display: flex; align-items: center; gap: 12px;
-  padding: 12px 0;
+  padding: 7px 0;
   border-bottom: 1px solid var(--border);
   font-size: 13px; font-weight: 300;
   color: var(--ink-mid); line-height: 1.5;
@@ -542,7 +549,7 @@ section { padding: 120px 56px; }
 }
 
 .calidad-header {
-  margin-bottom: 64px;
+  margin-bottom: 28px;
 }
 .calidad-header h2 {
   font-family: 'DM Sans', sans-serif;
@@ -563,7 +570,7 @@ section { padding: 120px 56px; }
 
 .calidad-card {
   background: rgba(253,250,246,0.03);
-  padding: 44px 36px;
+  padding: 26px 28px;
   position: relative;
   transition: background 0.25s;
 }
@@ -589,7 +596,7 @@ section { padding: 120px 56px; }
   font-family: 'DM Mono', monospace;
   font-size: 10px; font-weight: 300;
   letter-spacing: 0.16em; text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 .calidad-card:not(.featured) .calidad-tier { color: rgba(253,250,246,0.3); }
 .calidad-card.featured .calidad-tier { color: var(--amber-pale); }
@@ -598,14 +605,14 @@ section { padding: 120px 56px; }
   font-family: 'DM Sans', sans-serif;
   font-size: 22px; font-weight: 300;
   letter-spacing: -0.01em;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .calidad-card:not(.featured) .calidad-name { color: rgba(253,250,246,0.5); }
 .calidad-card.featured .calidad-name { color: var(--white); }
 
 .calidad-desc {
-  font-size: 13px; font-weight: 300; line-height: 1.8;
-  margin-bottom: 28px;
+  font-size: 13px; font-weight: 300; line-height: 1.7;
+  margin-bottom: 14px;
 }
 .calidad-card:not(.featured) .calidad-desc { color: rgba(253,250,246,0.3); }
 .calidad-card.featured .calidad-desc { color: rgba(253,250,246,0.6); }
@@ -620,7 +627,7 @@ section { padding: 120px 56px; }
 
 .calidad-attr {
   display: flex; justify-content: space-between;
-  padding: 10px 0;
+  padding: 7px 0;
   border-bottom: 1px solid rgba(255,255,255,0.04);
   font-family: 'DM Mono', monospace;
   font-size: 10px; font-weight: 300;
@@ -758,6 +765,11 @@ section { padding: 120px 56px; }
 /* ─── CONTACT CTA ─── */
 #contacto {
   background: var(--ink);
+  position: relative;
+}
+#contacto footer {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
 }
 #contacto .section-label { color: var(--amber-pale); }
 #contacto .section-label::before { background: rgba(232,200,128,0.2); }
@@ -784,11 +796,11 @@ section { padding: 120px 56px; }
 .contacto-channels {
   display: flex; flex-direction: column; gap: 1px;
   border: 1px solid rgba(255,255,255,0.06);
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .contacto-channel {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 20px 24px;
+  padding: 12px 20px;
   background: rgba(255,255,255,0.02);
   text-decoration: none;
   transition: background 0.2s;
@@ -814,7 +826,7 @@ section { padding: 120px 56px; }
 }
 
 .contacto-right {
-  display: flex; flex-direction: column; gap: 32px;
+  display: flex; flex-direction: column; gap: 18px;
   padding-top: 8px;
 }
 .contacto-info-item {
@@ -1353,20 +1365,19 @@ footer {
     </div>
 
   </div>
+  <!-- Footer tucked inside last section so it's reachable within the snap point -->
+  <footer>
+    <a href="index.html" class="footer-logo">
+      <svg width="12" height="14" viewBox="0 0 14 16" fill="none">
+        <path d="M7 1L13 15H1L7 1Z" stroke="#B07830" stroke-width="1.5" fill="none"/>
+        <line x1="3.5" y1="10" x2="10.5" y2="10" stroke="#B07830" stroke-width="1"/>
+      </svg>
+      Arlem<span>.</span>
+    </a>
+    <span class="footer-copy">© 2026 Arlem Group + HISA Matcha</span>
+    <a href="index.html" class="footer-back">← Volver al grupo</a>
+  </footer>
 </section>
-
-<!-- ─── FOOTER ─── -->
-<footer>
-  <a href="index.html" class="footer-logo">
-    <svg width="12" height="14" viewBox="0 0 14 16" fill="none">
-      <path d="M7 1L13 15H1L7 1Z" stroke="#B07830" stroke-width="1.5" fill="none"/>
-      <line x1="3.5" y1="10" x2="10.5" y2="10" stroke="#B07830" stroke-width="1"/>
-    </svg>
-    Arlem<span>.</span>
-  </a>
-  <span class="footer-copy">© 2026 Arlem Group + HISA Matcha</span>
-  <a href="index.html" class="footer-back">← Volver al grupo</a>
-</footer>
 
 <script>
 // ─── i18n ───
