@@ -40,7 +40,7 @@ section {
   scroll-snap-stop: always;
   overflow: hidden;
 }
-#aplicaciones {
+#aplicaciones, #contacto {
   height: auto;
   min-height: 100vh;
   overflow: visible;
@@ -976,8 +976,11 @@ footer {
   }
   .photo-card { height: 300px; }
   .menu-grid { grid-template-columns: 1fr 1fr; }
-  .contacto-inner { grid-template-columns: 1fr; gap: 48px; }
+  /* contacto stays 2-col down to 640px */
   footer { flex-direction: column; gap: 12px; padding: 20px 24px; text-align: center; }
+}
+@media (max-width: 640px) {
+  .contacto-inner { grid-template-columns: 1fr; gap: 40px; }
 }
 @media (max-width: 600px) {
   .menu-grid { grid-template-columns: 1fr; }
@@ -1380,32 +1383,6 @@ footer {
       <h2 data-i18n="con.h2">¿Querés distribuir<br><em>HISA Matcha</em>?</h2>
       <p data-i18n="con.sub">Ya sea para una cafetería, una cadena o distribución regional — escribinos y armamos el programa que mejor se adapte a tu operación.</p>
 
-      <div class="contacto-channels">
-        <a href="mailto:hola@arlemgroup.com" class="contacto-channel">
-          <div>
-            <div class="contacto-channel-label">Email</div>
-            <div class="contacto-channel-value">hola@arlemgroup.com</div>
-          </div>
-          <span class="contacto-channel-arrow">→</span>
-        </a>
-        <a href="https://www.instagram.com/hisa.matcha/" target="_blank" class="contacto-channel">
-          <div>
-            <div class="contacto-channel-label">Instagram</div>
-            <div class="contacto-channel-value">@hisa.matcha</div>
-          </div>
-          <span class="contacto-channel-arrow">→</span>
-        </a>
-        <a href="https://wa.me/13392139573" target="_blank" class="contacto-channel">
-          <div>
-            <div class="contacto-channel-label">WhatsApp</div>
-            <div class="contacto-channel-value">+1 339 213 9573</div>
-          </div>
-          <span class="contacto-channel-arrow">→</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="contacto-right">
       <!-- Formspree: sign up at formspree.io, create a form for seanc@arlemgroup.com, then replace FORM_ID below -->
       <form id="contacto-form" class="hisa-form" action="https://formspree.io/f/FORM_ID" method="POST">
         <input type="hidden" name="_subject" value="Consulta HISA Matcha">
@@ -1437,6 +1414,25 @@ footer {
           Contactar por WhatsApp
         </a>
       </form>
+    </div>
+
+    <div class="contacto-right">
+      <div class="contacto-info-item">
+        <div class="contacto-info-label">Mercados activos</div>
+        <div class="contacto-info-value">América Latina + Europa</div>
+      </div>
+      <div class="contacto-info-item">
+        <div class="contacto-info-label">Origen del producto</div>
+        <div class="contacto-info-value">Shizuoka, Japón</div>
+      </div>
+      <div class="contacto-info-item">
+        <div class="contacto-info-label">Programas disponibles</div>
+        <div class="contacto-info-value">Mayorista + Minorista<br>Private Label + Co-branding</div>
+      </div>
+      <div class="contacto-info-item">
+        <div class="contacto-info-label">Operado por</div>
+        <div class="contacto-info-value">Arlem Group — Miami, FL</div>
+      </div>
     </div>
 
   </div>
