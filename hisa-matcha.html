@@ -843,6 +843,66 @@ section { padding: 60px 180px 60px 56px; }
   color: rgba(253,250,246,0.55); line-height: 1.6;
 }
 
+/* ── Contact form ── */
+.hisa-form { display: flex; flex-direction: column; gap: 14px; }
+.form-field { display: flex; flex-direction: column; gap: 6px; }
+.form-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; font-weight: 300;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(253,250,246,0.3);
+}
+.form-optional { color: rgba(253,250,246,0.15); }
+.form-input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(253,250,246,0.8);
+  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300;
+  padding: 10px 14px; outline: none; width: 100%;
+  transition: border-color 0.2s;
+}
+.form-input::placeholder { color: rgba(253,250,246,0.18); }
+.form-input:focus { border-color: rgba(176,120,48,0.55); }
+.form-textarea { resize: vertical; min-height: 76px; }
+.form-submit {
+  background: var(--amber); color: var(--ink);
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  border: none; padding: 14px 24px;
+  cursor: pointer; text-align: left; margin-top: 4px;
+  transition: opacity 0.2s;
+}
+.form-submit:hover { opacity: 0.82; }
+.form-submit:disabled { opacity: 0.38; cursor: not-allowed; }
+.form-success {
+  display: none;
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--amber-pale); padding: 14px 0;
+}
+.form-divider {
+  display: flex; align-items: center; gap: 12px; margin: 2px 0;
+}
+.form-divider::before, .form-divider::after {
+  content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08);
+}
+.form-divider span {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(253,250,246,0.2);
+}
+.form-whatsapp {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(37,211,102,0.08);
+  border: 1px solid rgba(37,211,102,0.2);
+  color: #4cd97b;
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 12px 16px; text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.form-whatsapp:hover { background: rgba(37,211,102,0.15); border-color: rgba(37,211,102,0.38); }
+
 /* ─── FOOTER ─── */
 footer {
   background: var(--ink);
@@ -1346,22 +1406,37 @@ footer {
     </div>
 
     <div class="contacto-right">
-      <div class="contacto-info-item">
-        <div class="contacto-info-label">Mercados activos</div>
-        <div class="contacto-info-value">América Latina + Europa</div>
-      </div>
-      <div class="contacto-info-item">
-        <div class="contacto-info-label">Origen del producto</div>
-        <div class="contacto-info-value">Shizuoka, Japón</div>
-      </div>
-      <div class="contacto-info-item">
-        <div class="contacto-info-label">Programas disponibles</div>
-        <div class="contacto-info-value">Mayorista + Minorista<br>Private Label + Co-branding</div>
-      </div>
-      <div class="contacto-info-item">
-        <div class="contacto-info-label">Operado por</div>
-        <div class="contacto-info-value">Arlem Group — Miami, FL</div>
-      </div>
+      <!-- Formspree: sign up at formspree.io, create a form for seanc@arlemgroup.com, then replace FORM_ID below -->
+      <form id="contacto-form" class="hisa-form" action="https://formspree.io/f/FORM_ID" method="POST">
+        <input type="hidden" name="_subject" value="Consulta HISA Matcha">
+
+        <div class="form-field">
+          <label class="form-label" for="form-name">Nombre</label>
+          <input class="form-input" type="text" id="form-name" name="name" placeholder="Tu nombre">
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="form-contact">Email o teléfono <span class="form-optional">*</span></label>
+          <input class="form-input" type="text" id="form-contact" name="contact" placeholder="email@ejemplo.com  ó  +54 9 11 ..." required>
+        </div>
+
+        <div class="form-field">
+          <label class="form-label" for="form-msg">Mensaje <span class="form-optional">(opcional)</span></label>
+          <textarea class="form-input form-textarea" id="form-msg" name="message" placeholder="¿En qué estás pensando?"></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Enviar consulta →</button>
+        <div class="form-success" id="form-success">✓ Mensaje enviado — te contactamos pronto.</div>
+
+        <div class="form-divider"><span>o</span></div>
+
+        <a href="https://wa.me/13392139573" target="_blank" class="form-whatsapp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Contactar por WhatsApp
+        </a>
+      </form>
     </div>
 
   </div>
@@ -1528,7 +1603,7 @@ document.addEventListener('click', (e) => {
 
 // Sync active dot on scroll — find which section top is closest to viewport top
 function updateActiveDot() {
-  const scrollY = document.documentElement.scrollTop;
+  const scrollY = document.body.scrollTop || document.documentElement.scrollTop || window.scrollY;
   let closest = 0;
   let minDist = Infinity;
   snapSections.forEach((s, i) => {
@@ -1542,7 +1617,8 @@ function updateActiveDot() {
   document.querySelector('.section-dots')?.classList.toggle('on-dark', isDark);
 }
 
-document.addEventListener('scroll', updateActiveDot, { passive: true });
+window.addEventListener('scroll', updateActiveDot, { passive: true });
+document.body.addEventListener('scroll', updateActiveDot, { passive: true });
 
 // Activate on load
 setTimeout(updateActiveDot, 100);
@@ -1569,6 +1645,35 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.dot .dot-circle').forEach(c => { c.style.transform = ''; });
   });
 });
+
+// ─── Contact form (Formspree fetch) ───
+const contactForm = document.getElementById('contacto-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('.form-submit');
+    const successMsg = document.getElementById('form-success');
+    btn.textContent = 'Enviando…';
+    btn.disabled = true;
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        contactForm.querySelectorAll('.form-field, .form-submit, .form-divider').forEach(el => el.style.display = 'none');
+        successMsg.style.display = 'block';
+      } else {
+        btn.textContent = 'Error — intentá de nuevo';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Error — intentá de nuevo';
+      btn.disabled = false;
+    }
+  });
+}
 
 // ─── Dropdown ───
 document.querySelectorAll('.nav-has-dropdown').forEach(item => {
