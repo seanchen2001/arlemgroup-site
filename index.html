@@ -1,1279 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arlem Group — Global Commodities, Food Ingredients & Trade</title>
-<meta name="description" content="Arlem Group connects overlooked markets to the supply chains that need them — operating across raw materials, food ingredients, and technology in LATAM and Europe.">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://arlemgroup.com">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="en_US">
-<meta property="og:site_name" content="Arlem Group">
-<meta property="og:title" content="Arlem Group — Global Commodities & Trade">
-<meta property="og:description" content="Connecting overlooked markets to the supply chains that need them. Raw materials, food ingredients, and technology across LATAM and Europe.">
-<meta property="og:url" content="https://arlemgroup.com">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1714'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' fill='%23B07830' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-:root {
-  --cream:      #F5F0E8;
-  --cream2:     #EDE8DF;
-  --cream3:     #DDD6C8;
-  --ink:        #1A1714;
-  --ink-mid:    #5A5450;
-  --ink-light:  #9A9490;
-  --amber:      #B07830;
-  --amber-soft: #C89050;
-  --amber-pale: #E8C880;
-  --white:      #FDFAF6;
-  --border:     rgba(26,23,20,0.10);
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
-  color: var(--ink);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* WHATSAPP FAB */
-.whatsapp-fab {
-  position: fixed; bottom: 28px; right: 28px; z-index: 500;
-  width: 52px; height: 52px;
-  background: #25D366; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.35);
-  text-decoration: none;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.whatsapp-fab:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(37,211,102,0.5);
-}
-
-/* NAV */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 56px;
-  height: 56px;
-  background: rgba(245,240,232,0.94);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
-}
-
-.nav-logo {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.nav-logo-icon {
-  width: 26px; height: 26px;
-  background: var(--ink);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-}
-
-.nav-logo-icon svg { display: block; }
-.nav-logo span { color: var(--amber); }
-
-.nav-links { display: flex; gap: 40px; list-style: none; }
-
-.nav-links a {
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-mid);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover { color: var(--ink); }
-
-/* Portfolio dropdown */
-.nav-has-dropdown { position: relative; }
-
-.nav-dropdown {
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 50%;
-  transform: translateX(-50%) translateY(-4px);
-  background: var(--white);
-  border: 1px solid var(--border);
-  min-width: 200px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-  z-index: 200;
-}
-
-.nav-has-dropdown.is-open .nav-dropdown {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
-
-.nav-dropdown-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--border);
-  text-decoration: none;
-  transition: background 0.15s;
-  gap: 20px;
-}
-.nav-dropdown-item:last-child { border-bottom: none; }
-.nav-dropdown-item:hover { background: var(--cream2); }
-
-.nav-dropdown-name {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--ink);
-  letter-spacing: 0;
-  text-transform: none;
-}
-.nav-dropdown-status {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 2px 7px;
-  white-space: nowrap;
-}
-.nav-dropdown-status.live { color: #4A7C59; background: rgba(74,124,89,0.08); }
-.nav-dropdown-status.building { color: var(--amber); background: rgba(176,120,48,0.08); }
-.nav-dropdown-item.disabled { pointer-events: none; opacity: 0.45; }
-
-.nav-right { display: flex; align-items: center; gap: 24px; }
-
-.lang-toggle {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  border: 1px solid var(--border);
-  overflow: hidden;
-}
-
-.lang-btn {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  color: var(--ink-light);
-  background: transparent;
-  border: none;
-  padding: 6px 12px;
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s;
-}
-
-.lang-btn.active {
-  background: var(--ink);
-  color: var(--white);
-}
-
-.nav-cta {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  color: var(--amber);
-  text-decoration: none;
-  transition: color 0.2s;
-}
-
-.nav-cta:hover { color: var(--amber-soft); }
-
-/* HERO */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 56px 56px 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  padding-top: 80px;
-  padding-bottom: 140px;
-  max-width: 800px;
-}
-
-.hero-eyebrow {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  font-weight: 300;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 36px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.1s;
-}
-
-.hero-eyebrow::after {
-  content: '';
-  display: block;
-  width: 48px; height: 1px;
-  background: var(--amber-pale);
-}
-
-.hero-headline {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(48px, 7vw, 92px);
-  font-weight: 300;
-  line-height: 1.0;
-  color: var(--ink);
-  letter-spacing: -0.03em;
-  margin-bottom: 36px;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.2s;
-}
-
-.hero-headline em {
-  font-style: italic;
-  color: var(--amber);
-  font-weight: 300;
-}
-
-.hero-sub {
-  font-size: 17px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--ink-mid);
-  max-width: 520px;
-  margin-bottom: 56px;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.35s;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.5s;
-}
-
-.btn-primary {
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--white);
-  background: var(--ink);
-  padding: 14px 36px;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-
-.btn-primary:hover { background: var(--amber); }
-
-.btn-ghost {
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--ink-mid);
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.2s;
-}
-
-.btn-ghost:hover { color: var(--ink); }
-.btn-ghost::after { content: '↓'; }
-
-.hero-bg-word {
-  position: absolute;
-  bottom: 60px;
-  right: -20px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(140px, 20vw, 300px);
-  font-weight: 600;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--cream3);
-  pointer-events: none;
-  user-select: none;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  opacity: 0;
-  animation: fadeIn 1.4s ease forwards 0.6s;
-}
-
-.hero-stats {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 28px 56px;
-  display: flex;
-  border-top: 1px solid var(--border);
-  background: rgba(245,240,232,0.6);
-  opacity: 0;
-  animation: fadeUp 0.8s ease forwards 0.7s;
-}
-
-.hero-stat { flex: 1; padding: 0 48px 0 0; }
-
-.hero-stat + .hero-stat {
-  padding-left: 48px;
-  border-left: 1px solid var(--border);
-}
-
-.hero-stat-num {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 26px;
-  font-weight: 300;
-  color: var(--ink);
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
-}
-
-.hero-stat-num strong { font-weight: 500; color: var(--amber); }
-
-.hero-stat-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink-light);
-}
-
-/* SECTIONS */
-section { padding: 120px 56px; }
-
-.section-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-bottom: 60px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.section-label::before {
-  content: '';
-  display: block;
-  width: 32px; height: 1px;
-  background: var(--amber-pale);
-}
-
-/* PORTFOLIO */
-#portfolio {
-  background: var(--white);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.portfolio-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 72px;
-}
-
-.portfolio-title {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(30px, 4vw, 52px);
-  font-weight: 300;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--ink);
-}
-
-.portfolio-sub {
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--ink-mid);
-  max-width: 280px;
-  text-align: right;
-  line-height: 1.7;
-}
-
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-}
-
-.portfolio-card {
-  background: var(--white);
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  cursor: default;
-}
-
-/* ── CARD IMAGE ── */
-.card-image {
-  position: relative;
-  width: 100%;
-  height: 148px;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.55s ease, filter 0.45s ease;
-  filter: brightness(0.82) saturate(0.8);
-}
-
-.card-image::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(175deg, rgba(26,23,20,0.08) 0%, rgba(26,23,20,0.52) 100%);
-  z-index: 1;
-  transition: opacity 0.4s ease;
-}
-
-.card-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse 100% 60% at 50% 120%,
-    rgba(201,144,63,0.65) 0%,
-    rgba(176,120,48,0.25) 45%,
-    transparent 70%
-  );
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.45s ease;
-}
-
-.portfolio-card:hover .card-image img {
-  transform: scale(1.06);
-  filter: brightness(0.95) saturate(1.08);
-}
-.portfolio-card:hover .card-image::before { opacity: 0.5; }
-.portfolio-card:hover .card-image::after  { opacity: 1; }
-
-/* ── CARD CONTENT — compact ── */
-.card-content {
-  padding: 16px 18px 18px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  background: var(--white);
-  transition: background 0.3s;
-  gap: 4px;
-}
-
-.portfolio-card:hover .card-content { background: var(--cream); }
-
-.card-number {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 300;
-  color: var(--ink-light);
-  letter-spacing: 0.1em;
-  margin-bottom: 0;
-}
-
-.card-category {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--amber);
-}
-
-.card-name {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  color: var(--ink);
-}
-
-/* desc + tags hidden by default, revealed on hover */
-.card-desc {
-  font-size: 12.5px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--ink-mid);
-  margin-top: 4px;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.35s ease, margin-top 0.3s ease;
-}
-
-.portfolio-card:hover .card-desc {
-  max-height: 160px;
-  opacity: 1;
-  margin-top: 8px;
-}
-
-.card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease 0.05s, opacity 0.35s ease 0.05s;
-}
-
-.portfolio-card:hover .card-tags {
-  max-height: 80px;
-  opacity: 1;
-}
-
-.card-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  font-weight: 300;
-  letter-spacing: 0.06em;
-  color: var(--ink-mid);
-  background: var(--cream2);
-  padding: 4px 10px;
-}
-
-/* ── CARD LINKS ── */
-.card-links {
-  display: flex;
-  gap: 6px;
-  margin-top: 4px;
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.4s ease 0.08s, opacity 0.35s ease 0.08s;
-}
-.portfolio-card:hover .card-links { max-height: 40px; opacity: 1; }
-
-.card-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: 0.07em;
-  color: var(--ink-mid);
-  text-decoration: none;
-  padding: 4px 9px 4px 7px;
-  background: var(--cream2);
-  white-space: nowrap;
-  transition: background 0.2s, color 0.2s;
-}
-.card-link:hover { background: var(--amber); color: #fff; }
-.card-link:hover svg * { stroke: #fff !important; }
-
-.card-status {
-  position: absolute;
-  top: 148px;
-  right: 0;
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  z-index: 10;
-}
-
-.status-live { color: #4A7C59; background: rgba(74,124,89,0.08); }
-.status-building { color: var(--amber); background: rgba(176,120,48,0.08); }
-
-/* PROCESS */
-#process {
-  background: var(--cream);
-  border-bottom: 1px solid var(--border);
-}
-
-.process-grid {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.process-left h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(28px, 3.5vw, 44px);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  color: var(--ink);
-  margin-bottom: 24px;
-}
-
-.process-left p {
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: var(--ink-mid);
-}
-
-.process-steps {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-}
-
-.process-step {
-  background: var(--white);
-  padding: 40px 36px;
-  transition: background 0.2s;
-}
-
-.process-step:hover { background: var(--cream2); }
-
-.step-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px;
-  font-weight: 300;
-  color: var(--amber);
-  letter-spacing: 0.1em;
-  margin-bottom: 18px;
-}
-
-.step-title {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--ink);
-  margin-bottom: 12px;
-}
-
-.step-desc {
-  font-size: 13px;
-  font-weight: 300;
-  line-height: 1.75;
-  color: var(--ink-mid);
-}
-
-/* CONTACT */
-#contact { background: var(--ink); }
-
-#contact .section-label { color: var(--amber-pale); }
-#contact .section-label::before { background: rgba(232,200,128,0.25); }
-
-.contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-
-.contact-left h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  color: var(--white);
-  margin-bottom: 24px;
-}
-
-.contact-left p {
-  font-size: 15px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: rgba(253,250,246,0.45);
-  margin-bottom: 48px;
-}
-
-.contact-info { display: flex; flex-direction: column; gap: 24px; }
-
-.contact-item { display: flex; flex-direction: column; gap: 5px; }
-
-.contact-item-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(253,250,246,0.3);
-}
-
-.contact-item-value {
-  font-size: 14px;
-  font-weight: 300;
-  color: rgba(253,250,246,0.65);
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(255,255,255,0.07);
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  border-bottom: 1px solid rgba(255,255,255,0.07);
-}
-
-.form-field { position: relative; }
-.form-field:first-child { border-right: 1px solid rgba(255,255,255,0.07); }
-
-.form-field label {
-  display: block;
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: rgba(253,250,246,0.28);
-  padding: 20px 24px 0;
-}
-
-.form-field input,
-.form-field textarea,
-.form-field select {
-  display: block;
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  color: var(--white);
-  padding: 8px 24px 20px;
-  resize: none;
-  -webkit-appearance: none;
-}
-
-.form-field select option { background: #1A1714; }
-.form-field textarea { height: 120px; }
-.form-full { grid-column: 1 / -1; }
-.form-full .form-field { border-right: none; }
-
-.form-submit {
-  padding: 20px 24px;
-  display: flex;
-  justify-content: flex-end;
-  border-top: 1px solid rgba(255,255,255,0.07);
-}
-
-.btn-submit {
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--ink);
-  background: var(--amber-pale);
-  border: none;
-  padding: 13px 36px;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-
-.btn-submit:hover { background: var(--amber-soft); color: var(--white); }
-
-/* FOOTER */
-footer {
-  background: var(--ink);
-  padding: 28px 56px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-
-.footer-logo {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(253,250,246,0.35);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer-logo span { color: var(--amber); }
-
-.footer-cities {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.12em;
-  color: rgba(253,250,246,0.22);
-}
-
-.footer-copy {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 0.1em;
-  color: rgba(253,250,246,0.18);
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  nav { padding: 0 24px; }
-  nav .nav-links { display: none; }
-  section { padding: 72px 24px; }
-  .hero { padding: 56px 24px 0; }
-  .hero-bg-word { display: none; }
-  .hero-stats { padding: 20px 24px; flex-wrap: wrap; gap: 20px; }
-  .hero-stat { border: none !important; padding: 0 !important; flex: 0 0 45%; }
-  .portfolio-grid { grid-template-columns: 1fr; }
-  .portfolio-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .portfolio-sub { text-align: left; max-width: 100%; }
-  .process-grid { grid-template-columns: 1fr; gap: 40px; }
-  .process-steps { grid-template-columns: 1fr; }
-  .contact-grid { grid-template-columns: 1fr; gap: 48px; }
-  .form-row { grid-template-columns: 1fr; }
-  .form-field:first-child { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); }
-  footer { flex-direction: column; gap: 10px; padding: 20px 24px; text-align: center; }
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kura Matcha — Matcha mayorista · Importación directa desde Japón</title>
+  <meta name="description" content="Kura Matcha. Matcha japonés importado directamente para cafés, roasteries y distribuidores de food service." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%234A6741'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Pre-paint guard: enables anime.js initial-state CSS before first render.
+    (function () {
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-anime');
+      }
+    })();
+  </script>
 </head>
 <body>
 
-<nav>
-  <a href="#" class="nav-logo">
-    <span class="nav-logo-icon">
-      <svg width="14" height="16" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M7 1L13 15H1L7 1Z" stroke="#B07830" stroke-width="1.5" fill="none"/>
-        <line x1="3.5" y1="10" x2="10.5" y2="10" stroke="#B07830" stroke-width="1"/>
-      </svg>
-    </span>
-    Arlem<span>.</span>
-  </a>
-  <ul class="nav-links">
-    <li class="nav-has-dropdown">
-      <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
-      <div class="nav-dropdown">
-        <a href="kura-matcha/" class="nav-dropdown-item">
-          <span class="nav-dropdown-name">Kura Matcha</span>
-          <span class="nav-dropdown-status live">Live</span>
-        </a>
-        <div class="nav-dropdown-item disabled">
-          <span class="nav-dropdown-name">Arlem Devs</span>
-          <span class="nav-dropdown-status live">Live</span>
-        </div>
-        <div class="nav-dropdown-item disabled">
-          <span class="nav-dropdown-name">Coming Soon</span>
-          <span class="nav-dropdown-status building">Building</span>
-        </div>
-      </div>
-    </li>
-    <li><a href="#process" data-i18n="nav.approach">Approach</a></li>
-    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-  </ul>
-  <div class="nav-right">
-    <div class="lang-toggle">
-      <button class="lang-btn active" data-lang="en" onclick="setLang('en')">EN</button>
-      <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
-      <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
-    </div>
-    <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in touch →</a>
+<nav class="nav nav--light" aria-label="Main">
+  <a href="index.html" class="nav__brand">Kura Matcha</a>
+  <div class="nav__links">
+    <a href="index.html" class="nav__link is-active">Inicio</a>
+    <a href="catalogo.html" class="nav__link">Catálogo</a>
+    <a href="about.html" class="nav__link">Marca</a>
+    <a href="#contacto" class="nav__link nav__link--hide-sm">Contacto</a>
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-eyebrow" data-i18n="hero.eyebrow">Global Commodities & Trade</div>
-    <h1 class="hero-headline">
-      <span data-i18n="hero.line1">We find</span><br>
-      <em data-i18n="hero.line2">the gaps.</em><br>
-      <span data-i18n="hero.line3">We fill them.</span>
-    </h1>
-    <p class="hero-sub" data-i18n="hero.sub">
-      Arlem Group operates across raw materials, food ingredients, and technology — connecting overlooked markets to the supply chains that need them.
-    </p>
-    <div class="hero-actions">
-      <a href="#portfolio" class="btn-primary" data-i18n="hero.cta1">Our portfolio</a>
-      <a href="#process" class="btn-ghost" data-i18n="hero.cta2">How we work</a>
+<!-- =========================  01 · HERO  ========================= -->
+<header class="hero" id="inicio">
+  <div class="hero__bg" aria-hidden="true">
+    <!-- Reemplazar por <video class="hero__bg-video" autoplay muted loop playsinline src="..."></video> cuando haya video -->
+  </div>
+
+  <div class="hero__meta">
+    <span>Kura Matcha · Edición 001</span>
+    <span>2026 · Importación directa</span>
+  </div>
+
+  <div class="hero__main">
+    <span class="hero__wordmark">Kura Matcha</span>
+    <div class="hero__descriptor">
+      <span class="hero__descriptor-line" aria-hidden="true"></span>
+      <span class="hero__descriptor-text">Matcha mayorista · Importación directa desde Japón</span>
+    </div>
+    <div class="hero__actions">
+      <a href="catalogo.html" class="btn btn--solid">
+        <span class="btn__label">Ver catálogo</span>
+        <span class="btn__arrow">→</span>
+      </a>
+      <a href="#contacto" class="btn btn--ghost-light">
+        <span class="btn__label">Contacto</span>
+        <span class="btn__arrow">↓</span>
+      </a>
     </div>
   </div>
-  <div class="hero-bg-word">ARLEM</div>
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <div class="hero-stat-num"><strong>6</strong></div>
-      <div class="hero-stat-label" data-i18n="stats.countries">Countries active</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-num"><strong>3</strong></div>
-      <div class="hero-stat-label" data-i18n="stats.verticals">Verticals</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-num"><strong>4</strong></div>
-      <div class="hero-stat-label" data-i18n="stats.offices">Offices</div>
-    </div>
-    <div class="hero-stat">
-      <div class="hero-stat-num">Miami <strong>·</strong> HQ</div>
-      <div class="hero-stat-label" data-i18n="stats.hq">Base of operations</div>
-    </div>
+
+  <div class="hero__foot">
+    <span>Cafés · Roasteries · Food service</span>
+    <a href="#origen" class="hero__scroll">
+      <span>Origen</span>
+      <span class="hero__scroll-line"></span>
+    </a>
   </div>
-</section>
+</header>
 
-<section id="portfolio">
-  <div class="section-label" data-i18n="nav.portfolio">Portfolio</div>
-  <div class="portfolio-header reveal">
-    <h2 class="portfolio-title" data-i18n="portfolio.title">Three verticals.<br>One operating model.</h2>
-    <p class="portfolio-sub" data-i18n="portfolio.sub">Each business built around the same principle — find fragmented, underserved markets and execute with speed.</p>
+<!-- =========================  02 · MAP  ========================= -->
+<section class="map-section" id="origen">
+  <header class="section-head reveal">
+    <div class="section-head__meta">
+      <span class="section-head__no">02 · Origen</span>
+      <span class="section-head__no">Cuatro regiones · Matcha</span>
+    </div>
+    <hr class="rule" />
+    <h2 class="h-section section-head__title">Origen</h2>
+    <p class="lede">Cuatro regiones productoras de matcha en Japón. Seleccione una prefectura para ver los blends disponibles, variedades, cosecha y MOQ.</p>
+  </header>
+
+  <div class="map-layout reveal" data-delay="1">
+    <div class="map-stage" id="map-stage">
+      <div class="map-stage__meta">
+        <span>Japan · 47 prefecturas</span>
+        <span>Escala adaptativa</span>
+      </div>
+      <svg class="map-stage__svg" id="map-svg" aria-label="Mapa de Japón por prefectura"></svg>
+      <div class="map-stage__loading" id="map-loading">Cargando cartografía…</div>
+    </div>
+
+    <aside class="panel" id="blend-panel" aria-live="polite">
+      <button class="panel__close" id="panel-close" type="button" aria-label="Cerrar panel">×</button>
+      <div class="panel__empty" id="panel-empty">
+        <span class="panel__empty-title">— Seleccione una región</span>
+        <p class="panel__empty-copy">Las prefecturas marcadas en verde contienen blends disponibles. Haga clic en cualquiera de ellas para ver el detalle.</p>
+      </div>
+      <div id="panel-body"></div>
+    </aside>
   </div>
-  <div class="portfolio-grid reveal">
 
-    <!-- CARD 1: Kura Matcha -->
-    <div class="portfolio-card">
-      <div class="card-image">
-        <!-- Replace src with your matcha image URL -->
-        <img src="/images/hisa.jpg" alt="Kura Matcha">      </div>
-      <div class="card-content">
-        <span class="card-status status-live" data-i18n="card.live">Live</span>
-        <div class="card-number">01</div>
-        <div class="card-category" data-i18n="card2.cat">Food & Ingredients</div>
-        <div class="card-name">Kura Matcha</div>
-        <p class="card-desc" data-i18n="card2.desc">Ceremonial matcha for high-end shops. Private label, co-branded, and bulk supply programs for SMBs and brands. Current focus: Japanese matcha distributed to café chains and food service operators across Latin America and Europe under the Kura Matcha brand.</p>
-        <div class="card-tags">
-          <span class="card-tag">Japan · Europe · LATAM</span>
-          <span class="card-tag">B2B</span>
-        </div>
-        <div class="card-links">
-          <a href="kura-matcha/" class="card-link">Ver marca →</a>
-          <a href="https://www.instagram.com/hisa.matcha/" target="_blank" class="card-link">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink-mid)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="var(--ink-mid)" stroke="none"/></svg>
-            Instagram
-          </a>
-        </div>
-      </div>
+  <div class="map-legend reveal">
+    <div class="map-legend__items">
+      <span><span class="map-legend__dot"></span>Shizuoka</span>
+      <span>·</span>
+      <span>Kyoto / Uji</span>
+      <span>·</span>
+      <span>Kansai</span>
+      <span>·</span>
+      <span>Kagoshima</span>
     </div>
-
-    <!-- CARD 2: Arlem Devs -->
-    <div class="portfolio-card">
-      <div class="card-image">
-        <!-- Replace src with your tech/dev image URL -->
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80" alt="Arlem Devs">
-      </div>
-      <div class="card-content">
-        <span class="card-status status-live" data-i18n="card.live">Live</span>
-        <div class="card-number">02</div>
-        <div class="card-category" data-i18n="card3.cat">Technology</div>
-        <div class="card-name">Arlem Devs</div>
-        <p class="card-desc" data-i18n="card3.desc">Financial infrastructure for operators in emerging markets. Current product: a fully automated platform purpose-built for Argentine ALYCs and boutique trading desks.</p>
-        <div class="card-tags">
-          <span class="card-tag">SaaS</span>
-          <span class="card-tag">Argentina</span>
-          <span class="card-tag">ALYCs</span>
-        </div>
-        <div class="card-links">
-        </div>
-      </div>
-    </div>
-
-    <!-- CARD 3: Arlem Hides -->
-    <div class="portfolio-card">
-      <div class="card-image">
-        <!-- Replace src with your hides/leather image URL -->
-        <img src="lwg.webp" alt="Arlem Hides">
-      </div>
-      <div class="card-content">
-        <span class="card-status status-building" data-i18n="card.building">Building</span>
-        <div class="card-number">03</div>
-        <div class="card-category" data-i18n="card1.cat">Raw Materials</div>
-        <div class="card-name">Coming Soon</div>
-        <p class="card-desc" data-i18n="card1.desc"></p>
-        <div class="card-tags">
-          <span class="card-tag"></span>
-          <span class="card-tag"></span>
-          <span class="card-tag"></span>
-        </div>
-        <div class="card-links">
-          <a href="" target="_blank" class="card-link">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink-mid)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="var(--ink-mid)" stroke="none"/></svg>
-            Instagram
-          </a>
-          <a href="" target="_blank" class="card-link">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink-mid)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-            LinkedIn
-          </a>
-          <a href="" target="_blank" class="card-link">
-            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink-mid)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            Website
-          </a>
-        </div>
-      </div>
-    </div>
-
+    <div class="map-legend__note">Más regiones próximamente</div>
   </div>
 </section>
 
-<section id="process">
-  <div class="section-label" data-i18n="nav.approach">Approach</div>
-  <div class="process-grid">
-    <div class="process-left reveal">
-      <h2 data-i18n="process.title">How we<br>work.</h2>
-      <p data-i18n="process.sub">No corporate playbook. We operate lean, move fast, and stay close to the ground in every market we enter.</p>
-    </div>
-    <div class="process-steps reveal">
-      <div class="process-step">
-        <div class="step-num">01 —</div>
-        <div class="step-title" data-i18n="step1.title">Identify the gap</div>
-        <p class="step-desc" data-i18n="step1.desc">We look for markets where information asymmetry creates pricing inefficiency — commodities, geographies, or supply chains that institutional players ignore.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">02 —</div>
-        <div class="step-title" data-i18n="step2.title">Validate on the ground</div>
-        <p class="step-desc" data-i18n="step2.desc">Before any capital moves, we verify the trade: supplier reliability, logistics, customs, and buyer appetite. No desk-only diligence.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">03 —</div>
-        <div class="step-title" data-i18n="step3.title">Execute the first deal</div>
-        <p class="step-desc" data-i18n="step3.desc">We start small, prove the flow works, and build the relationship. The first transaction is the proof of concept.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-num">04 —</div>
-        <div class="step-title" data-i18n="step4.title">Build the infrastructure</div>
-        <p class="step-desc" data-i18n="step4.desc">Once the route is proven, we systematize — logistics partners, pricing frameworks, and operational processes that make the trade scalable.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="map-tooltip" id="map-tooltip" role="tooltip"></div>
 
-<section id="contact">
-  <div class="section-label" data-i18n="nav.contact">Contact</div>
-  <div class="contact-grid">
-    <div class="contact-left reveal">
-      <h2 data-i18n="contact.title">Let's work<br>together.</h2>
-      <p data-i18n="contact.sub">Whether you're a supplier, buyer, or potential partner — we're direct people. Tell us what you're working on.</p>
-      <div class="contact-info">
-        <div class="contact-item">
-          <span class="contact-item-label" data-i18n="contact.email.label">Email</span>
-          <span class="contact-item-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="553c3b333a15342739303832273a20257b363a38">[email&#160;protected]</a></span>
-        </div>
-        <div class="contact-item">
-          <span class="contact-item-label" data-i18n="contact.hq.label">Headquarters</span>
-          <span class="contact-item-value">Miami, USA</span>
-        </div>
-        <div class="contact-item">
-          <span class="contact-item-label" data-i18n="contact.offices.label">Offices</span>
-          <span class="contact-item-value">Paris · Buenos Aires · Taipei</span>
-        </div>
-        <div class="contact-item">
-          <span class="contact-item-label" data-i18n="contact.ops.label">Operations</span>
-          <span class="contact-item-value">4 <span data-i18n="contact.ops.value">countries</span></span>
-        </div>
-      </div>
+<!-- =========================  03 · CONTACT  ========================= -->
+<section class="contact" id="contacto">
+  <header class="section-head reveal">
+    <div class="section-head__meta">
+      <span class="section-head__no">03 · Contacto</span>
+      <span class="section-head__no">Operaciones mayoristas</span>
     </div>
-    <div class="reveal">
-      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form-row">
-          <div class="form-field">
-            <label data-i18n="form.name">Name</label>
-            <input type="text" name="name" placeholder="—" required>
-          </div>
-          <div class="form-field">
-            <label data-i18n="form.company">Company</label>
-            <input type="text" name="company" placeholder="—">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-field">
-            <label data-i18n="form.email">Email</label>
-            <input type="email" name="email" placeholder="—" required>
-          </div>
-          <div class="form-field">
-            <label data-i18n="form.topic">Topic</label>
-            <select name="topic">
-              <option value="" disabled selected>—</option>
-              <option>Arlem Hides</option>
-              <option>Arlem Foods / Kura Matcha</option>
-              <option>Arlem Tech</option>
-              <option data-i18n="form.general">General inquiry</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row form-full">
-          <div class="form-field">
-            <label data-i18n="form.message">Message</label>
-            <textarea name="message" placeholder="—" required></textarea>
-          </div>
-        </div>
-        <div class="form-submit">
-          <button type="submit" class="btn-submit" data-i18n="form.submit">Send message →</button>
-        </div>
-      </form>
+    <hr class="rule rule--light" />
+    <h2 class="h-section section-head__title">Hablemos de volumen.</h2>
+  </header>
+
+  <div class="contact__grid contact__grid--single">
+    <div class="contact__side reveal">
+      <span class="eyebrow" style="color:rgba(253,250,246,0.6);">— Contacto directo</span>
+      <h3 class="h-sub">Consulte por un blend o por un volumen específico.</h3>
+      <p class="contact__copy" id="contact-copy">Indique el blend de interés, país de operación y volumen estimado. Respondemos por WhatsApp en un plazo de 24 h hábiles.</p>
+
+      <div class="form__notice" id="form-notice">Blend preseleccionado · <span data-blend-echo></span></div>
+
+      <div class="contact__actions" style="margin-top:1.5rem;">
+        <a id="contact-wa" href="https://wa.me/541156670631?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista" target="_blank" rel="noopener" class="btn btn--solid">
+          <span class="btn__label">Escribir por WhatsApp</span>
+          <span class="btn__arrow">↗</span>
+        </a>
+      </div>
     </div>
   </div>
+
+  <footer class="footer">
+    <div class="footer__meta">
+      <span>© 2026 · Kura Matcha</span>
+      <span>Importación directa · Japón</span>
+    </div>
+    <div class="footer__meta">
+      <a href="catalogo.html">Catálogo</a>
+      <a href="about.html">Marca</a>
+      <a href="#inicio">Volver al inicio ↑</a>
+    </div>
+  </footer>
 </section>
 
-<footer>
-  <span class="footer-logo">
-    <svg width="12" height="14" viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M7 1L13 15H1L7 1Z" stroke="#B07830" stroke-width="1.5" fill="none"/>
-      <line x1="3.5" y1="10" x2="10.5" y2="10" stroke="#B07830" stroke-width="1"/>
-    </svg>
-    Arlem<span>.</span>
-  </span>
-  <span class="footer-cities">Miami · Paris · Buenos Aires · Taipei</span>
-  <span class="footer-copy">© 2026 Arlem Group</span>
-</footer>
-
-<script>
-const i18n = {
-  en: {
-    "nav.portfolio":"Portfolio","nav.approach":"Approach","nav.contact":"Contact","nav.cta":"Get in touch →",
-    "hero.eyebrow":"Global Commodities & Trade","hero.line1":"We find","hero.line2":"the gaps.","hero.line3":"We fill them.",
-    "hero.sub":"Arlem Group operates across raw materials, food ingredients, and technology — connecting overlooked markets to the supply chains that need them.",
-    "hero.cta1":"Our portfolio","hero.cta2":"How we work",
-    "stats.countries":"Countries active","stats.verticals":"Verticals","stats.offices":"Offices","stats.hq":"Base of operations",
-    "portfolio.title":"Three verticals.\nOne operating model.",
-    "portfolio.sub":"Each business built around the same principle — find fragmented, underserved markets and execute with speed.",
-    "card.live":"Live","card.building":"Building",
-    "card1.cat":"Raw Materials","card1.desc":"Bovine and buffalo hides sourced from South American frigoríficos, traded to tanneries in China, Europe, and India. End-to-end logistics, quality grading, and customs clearance.",
-    "card2.cat":"Food & Ingredients","card2.desc":"Specialty food ingredients for the premium consumer market. Current focus: Japanese matcha distributed to café chains and food service operators across Latin America under the Kura Matcha brand.",
-    "card3.cat":"Technology","card3.desc":"Financial infrastructure for operators in emerging markets. Current product: an accounting and PnL platform purpose-built for Argentine ALYCs and boutique trading desks.",
-    "process.title":"How we\nwork.","process.sub":"No corporate playbook. We operate lean, move fast, and stay close to the ground in every market we enter.",
-    "step1.title":"Identify the gap","step1.desc":"We look for markets where information asymmetry creates pricing inefficiency — commodities, geographies, or supply chains that institutional players ignore.",
-    "step2.title":"Validate on the ground","step2.desc":"Before any capital moves, we verify the trade: supplier reliability, logistics, customs, and buyer appetite. No desk-only diligence.",
-    "step3.title":"Execute the first deal","step3.desc":"We start small, prove the flow works, and build the relationship. The first transaction is the proof of concept.",
-    "step4.title":"Build the infrastructure","step4.desc":"Once the route is proven, we systematize — logistics partners, pricing frameworks, and operational processes that make the trade scalable.",
-    "contact.title":"Let's work\ntogether.","contact.sub":"Whether you're a supplier, buyer, or potential partner — we're direct people. Tell us what you're working on.",
-    "contact.email.label":"Email","contact.hq.label":"Headquarters","contact.offices.label":"Offices","contact.ops.label":"Operations","contact.ops.value":"countries",
-    "form.name":"Name","form.company":"Company","form.email":"Email","form.topic":"Topic","form.message":"Message","form.general":"General inquiry","form.submit":"Send message →"
-  },
-  es: {
-    "nav.portfolio":"Portfolio","nav.approach":"Metodología","nav.contact":"Contacto","nav.cta":"Escribinos →",
-    "hero.eyebrow":"Commodities & Comercio Global","hero.line1":"Encontramos","hero.line2":"los espacios.","hero.line3":"Los llenamos.",
-    "hero.sub":"Arlem Group opera en materias primas, ingredientes alimentarios y tecnología — conectando mercados ignorados con las cadenas de suministro que los necesitan.",
-    "hero.cta1":"Nuestro portfolio","hero.cta2":"Cómo trabajamos",
-    "stats.countries":"Países activos","stats.verticals":"Verticales","stats.offices":"Oficinas","stats.hq":"Base de operaciones",
-    "portfolio.title":"Tres verticales.\nUn modelo operativo.",
-    "portfolio.sub":"Cada negocio construido sobre el mismo principio — encontrar mercados fragmentados y desatendidos, y ejecutar con velocidad.",
-    "card.live":"Activo","card.building":"En desarrollo",
-    "card1.cat":"Materias Primas","card1.desc":"Cueros bovinos y bufalinos provenientes de frigoríficos sudamericanos, comercializados con curtiembres en China, Europa e India. Logística integral, clasificación de calidad y gestión aduanera.",
-    "card2.cat":"Alimentos & Ingredientes","card2.desc":"Ingredientes alimentarios especiales para el mercado premium. Foco actual: matcha japonés distribuido a cadenas de café y operadores de food service en América Latina bajo la marca Kura Matcha.",
-    "card3.cat":"Tecnología","card3.desc":"Infraestructura financiera para operadores en mercados emergentes. Producto actual: plataforma de contabilidad y PnL diseñada para ALYCs argentinas y mesas de trading boutique.",
-    "process.title":"Cómo\ntrabajamos.","process.sub":"Sin manuales corporativos. Operamos con estructura mínima, velocidad máxima y presencia directa en cada mercado que entramos.",
-    "step1.title":"Identificamos el espacio","step1.desc":"Buscamos mercados donde la asimetría de información genera ineficiencias de precio — commodities, geografías o cadenas de suministro que los jugadores institucionales ignoran.",
-    "step2.title":"Validamos sobre el terreno","step2.desc":"Antes de mover capital, verificamos el trade: confiabilidad del proveedor, logística, aduanas y apetito comprador. Sin due diligence de escritorio.",
-    "step3.title":"Ejecutamos el primer deal","step3.desc":"Empezamos pequeño, probamos que el flujo funciona y construimos la relación. La primera transacción es el proof of concept.",
-    "step4.title":"Construimos la infraestructura","step4.desc":"Una vez probada la ruta, sistematizamos — socios logísticos, marcos de pricing y procesos operativos que hacen el trade escalable.",
-    "contact.title":"Trabajemos\njuntos.","contact.sub":"Seas proveedor, comprador o potencial socio — somos gente directa. Contanos en qué estás trabajando.",
-    "contact.email.label":"Email","contact.hq.label":"Casa Central","contact.offices.label":"Oficinas","contact.ops.label":"Operaciones","contact.ops.value":"países",
-    "form.name":"Nombre","form.company":"Empresa","form.email":"Email","form.topic":"Tema","form.message":"Mensaje","form.general":"Consulta general","form.submit":"Enviar mensaje →"
-  },
-  fr: {
-    "nav.portfolio":"Portfolio","nav.approach":"Méthode","nav.contact":"Contact","nav.cta":"Nous contacter →",
-    "hero.eyebrow":"Matières Premières & Commerce Mondial","hero.line1":"Nous trouvons","hero.line2":"les espaces.","hero.line3":"Nous les comblons.",
-    "hero.sub":"Arlem Group opère dans les matières premières, les ingrédients alimentaires et la technologie — en connectant les marchés négligés aux chaînes d'approvisionnement qui en ont besoin.",
-    "hero.cta1":"Notre portfolio","hero.cta2":"Notre approche",
-    "stats.countries":"Pays actifs","stats.verticals":"Verticales","stats.offices":"Bureaux","stats.hq":"Siège social",
-    "portfolio.title":"Trois verticales.\nUn modèle opérationnel.",
-    "portfolio.sub":"Chaque activité repose sur le même principe — identifier les marchés fragmentés et sous-servis, et exécuter avec rapidité.",
-    "card.live":"Actif","card.building":"En cours",
-    "card1.cat":"Matières Premières","card1.desc":"Peaux bovines et bubalines issues de frigoríficos sud-américains, commercialisées auprès de tanneries en Chine, Europe et Inde. Logistique complète, contrôle qualité et dédouanement.",
-    "card2.cat":"Alimentation & Ingrédients","card2.desc":"Ingrédients alimentaires de spécialité pour le marché premium. Focus actuel : matcha japonais distribué aux chaînes de café et opérateurs de restauration en Amérique latine sous la marque Kura Matcha.",
-    "card3.cat":"Technologie","card3.desc":"Infrastructure financière pour les opérateurs des marchés émergents. Produit actuel : plateforme de comptabilité et PnL conçue pour les ALYCs argentines et les desks de trading boutique.",
-    "process.title":"Notre\nméthode.","process.sub":"Pas de manuel d'entreprise. Nous opérons avec légèreté, rapidité et présence directe sur chaque marché que nous intégrons.",
-    "step1.title":"Identifier l'opportunité","step1.desc":"Nous cherchons les marchés où l'asymétrie d'information crée des inefficiences de prix — commodités, géographies ou chaînes logistiques ignorées par les acteurs institutionnels.",
-    "step2.title":"Valider sur le terrain","step2.desc":"Avant tout mouvement de capital, nous vérifions le trade : fiabilité fournisseur, logistique, douanes et appétit acheteur. Aucune diligence faite depuis un bureau.",
-    "step3.title":"Exécuter le premier deal","step3.desc":"Nous commençons petit, prouvons que le flux fonctionne et construisons la relation. La première transaction est la preuve de concept.",
-    "step4.title":"Construire l'infrastructure","step4.desc":"Une fois la route prouvée, nous systématisons — partenaires logistiques, cadres de pricing et processus opérationnels qui rendent le trade scalable.",
-    "contact.title":"Travaillons\nensemble.","contact.sub":"Que vous soyez fournisseur, acheteur ou partenaire potentiel — nous sommes des gens directs. Dites-nous sur quoi vous travaillez.",
-    "contact.email.label":"Email","contact.hq.label":"Siège","contact.offices.label":"Bureaux","contact.ops.label":"Opérations","contact.ops.value":"pays",
-    "form.name":"Nom","form.company":"Société","form.email":"Email","form.topic":"Sujet","form.message":"Message","form.general":"Renseignement général","form.submit":"Envoyer →"
-  },
-};
-
-let currentLang = 'en';
-
-function setLang(lang) {
-  currentLang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b => {
-    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
-  });
-  document.body.style.fontFamily = "'DM Sans', sans-serif";
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    const val = i18n[lang] && i18n[lang][key];
-    if (!val) return;
-    el.innerHTML = val.replace(/\n/g, '<br>');
-  });
-}
-
-// ─── Dropdown ───
-document.querySelectorAll('.nav-has-dropdown').forEach(item => {
-  let timer;
-  const open  = () => { clearTimeout(timer); item.classList.add('is-open'); };
-  const close = () => { timer = setTimeout(() => item.classList.remove('is-open'), 180); };
-  item.addEventListener('mouseenter', open);
-  item.addEventListener('mouseleave', close);
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
-
-<a href="https://wa.me/13392139573" target="_blank" class="whatsapp-fab" aria-label="WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
+<script src="regions.js"></script>
+<script src="scripts.js"></script>
+<script src="animations.js"></script>
+<script src="map.js"></script>
 </body>
 </html>
