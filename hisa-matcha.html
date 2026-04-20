@@ -3,48 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HISA Matcha — Matcha Japonés Premium para Cafeterías | Arlem Group</title>
-<meta name="description" content="HISA Matcha distribuye matcha japonés premium de Shizuoka para cafeterías, baristas y food service en Argentina y América Latina. Programas mayoristas y minoristas.">
-<meta name="keywords" content="matcha argentina, matcha para cafeterías, matcha japonés, matcha premium, distribuidor matcha argentina, matcha LATAM, matcha latte, matcha wholesale, matcha al por mayor, hisa matcha, arlem group">
+<title>Kura Matcha — Matcha Japonés para el Canal B2B | Arlem Group</title>
+<meta name="description" content="Matcha premium de Shizuoka, Japón — distribuido para cafeterías y operadores de food service en América Latina y Europa.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://arlemgroup.com/hisa-matcha.html">
-<meta name="geo.region" content="AR">
-<meta name="geo.placename" content="Argentina">
-<meta name="ICBM" content="-34.6037, -58.3816">
 <meta property="og:type" content="website">
-<meta property="og:locale" content="es_AR">
-<meta property="og:site_name" content="Arlem Group">
-<meta property="og:title" content="HISA Matcha — Matcha Japonés Premium para Cafeterías">
-<meta property="og:description" content="Matcha premium de Shizuoka distribuido a cafeterías y operadores de food service en Argentina y América Latina. Programas mayoristas y minoristas.">
+<meta property="og:title" content="Kura Matcha — Matcha Japonés B2B">
+<meta property="og:description" content="Matcha premium de Shizuoka para cafeterías, distribuidores y food service.">
 <meta property="og:url" content="https://arlemgroup.com/hisa-matcha.html">
-<meta property="og:image" content="https://arlemgroup.com/images/hisa-latte.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="HISA Matcha — Matcha Japonés Premium para Cafeterías">
-<meta name="twitter:description" content="Matcha premium de Shizuoka distribuido a cafeterías en Argentina y LATAM.">
-<meta name="twitter:image" content="https://arlemgroup.com/images/hisa-latte.jpg">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1714'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' fill='%23B07830' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { height: 100%; }
-body {
-  height: 100vh;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-}
-section {
-  height: 100vh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  overflow: hidden;
-}
-#aplicaciones, #contacto {
-  height: auto;
-  min-height: 100vh;
-  overflow: visible;
-}
 
 :root {
   --cream:      #F5F0E8;
@@ -60,13 +30,14 @@ section {
   --border:     rgba(26,23,20,0.10);
   --matcha:     #4A6741;
   --matcha-pale:#6B8F62;
+  --matcha-bg:  rgba(74,103,65,0.12);
 }
 
 html { scroll-behavior: smooth; }
 
 body {
   font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
+  background: var(--white);
   color: var(--ink);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -82,22 +53,18 @@ body {
   text-decoration: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.whatsapp-fab:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(37,211,102,0.5);
-}
+.whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
 
 /* ─── NAV ─── */
-nav:not(.section-dots) {
+nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 56px;
   height: 56px;
-  background: rgba(245,240,232,0.94);
+  background: rgba(253,250,246,0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
-
 .nav-logo {
   font-family: 'DM Sans', sans-serif;
   font-size: 15px; font-weight: 600;
@@ -113,7 +80,6 @@ nav:not(.section-dots) {
 }
 .nav-logo-icon svg { display: block; }
 .nav-logo span { color: var(--amber); }
-
 .nav-links { display: flex; gap: 40px; list-style: none; }
 .nav-links a {
   font-size: 12px; font-weight: 400;
@@ -121,582 +87,386 @@ nav:not(.section-dots) {
   color: var(--ink-mid); text-decoration: none; transition: color 0.2s;
 }
 .nav-links a:hover { color: var(--ink); }
-
-.nav-right {
-  display: flex; align-items: center; gap: 20px;
-}
-.lang-toggle {
-  display: flex; align-items: center;
-  border: 1px solid var(--border); overflow: hidden;
-}
+.nav-right { display: flex; align-items: center; gap: 20px; }
+.lang-toggle { display: flex; align-items: center; border: 1px solid var(--border); overflow: hidden; }
 .lang-btn {
   font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 400;
-  letter-spacing: 0.08em;
-  color: var(--ink-light);
-  background: transparent; border: none;
+  font-size: 10px; font-weight: 400; letter-spacing: 0.08em;
+  color: var(--ink-light); background: transparent; border: none;
   padding: 6px 12px; cursor: pointer;
   transition: background 0.15s, color 0.15s;
 }
 .lang-btn.active { background: var(--ink); color: var(--white); }
 .nav-cta {
   font-family: 'DM Mono', monospace;
-  font-size: 11px; font-weight: 400;
-  letter-spacing: 0.06em;
-  color: var(--amber); text-decoration: none;
-  transition: color 0.2s;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.06em;
+  color: var(--amber); text-decoration: none; transition: color 0.2s;
 }
 .nav-cta:hover { color: var(--amber-soft); }
 
-/* Portfolio dropdown */
+/* Dropdown */
 .nav-has-dropdown { position: relative; }
 .nav-dropdown {
-  position: absolute;
-  top: calc(100% + 12px);
-  left: 50%;
+  position: absolute; top: calc(100% + 12px); left: 50%;
   transform: translateX(-50%) translateY(-4px);
-  background: var(--white);
-  border: 1px solid var(--border);
-  min-width: 200px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-  z-index: 200;
+  background: var(--white); border: 1px solid var(--border); min-width: 200px;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease; z-index: 200;
 }
-.nav-has-dropdown.is-open .nav-dropdown {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
-}
+.nav-has-dropdown.is-open .nav-dropdown { opacity: 1; pointer-events: auto; transform: translateX(-50%) translateY(0); }
 .nav-dropdown-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 16px;
-  border-bottom: 1px solid var(--border);
-  text-decoration: none;
-  transition: background 0.15s;
-  gap: 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; border-bottom: 1px solid var(--border);
+  text-decoration: none; transition: background 0.15s; gap: 20px;
 }
 .nav-dropdown-item:last-child { border-bottom: none; }
 .nav-dropdown-item:hover { background: var(--cream2); }
-.nav-dropdown-name {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 12px; font-weight: 500;
-  color: var(--ink); letter-spacing: 0; text-transform: none;
-}
+.nav-dropdown-name { font-family: 'DM Sans'; font-size: 12px; font-weight: 500; color: var(--ink); }
 .nav-dropdown-status {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px; font-weight: 400;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  padding: 2px 7px; white-space: nowrap;
+  font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 400;
+  letter-spacing: 0.08em; text-transform: uppercase; padding: 2px 7px; white-space: nowrap;
 }
 .nav-dropdown-status.live { color: #4A7C59; background: rgba(74,124,89,0.08); }
 .nav-dropdown-status.building { color: var(--amber); background: rgba(176,120,48,0.08); }
 .nav-dropdown-item.disabled { pointer-events: none; opacity: 0.45; }
 
-/* Side section dots */
-.section-dots {
-  position: fixed;
-  right: 24px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 400;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: flex-end;
+/* ─── SECTION SHARED ─── */
+.section-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 56px;
 }
-.dot {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  cursor: pointer;
+.section-heading {
+  font-family: 'DM Sans', sans-serif;
+  font-size: clamp(48px, 6vw, 80px);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  padding-bottom: 24px;
+  border-bottom: 1.5px solid var(--ink);
+  margin-bottom: 72px;
+  display: flex; align-items: flex-end; justify-content: space-between;
 }
-.dot-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--ink);
-  opacity: 0.22;
-  transition: opacity 0.3s ease, color 0.3s ease;
-  white-space: nowrap;
-}
-.dot-circle {
-  display: block;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--ink);
-  opacity: 0.25;
-  flex-shrink: 0;
-  transition: opacity 0.3s ease, transform 0.15s ease, background 0.3s ease;
-}
-.dot.active .dot-label {
-  opacity: 1;
-  color: var(--amber);
-}
-.dot.active .dot-circle {
-  opacity: 1;
-  background: var(--amber);
-  transform: scale(1.4);
-}
-
-/* On dark sections — flip to light */
-.section-dots.on-dark .dot-label {
-  color: var(--white);
-  opacity: 0.3;
-}
-.section-dots.on-dark .dot-circle {
-  background: var(--white);
-  opacity: 0.3;
-}
-.section-dots.on-dark .dot.active .dot-label {
-  color: var(--amber-pale);
-  opacity: 1;
-}
-.section-dots.on-dark .dot.active .dot-circle {
-  background: var(--amber-pale);
-}
-
-
-@media (max-width: 900px) {
-  .section-dots { display: none; }
+.section-heading-logo {
+  width: 32px; height: auto; flex-shrink: 0; margin-bottom: 6px; opacity: 0.6;
 }
 
 /* ─── HERO ─── */
-.hero {
+#hero {
   height: 100vh;
   position: relative;
-  display: flex; align-items: flex-end;
+  display: flex;
+  align-items: flex-end;
   overflow: hidden;
+  background: url('images/hisa-hero.jpg') center/cover no-repeat,
+              linear-gradient(to bottom right, #0a0f08, #141f10, #1A1714);
 }
-
-.hero-bg {
-  position: absolute; inset: 0;
-  background-image: url('images/hisa-hero.jpg');
-  background-size: cover;
-  background-position: center center;
-  z-index: 0;
-}
-
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10,14,12,0.25) 0%,
-    rgba(10,14,12,0.55) 50%,
-    rgba(10,14,12,0.82) 100%
+    rgba(10,15,8,0.2) 0%,
+    rgba(10,15,8,0.5) 50%,
+    rgba(10,15,8,0.82) 100%
   );
   z-index: 1;
 }
-
+.hero-badge {
+  position: absolute; top: 80px; right: 56px; z-index: 2;
+  text-align: right;
+}
+.hero-badge-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 28px; font-weight: 300; letter-spacing: 0.12em;
+  color: rgba(232,200,128,0.6);
+  line-height: 1;
+}
+.hero-badge div:last-child {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; font-weight: 300; letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(232,200,128,0.3);
+  margin-top: 4px;
+}
 .hero-content {
   position: relative; z-index: 2;
   padding: 0 56px 80px;
-  max-width: 900px;
+  max-width: 860px;
 }
-
 .hero-eyebrow {
   font-family: 'DM Mono', monospace;
   font-size: 11px; font-weight: 300;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(232,200,128,0.85);
-  margin-bottom: 32px;
+  color: rgba(232,200,128,0.75);
+  margin-bottom: 28px;
   display: flex; align-items: center; gap: 16px;
   opacity: 0; animation: fadeUp 0.8s ease forwards 0.1s;
 }
 .hero-eyebrow::after {
   content: ''; display: block;
   width: 48px; height: 1px;
-  background: rgba(232,200,128,0.3);
+  background: rgba(232,200,128,0.25);
 }
-
 .hero-headline {
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(44px, 7vw, 90px);
+  font-size: clamp(44px, 7vw, 88px);
   font-weight: 300; line-height: 1.0;
   letter-spacing: -0.03em;
   color: var(--white);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   opacity: 0; animation: fadeUp 0.8s ease forwards 0.25s;
 }
-.hero-headline em {
-  font-style: italic; color: var(--amber-pale); font-weight: 300;
-}
-
+.hero-headline em { font-style: italic; color: var(--amber-pale); font-weight: 300; }
 .hero-sub {
   font-size: 16px; font-weight: 300; line-height: 1.8;
-  color: rgba(253,250,246,0.6);
-  max-width: 480px; margin-bottom: 48px;
+  color: rgba(253,250,246,0.55);
+  max-width: 460px; margin-bottom: 44px;
   opacity: 0; animation: fadeUp 0.8s ease forwards 0.4s;
 }
-
 .hero-actions {
-  display: flex; gap: 16px; align-items: center;
+  display: flex; gap: 16px; align-items: center; flex-wrap: wrap;
   opacity: 0; animation: fadeUp 0.8s ease forwards 0.55s;
 }
-
 .btn-primary {
   font-family: 'DM Mono', monospace;
   font-size: 12px; font-weight: 400;
   letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink); background: var(--amber-pale);
-  padding: 14px 36px; text-decoration: none;
-  transition: background 0.2s, color 0.2s;
+  padding: 15px 36px; text-decoration: none;
+  transition: background 0.2s;
 }
-.btn-primary:hover { background: var(--amber-soft); color: #fff; }
-
+.btn-primary:hover { background: var(--amber-soft); }
 .btn-ghost {
   font-family: 'DM Mono', monospace;
-  font-size: 12px; font-weight: 300;
+  font-size: 12px; font-weight: 400;
   letter-spacing: 0.08em; text-transform: uppercase;
-  color: rgba(253,250,246,0.55); text-decoration: none;
-  display: flex; align-items: center; gap: 8px;
-  transition: color 0.2s;
+  color: rgba(253,250,246,0.6); background: transparent;
+  border: 1px solid rgba(253,250,246,0.2);
+  padding: 15px 36px; text-decoration: none;
+  transition: color 0.2s, border-color 0.2s;
 }
-.btn-ghost:hover { color: rgba(253,250,246,0.9); }
-.btn-ghost::after { content: '↓'; }
+.btn-ghost:hover { color: var(--white); border-color: rgba(253,250,246,0.5); }
 
-.hero-badge {
-  position: absolute; top: 80px; right: 56px;
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── ORIGEN (MAP) ─── */
+#origen {
+  background: #FFFFFF;
+  padding: 120px 0;
+}
+.map-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+.japan-map-wrap {
+  position: relative;
+}
+.japan-map-wrap svg {
+  width: 100%;
+  max-width: 440px;
+  display: block;
+}
+
+/* Map SVG styles */
+.jp-island {
+  fill: #FFFFFF;
+  stroke: #1A1714;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+.jp-region {
+  cursor: pointer;
+  transition: fill 0.2s;
+}
+.jp-region.has-data {
+  fill: rgba(74,103,65,0.15);
+  stroke: #1A1714;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+}
+.jp-region.has-data:hover {
+  fill: rgba(74,103,65,0.4);
+}
+.jp-region.has-data.active {
+  fill: #4A6741;
+}
+.jp-dot {
+  fill: #FFFFFF;
+  stroke: #1A1714;
+  stroke-width: 1.2;
+  pointer-events: none;
+}
+.jp-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 7px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  fill: #1A1714;
+  pointer-events: none;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+/* Blend panel */
+.blend-panel {
+  padding-top: 8px;
+}
+.blend-panel-hint {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; font-weight: 300;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-light);
+  padding: 32px 0;
+  border-top: 1px solid var(--border);
+}
+.blend-region-name {
   font-family: 'DM Mono', monospace;
   font-size: 10px; font-weight: 300;
   letter-spacing: 0.16em; text-transform: uppercase;
-  color: rgba(253,250,246,0.35);
-  z-index: 2;
-  display: flex; flex-direction: column; align-items: flex-end; gap: 4px;
-  opacity: 0; animation: fadeIn 1s ease forwards 0.8s;
+  color: var(--matcha);
+  margin-bottom: 24px;
 }
-.hero-badge-num {
-  font-size: 32px; font-weight: 300;
-  color: rgba(253,250,246,0.15); letter-spacing: -0.04em;
-  line-height: 1;
-}
-
-/* ─── SHARED SECTION ─── */
-section { padding: 60px 180px 60px 56px; }
-
-.section-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 300;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--amber); margin-bottom: 32px;
-  display: flex; align-items: center; gap: 16px;
-}
-.section-label::before {
-  content: ''; display: block;
-  width: 32px; height: 1px; background: var(--amber-pale);
-}
-
-/* ─── PRODUCTO ─── */
-#producto {
+.blend-list { display: flex; flex-direction: column; gap: 1px; }
+.blend-item {
   background: var(--white);
-  border-bottom: 1px solid var(--border);
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  display: flex; justify-content: space-between; align-items: center;
 }
-
-.producto-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: center;
+.blend-item:hover { background: var(--cream2); }
+.blend-item.active { background: var(--ink); border-color: var(--ink); }
+.blend-item-name {
+  font-size: 15px; font-weight: 500; letter-spacing: -0.01em;
+  color: var(--ink); transition: color 0.15s;
 }
-
-.producto-text h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 300; letter-spacing: -0.02em; line-height: 1.1;
-  color: var(--ink); margin-bottom: 24px;
+.blend-item.active .blend-item-name { color: var(--white); }
+.blend-item-arrow {
+  font-size: 14px; color: var(--ink-light); transition: color 0.15s, transform 0.2s;
 }
-.producto-text h2 em {
-  font-style: italic; color: var(--amber); font-weight: 300;
+.blend-item.active .blend-item-arrow { color: var(--amber-pale); transform: rotate(90deg); }
+.blend-detail {
+  display: none;
+  background: var(--ink);
+  padding: 28px 24px;
+  border-top: none;
+  margin-top: -1px;
 }
-
-.producto-text p {
-  font-size: 15px; font-weight: 300; line-height: 1.85;
-  color: var(--ink-mid); margin-bottom: 20px;
+.blend-detail.open { display: block; }
+.blend-detail-row {
+  display: flex; justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-
-.specs-table {
-  border-top: 1px solid var(--border);
+.blend-detail-row:last-child { border-bottom: none; }
+.blend-detail-key {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; font-weight: 300;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(253,250,246,0.35);
 }
-.spec-row {
+.blend-detail-val {
+  font-size: 13px; font-weight: 300;
+  color: rgba(253,250,246,0.75);
+  text-align: right; max-width: 60%;
+}
+.blend-detail-price {
   display: flex; justify-content: space-between; align-items: baseline;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border);
+  padding: 16px 0 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 4px;
 }
-.spec-key {
+.blend-detail-price-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: rgba(253,250,246,0.35);
+}
+.blend-detail-price-val {
+  font-size: 22px; font-weight: 500; letter-spacing: -0.02em;
+  color: var(--amber-pale);
+}
+.blend-detail-price-unit {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; color: rgba(253,250,246,0.35);
+  margin-left: 4px;
+}
+.blend-cta {
+  display: block;
+  margin-top: 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink);
+  background: var(--amber-pale);
+  padding: 12px 0;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.blend-cta:hover { background: var(--amber-soft); }
+
+/* ─── MAP COMING SOON ─── */
+.jp-region.has-soon {
+  fill: rgba(26,23,20,0.06);
+  stroke: rgba(26,23,20,0.18);
+  stroke-width: 0.8;
+  stroke-dasharray: 3 2;
+  cursor: pointer;
+  transition: fill 0.2s;
+}
+.jp-region.has-soon:hover { fill: rgba(26,23,20,0.14); }
+.map-soon-note {
+  display: flex; align-items: center; gap: 10px;
+  margin-top: 20px;
   font-family: 'DM Mono', monospace;
   font-size: 10px; font-weight: 300;
   letter-spacing: 0.12em; text-transform: uppercase;
   color: var(--ink-light);
 }
-.spec-val {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px; font-weight: 300;
-  color: var(--ink-mid); text-align: right;
+.map-soon-dot {
+  display: inline-block; width: 8px; height: 8px;
+  border: 1.5px dashed var(--ink-light); border-radius: 50%; flex-shrink: 0;
 }
-.spec-val strong { color: var(--amber); font-weight: 400; }
-
-.producto-image {
-  position: relative; overflow: hidden;
-  aspect-ratio: 3/4;
-  max-height: calc(100vh - 160px);
-}
-.producto-image img {
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
-}
-.producto-image-label {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 16px 20px;
-  background: linear-gradient(to top, rgba(10,14,12,0.7) 0%, transparent 100%);
+.blend-panel-soon {
+  padding: 20px 0;
   font-family: 'DM Mono', monospace;
   font-size: 10px; font-weight: 300;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(253,250,246,0.45);
-  display: flex; justify-content: space-between;
-}
-
-/* ─── DISTRIBUCIÓN ─── */
-#distribucion {
-  background: var(--cream);
-  border-bottom: 1px solid var(--border);
-}
-
-.dist-header {
-  display: flex; align-items: flex-end;
-  justify-content: space-between; margin-bottom: 28px;
-}
-.dist-header h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 300; letter-spacing: -0.02em; line-height: 1.1;
-  color: var(--ink);
-}
-.dist-header p {
-  font-size: 14px; font-weight: 300;
-  color: var(--ink-mid); max-width: 280px;
-  text-align: right; line-height: 1.7;
-}
-
-.dist-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border);
-}
-
-.dist-card {
-  background: var(--white);
-  padding: 28px 32px;
-  transition: background 0.25s;
-}
-.dist-card:hover { background: var(--cream2); }
-
-.dist-card-num {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 300;
-  color: var(--ink-light); letter-spacing: 0.1em;
-  margin-bottom: 10px;
-}
-.dist-card-title {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 26px; font-weight: 300;
-  letter-spacing: -0.02em; color: var(--ink);
-  margin-bottom: 8px;
-}
-.dist-card-subtitle {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 300;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--amber); margin-bottom: 12px;
-}
-.dist-card-desc {
-  font-size: 14px; font-weight: 300; line-height: 1.8;
-  color: var(--ink-mid); margin-bottom: 14px;
-}
-
-.dist-features {
-  display: flex; flex-direction: column; gap: 0;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-light);
   border-top: 1px solid var(--border);
 }
-.dist-feature {
-  display: flex; align-items: center; gap: 12px;
-  padding: 7px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 13px; font-weight: 300;
-  color: var(--ink-mid); line-height: 1.5;
+.blend-panel-soon strong {
+  display: block; font-size: 13px; font-weight: 500;
+  font-family: 'DM Sans', sans-serif; letter-spacing: 0;
+  color: var(--ink); margin-bottom: 8px; text-transform: none;
 }
-.dist-feature::before {
-  content: '';
-  width: 4px; height: 4px;
-  background: var(--amber-pale);
-  flex-shrink: 0;
-}
-
-/* ─── CALIDAD ─── */
-#calidad {
-  background: var(--ink);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
-}
-#calidad .section-label {
-  color: var(--amber-pale);
-}
-#calidad .section-label::before {
-  background: rgba(232,200,128,0.2);
-}
-
-.calidad-header {
-  margin-bottom: 28px;
-}
-.calidad-header h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 300; letter-spacing: -0.02em; line-height: 1.1;
-  color: var(--white); margin-bottom: 20px;
-}
-.calidad-header p {
-  font-size: 15px; font-weight: 300; line-height: 1.8;
-  color: rgba(253,250,246,0.45); max-width: 520px;
-}
-
-.calidad-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1px; background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.05);
-}
-
-.calidad-card {
-  background: rgba(253,250,246,0.03);
-  padding: 26px 28px;
-  position: relative;
-  transition: background 0.25s;
-}
-.calidad-card:hover { background: rgba(253,250,246,0.06); }
-
-.calidad-card.featured {
-  background: rgba(176,120,48,0.07);
-  border: 1px solid rgba(176,120,48,0.25);
-  margin: -1px;
-}
-.calidad-card.featured:hover { background: rgba(176,120,48,0.11); }
-
-.calidad-badge {
-  position: absolute; top: 20px; right: 20px;
-  font-family: 'DM Mono', monospace;
-  font-size: 9px; font-weight: 400;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--amber); background: rgba(176,120,48,0.12);
-  padding: 3px 9px;
-}
-
-.calidad-tier {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 300;
-  letter-spacing: 0.16em; text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.calidad-card:not(.featured) .calidad-tier { color: rgba(253,250,246,0.3); }
-.calidad-card.featured .calidad-tier { color: var(--amber-pale); }
-
-.calidad-name {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 22px; font-weight: 300;
-  letter-spacing: -0.01em;
-  margin-bottom: 10px;
-}
-.calidad-card:not(.featured) .calidad-name { color: rgba(253,250,246,0.5); }
-.calidad-card.featured .calidad-name { color: var(--white); }
-
-.calidad-desc {
-  font-size: 13px; font-weight: 300; line-height: 1.7;
-  margin-bottom: 14px;
-}
-.calidad-card:not(.featured) .calidad-desc { color: rgba(253,250,246,0.3); }
-.calidad-card.featured .calidad-desc { color: rgba(253,250,246,0.6); }
-
-.calidad-attrs {
-  display: flex; flex-direction: column; gap: 0;
-  border-top: 1px solid rgba(255,255,255,0.05);
-}
-.calidad-card.featured .calidad-attrs {
-  border-top-color: rgba(176,120,48,0.2);
-}
-
-.calidad-attr {
-  display: flex; justify-content: space-between;
-  padding: 7px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 300;
-  letter-spacing: 0.08em;
-}
-.calidad-card.featured .calidad-attr {
-  border-bottom-color: rgba(176,120,48,0.1);
-}
-.calidad-attr-key { color: rgba(253,250,246,0.25); text-transform: uppercase; letter-spacing: 0.12em; }
-.calidad-card:not(.featured) .calidad-attr-val { color: rgba(253,250,246,0.25); }
-.calidad-card.featured .calidad-attr-val { color: rgba(232,200,128,0.7); }
 
 /* ─── APLICACIONES ─── */
 #aplicaciones {
-  background: var(--cream);
-  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  padding: 120px 0;
 }
-
-.aplicaciones-header {
-  display: flex; align-items: flex-end;
-  justify-content: space-between; margin-bottom: 64px;
-}
-.aplicaciones-header h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 300; letter-spacing: -0.02em; line-height: 1.1;
-  color: var(--ink);
-}
-.aplicaciones-header p {
-  font-size: 14px; font-weight: 300;
-  color: var(--ink-mid); max-width: 280px;
-  text-align: right; line-height: 1.7;
-}
-
-/* Featured photos — editorial 3-col × 2-row grid */
-.aplicaciones-photos {
+.photo-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 280px 280px;
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border);
-  margin-bottom: 1px;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
 }
-/* tonic: left col, spans both rows (tall portrait) */
-.aplicaciones-photos .photo-card:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
-/* pour: centre top */
-.aplicaciones-photos .photo-card:nth-child(2) { grid-column: 2; grid-row: 1; }
-/* dirty: centre bottom */
-.aplicaciones-photos .photo-card:nth-child(3) { grid-column: 2; grid-row: 2; }
-/* latte: right col, spans both rows (tall portrait) */
-.aplicaciones-photos .photo-card:nth-child(4) { grid-column: 3; grid-row: 1 / 3; }
-
 .photo-card {
   position: relative; overflow: hidden;
-  height: 100%;
 }
 .photo-card img {
-  width: 100%; height: 100%;
-  object-fit: cover; display: block;
-  transition: transform 0.55s ease, filter 0.4s ease;
-  filter: brightness(0.85);
+  width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  transition: transform 0.5s ease;
 }
-.photo-card:hover img {
-  transform: scale(1.04);
-  filter: brightness(0.95);
-}
+.photo-card:hover img { transform: scale(1.04); }
 .photo-card-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(10,14,12,0.65) 0%, transparent 55%);
+  background: linear-gradient(to bottom, transparent 45%, rgba(10,14,12,0.72) 100%);
 }
 .photo-card-label {
   position: absolute; bottom: 0; left: 0; right: 0;
@@ -704,29 +474,34 @@ section { padding: 60px 180px 60px 56px; }
 }
 .photo-card-num {
   font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 300;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(253,250,246,0.4); margin-bottom: 6px;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.1em;
+  color: rgba(253,250,246,0.4); margin-bottom: 5px;
 }
 .photo-card-name {
   font-family: 'DM Sans', sans-serif;
-  font-size: 20px; font-weight: 300;
-  color: var(--white); letter-spacing: -0.01em;
-  margin-bottom: 6px;
+  font-size: 18px; font-weight: 400; letter-spacing: -0.01em;
+  color: var(--white); margin-bottom: 3px;
 }
 .photo-card-desc {
-  font-size: 13px; font-weight: 300; line-height: 1.6;
-  color: rgba(253,250,246,0.55);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; font-weight: 300; letter-spacing: 0.08em;
+  color: rgba(253,250,246,0.5);
 }
-
-/* Menu grid */
+/* placeholder when image is missing */
+.photo-card-placeholder {
+  width: 100%; aspect-ratio: 4/3;
+  background: var(--cream2); display: flex; align-items: center; justify-content: center;
+}
+.photo-card-placeholder span {
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--ink-light);
+}
 .menu-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 1px; background: var(--border);
-  border: 1px solid var(--border);
-  border-top: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  margin-top: 2px;
 }
-
 .menu-card {
   background: var(--white);
   padding: 32px 28px;
@@ -734,294 +509,160 @@ section { padding: 60px 180px 60px 56px; }
   transition: background 0.2s;
 }
 .menu-card:hover { background: var(--cream2); }
-
 .menu-card-num {
   font-family: 'DM Mono', monospace;
   font-size: 10px; font-weight: 300;
   color: var(--ink-light); letter-spacing: 0.1em;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .menu-card-name {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 17px; font-weight: 400;
-  color: var(--ink); letter-spacing: -0.01em;
-  margin-bottom: 10px;
+  font-size: 16px; font-weight: 400; letter-spacing: -0.01em;
+  color: var(--ink); margin-bottom: 8px;
 }
 .menu-card-desc {
-  font-size: 13px; font-weight: 300; line-height: 1.75;
-  color: var(--ink-mid); flex: 1; margin-bottom: 20px;
-}
-.menu-card-tags {
-  display: flex; flex-wrap: wrap; gap: 5px;
-}
-.menu-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 9px; font-weight: 300;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  color: var(--ink-light); background: var(--cream2);
-  padding: 3px 9px;
+  font-size: 13px; font-weight: 300; line-height: 1.7;
+  color: var(--ink-mid);
 }
 
-/* ─── CONTACT CTA ─── */
+/* ─── CONTACTO ─── */
 #contacto {
   background: var(--ink);
+  padding: 120px 0 180px;
   position: relative;
 }
-#contacto footer {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
+#contacto .section-heading {
+  color: var(--white);
+  border-bottom-color: rgba(255,255,255,0.15);
 }
-#contacto .section-label { color: var(--amber-pale); }
-#contacto .section-label::before { background: rgba(232,200,128,0.2); }
-
-.contacto-inner {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 80px; align-items: start;
+.contacto-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
 }
-
-.contacto-left h2 {
-  font-family: 'DM Sans', sans-serif;
-  font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 300; letter-spacing: -0.02em; line-height: 1.1;
+.contacto-info h3 {
+  font-size: clamp(24px, 2.5vw, 34px); font-weight: 300;
+  letter-spacing: -0.02em; line-height: 1.2;
   color: var(--white); margin-bottom: 20px;
 }
-.contacto-left h2 em {
-  font-style: italic; color: var(--amber-pale); font-weight: 300;
-}
-.contacto-left p {
+.contacto-info h3 em { font-style: italic; color: var(--amber-pale); font-weight: 300; }
+.contacto-info p {
   font-size: 15px; font-weight: 300; line-height: 1.8;
-  color: rgba(253,250,246,0.4);
+  color: rgba(253,250,246,0.4); margin-bottom: 32px;
 }
+.contacto-meta { display: flex; flex-direction: column; gap: 16px; }
+.contacto-meta-item { display: flex; flex-direction: column; gap: 4px; }
+.contacto-meta-label {
+  font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 300;
+  letter-spacing: 0.14em; text-transform: uppercase; color: rgba(253,250,246,0.3);
+}
+.contacto-meta-val { font-size: 14px; font-weight: 300; color: rgba(253,250,246,0.65); }
 
-.contacto-channels {
-  display: flex; flex-direction: column; gap: 1px;
-  border: 1px solid rgba(255,255,255,0.06);
-  margin-top: 20px;
-}
-.contacto-channel {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 12px 20px;
-  background: rgba(255,255,255,0.02);
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.contacto-channel:hover { background: rgba(255,255,255,0.05); }
-.contacto-channel-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 300;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(253,250,246,0.3);
-  margin-bottom: 4px;
-}
-.contacto-channel-value {
-  font-size: 14px; font-weight: 300;
-  color: rgba(253,250,246,0.65);
-}
-.contacto-channel-arrow {
-  font-size: 16px; color: var(--amber); opacity: 0.6;
-  transition: opacity 0.2s, transform 0.2s;
-}
-.contacto-channel:hover .contacto-channel-arrow {
-  opacity: 1; transform: translateX(4px);
-}
-
-.contacto-right {
-  display: flex; flex-direction: column; gap: 18px;
-  padding-top: 8px;
-}
-.contacto-info-item {
-  display: flex; flex-direction: column; gap: 6px;
-}
-.contacto-info-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 300;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(253,250,246,0.25);
-}
-.contacto-info-value {
-  font-size: 15px; font-weight: 300;
-  color: rgba(253,250,246,0.55); line-height: 1.6;
-}
-
-/* ── Contact form ── */
-.hisa-form { display: flex; flex-direction: column; gap: 14px; }
-.form-field { display: flex; flex-direction: column; gap: 6px; }
+/* Form */
+.hisa-form { display: flex; flex-direction: column; gap: 0; }
+.form-field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
 .form-label {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 300;
-  letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(253,250,246,0.3);
+  font-family: 'DM Mono', monospace; font-size: 9px; font-weight: 300;
+  letter-spacing: 0.14em; text-transform: uppercase; color: rgba(253,250,246,0.4);
 }
-.form-optional { color: rgba(253,250,246,0.15); }
 .form-input {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  color: rgba(253,250,246,0.8);
   font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 300;
-  padding: 10px 14px; outline: none; width: 100%;
+  color: var(--white); background: transparent;
+  border: none; border-bottom: 1px solid rgba(255,255,255,0.12);
+  padding: 10px 0; outline: none;
   transition: border-color 0.2s;
 }
-.form-input::placeholder { color: rgba(253,250,246,0.18); }
-.form-input:focus { border-color: rgba(176,120,48,0.55); }
-.form-textarea { resize: vertical; min-height: 76px; }
+.form-input::placeholder { color: rgba(253,250,246,0.2); }
+.form-input:focus { border-bottom-color: rgba(255,255,255,0.4); }
+.form-textarea { resize: none; min-height: 90px; }
 .form-submit {
-  background: var(--amber); color: var(--ink);
-  font-family: 'DM Mono', monospace; font-size: 11px;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  border: none; padding: 14px 24px;
-  cursor: pointer; text-align: left; margin-top: 4px;
-  transition: opacity 0.2s;
+  font-family: 'DM Mono', monospace; font-size: 11px; font-weight: 400;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--ink); background: var(--amber-pale);
+  border: none; padding: 16px; cursor: pointer;
+  transition: background 0.2s; margin-top: 8px;
 }
-.form-submit:hover { opacity: 0.82; }
-.form-submit:disabled { opacity: 0.38; cursor: not-allowed; }
+.form-submit:hover { background: var(--amber-soft); }
+.form-submit:disabled { opacity: 0.5; cursor: not-allowed; }
 .form-success {
-  display: none;
-  font-family: 'DM Mono', monospace; font-size: 11px;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--amber-pale); padding: 14px 0;
-}
-.form-divider {
-  display: flex; align-items: center; gap: 12px; margin: 2px 0;
-}
-.form-divider::before, .form-divider::after {
-  content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08);
-}
-.form-divider span {
-  font-family: 'DM Mono', monospace; font-size: 10px;
-  letter-spacing: 0.12em; text-transform: uppercase;
-  color: rgba(253,250,246,0.2);
+  display: none; padding: 16px; margin-top: 8px;
+  background: rgba(74,103,65,0.15); border: 1px solid rgba(74,103,65,0.3);
+  font-family: 'DM Mono', monospace; font-size: 11px; letter-spacing: 0.06em;
+  color: var(--amber-pale);
 }
 .form-whatsapp {
-  display: flex; align-items: center; gap: 10px;
-  background: rgba(37,211,102,0.08);
-  border: 1px solid rgba(37,211,102,0.2);
-  color: #4cd97b;
-  font-family: 'DM Mono', monospace; font-size: 11px;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 12px 16px; text-decoration: none;
-  transition: background 0.2s, border-color 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  margin-top: 16px; padding: 14px;
+  background: transparent; border: 1px solid rgba(255,255,255,0.1);
+  text-decoration: none; color: rgba(253,250,246,0.5);
+  font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
 }
-.form-whatsapp:hover { background: rgba(37,211,102,0.15); border-color: rgba(37,211,102,0.38); }
+.form-whatsapp:hover { border-color: #25D366; color: #25D366; }
+.form-or {
+  text-align: center; margin: 8px 0;
+  font-family: 'DM Mono', monospace; font-size: 9px;
+  letter-spacing: 0.1em; color: rgba(253,250,246,0.2);
+}
 
-/* ─── FOOTER ─── */
+/* Footer */
 footer {
-  background: var(--ink);
-  padding: 28px 56px;
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 24px 56px;
   display: flex; align-items: center; justify-content: space-between;
-  border-top: 1px solid rgba(255,255,255,0.05);
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 .footer-logo {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: rgba(253,250,246,0.3);
+  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 600;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  color: rgba(253,250,246,0.4); text-decoration: none;
   display: flex; align-items: center; gap: 8px;
-  text-decoration: none;
+  transition: color 0.2s;
 }
+.footer-logo:hover { color: var(--white); }
 .footer-logo span { color: var(--amber); }
 .footer-copy {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 300;
-  letter-spacing: 0.1em; color: rgba(253,250,246,0.18);
+  font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 300;
+  letter-spacing: 0.06em; color: rgba(253,250,246,0.2);
 }
 .footer-back {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; font-weight: 300;
-  letter-spacing: 0.1em;
-  color: rgba(253,250,246,0.25); text-decoration: none;
-  transition: color 0.2s;
+  font-family: 'DM Mono', monospace; font-size: 10px; font-weight: 300;
+  letter-spacing: 0.06em; color: rgba(253,250,246,0.3);
+  text-decoration: none; transition: color 0.2s;
 }
 .footer-back:hover { color: var(--amber-pale); }
 
-/* ─── ANIMATIONS ─── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-.reveal {
-  opacity: 0; transform: translateY(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* ─── FADE IN ANIMATION ─── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: none; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   nav { padding: 0 24px; }
-  nav .nav-links { display: none; }
-  section { padding: 72px 24px; }
-  .hero-content { padding: 0 24px 60px; }
-  .hero-badge { right: 24px; }
-  .producto-grid { grid-template-columns: 1fr; gap: 48px; }
-  .producto-image { aspect-ratio: 4/3; }
-  .dist-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .dist-header p { text-align: left; max-width: 100%; }
-  .dist-grid { grid-template-columns: 1fr; }
-  .calidad-grid { grid-template-columns: 1fr; }
-  .calidad-card.featured { margin: 0; }
-  .aplicaciones-header { flex-direction: column; align-items: flex-start; gap: 12px; }
-  .aplicaciones-header p { text-align: left; max-width: 100%; }
-  .aplicaciones-photos {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(4, 300px);
-  }
-  .aplicaciones-photos .photo-card:nth-child(1),
-  .aplicaciones-photos .photo-card:nth-child(2),
-  .aplicaciones-photos .photo-card:nth-child(3),
-  .aplicaciones-photos .photo-card:nth-child(4) {
-    grid-column: 1; grid-row: auto;
-  }
-  .photo-card { height: 300px; }
+  .nav-links { display: none; }
+  .section-inner { padding: 0 24px; }
+  .hero-content { padding: 0 24px 56px; }
+  .hero-badge { right: 24px; top: 72px; }
+  .hero-headline { font-size: clamp(36px, 9vw, 64px); }
+  .section-heading { font-size: clamp(36px, 8vw, 56px); margin-bottom: 48px; }
+  .map-layout,
+  .contacto-layout { grid-template-columns: 1fr; gap: 48px; }
+  .photo-grid { grid-template-columns: 1fr; gap: 2px; }
   .menu-grid { grid-template-columns: 1fr 1fr; }
-  /* contacto stays 2-col down to 640px */
-  footer { flex-direction: column; gap: 12px; padding: 20px 24px; text-align: center; }
-}
-@media (max-width: 640px) {
-  .contacto-inner { grid-template-columns: 1fr; gap: 40px; }
+  footer { padding: 20px 24px; }
+  #origen, #aplicaciones, #contacto { padding: 80px 0; }
 }
 @media (max-width: 600px) {
   .menu-grid { grid-template-columns: 1fr; }
-  .hero-headline { font-size: 38px; }
 }
 </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Product",
-      "name": "HISA Matcha",
-      "description": "Matcha japonés premium de Shizuoka, distribuido a cafeterías y food service en Argentina y América Latina.",
-      "brand": {
-        "@type": "Brand",
-        "name": "HISA Matcha"
-      },
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "areaServed": ["AR", "LATAM", "EU"],
-        "businessFunction": "https://schema.org/Wholesale"
-      }
-    },
-    {
-      "@type": "Organization",
-      "name": "Arlem Group",
-      "url": "https://arlemgroup.com",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+13392139573",
-        "contactType": "sales",
-        "availableLanguage": ["Spanish", "English", "French"]
-      }
-    }
-  ]
-}
-</script>
 </head>
 <body>
+
+<!-- ─── WHATSAPP FAB ─── -->
+<a href="https://wa.me/13392139573" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
 <!-- ─── NAV ─── -->
 <nav>
@@ -1036,10 +677,10 @@ footer {
   </a>
   <ul class="nav-links">
     <li class="nav-has-dropdown">
-      <a href="index.html#portfolio" data-i18n="nav.portfolio">Portfolio</a>
+      <a href="index.html#portfolio">Portfolio</a>
       <div class="nav-dropdown">
         <a href="hisa-matcha.html" class="nav-dropdown-item">
-          <span class="nav-dropdown-name">HISA Matcha</span>
+          <span class="nav-dropdown-name">Kura Matcha</span>
           <span class="nav-dropdown-status live">Live</span>
         </a>
         <div class="nav-dropdown-item disabled">
@@ -1052,225 +693,158 @@ footer {
         </div>
       </div>
     </li>
-    <li><a href="index.html#process" data-i18n="nav.approach">Approach</a></li>
-    <li><a href="#contacto" data-i18n="nav.contact">Contact</a></li>
+    <li><a href="index.html#process">Proceso</a></li>
+    <li><a href="#contacto">Contacto</a></li>
   </ul>
   <div class="nav-right">
     <div class="lang-toggle">
       <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
       <button class="lang-btn active" data-lang="es" onclick="setLang('es')">ES</button>
-      <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
     </div>
-    <a href="#contacto" class="nav-cta" data-i18n="nav.cta">Get in touch →</a>
+    <a href="#contacto" class="nav-cta" data-i18n="nav.cta">Consultar →</a>
   </div>
 </nav>
 
 <!-- ─── HERO ─── -->
-<section class="hero" id="hero" data-dark="true">
-  <div class="hero-bg"></div>
+<section id="hero">
   <div class="hero-overlay"></div>
 
   <div class="hero-badge">
-    <div class="hero-badge-num">HISA</div>
-    <div>Matcha + Japan + 2026</div>
+    <div class="hero-badge-num">Kura Matcha</div>
+    <div>Matcha · Japan · 2026</div>
   </div>
 
   <div class="hero-content">
-    <div class="hero-eyebrow">HISA Matcha &nbsp;·&nbsp; Shizuoka, Japan &nbsp;·&nbsp; Premium Grade</div>
+    <div class="hero-eyebrow">Kura Matcha &nbsp;·&nbsp; Shizuoka, Japón &nbsp;·&nbsp; Canal B2B</div>
     <h1 class="hero-headline" data-i18n="hero.headline">
       Matcha japonés.<br>
       Para la <em>cafetería</em><br>
       de verdad.
     </h1>
     <p class="hero-sub" data-i18n="hero.sub">
-      Matcha premium de Shizuoka, distribuido a cafeterías y operadores de food service en América Latina y Europa. Programas mayoristas y minoristas bajo la marca HISA.
+      Matcha premium de Shizuoka, distribuido a cafeterías y operadores de food service en América Latina y Europa.
     </p>
     <div class="hero-actions">
-      <a href="#contacto" class="btn-primary" data-i18n="hero.cta1">Consultar distribución</a>
-      <a href="#aplicaciones" class="btn-ghost" data-i18n="hero.cta2">Ver aplicaciones</a>
+      <a href="#origen" class="btn-primary" data-i18n="hero.cta1">Explorar blends →</a>
+      <a href="#contacto" class="btn-ghost" data-i18n="hero.cta2">Consultar</a>
     </div>
   </div>
 </section>
 
-<!-- ─── PRODUCTO ─── -->
-<section id="producto">
-  <div class="section-label reveal" data-i18n="sec.producto">Producto</div>
-  <div class="producto-grid">
-    <div class="producto-text reveal">
-      <h2 data-i18n="prod.h2">Maki Matcha.<br>Nuestro <em>SKU flagship</em>.</h2>
-      <p data-i18n="prod.desc">
-        Un matcha de Shizuoka con perfil vegetal pronunciado y final seco y estructurado. Notas de achicoria y nuez verde aportan profundidad, mientras que el meadow silvestre suma un carácter verde y vivo. Directo y expresivo — se mantiene perfectamente en leche y preparaciones culinarias.
-      </p>
-      <div class="specs-table">
-        <div class="spec-row">
-          <span class="spec-key">Cosecha</span>
-          <span class="spec-val">2da y 3era</span>
-        </div>
-        <div class="spec-row">
-          <span class="spec-key">Origen</span>
-          <span class="spec-val"><strong>Shizuoka, Japón</strong></span>
-        </div>
-        <div class="spec-row">
-          <span class="spec-key">Cultivar</span>
-          <span class="spec-val">Yabukita + Tsuyuhikari + Okumidori</span>
-        </div>
-        <div class="spec-row">
-          <span class="spec-key">Molienda</span>
-          <span class="spec-val">Molino mecánico</span>
-        </div>
-        <div class="spec-row">
-          <span class="spec-key">Textura</span>
-          <span class="spec-val">Granular</span>
-        </div>
-        <div class="spec-row">
-          <span class="spec-key">Ideal para</span>
-          <span class="spec-val"><strong>Latte + Horneado</strong></span>
-        </div>
-        <div class="spec-row">
-          <span class="spec-key">Grado</span>
-          <span class="spec-val"><strong>Premium</strong></span>
+<!-- ─── ORIGEN (MAPA) ─── -->
+<section id="origen">
+  <div class="section-inner">
+
+    <div class="section-heading reveal">
+      <span data-i18n="origen.title">Origen</span>
+      <svg class="section-heading-logo" viewBox="0 0 80 100" fill="none">
+        <rect x="26" y="0" width="28" height="20" rx="1" fill="currentColor"/>
+        <rect x="6" y="23" width="68" height="3" fill="currentColor"/>
+        <line x1="10" y1="26" x2="2"  y2="94" stroke="currentColor" stroke-width="5" stroke-linecap="square"/>
+        <line x1="21" y1="26" x2="17" y2="94" stroke="currentColor" stroke-width="5" stroke-linecap="square"/>
+        <line x1="32" y1="26" x2="32" y2="94" stroke="currentColor" stroke-width="5" stroke-linecap="square"/>
+        <line x1="40" y1="26" x2="40" y2="94" stroke="currentColor" stroke-width="5" stroke-linecap="square"/>
+        <line x1="48" y1="26" x2="48" y2="94" stroke="currentColor" stroke-width="5" stroke-linecap="square"/>
+        <line x1="59" y1="26" x2="63" y2="94" stroke="currentColor" stroke-width="5" stroke-linecap="square"/>
+        <line x1="70" y1="26" x2="78" y2="94" stroke="currentColor" stroke-width="5" stroke-linecap="square"/>
+      </svg>
+    </div>
+
+    <div class="map-layout reveal">
+      <!-- Japan SVG Map -->
+      <div class="japan-map-wrap">
+        <svg viewBox="0 0 460 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mapa de Japón con regiones de origen" style="overflow:visible">
+
+          <!-- ── Hokkaido ── -->
+          <path class="jp-island" d="
+            M 318,18 L 330,16 L 352,22 L 380,34 L 400,46 L 398,58 L 388,70 L 372,80
+            L 354,88 L 338,94 L 320,100 L 308,104 L 298,108 L 292,96 L 288,78
+            L 290,60 L 298,42 L 308,28 Z"/>
+
+          <!-- ── Honshu (full island, no region cutouts — regions drawn on top) ── -->
+          <path class="jp-island" d="
+            M 308,108 L 314,118 L 318,136 L 316,156 L 310,178 L 302,200
+            L 295,218 L 288,236 L 282,250 L 278,260 L 272,270
+            L 260,278 L 246,282 L 232,284 L 218,284 L 202,284
+            L 195,290 L 184,308 L 174,318 L 168,310 L 160,296 L 154,284
+            L 140,282 L 122,280 L 104,284 L 82,292 L 68,298
+            L 76,288 L 96,272 L 116,264 L 132,260 L 148,256 L 162,248
+            L 178,240 L 196,232 L 218,220 L 240,206 L 260,188
+            L 276,168 L 288,148 L 296,130 L 302,116 Z"/>
+
+          <!-- ── Shikoku ── -->
+          <path class="jp-island" d="
+            M 110,292 L 132,290 L 148,292 L 154,300 L 146,312 L 132,320
+            L 112,326 L 96,320 L 88,308 L 94,298 Z"/>
+
+          <!-- ── Kyushu ── -->
+          <path class="jp-island" d="
+            M 64,302 L 80,296 L 96,296 L 100,308 L 96,320
+            L 82,332 L 72,348 L 60,358 L 50,352 L 42,336
+            L 38,318 L 42,304 Z"/>
+
+          <!-- ── Kyushu south tip (Kagoshima area) ── -->
+          <!-- included in Kyushu above -->
+
+          <!-- ── Active Regions (drawn on top of islands) ── -->
+
+          <!-- Shizuoka -->
+          <path id="region-shizuoka"
+            class="jp-region has-data"
+            data-region="shizuoka"
+            aria-label="Shizuoka"
+            d="M 218,284 L 246,282 L 260,274 L 258,264 L 248,256
+               L 236,252 L 222,252 L 212,258 L 208,268 L 212,278 Z"/>
+          <circle class="jp-dot" cx="234" cy="266" r="4.5"/>
+          <text class="jp-label" x="234" y="245" style="font-size:8px">Shizuoka</text>
+
+          <!-- Kyoto / Uji -->
+          <path id="region-kyoto"
+            class="jp-region has-data"
+            data-region="kyoto"
+            aria-label="Kyoto / Uji"
+            d="M 175,260 L 202,258 L 208,268 L 200,278 L 178,278 L 168,270 Z"/>
+          <circle class="jp-dot" cx="189" cy="269" r="4"/>
+          <text class="jp-label" x="189" y="257" style="font-size:7px">Kyoto</text>
+
+          <!-- Kansai -->
+          <path id="region-kansai"
+            class="jp-region has-data"
+            data-region="kansai"
+            aria-label="Kansai"
+            d="M 140,268 L 168,262 L 175,270 L 168,282 L 152,284 L 136,280 L 130,272 Z"/>
+          <circle class="jp-dot" cx="153" cy="274" r="4"/>
+          <text class="jp-label" x="153" y="260" style="font-size:7px">Kansai</text>
+
+          <!-- Kagoshima (southern Kyushu) -->
+          <path id="region-kagoshima"
+            class="jp-region has-data"
+            data-region="kagoshima"
+            aria-label="Kagoshima"
+            d="M 44,334 L 74,330 L 78,342 L 70,356 L 58,360 L 46,352 L 40,342 Z"/>
+          <circle class="jp-dot" cx="59" cy="346" r="4"/>
+          <text class="jp-label" x="59" y="326" style="font-size:7px">Kagoshima</text>
+
+          <!-- Tokyo reference dot -->
+          <circle cx="278" cy="246" r="3" fill="none" stroke="#1A1714" stroke-width="1" pointer-events="none" opacity="0.4"/>
+          <text style="font-family:'DM Mono',monospace;font-size:6px;fill:#1A1714;opacity:0.4;text-anchor:start" x="284" y="249">Tokyo</text>
+
+        </svg>
+
+        <!-- Legend -->
+        <div class="map-soon-note" style="margin-top:20px; gap:8px;">
+          <svg width="8" height="8" viewBox="0 0 8 8"><rect width="8" height="8" fill="#4A6741"/></svg>
+          <span style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#1A1714;opacity:0.6">Shizuoka · Kyoto / Uji · Kansai · Kagoshima</span>
         </div>
       </div>
-    </div>
-    <div class="producto-image reveal">
-      <img src="images/hisa-powder.jpg" alt="Maki Matcha — polvo premium de Shizuoka">
-    </div>
-  </div>
-</section>
 
-<!-- ─── DISTRIBUCIÓN ─── -->
-<section id="distribucion">
-  <div class="section-label reveal" data-i18n="sec.dist">Distribución</div>
-  <div class="dist-header reveal">
-    <h2 data-i18n="dist.h2">Dos modelos.<br>Un solo estándar.</h2>
-    <p data-i18n="dist.sub">Programas diseñados para operadores de distintas escalas, desde cadenas hasta cafeterías independientes.</p>
-  </div>
-  <div class="dist-grid reveal">
+      <!-- Blend Panel -->
+      <div class="blend-panel" id="blend-panel">
+        <p class="blend-panel-hint" id="blend-hint" data-i18n="blend.hint">Seleccioná una región en el mapa</p>
 
-    <!-- Mayorista -->
-    <div class="dist-card">
-      <div class="dist-card-num">01</div>
-      <div class="dist-card-title" data-i18n="dist.01.title">Mayorista</div>
-      <div class="dist-card-subtitle" data-i18n="dist.01.sub">Wholesale + B2B</div>
-      <p class="dist-card-desc" data-i18n="dist.01.desc">
-        Programa de suministro para cadenas de cafeterías, operadores de food service, marcas propias y distribuidores. Volúmenes a escala con packaging neutral o co-branded bajo acuerdo.
-      </p>
-      <div class="dist-features">
-        <div class="dist-feature" data-i18n="dist.01.f1">Suministro a granel en bolsas de 1kg, 5kg y 10kg</div>
-        <div class="dist-feature" data-i18n="dist.01.f2">Programas de marca propia (private label)</div>
-        <div class="dist-feature" data-i18n="dist.01.f3">Co-branding disponible bajo acuerdo</div>
-        <div class="dist-feature" data-i18n="dist.01.f4">Entrega directa a cadena de suministro</div>
-        <div class="dist-feature" data-i18n="dist.01.f5">Foco: LATAM y Europa</div>
-      </div>
-    </div>
-
-    <!-- Minorista -->
-    <div class="dist-card">
-      <div class="dist-card-num">02</div>
-      <div class="dist-card-title" data-i18n="dist.02.title">Minorista</div>
-      <div class="dist-card-subtitle" data-i18n="dist.02.sub">Retail + Specialty</div>
-      <p class="dist-card-desc" data-i18n="dist.02.desc">
-        Programa para cafeterías independientes y retail de especialidad. Pedidos de menor volumen con packaging de marca HISA Matcha, listo para usar en barra o reventa.
-      </p>
-      <div class="dist-features">
-        <div class="dist-feature" data-i18n="dist.02.f1">Presentaciones de 30g y 50g bajo marca HISA</div>
-        <div class="dist-feature" data-i18n="dist.02.f2">Packaging terminado, listo para barra o góndola</div>
-        <div class="dist-feature" data-i18n="dist.02.f3">Soporte de producto y guía de preparación</div>
-        <div class="dist-feature" data-i18n="dist.02.f4">Pedidos recurrentes con logística simplificada</div>
-        <div class="dist-feature" data-i18n="dist.02.f5">Ideal para specialty cafés y tiendas gourmet</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ─── CALIDAD ─── -->
-<section id="calidad" data-dark="true">
-  <div class="section-label reveal" data-i18n="sec.calidad">Calidad</div>
-  <div class="calidad-header reveal">
-    <h2 data-i18n="cal.h2">Tres grados.<br>Nosotros vivimos en el del medio.</h2>
-    <p data-i18n="cal.sub">El matcha se clasifica según la calidad de la hoja, el proceso de cultivo y el perfil de sabor resultante. HISA Matcha trabaja exclusivamente con grado premium.</p>
-  </div>
-  <div class="calidad-grid reveal">
-
-    <!-- Culinario -->
-    <div class="calidad-card">
-      <div class="calidad-tier" data-i18n="cal.01.tier">Grado I</div>
-      <div class="calidad-name" data-i18n="cal.01.name">Culinario</div>
-      <p class="calidad-desc" data-i18n="cal.01.desc">
-        Hojas de cosechas tardías, molienda gruesa. Color verde menos intenso, sabor más amargo y astringente. Diseñado para cocina, horneado a gran escala y bebidas donde prima el rendimiento sobre el sabor.
-      </p>
-      <div class="calidad-attrs">
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.color">Color</span>
-          <span class="calidad-attr-val" data-i18n="cal.01.color">Verde oliva</span>
-        </div>
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.flavor">Sabor</span>
-          <span class="calidad-attr-val" data-i18n="cal.01.flavor">Amargo, astringente</span>
-        </div>
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.use">Uso</span>
-          <span class="calidad-attr-val" data-i18n="cal.01.use">Cocina industrial</span>
-        </div>
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.price">Precio relativo</span>
-          <span class="calidad-attr-val" data-i18n="cal.01.price">Bajo</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Premium — featured -->
-    <div class="calidad-card featured">
-      <div class="calidad-badge" data-i18n="cal.badge">Nuestro grado</div>
-      <div class="calidad-tier" data-i18n="cal.02.tier">Grado II</div>
-      <div class="calidad-name" data-i18n="cal.02.name">Premium</div>
-      <p class="calidad-desc" data-i18n="cal.02.desc">
-        Hojas de primera y segunda cosecha, molienda fina. Color verde vibrante, sabor equilibrado con dulzura natural y cuerpo. Perfecto para lattes, bebidas de café de especialidad y horneado de calidad.
-      </p>
-      <div class="calidad-attrs">
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.color">Color</span>
-          <span class="calidad-attr-val" data-i18n="cal.02.color">Verde intenso</span>
-        </div>
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.flavor">Sabor</span>
-          <span class="calidad-attr-val" data-i18n="cal.02.flavor">Equilibrado, dulce</span>
-        </div>
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.use">Uso</span>
-          <span class="calidad-attr-val" data-i18n="cal.02.use">Cafetería, latte, baked</span>
-        </div>
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.price">Precio relativo</span>
-          <span class="calidad-attr-val" data-i18n="cal.02.price">Medio-alto</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Ceremonial -->
-    <div class="calidad-card">
-      <div class="calidad-tier" data-i18n="cal.03.tier">Grado III</div>
-      <div class="calidad-name" data-i18n="cal.03.name">Ceremonial</div>
-      <p class="calidad-desc" data-i18n="cal.03.desc">
-        Primera cosecha únicamente, hojas sombreadas 3–4 semanas. Molienda ultrafina en piedra de granito. Perfil delicado, umami pronunciado. Pensado para consumo puro — agua caliente, sin leche.
-      </p>
-      <div class="calidad-attrs">
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.color">Color</span>
-          <span class="calidad-attr-val" data-i18n="cal.03.color">Verde jade brillante</span>
-        </div>
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.flavor">Sabor</span>
-          <span class="calidad-attr-val" data-i18n="cal.03.flavor">Umami, delicado</span>
-        </div>
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.use">Uso</span>
-          <span class="calidad-attr-val" data-i18n="cal.03.use">Consumo tradicional</span>
-        </div>
-        <div class="calidad-attr">
-          <span class="calidad-attr-key" data-i18n="cal.attr.price">Precio relativo</span>
-          <span class="calidad-attr-val" data-i18n="cal.03.price">Alto</span>
+        <div id="blend-content" style="display:none">
+          <div class="blend-region-name" id="blend-region-label"></div>
+          <div class="blend-list" id="blend-list"></div>
         </div>
       </div>
     </div>
@@ -1280,163 +854,151 @@ footer {
 
 <!-- ─── APLICACIONES ─── -->
 <section id="aplicaciones">
-  <div class="section-label reveal" data-i18n="sec.apps">Aplicaciones</div>
-  <div class="aplicaciones-header reveal">
-    <h2 data-i18n="apps.h2">Lo que podés hacer<br>con HISA.</h2>
-    <p data-i18n="apps.sub">Un portfolio de preparaciones para cafeterías. Cada una diseñada para mostrar el matcha premium en su mejor versión.</p>
-  </div>
+  <div class="section-inner">
 
-  <!-- Featured photos — 4-image editorial grid -->
-  <div class="aplicaciones-photos reveal">
-    <!-- 01 Latte: left col, tall (spans 2 rows) -->
-    <div class="photo-card">
-      <img src="images/hisa-latte.jpg" alt="Matcha Latte con latte art">
-      <div class="photo-card-overlay"></div>
-      <div class="photo-card-label">
-        <div class="photo-card-num">01</div>
-        <div class="photo-card-name">Matcha Latte</div>
-        <div class="photo-card-desc">Matcha + Steamed Milk</div>
+    <div class="section-heading reveal" data-i18n="apps.title">Aplicaciones</div>
+
+    <!-- Photo card grid (4 images) -->
+    <div class="photo-grid reveal">
+      <div class="photo-card">
+        <img src="images/hisa-latte.jpg" alt="Matcha Latte" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-card-placeholder" style="display:none"><span>Foto próximamente</span></div>
+        <div class="photo-card-overlay"></div>
+        <div class="photo-card-label">
+          <div class="photo-card-num">01</div>
+          <div class="photo-card-name">Matcha Latte</div>
+          <div class="photo-card-desc">Matcha + Steamed Milk</div>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="images/hisa-pour.jpg" alt="Iced Matcha Latte" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-card-placeholder" style="display:none"><span>Foto próximamente</span></div>
+        <div class="photo-card-overlay"></div>
+        <div class="photo-card-label">
+          <div class="photo-card-num">02</div>
+          <div class="photo-card-name">Iced Matcha Latte</div>
+          <div class="photo-card-desc">Ice + Matcha + Milk</div>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="hisa-dirty.jpg" alt="Dirty Matcha" loading="lazy">
+        <div class="photo-card-overlay"></div>
+        <div class="photo-card-label">
+          <div class="photo-card-num">03</div>
+          <div class="photo-card-name">Dirty Matcha</div>
+          <div class="photo-card-desc">Espresso + Matcha + Milk</div>
+        </div>
+      </div>
+      <div class="photo-card">
+        <img src="hisa-tonic.jpg" alt="Matcha Tonic" loading="lazy">
+        <div class="photo-card-overlay"></div>
+        <div class="photo-card-label">
+          <div class="photo-card-num">04</div>
+          <div class="photo-card-name">Matcha Tonic</div>
+          <div class="photo-card-desc">Matcha + Tonic + Ice + Citrus</div>
+        </div>
       </div>
     </div>
-    <!-- 02 Pour: centre top -->
-    <div class="photo-card">
-      <img src="images/hisa-pour.jpg" alt="Iced Matcha Latte — pour over milk">
-      <div class="photo-card-overlay"></div>
-      <div class="photo-card-label">
-        <div class="photo-card-num">02</div>
-        <div class="photo-card-name">Iced Matcha Latte</div>
-        <div class="photo-card-desc">Ice + Matcha + Milk</div>
+
+    <!-- Menu text cards -->
+    <div class="menu-grid reveal">
+      <div class="menu-card">
+        <div class="menu-card-num">05</div>
+        <div class="menu-card-name">Matcha Smoothie</div>
+        <p class="menu-card-desc">Matcha + Banana + Oat Milk + Ice</p>
       </div>
-    </div>
-    <!-- 03 Dirty: centre bottom -->
-    <div class="photo-card">
-      <img src="images/hisa-dirty.jpg" alt="Dirty Matcha — espresso over matcha">
-      <div class="photo-card-overlay"></div>
-      <div class="photo-card-label">
-        <div class="photo-card-num">03</div>
-        <div class="photo-card-name">Dirty Matcha</div>
-        <div class="photo-card-desc">Espresso + Matcha + Milk</div>
+      <div class="menu-card">
+        <div class="menu-card-num">06</div>
+        <div class="menu-card-name">Matcha Cold Brew</div>
+        <p class="menu-card-desc">Matcha + Cold Water</p>
       </div>
-    </div>
-    <!-- 04 Tonic: right col, tall (spans 2 rows) -->
-    <div class="photo-card">
-      <img src="images/hisa-tonic.jpg" alt="Matcha Tonic — martini glass">
-      <div class="photo-card-overlay"></div>
-      <div class="photo-card-label">
-        <div class="photo-card-num">04</div>
-        <div class="photo-card-name">Matcha Tonic</div>
-        <div class="photo-card-desc">Matcha + Tonic Water + Ice + Citrus</div>
+      <div class="menu-card">
+        <div class="menu-card-num">07</div>
+        <div class="menu-card-name">Protein Foam Matcha</div>
+        <p class="menu-card-desc">Matcha + Oat Milk + Protein Foam</p>
       </div>
-    </div>
-  </div>
-
-  <!-- Menu grid -->
-  <div class="menu-grid reveal">
-
-    <!-- Drinks -->
-    <div class="menu-card">
-      <div class="menu-card-num">05</div>
-      <div class="menu-card-name">Matcha Smoothie</div>
-      <p class="menu-card-desc">Matcha + Banana + Oat Milk + Ice</p>
-    </div>
-
-    <div class="menu-card">
-      <div class="menu-card-num">06</div>
-      <div class="menu-card-name">Matcha Cold Brew</div>
-      <p class="menu-card-desc">Matcha + Cold Water</p>
-    </div>
-
-    <div class="menu-card">
-      <div class="menu-card-num">07</div>
-      <div class="menu-card-name">Protein Foam Matcha</div>
-      <p class="menu-card-desc">Matcha + Oat Milk + Protein Foam</p>
-    </div>
-
-    <div class="menu-card">
-      <div class="menu-card-num">08</div>
-      <div class="menu-card-name">Strawberry Matcha</div>
-      <p class="menu-card-desc">Matcha + Strawberry + Milk</p>
-    </div>
-
-    <!-- Food -->
-    <div class="menu-card">
-      <div class="menu-card-num">09</div>
-      <div class="menu-card-name">Matcha Baked Goods</div>
-      <p class="menu-card-desc">Matcha + Pastry</p>
-    </div>
-
-    <div class="menu-card">
-      <div class="menu-card-num">10</div>
-      <div class="menu-card-name">Soft Serve</div>
-      <p class="menu-card-desc">Matcha + Ice Cream Base</p>
+      <div class="menu-card">
+        <div class="menu-card-num">08</div>
+        <div class="menu-card-name">Strawberry Matcha</div>
+        <p class="menu-card-desc">Matcha + Strawberry + Milk</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-num">09</div>
+        <div class="menu-card-name">Matcha Baked Goods</div>
+        <p class="menu-card-desc">Matcha + Pastry</p>
+      </div>
+      <div class="menu-card">
+        <div class="menu-card-num">10</div>
+        <div class="menu-card-name">Soft Serve</div>
+        <p class="menu-card-desc">Matcha + Ice Cream Base</p>
+      </div>
     </div>
 
   </div>
 </section>
 
 <!-- ─── CONTACTO ─── -->
-<section id="contacto" data-dark="true">
-  <div class="section-label reveal" data-i18n="sec.contacto">Contacto</div>
-  <div class="contacto-inner reveal">
+<section id="contacto">
+  <div class="section-inner">
 
-    <div class="contacto-left">
-      <h2 data-i18n="con.h2">¿Querés distribuir<br><em>HISA Matcha</em>?</h2>
-      <p data-i18n="con.sub">Ya sea para una cafetería, una cadena o distribución regional — escribinos y armamos el programa que mejor se adapte a tu operación.</p>
+    <div class="section-heading reveal">
+      <span data-i18n="con.title">Contacto</span>
+    </div>
 
-      <!-- Formspree: sign up at formspree.io, create a form for seanc@arlemgroup.com, then replace FORM_ID below -->
+    <div class="contacto-layout reveal">
+
+      <div class="contacto-info">
+        <h3 data-i18n="con.h3">¿Querés distribuir<br><em>Kura Matcha</em>?</h3>
+        <p data-i18n="con.sub">Para cafeterías, cadenas o distribución regional. Escribinos y armamos el programa que mejor se adapte a tu operación.</p>
+        <div class="contacto-meta">
+          <div class="contacto-meta-item">
+            <span class="contacto-meta-label" data-i18n="con.meta.origin.label">Origen</span>
+            <span class="contacto-meta-val">Shizuoka, Japón</span>
+          </div>
+          <div class="contacto-meta-item">
+            <span class="contacto-meta-label" data-i18n="con.meta.markets.label">Mercados</span>
+            <span class="contacto-meta-val">América Latina · Europa</span>
+          </div>
+          <div class="contacto-meta-item">
+            <span class="contacto-meta-label" data-i18n="con.meta.op.label">Operado por</span>
+            <span class="contacto-meta-val">Arlem Group — Miami, FL</span>
+          </div>
+        </div>
+      </div>
+
       <form id="contacto-form" class="hisa-form" action="https://formspree.io/f/FORM_ID" method="POST">
-        <input type="hidden" name="_subject" value="Consulta HISA Matcha">
+        <input type="hidden" name="_subject" value="Consulta Kura Matcha">
+        <input type="hidden" name="blend" id="form-blend" value="">
 
         <div class="form-field">
-          <label class="form-label" for="form-name">Nombre</label>
-          <input class="form-input" type="text" id="form-name" name="name" placeholder="Tu nombre">
+          <label class="form-label" for="form-name" data-i18n="form.name">Nombre</label>
+          <input class="form-input" type="text" id="form-name" name="name" placeholder="Tu nombre" required>
         </div>
-
         <div class="form-field">
-          <label class="form-label" for="form-contact">Email o teléfono <span class="form-optional">*</span></label>
-          <input class="form-input" type="text" id="form-contact" name="contact" placeholder="email@ejemplo.com  ó  +54 9 11 ..." required>
+          <label class="form-label" for="form-empresa" data-i18n="form.empresa">Empresa / Cafetería</label>
+          <input class="form-input" type="text" id="form-empresa" name="empresa" placeholder="Nombre de tu empresa">
         </div>
-
         <div class="form-field">
-          <label class="form-label" for="form-msg">Mensaje <span class="form-optional">(opcional)</span></label>
+          <label class="form-label" for="form-email">Email</label>
+          <input class="form-input" type="email" id="form-email" name="email" placeholder="tu@email.com" required>
+        </div>
+        <div class="form-field">
+          <label class="form-label" for="form-msg" data-i18n="form.msg">Mensaje</label>
           <textarea class="form-input form-textarea" id="form-msg" name="message" placeholder="¿En qué estás pensando?"></textarea>
         </div>
 
-        <button type="submit" class="form-submit">Enviar consulta →</button>
-        <div class="form-success" id="form-success">✓ Mensaje enviado — te contactamos pronto.</div>
-
-        <div class="form-divider"><span>o</span></div>
-
+        <button type="submit" class="form-submit" data-i18n="form.submit">Enviar consulta →</button>
+        <div class="form-success" id="form-success" data-i18n="form.success">✓ Mensaje enviado — te contactamos pronto.</div>
+        <div class="form-or" data-i18n="form.or">o</div>
         <a href="https://wa.me/13392139573" target="_blank" class="form-whatsapp">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-          Contactar por WhatsApp
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span data-i18n="form.wa">Contactar por WhatsApp</span>
         </a>
       </form>
-    </div>
 
-    <div class="contacto-right">
-      <div class="contacto-info-item">
-        <div class="contacto-info-label">Mercados activos</div>
-        <div class="contacto-info-value">América Latina + Europa</div>
-      </div>
-      <div class="contacto-info-item">
-        <div class="contacto-info-label">Origen del producto</div>
-        <div class="contacto-info-value">Shizuoka, Japón</div>
-      </div>
-      <div class="contacto-info-item">
-        <div class="contacto-info-label">Programas disponibles</div>
-        <div class="contacto-info-value">Mayorista + Minorista<br>Private Label + Co-branding</div>
-      </div>
-      <div class="contacto-info-item">
-        <div class="contacto-info-label">Operado por</div>
-        <div class="contacto-info-value">Arlem Group — Miami, FL</div>
-      </div>
     </div>
-
   </div>
-  <!-- Footer tucked inside last section so it's reachable within the snap point -->
+
   <footer>
     <a href="index.html" class="footer-logo">
       <svg width="12" height="14" viewBox="0 0 14 16" fill="none">
@@ -1445,7 +1007,7 @@ footer {
       </svg>
       Arlem<span>.</span>
     </a>
-    <span class="footer-copy">© 2026 Arlem Group + HISA Matcha</span>
+    <span class="footer-copy">© 2026 Arlem Group + Kura Matcha</span>
     <a href="index.html" class="footer-back">← Volver al grupo</a>
   </footer>
 </section>
@@ -1454,195 +1016,267 @@ footer {
 // ─── i18n ───
 const i18n = {
   es: {
-    "nav.portfolio":"Portfolio","nav.approach":"Proceso","nav.contact":"Contacto","nav.cta":"Hablar →",
-    "nav.producto":"Producto","nav.dist":"Distribución","nav.calidad":"Calidad","nav.apps":"Aplicaciones","nav.contacto":"Contacto",
-    "hero.headline":"Matcha japonés.<br>Para la <em>cafetería</em><br>de verdad.",
-    "hero.sub":"Matcha premium de Shizuoka, distribuido a cafeterías y operadores de food service en América Latina y Europa. Programas mayoristas y minoristas bajo la marca HISA.",
-    "hero.cta1":"Consultar distribución","hero.cta2":"Ver aplicaciones",
-    "sec.producto":"Producto","sec.dist":"Distribución","sec.calidad":"Calidad","sec.apps":"Aplicaciones","sec.contacto":"Contacto",
-    "prod.h2":"Maki Matcha.<br>Nuestro <em>SKU flagship</em>.",
-    "prod.desc":"Un matcha de Shizuoka con perfil vegetal pronunciado y final seco y estructurado. Notas de achicoria y nuez verde aportan profundidad, mientras que el meadow silvestre suma un carácter verde y vivo. Directo y expresivo — se mantiene perfectamente en leche y preparaciones culinarias.",
-    "dist.h2":"Dos modelos.<br>Un solo estándar.",
-    "dist.sub":"Programas diseñados para operadores de distintas escalas, desde cadenas hasta cafeterías independientes.",
-    "cal.h2":"Tres grados.<br>Nosotros vivimos en el del medio.",
-    "cal.sub":"El matcha se clasifica según la calidad de la hoja, el proceso de cultivo y el perfil de sabor resultante. HISA Matcha trabaja exclusivamente con grado premium.",
-    "apps.h2":"Lo que podés hacer<br>con HISA.",
-    "apps.sub":"Un portfolio de preparaciones para cafeterías. Cada una diseñada para mostrar el matcha premium en su mejor versión.",
-    "con.h2":"¿Querés distribuir<br><em>HISA Matcha</em>?",
-    "con.sub":"Ya sea para una cafetería, una cadena o distribución regional — escribinos y armamos el programa que mejor se adapte a tu operación.",
-    "dist.01.title":"Mayorista","dist.01.sub":"Wholesale + B2B",
-    "dist.01.desc":"Programa de suministro para cadenas de cafeterías, operadores de food service, marcas propias y distribuidores. Volúmenes a escala con packaging neutral o co-branded bajo acuerdo.",
-    "dist.01.f1":"Suministro a granel en bolsas de 1kg, 5kg y 10kg","dist.01.f2":"Programas de marca propia (private label)","dist.01.f3":"Co-branding disponible bajo acuerdo","dist.01.f4":"Entrega directa a cadena de suministro","dist.01.f5":"Foco: LATAM y Europa",
-    "dist.02.title":"Minorista","dist.02.sub":"Retail + Specialty",
-    "dist.02.desc":"Programa para cafeterías independientes y retail de especialidad. Pedidos de menor volumen con packaging de marca HISA Matcha, listo para usar en barra o reventa.",
-    "dist.02.f1":"Presentaciones de 30g y 50g bajo marca HISA","dist.02.f2":"Packaging terminado, listo para barra o góndola","dist.02.f3":"Soporte de producto y guía de preparación","dist.02.f4":"Pedidos recurrentes con logística simplificada","dist.02.f5":"Ideal para specialty cafés y tiendas gourmet",
-    "cal.badge":"Nuestro grado",
-    "cal.01.tier":"Grado I","cal.01.name":"Culinario","cal.01.desc":"Hojas de cosechas tardías, molienda gruesa. Color verde menos intenso, sabor más amargo y astringente. Diseñado para cocina, horneado a gran escala y bebidas donde prima el rendimiento sobre el sabor.","cal.01.color":"Verde oliva","cal.01.flavor":"Amargo, astringente","cal.01.use":"Cocina industrial","cal.01.price":"Bajo",
-    "cal.02.tier":"Grado II","cal.02.name":"Premium","cal.02.desc":"Hojas de primera y segunda cosecha, molienda fina. Color verde vibrante, sabor equilibrado con dulzura natural y cuerpo. Perfecto para lattes, bebidas de café de especialidad y horneado de calidad.","cal.02.color":"Verde intenso","cal.02.flavor":"Equilibrado, dulce","cal.02.use":"Cafetería, latte, baked","cal.02.price":"Medio-alto",
-    "cal.03.tier":"Grado III","cal.03.name":"Ceremonial","cal.03.desc":"Primera cosecha únicamente, hojas sombreadas 3–4 semanas. Molienda ultrafina en piedra de granito. Perfil delicado, umami pronunciado. Pensado para consumo puro — agua caliente, sin leche.","cal.03.color":"Verde jade brillante","cal.03.flavor":"Umami, delicado","cal.03.use":"Consumo tradicional","cal.03.price":"Alto",
-    "cal.attr.color":"Color","cal.attr.flavor":"Sabor","cal.attr.use":"Uso","cal.attr.price":"Precio relativo"
+    "nav.cta": "Consultar →",
+    "hero.headline": "Matcha japonés.<br>Para la <em>cafetería</em><br>de verdad.",
+    "hero.sub": "Matcha premium de Shizuoka, distribuido a cafeterías y operadores de food service en América Latina y Europa.",
+    "hero.cta1": "Explorar blends →",
+    "hero.cta2": "Consultar",
+    "origen.title": "Origen",
+    "blend.hint": "Seleccioná una región en el mapa",
+    "apps.title": "Aplicaciones",
+    "con.title": "Contacto",
+    "con.h3": "¿Querés distribuir<br><em>Kura Matcha</em>?",
+    "con.sub": "Para cafeterías, cadenas o distribución regional. Escribinos y armamos el programa que mejor se adapte a tu operación.",
+    "con.meta.origin.label": "Origen",
+    "con.meta.markets.label": "Mercados",
+    "con.meta.op.label": "Operado por",
+    "form.name": "Nombre",
+    "form.empresa": "Empresa / Cafetería",
+    "form.msg": "Mensaje",
+    "form.submit": "Enviar consulta →",
+    "form.success": "✓ Mensaje enviado — te contactamos pronto.",
+    "form.or": "o",
+    "form.wa": "Contactar por WhatsApp",
   },
   en: {
-    "nav.portfolio":"Portfolio","nav.approach":"Approach","nav.contact":"Contact","nav.cta":"Get in touch →",
-    "nav.producto":"Product","nav.dist":"Distribution","nav.calidad":"Quality","nav.apps":"Applications","nav.contacto":"Contact",
-    "hero.headline":"Japanese matcha.<br>For the real<br><em>craft café</em>.",
-    "hero.sub":"Premium matcha from Shizuoka, distributed to cafés and food service operators across Latin America and Europe. Wholesale and retail programs under the HISA brand.",
-    "hero.cta1":"Inquire about distribution","hero.cta2":"See applications",
-    "sec.producto":"Product","sec.dist":"Distribution","sec.calidad":"Quality","sec.apps":"Applications","sec.contacto":"Contact",
-    "prod.h2":"Maki Matcha.<br>Our <em>flagship SKU</em>.",
-    "prod.desc":"A Shizuoka matcha with a bold vegetal profile and structured, dry finish. Notes of chicory and green walnut bring depth and slight bitterness, while wild meadow adds a fresh, untamed green character. Direct and expressive — it holds its presence beautifully in milk and culinary preparations.",
-    "dist.h2":"Two models.<br>One standard.",
-    "dist.sub":"Programs designed for operators of different scales, from chains to independent cafés.",
-    "cal.h2":"Three grades.<br>We live in the middle one.",
-    "cal.sub":"Matcha is classified by leaf quality, cultivation process, and the resulting flavor profile. HISA Matcha works exclusively with premium grade.",
-    "apps.h2":"What you can make<br>with HISA.",
-    "apps.sub":"A portfolio of preparations for cafés. Each one designed to show premium matcha at its best.",
-    "con.h2":"Want to distribute<br><em>HISA Matcha</em>?",
-    "con.sub":"Whether for a single café, a chain, or regional distribution — reach out and we'll put together the right program for your operation.",
-    "dist.01.title":"Wholesale","dist.01.sub":"Wholesale + B2B",
-    "dist.01.desc":"Supply program for café chains, food service operators, private labels and distributors. Scale volumes with neutral or co-branded packaging by agreement.",
-    "dist.01.f1":"Bulk supply in 1kg, 5kg and 10kg bags","dist.01.f2":"Private label programs","dist.01.f3":"Co-branding available by agreement","dist.01.f4":"Direct delivery to supply chain","dist.01.f5":"Focus: LATAM and Europe",
-    "dist.02.title":"Retail","dist.02.sub":"Retail + Specialty",
-    "dist.02.desc":"Program for independent cafés and specialty retail. Lower-volume orders with HISA Matcha branded packaging, ready for bar use or resale.",
-    "dist.02.f1":"30g and 50g formats under the HISA brand","dist.02.f2":"Finished packaging, ready for bar or shelf","dist.02.f3":"Product support and preparation guide","dist.02.f4":"Recurring orders with simplified logistics","dist.02.f5":"Ideal for specialty cafés and gourmet stores",
-    "cal.badge":"Our grade",
-    "cal.01.tier":"Grade I","cal.01.name":"Culinary","cal.01.desc":"Late-harvest leaves, coarse grind. Less intense green color, more bitter and astringent flavor. Designed for cooking, large-scale baking and drinks where yield takes priority over taste.","cal.01.color":"Olive green","cal.01.flavor":"Bitter, astringent","cal.01.use":"Industrial cooking","cal.01.price":"Low",
-    "cal.02.tier":"Grade II","cal.02.name":"Premium","cal.02.desc":"First and second harvest leaves, fine grind. Vibrant green color, balanced flavor with natural sweetness and body. Perfect for lattes, specialty café drinks and quality baking.","cal.02.color":"Deep green","cal.02.flavor":"Balanced, sweet","cal.02.use":"Café, latte, baked goods","cal.02.price":"Mid-high",
-    "cal.03.tier":"Grade III","cal.03.name":"Ceremonial","cal.03.desc":"First harvest only, shade-grown leaves for 3–4 weeks. Ultra-fine stone-ground. Delicate profile, pronounced umami. Intended for pure consumption — hot water, no milk.","cal.03.color":"Bright jade green","cal.03.flavor":"Umami, delicate","cal.03.use":"Traditional consumption","cal.03.price":"High",
-    "cal.attr.color":"Color","cal.attr.flavor":"Flavor","cal.attr.use":"Use","cal.attr.price":"Relative price"
-  },
-  fr: {
-    "nav.portfolio":"Portfolio","nav.approach":"Processus","nav.contact":"Contact","nav.cta":"Nous contacter →",
-    "nav.producto":"Produit","nav.dist":"Distribution","nav.calidad":"Qualité","nav.apps":"Applications","nav.contacto":"Contact",
-    "hero.headline":"Matcha japonais.<br>Pour le vrai<br><em>café de spécialité</em>.",
-    "hero.sub":"Matcha premium de Shizuoka, distribué aux cafés et opérateurs de restauration en Amérique latine et en Europe. Programmes en gros et au détail sous la marque HISA.",
-    "hero.cta1":"Demande de distribution","hero.cta2":"Voir les applications",
-    "sec.producto":"Produit","sec.dist":"Distribution","sec.calidad":"Qualité","sec.apps":"Applications","sec.contacto":"Contact",
-    "prod.h2":"Maki Matcha.<br>Notre <em>SKU phare</em>.",
-    "prod.desc":"Un matcha de Shizuoka au profil végétal prononcé et à la finale sèche et structurée. Des notes de chicorée et de noix verte apportent de la profondeur, tandis que le meadow sauvage ajoute un caractère vert et vivant. Direct et expressif — il se tient parfaitement dans le lait et les préparations culinaires.",
-    "dist.h2":"Deux modèles.<br>Un seul standard.",
-    "dist.sub":"Des programmes conçus pour des opérateurs de différentes échelles, des chaînes aux cafés indépendants.",
-    "cal.h2":"Trois grades.<br>Nous vivons dans celui du milieu.",
-    "cal.sub":"Le matcha est classifié selon la qualité de la feuille, le processus de culture et le profil aromatique qui en résulte. HISA Matcha travaille exclusivement avec du matcha de grade premium.",
-    "apps.h2":"Ce que vous pouvez faire<br>avec HISA.",
-    "apps.sub":"Un portfolio de préparations pour les cafés. Chacune conçue pour mettre en valeur le matcha premium dans sa meilleure version.",
-    "con.h2":"Vous souhaitez distribuer<br><em>HISA Matcha</em>?",
-    "con.sub":"Que ce soit pour un café, une chaîne ou une distribution régionale — contactez-nous et nous construirons le programme adapté à votre opération.",
-    "dist.01.title":"Vente en gros","dist.01.sub":"Vente en gros + B2B",
-    "dist.01.desc":"Programme d'approvisionnement pour les chaînes de cafés, opérateurs de restauration, marques propres et distributeurs. Volumes à l'échelle avec packaging neutre ou co-brandé sur accord.",
-    "dist.01.f1":"Fourniture en vrac en sacs de 1kg, 5kg et 10kg","dist.01.f2":"Programmes de marque propre (private label)","dist.01.f3":"Co-branding disponible sur accord","dist.01.f4":"Livraison directe à la chaîne d'approvisionnement","dist.01.f5":"Focus : LATAM et Europe",
-    "dist.02.title":"Vente au détail","dist.02.sub":"Détail + Spécialité",
-    "dist.02.desc":"Programme pour les cafés indépendants et le commerce de spécialité. Commandes de plus petit volume avec packaging de marque HISA Matcha, prêt pour une utilisation au bar ou la revente.",
-    "dist.02.f1":"Formats 30g et 50g sous la marque HISA","dist.02.f2":"Packaging fini, prêt pour le bar ou le rayon","dist.02.f3":"Support produit et guide de préparation","dist.02.f4":"Commandes récurrentes avec logistique simplifiée","dist.02.f5":"Idéal pour les cafés de spécialité et les épiceries fines",
-    "cal.badge":"Notre grade",
-    "cal.01.tier":"Grade I","cal.01.name":"Culinaire","cal.01.desc":"Feuilles de récoltes tardives, mouture grossière. Couleur verte moins intense, saveur plus amère et astringente. Conçu pour la cuisine, la pâtisserie industrielle et les boissons où le rendement prime sur le goût.","cal.01.color":"Vert olive","cal.01.flavor":"Amer, astringent","cal.01.use":"Cuisine industrielle","cal.01.price":"Bas",
-    "cal.02.tier":"Grade II","cal.02.name":"Premium","cal.02.desc":"Feuilles de première et deuxième récolte, mouture fine. Couleur verte vibrante, saveur équilibrée avec douceur naturelle et corps. Parfait pour les lattes, les boissons de café de spécialité et la pâtisserie de qualité.","cal.02.color":"Vert intense","cal.02.flavor":"Équilibré, doux","cal.02.use":"Café, latte, pâtisserie","cal.02.price":"Moyen-élevé",
-    "cal.03.tier":"Grade III","cal.03.name":"Cérémonial","cal.03.desc":"Première récolte uniquement, feuilles ombragées 3–4 semaines. Mouture ultra-fine sur pierre de granit. Profil délicat, umami prononcé. Conçu pour la consommation pure — eau chaude, sans lait.","cal.03.color":"Vert jade brillant","cal.03.flavor":"Umami, délicat","cal.03.use":"Consommation traditionnelle","cal.03.price":"Élevé",
-    "cal.attr.color":"Couleur","cal.attr.flavor":"Saveur","cal.attr.use":"Usage","cal.attr.price":"Prix relatif"
+    "nav.cta": "Get in touch →",
+    "hero.headline": "Japanese matcha.<br>For the <em>real café</em>.",
+    "hero.sub": "Premium matcha from Shizuoka, distributed to cafés and food service operators across Latin America and Europe.",
+    "hero.cta1": "Explore blends →",
+    "hero.cta2": "Get in touch",
+    "origen.title": "Origin",
+    "blend.hint": "Select a region on the map",
+    "apps.title": "Applications",
+    "con.title": "Contact",
+    "con.h3": "Want to distribute<br><em>Kura Matcha</em>?",
+    "con.sub": "For cafés, chains or regional distribution. Write to us and we'll set up the right program for your operation.",
+    "con.meta.origin.label": "Origin",
+    "con.meta.markets.label": "Markets",
+    "con.meta.op.label": "Operated by",
+    "form.name": "Name",
+    "form.empresa": "Company / Café",
+    "form.msg": "Message",
+    "form.submit": "Send inquiry →",
+    "form.success": "✓ Message sent — we'll be in touch soon.",
+    "form.or": "or",
+    "form.wa": "Contact via WhatsApp",
   }
 };
 
-let currentLang = 'es';
-
 function setLang(lang) {
-  currentLang = lang;
-  document.querySelectorAll('.lang-btn').forEach(b => {
-    b.classList.toggle('active', b.getAttribute('data-lang') === lang);
-  });
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  const t = i18n[lang] || i18n.es;
   document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    const val = i18n[lang] && i18n[lang][key];
-    if (!val) return;
-    el.innerHTML = val;
+    const key = el.dataset.i18n;
+    if (t[key] !== undefined) el.innerHTML = t[key].replace(/\\n/g, '<br>');
   });
 }
 
-// ─── Scroll reveal ───
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+// ─── Map region data ───
+const REGIONS = [
+  {
+    id: 'shizuoka',
+    name: 'Shizuoka',
+    blends: [
+      {
+        id: 'maki-matcha',
+        name: 'Maki Matcha',
+        price: 240,
+        moq: '1 kg',
+        cosecha: '2da y 3ra',
+        variedades: 'Yabukita · Tsuyuhikari · Okumidori',
+        proceso: 'Cultivo a pleno sol',
+        textura: 'Granulada',
+        notas: 'Vegetal intenso · Amargor equilibrado · Robusto',
+        uso: 'Latte · Repostería · Bebidas frías',
+      },
+      {
+        id: 'sc3',
+        name: 'SC-3',
+        price: null,
+        moq: 'A consultar',
+        cosecha: 'A confirmar',
+        variedades: 'A confirmar',
+        proceso: 'A confirmar',
+        textura: 'A confirmar',
+        notas: 'A confirmar',
+        uso: 'A confirmar',
+      }
+    ]
+  },
+  {
+    id: 'kyoto',
+    name: 'Kyoto / Uji',
+    blends: [
+      {
+        id: 'kyoto-uji',
+        name: 'Uji Blend',
+        price: null,
+        moq: 'A consultar',
+        cosecha: 'A confirmar',
+        variedades: 'A confirmar',
+        proceso: 'Sombreado tradicional',
+        textura: 'A confirmar',
+        notas: 'A confirmar',
+        uso: 'Ceremonial · Latte premium',
+      }
+    ]
+  },
+  {
+    id: 'kansai',
+    name: 'Kansai',
+    blends: [
+      {
+        id: 'kansai-blend',
+        name: 'Kansai Blend',
+        price: null,
+        moq: 'A consultar',
+        cosecha: 'A confirmar',
+        variedades: 'A confirmar',
+        proceso: 'A confirmar',
+        textura: 'A confirmar',
+        notas: 'A confirmar',
+        uso: 'A confirmar',
+      }
+    ]
+  },
+  {
+    id: 'kagoshima',
+    name: 'Kagoshima',
+    blends: [
+      {
+        id: 'kagoshima-blend',
+        name: 'Kagoshima Blend',
+        price: null,
+        moq: 'A consultar',
+        cosecha: 'A confirmar',
+        variedades: 'A confirmar',
+        proceso: 'Cultivo a pleno sol',
+        textura: 'A confirmar',
+        notas: 'A confirmar',
+        uso: 'Latte · Food service',
+      }
+    ]
+  }
+];
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// ─── Map interaction ───
+let activeRegionId = null;
+let activeBlendId = null;
 
-// ─── Section dot nav + scroll snap ───
-const snapSections = Array.from(document.querySelectorAll('section[id]'));
-let currentIdx = 0;
-let isSnapping = false;
+function renderBlendPanel(region) {
+  const content = document.getElementById('blend-content');
+  const hint = document.getElementById('blend-hint');
+  const label = document.getElementById('blend-region-label');
+  const list = document.getElementById('blend-list');
 
-function activateDot(idx) {
-  // Query fresh — dot nav HTML is below this script block
-  document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+  hint.style.display = 'none';
+  content.style.display = 'block';
+  label.textContent = region.name;
+
+  list.innerHTML = region.blends.map(blend => `
+    <div class="blend-item" data-blend="${blend.id}" onclick="selectBlend('${region.id}','${blend.id}')">
+      <span class="blend-item-name">${blend.name}</span>
+      <span class="blend-item-arrow">↓</span>
+    </div>
+    <div class="blend-detail" id="detail-${blend.id}">
+      ${blend.price ? `
+      <div class="blend-detail-price">
+        <span class="blend-detail-price-label">Precio</span>
+        <span>
+          <span class="blend-detail-price-val">USD ${blend.price}</span>
+          <span class="blend-detail-price-unit">/ kg</span>
+        </span>
+      </div>` : ''}
+      <div class="blend-detail-row">
+        <span class="blend-detail-key">MOQ</span>
+        <span class="blend-detail-val">${blend.moq}</span>
+      </div>
+      <div class="blend-detail-row">
+        <span class="blend-detail-key">Cosecha</span>
+        <span class="blend-detail-val">${blend.cosecha}</span>
+      </div>
+      <div class="blend-detail-row">
+        <span class="blend-detail-key">Variedades</span>
+        <span class="blend-detail-val">${blend.variedades}</span>
+      </div>
+      <div class="blend-detail-row">
+        <span class="blend-detail-key">Proceso</span>
+        <span class="blend-detail-val">${blend.proceso}</span>
+      </div>
+      <div class="blend-detail-row">
+        <span class="blend-detail-key">Notas</span>
+        <span class="blend-detail-val">${blend.notas}</span>
+      </div>
+      <div class="blend-detail-row">
+        <span class="blend-detail-key">Uso</span>
+        <span class="blend-detail-val">${blend.uso}</span>
+      </div>
+      <a href="#contacto" class="blend-cta" onclick="prefillBlend('${blend.name}')">Consultar este blend →</a>
+    </div>
+  `).join('');
 }
 
-function goToSection(idx) {
-  if (idx < 0 || idx >= snapSections.length || isSnapping) return;
-  isSnapping = true;
-  currentIdx = idx;
-  activateDot(idx);
-  snapSections[idx].scrollIntoView({ behavior: 'smooth', block: 'start' });
-  setTimeout(() => { isSnapping = false; }, 900);
+function selectRegion(regionId) {
+  const region = REGIONS.find(r => r.id === regionId);
+  if (!region) return;
+
+  // Reset all regions
+  document.querySelectorAll('.jp-region').forEach(el => el.classList.remove('active'));
+
+  // Activate clicked region
+  const el = document.getElementById('region-' + regionId);
+  if (el) el.classList.add('active');
+
+  activeRegionId = regionId;
+  activeBlendId = null;
+
+  renderBlendPanel(region);
+
+  // On mobile, scroll to panel
+  if (window.innerWidth < 900) {
+    document.getElementById('blend-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
 }
 
-// Dot click handlers — delegated on document since nav HTML is parsed after this script
-document.addEventListener('click', (e) => {
-  const dot = e.target.closest('.dot');
-  if (!dot) return;
-  e.preventDefault();
-  const idx = Array.from(document.querySelectorAll('.dot')).indexOf(dot);
-  if (idx !== -1) goToSection(idx);
+function selectBlend(regionId, blendId) {
+  // Toggle same blend
+  if (activeBlendId === blendId) {
+    document.getElementById('detail-' + blendId)?.classList.remove('open');
+    document.querySelector(`.blend-item[data-blend="${blendId}"]`)?.classList.remove('active');
+    activeBlendId = null;
+    return;
+  }
+
+  // Close any open detail
+  document.querySelectorAll('.blend-detail.open').forEach(el => el.classList.remove('open'));
+  document.querySelectorAll('.blend-item.active').forEach(el => el.classList.remove('active'));
+
+  // Open selected
+  document.getElementById('detail-' + blendId)?.classList.add('open');
+  document.querySelector(`.blend-item[data-blend="${blendId}"]`)?.classList.add('active');
+  activeBlendId = blendId;
+}
+
+function prefillBlend(blendName) {
+  document.getElementById('form-blend').value = blendName;
+  const msgField = document.getElementById('form-msg');
+  if (msgField && !msgField.value) {
+    msgField.placeholder = `Consulta sobre ${blendName}…`;
+  }
+}
+
+// Attach region click handlers
+document.querySelectorAll('.jp-region[data-region]').forEach(el => {
+  el.addEventListener('click', () => selectRegion(el.dataset.region));
 });
 
-// Sync active dot on scroll — find which section top is closest to viewport top
-function updateActiveDot() {
-  const scrollY = document.body.scrollTop || document.documentElement.scrollTop || window.scrollY;
-  let closest = 0;
-  let minDist = Infinity;
-  snapSections.forEach((s, i) => {
-    const dist = Math.abs(s.offsetTop - scrollY);
-    if (dist < minDist) { minDist = dist; closest = i; }
-  });
-  currentIdx = closest;
-  activateDot(closest);
-  // Dark section detection
-  const isDark = snapSections[closest]?.dataset.dark === 'true';
-  document.querySelector('.section-dots')?.classList.toggle('on-dark', isDark);
-}
-
-window.addEventListener('scroll', updateActiveDot, { passive: true });
-document.body.addEventListener('scroll', updateActiveDot, { passive: true });
-
-// Activate on load
-setTimeout(updateActiveDot, 100);
-
-// ─── Dock magnification ───
-document.addEventListener('DOMContentLoaded', () => {
-  const dotNav = document.querySelector('.section-dots');
-  if (!dotNav) return;
-  dotNav.addEventListener('mousemove', (e) => {
-    const allDots = Array.from(document.querySelectorAll('.dot'));
-    let closestIdx = 0, minDist = Infinity;
-    allDots.forEach((dot, i) => {
-      const r = dot.getBoundingClientRect();
-      const dist = Math.abs(e.clientY - (r.top + r.height / 2));
-      if (dist < minDist) { minDist = dist; closestIdx = i; }
-    });
-    allDots.forEach((dot, i) => {
-      const d = Math.abs(i - closestIdx);
-      const s = 1 + 0.85 * Math.exp(-(d * d) / (2 * 1.8 * 1.8));
-      dot.querySelector('.dot-circle').style.transform = `scale(${s.toFixed(3)})`;
-    });
-  });
-  dotNav.addEventListener('mouseleave', () => {
-    document.querySelectorAll('.dot .dot-circle').forEach(c => { c.style.transform = ''; });
-  });
+// Auto-select Shizuoka on load
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => selectRegion('shizuoka'), 300);
 });
 
-// ─── Contact form (Formspree fetch) ───
+// ─── Form submit ───
 const contactForm = document.getElementById('contacto-form');
 if (contactForm) {
   contactForm.addEventListener('submit', async (e) => {
@@ -1658,7 +1292,7 @@ if (contactForm) {
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
-        contactForm.querySelectorAll('.form-field, .form-submit, .form-divider').forEach(el => el.style.display = 'none');
+        contactForm.querySelectorAll('.form-field, .form-submit, .form-or, .form-whatsapp').forEach(el => el.style.display = 'none');
         successMsg.style.display = 'block';
       } else {
         btn.textContent = 'Error — intentá de nuevo';
@@ -1671,7 +1305,7 @@ if (contactForm) {
   });
 }
 
-// ─── Dropdown ───
+// ─── Nav dropdown ───
 document.querySelectorAll('.nav-has-dropdown').forEach(item => {
   let timer;
   const open  = () => { clearTimeout(timer); item.classList.add('is-open'); };
@@ -1679,22 +1313,13 @@ document.querySelectorAll('.nav-has-dropdown').forEach(item => {
   item.addEventListener('mouseenter', open);
   item.addEventListener('mouseleave', close);
 });
+
+// ─── Scroll reveal ───
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
 
-<!-- Side dot nav -->
-<nav class="section-dots" aria-label="Page sections">
-  <a class="dot" href="#hero"         data-section="hero">         <span class="dot-label">Inicio</span>        <span class="dot-circle"></span></a>
-  <a class="dot" href="#producto"     data-section="producto">     <span class="dot-label">Producto</span>      <span class="dot-circle"></span></a>
-  <a class="dot" href="#distribucion" data-section="distribucion"> <span class="dot-label">Distribución</span> <span class="dot-circle"></span></a>
-  <a class="dot" href="#calidad"      data-section="calidad">      <span class="dot-label">Calidad</span>       <span class="dot-circle"></span></a>
-  <a class="dot" href="#aplicaciones" data-section="aplicaciones"> <span class="dot-label">Aplicaciones</span> <span class="dot-circle"></span></a>
-  <a class="dot" href="#contacto"     data-section="contacto">     <span class="dot-label">Contacto</span>     <span class="dot-circle"></span></a>
-</nav>
-
-<a href="https://wa.me/13392139573" target="_blank" class="whatsapp-fab" aria-label="WhatsApp">
-  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
 </body>
 </html>
