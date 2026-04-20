@@ -1,5 +1,5 @@
 /* =====================================================================
-   KŌSHA — blend catalog (single source of truth)
+   Kura Matcha — blend catalog (single source of truth)
    Consumed by: map.js (Japan map panel) and catalogo.html (product list)
    Prefecture names must match GeoJSON nam field from dataofjapan/land.
    ===================================================================== */

@@ -5,10 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kura Matcha — Matcha mayorista · Importación directa desde Japón</title>
   <meta name="description" content="Kura Matcha. Matcha japonés importado directamente para cafés, roasteries y distribuidores de food service." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%234A6741'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Pre-paint guard: enables anime.js initial-state CSS before first render.
+    (function () {
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-anime');
+      }
+    })();
+  </script>
 </head>
 <body>
 
@@ -29,14 +38,15 @@
   </div>
 
   <div class="hero__meta">
-    <span>Kura Matcha · </span>
-    <span>Edición 001 · 2026</span>
+    <span>Kura Matcha · Edición 001</span>
+    <span>2026 · Importación directa</span>
   </div>
 
   <div class="hero__main">
     <span class="hero__wordmark">Kura Matcha</span>
     <div class="hero__descriptor">
-      <span>Matcha mayorista · Importación directa desde Japón</span>
+      <span class="hero__descriptor-line" aria-hidden="true"></span>
+      <span class="hero__descriptor-text">Matcha mayorista · Importación directa desde Japón</span>
     </div>
     <div class="hero__actions">
       <a href="catalogo.html" class="btn btn--solid">
@@ -64,7 +74,7 @@
   <header class="section-head reveal">
     <div class="section-head__meta">
       <span class="section-head__no">02 · Origen</span>
-      <span class="section-head__no">日本 · Nippon</span>
+      <span class="section-head__no">Cuatro regiones · Matcha</span>
     </div>
     <hr class="rule" />
     <h2 class="h-section section-head__title">Origen</h2>
@@ -118,87 +128,26 @@
     <h2 class="h-section section-head__title">Hablemos de volumen.</h2>
   </header>
 
-  <div class="contact__grid">
+  <div class="contact__grid contact__grid--single">
     <div class="contact__side reveal">
-      <span class="eyebrow" style="color:rgba(253,250,246,0.6);">— 01 · Catálogo</span>
-      <h3 class="h-sub">Explore los lotes disponibles por región y cosecha.</h3>
-      <p class="contact__copy">Precio, MOQ, perfil organoléptico y proceso por blend. Descarga no requerida.</p>
-      <div class="contact__actions">
-        <a href="catalogo.html" class="btn btn--ghost-light">
-          <span class="btn__label">Ver catálogo</span>
-          <span class="btn__arrow">→</span>
+      <span class="eyebrow" style="color:rgba(253,250,246,0.6);">— Contacto directo</span>
+      <h3 class="h-sub">Consulte por un blend o por un volumen específico.</h3>
+      <p class="contact__copy" id="contact-copy">Indique el blend de interés, país de operación y volumen estimado. Respondemos por WhatsApp en un plazo de 24 h hábiles.</p>
+
+      <div class="form__notice" id="form-notice">Blend preseleccionado · <span data-blend-echo></span></div>
+
+      <div class="contact__actions" style="margin-top:1.5rem;">
+        <a id="contact-wa" href="https://wa.me/541156670631?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista" target="_blank" rel="noopener" class="btn btn--solid">
+          <span class="btn__label">Escribir por WhatsApp</span>
+          <span class="btn__arrow">↗</span>
         </a>
       </div>
-
-      <dl class="contact__info">
-        <div class="contact__info-row">
-          <dt>Whatsapp</dt>
-          <dd><a href="https://wa.me/000000000000" target="_blank" rel="noopener">+00 0000 000 000</a></dd>
-        </div>
-        <div class="contact__info-row">
-          <dt>Correo</dt>
-          <dd><a href="mailto:hola@kosha-matcha.com">hola@kosha-matcha.com</a></dd>
-        </div>
-        <div class="contact__info-row">
-          <dt>Horario</dt>
-          <dd>Lun–Vie · 09:00–18:00 JST / UTC-3 disponible</dd>
-        </div>
-        <div class="contact__info-row">
-          <dt>MOQ base</dt>
-          <dd>Desde 1 kg según blend</dd>
-        </div>
-      </dl>
-    </div>
-
-    <div class="contact__side reveal" data-delay="1">
-      <span class="eyebrow" style="color:rgba(253,250,246,0.6);">— 02 · Contacto directo</span>
-      <h3 class="h-sub">Consulte por un blend o por un volumen específico.</h3>
-      <p class="contact__copy">Indique el país de operación y el volumen estimado. Respondemos en un plazo de 24 h hábiles.</p>
-
-      <form class="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <div class="form__notice" id="form-notice">Blend preseleccionado · <span data-blend-echo></span></div>
-
-        <div class="form__row form__row--2">
-          <div class="form__field">
-            <label class="form__label" for="nombre">Nombre</label>
-            <input class="form__input" id="nombre" name="nombre" type="text" required autocomplete="name" />
-          </div>
-          <div class="form__field">
-            <label class="form__label" for="empresa">Empresa</label>
-            <input class="form__input" id="empresa" name="empresa" type="text" required autocomplete="organization" />
-          </div>
-        </div>
-
-        <div class="form__field">
-          <label class="form__label" for="email">Email</label>
-          <input class="form__input" id="email" name="email" type="email" required autocomplete="email" />
-        </div>
-
-        <div class="form__field">
-          <label class="form__label" for="mensaje">Mensaje · volumen · país</label>
-          <textarea class="form__textarea" id="mensaje" name="mensaje" required></textarea>
-        </div>
-
-        <input type="hidden" id="blend-field" name="blend" value="" />
-
-        <div class="form__actions">
-          <button type="submit" class="btn btn--solid">
-            <span class="btn__label">Enviar consulta</span>
-            <span class="btn__arrow">→</span>
-          </button>
-          <a href="https://wa.me/000000000000?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista"
-             target="_blank" rel="noopener" class="btn btn--ghost-light">
-            <span class="btn__label">Whatsapp</span>
-            <span class="btn__arrow">↗</span>
-          </a>
-        </div>
-      </form>
     </div>
   </div>
 
   <footer class="footer">
     <div class="footer__meta">
-      <span>© 2026 · Kura Matcha </span>
+      <span>© 2026 · Kura Matcha</span>
       <span>Importación directa · Japón</span>
     </div>
     <div class="footer__meta">
@@ -209,10 +158,12 @@
   </footer>
 </section>
 
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
 <script src="regions.js"></script>
 <script src="scripts.js"></script>
+<script src="animations.js"></script>
 <script src="map.js"></script>
 </body>
 </html>
