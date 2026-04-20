@@ -16,18 +16,19 @@
      Each featured blend has a short romaji codename shown on its card,
      matching the filename of its powder-stroke image in /public. */
   const CODENAMES = {
-    'blend-uji-1':       { code: 'ICHI',  img: 'public/ichi.png'  },
-    'blend-uji-2':       { code: 'KAI',   img: 'public/kai.png'   },
-    'blend-shizuoka-1':  { code: 'MAKI',  img: 'public/maki.png'  },
-    'blend-kansai-1':    { code: 'SEI',   img: 'public/sei.png'   },
-    'blend-kagoshima-1': { code: 'TSUNE', img: 'public/tsune.png' },
-    'blend-shizuoka-2':  { code: 'MAKI',  img: 'public/maki.png'  },
+    'blend-shizuoka-maki':    { code: 'MAKI',  img: 'public/maki.png'  },
+    'blend-shizuoka-rin':     { code: 'RIN',   img: 'public/maki.png'  },
+    'blend-kyoto-haku':       { code: 'HAKU',  img: 'public/kai.png'   },
+    'blend-kyoto-kai':        { code: 'KAI',   img: 'public/kai.png'   },
+    'blend-kansai-ichi':      { code: 'ICHI',  img: 'public/ichi.png'  },
+    'blend-kagoshima-tsuyu':  { code: 'TSUYU', img: 'public/sei.png'   },
+    'blend-kagoshima-tsune':  { code: 'TSUNE', img: 'public/tsune.png' },
   };
   const codeFor  = (blend) => (CODENAMES[blend.id] || {}).code || '—';
   const imageFor = (blend) => (CODENAMES[blend.id] || {}).img  || 'public/ichi.png';
 
   /* ---------- Featured blends shown in the rack ---------- */
-  const FEATURED_IDS = ['blend-uji-1','blend-uji-2','blend-shizuoka-1','blend-kansai-1','blend-kagoshima-1'];
+  const FEATURED_IDS = ['blend-shizuoka-maki','blend-kansai-ichi','blend-kyoto-kai','blend-kagoshima-tsuyu','blend-kagoshima-tsune'];
   const featured = FEATURED_IDS
     .map((id) => blends.find((p) => p.blend.id === id))
     .filter(Boolean);

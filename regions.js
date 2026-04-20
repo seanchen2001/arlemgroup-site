@@ -13,57 +13,57 @@ window.REGIONS = [
     headline: 'Cultivo a pleno sol, volumen consistente.',
     blends: [
       {
-        id: 'blend-shizuoka-1',
-        name: 'Shizuoka Nº 01',
-        price: null,
+        id: 'blend-shizuoka-maki',
+        name: 'Maki',
+        price: 125,
         moq: '1 kg',
-        cosecha: '2da y 3ra cosecha',
-        variedades: 'Yabukita · Saemidori',
+        cosecha: '2da y 3ra cosecha · 2026',
+        variedades: 'Yabukita · Tsuyuhikari · Okumidori',
         proceso: 'Cultivo a pleno sol',
-        notas: 'Cuerpo vegetal, notas herbáceas marcadas, amargor medio. Sostiene bien la leche sin perder presencia. Color verde oliva estable.',
+        notas: 'Chicory, nuez verde, pradera silvestre. Cuerpo vegetal con amargor controlado. Excelente rendimiento en latte, smoothies y repostería. Color verde profundo estable.',
         uso: 'Latte · Repostería · Bebidas frías'
       },
       {
-        id: 'blend-shizuoka-2',
-        name: 'Shizuoka Nº 02',
+        id: 'blend-shizuoka-rin',
+        name: 'Rin',
         price: null,
-        moq: '2 kg',
-        cosecha: '2da cosecha',
-        variedades: 'Yabukita',
+        moq: 'A consultar',
+        cosecha: '1ra cosecha · 2026',
+        variedades: 'Yabukita (blend)',
         proceso: 'Cultivo a pleno sol',
-        notas: 'Perfil equilibrado para operaciones de alto volumen. Consistencia lote a lote. Grano fino y dispersión rápida.',
-        uso: 'Food service · Batidos'
+        notas: 'Arroz tostado, pasto primaveral, anacardo crudo. Perfil equilibrado con dulzor sutil y cuerpo medio. Sostiene bien la leche en bebidas de autor.',
+        uso: 'Latte · Menú de autor'
       }
     ]
   },
   {
     id: 'kyoto',
-    name: 'Kyoto / Uji',
+    name: 'Kyoto',
     coord: '34.8854°N · 135.7280°E',
     prefectures: ['Kyoto', 'Kyoto Fu'],
-    headline: 'Sombreado tradicional. La referencia histórica.',
+    headline: 'La referencia histórica. Sombreado tradicional.',
     blends: [
       {
-        id: 'blend-uji-1',
-        name: 'Uji Ceremonial',
+        id: 'blend-kyoto-haku',
+        name: 'Haku',
         price: null,
         moq: 'A consultar',
-        cosecha: '1ra cosecha',
-        variedades: 'Samidori · Okumidori',
+        cosecha: '1ra cosecha · 2026',
+        variedades: 'Saemidori (blend)',
         proceso: 'Sombreado tradicional (tana)',
-        notas: 'Dulzor profundo, umami pronunciado, amargor mínimo. Textura sedosa en boca. Color verde jade vibrante que se mantiene en taza.',
+        notas: 'Espinaca joven, cáscara de cacao, pasto seco. Umami profundo con amargor elegante. Referencia para latte premium y servicio ceremonial.',
         uso: 'Ceremonial · Latte premium · Single origin'
       },
       {
-        id: 'blend-uji-2',
-        name: 'Uji Premium Blend',
+        id: 'blend-kyoto-kai',
+        name: 'Kai',
         price: null,
         moq: 'A consultar',
-        cosecha: '1ra y 2da cosecha',
-        variedades: 'Samidori · Yabukita',
-        proceso: 'Sombreado parcial',
-        notas: 'Puente entre ceremonial y culinario. Retiene dulzor del tencha de primera, con cuerpo suficiente para aplicación en bebidas.',
-        uso: 'Latte premium · Carta de autor'
+        cosecha: '1ra cosecha · 2026',
+        variedades: 'Okumidori',
+        proceso: 'Sombreado tradicional (tana)',
+        notas: 'Matcha ceremonial balanceado con notas vegetales suaves y final limpio. Textura sedosa. Versátil para servicio batido y latte premium.',
+        uso: 'Ceremonial · Latte premium · Single origin'
       }
     ]
   },
@@ -75,15 +75,15 @@ window.REGIONS = [
     headline: 'Corredor productor al sur de Kyoto.',
     blends: [
       {
-        id: 'blend-kansai-1',
-        name: 'Kansai Nº 01',
+        id: 'blend-kansai-ichi',
+        name: 'Ichi',
         price: null,
         moq: 'A consultar',
-        cosecha: 'A confirmar',
-        variedades: 'Okumidori · Yabukita',
+        cosecha: '1ra cosecha · 2026',
+        variedades: 'Yabukita (blend)',
         proceso: 'Sombreado parcial',
-        notas: 'Perfil equilibrado, amargor moderado. Paleta intermedia entre el dulzor de Uji y la robustez de Shizuoka.',
-        uso: 'Latte · Repostería fina'
+        notas: 'Crema dulce, almendra verde, chocolate blanco. Dulzor expresivo con estructura limpia. Ideal para lattes con carácter sin perder elegancia.',
+        uso: 'Latte premium · Carta de autor'
       }
     ]
   },
@@ -95,15 +95,26 @@ window.REGIONS = [
     headline: 'Cosecha temprana del sur. Perfil vivo.',
     blends: [
       {
-        id: 'blend-kagoshima-1',
-        name: 'Kagoshima Nº 01',
+        id: 'blend-kagoshima-tsuyu',
+        name: 'Tsuyu',
         price: null,
         moq: 'A consultar',
-        cosecha: 'Cosecha temprana · Abril',
-        variedades: 'Asatsuyu · Saemidori',
+        cosecha: '1ra cosecha · 2026',
+        variedades: 'Saemidori · Yutakamidori',
+        proceso: 'Cultivo en alturas · Kagoshima highlands',
+        notas: 'Fruta de hueso, crema fresca, pasto dulce. Umami pronunciado con frescura frutal. Perfil de altura, cosecha temprana. Referencia premium de la región.',
+        uso: 'Ceremonial · Latte premium · Single origin'
+      },
+      {
+        id: 'blend-kagoshima-tsune',
+        name: 'Tsune',
+        price: null,
+        moq: 'A consultar',
+        cosecha: '2da cosecha · 2026',
+        variedades: 'Yabukita',
         proceso: 'Cultivo a pleno sol',
-        notas: 'Frescura herbácea, notas cítricas sutiles. Color verde intenso. Excelente rendimiento en bebidas frías y soft serve.',
-        uso: 'Latte · Food service · Soft serve'
+        notas: 'Matcha de servicio diario, alto volumen. Verde claro con perfil suave. Dulzor gentil, amargor mínimo. Mezcla bien en lattes y bebidas frías.',
+        uso: 'Latte · Food service · Bebidas frías'
       }
     ]
   }
