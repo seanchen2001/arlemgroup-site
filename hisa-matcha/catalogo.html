@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kura Matcha — Catálogo · Matcha mayorista</title>
+  <meta name="description" content="Catálogo Kura Matcha · blends de matcha japonés por región, variedad, cosecha y MOQ." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%234A6741'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-anime');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+<nav class="nav nav--solid-dark" aria-label="Main">
+  <a href="index.html" class="nav__brand">Kura Matcha</a>
+  <div class="nav__links">
+    <a href="index.html" class="nav__link">Inicio</a>
+    <a href="catalogo.html" class="nav__link is-active">Catálogo</a>
+    <a href="about.html" class="nav__link">Marca</a>
+    <a href="index.html#contacto" class="nav__link nav__link--hide-sm">Contacto</a>
+  </div>
+</nav>
+
+<!-- ================ TARJETERO · Section 01 ================ -->
+<section class="tarjetero" id="tarjetero">
+  <div class="tarjetero__meta">
+    <span>Catálogo · <strong>Edición 001</strong></span>
+    <span id="rack-count">—</span>
+  </div>
+
+  <div class="rack" id="rack" role="list" aria-label="Selección de blends">
+    <!-- Cards injected by JS -->
+  </div>
+
+  <div class="tarjetero__foot">
+    <span>Kyoto · Shizuoka · Kansai · Kagoshima</span>
+    <div class="tarjetero__foot-actions">
+      <a href="#catalog-index">Índice ↓</a>
+      <a href="index.html#contacto">Consultar →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================ INDEX · Section 02 ================ -->
+<section class="catalog-index" id="catalog-index">
+  <header class="catalog-index__head">
+    <h2 class="mono-label" style="color:var(--ink); font-weight:500;">Índice</h2>
+    <span class="mono-label">Actualizado · 2026</span>
+  </header>
+
+  <div class="catalog-index__list" id="catalog-index-list">
+    <!-- Populated by JS -->
+  </div>
+
+  <footer class="catalog-index__foot">
+    <span>© 2026 · Kura Matcha · Importación directa desde Japón</span>
+    <div style="display:flex; gap:1.25rem; flex-wrap:wrap;">
+      <a href="index.html">Inicio</a>
+      <a href="about.html">Marca</a>
+      <a href="index.html#contacto">Contacto ↗</a>
+    </div>
+  </footer>
+</section>
+
+<!-- ================ BLEND OVERLAY ================ -->
+<div class="blend-overlay" id="blend-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="blend-overlay-title">
+  <div class="blend-overlay__sheet">
+    <span class="blend-overlay__edge" aria-hidden="true"></span>
+    <button class="blend-overlay__close" type="button" id="blend-overlay-close" aria-label="Cerrar">
+      <span class="blend-overlay__close-x">×</span>
+      <span>Cerrar</span>
+    </button>
+    <div class="blend-overlay__inner">
+      <div class="blend-overlay__art">
+        <img id="blend-overlay-img" src="" alt="" />
+      </div>
+      <div class="blend-overlay__body">
+        <div class="blend-overlay__no">
+          <span id="blend-overlay-no">Nº —</span>
+          <span id="blend-overlay-cosecha">—</span>
+        </div>
+        <h2 class="blend-overlay__title" id="blend-overlay-title">—</h2>
+        <span class="blend-overlay__sub" id="blend-overlay-sub">—</span>
+        <p class="blend-overlay__notes" id="blend-overlay-notes">—</p>
+        <dl class="blend-overlay__specs" id="blend-overlay-specs"></dl>
+        <div class="blend-overlay__pricing" id="blend-overlay-pricing"></div>
+        <div class="blend-overlay__cta">
+          <a href="#" id="blend-overlay-consult" class="btn btn--solid">
+            <span class="btn__label">Consultar este blend</span>
+            <span class="btn__arrow">→</span>
+          </a>
+          <a href="#" id="blend-overlay-wa" target="_blank" rel="noopener" class="btn btn--ghost-dark">
+            <span class="btn__label">WhatsApp</span>
+            <span class="btn__arrow">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="regions.js"></script>
+<script src="scripts.js"></script>
+<script src="animations.js"></script>
+<script src="catalog.js"></script>
+</body>
+</html>
