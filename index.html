@@ -3,7 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Arlem Group</title>
+<title>Arlem Group — Global Commodities, Food Ingredients & Trade</title>
+<meta name="description" content="Arlem Group connects overlooked markets to the supply chains that need them — operating across raw materials, food ingredients, and technology in LATAM and Europe.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://arlemgroup.com">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Arlem Group">
+<meta property="og:title" content="Arlem Group — Global Commodities & Trade">
+<meta property="og:description" content="Connecting overlooked markets to the supply chains that need them. Raw materials, food ingredients, and technology across LATAM and Europe.">
+<meta property="og:url" content="https://arlemgroup.com">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231A1714'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='18' font-weight='700' fill='%23B07830' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
@@ -31,6 +40,21 @@ body {
   color: var(--ink);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* WHATSAPP FAB */
+.whatsapp-fab {
+  position: fixed; bottom: 28px; right: 28px; z-index: 500;
+  width: 52px; height: 52px;
+  background: #25D366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.35);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.whatsapp-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.5);
 }
 
 /* NAV */
@@ -878,8 +902,8 @@ footer {
     <li class="nav-has-dropdown">
       <a href="#portfolio" data-i18n="nav.portfolio">Portfolio</a>
       <div class="nav-dropdown">
-        <a href="hisa-matcha.html" class="nav-dropdown-item">
-          <span class="nav-dropdown-name">HISA Matcha</span>
+        <a href="kura-matcha/" class="nav-dropdown-item">
+          <span class="nav-dropdown-name">Kura Matcha</span>
           <span class="nav-dropdown-status live">Live</span>
         </a>
         <div class="nav-dropdown-item disabled">
@@ -950,23 +974,23 @@ footer {
   </div>
   <div class="portfolio-grid reveal">
 
-    <!-- CARD 1: HISA Matcha -->
+    <!-- CARD 1: Kura Matcha -->
     <div class="portfolio-card">
       <div class="card-image">
         <!-- Replace src with your matcha image URL -->
-        <img src="/images/hisa.jpg" alt="HISA Matcha">      </div>
+        <img src="/images/hisa.jpg" alt="Kura Matcha">      </div>
       <div class="card-content">
         <span class="card-status status-live" data-i18n="card.live">Live</span>
         <div class="card-number">01</div>
         <div class="card-category" data-i18n="card2.cat">Food & Ingredients</div>
-        <div class="card-name">HISA Matcha</div>
-        <p class="card-desc" data-i18n="card2.desc">Ceremonial matcha for high-end shops. Private label, co-branded, and bulk supply programs for SMBs and brands. Current focus: Japanese matcha distributed to café chains and food service operators across Latin America and Europe under the HISA MATCHA brand.</p>
+        <div class="card-name">Kura Matcha</div>
+        <p class="card-desc" data-i18n="card2.desc">Ceremonial matcha for high-end shops. Private label, co-branded, and bulk supply programs for SMBs and brands. Current focus: Japanese matcha distributed to café chains and food service operators across Latin America and Europe under the Kura Matcha brand.</p>
         <div class="card-tags">
           <span class="card-tag">Japan · Europe · LATAM</span>
           <span class="card-tag">B2B</span>
         </div>
         <div class="card-links">
-          <a href="hisa-matcha.html" class="card-link">Ver marca →</a>
+          <a href="kura-matcha/" class="card-link">Ver marca →</a>
           <a href="https://www.instagram.com/hisa.matcha/" target="_blank" class="card-link">
             <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="var(--ink-mid)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="var(--ink-mid)" stroke="none"/></svg>
             Instagram
@@ -1113,7 +1137,7 @@ footer {
             <select name="topic">
               <option value="" disabled selected>—</option>
               <option>Arlem Hides</option>
-              <option>Arlem Foods / HISA Matcha</option>
+              <option>Arlem Foods / Kura Matcha</option>
               <option>Arlem Tech</option>
               <option data-i18n="form.general">General inquiry</option>
             </select>
@@ -1157,7 +1181,7 @@ const i18n = {
     "portfolio.sub":"Each business built around the same principle — find fragmented, underserved markets and execute with speed.",
     "card.live":"Live","card.building":"Building",
     "card1.cat":"Raw Materials","card1.desc":"Bovine and buffalo hides sourced from South American frigoríficos, traded to tanneries in China, Europe, and India. End-to-end logistics, quality grading, and customs clearance.",
-    "card2.cat":"Food & Ingredients","card2.desc":"Specialty food ingredients for the premium consumer market. Current focus: Japanese matcha distributed to café chains and food service operators across Latin America under the HISA MATCHA brand.",
+    "card2.cat":"Food & Ingredients","card2.desc":"Specialty food ingredients for the premium consumer market. Current focus: Japanese matcha distributed to café chains and food service operators across Latin America under the Kura Matcha brand.",
     "card3.cat":"Technology","card3.desc":"Financial infrastructure for operators in emerging markets. Current product: an accounting and PnL platform purpose-built for Argentine ALYCs and boutique trading desks.",
     "process.title":"How we\nwork.","process.sub":"No corporate playbook. We operate lean, move fast, and stay close to the ground in every market we enter.",
     "step1.title":"Identify the gap","step1.desc":"We look for markets where information asymmetry creates pricing inefficiency — commodities, geographies, or supply chains that institutional players ignore.",
@@ -1178,7 +1202,7 @@ const i18n = {
     "portfolio.sub":"Cada negocio construido sobre el mismo principio — encontrar mercados fragmentados y desatendidos, y ejecutar con velocidad.",
     "card.live":"Activo","card.building":"En desarrollo",
     "card1.cat":"Materias Primas","card1.desc":"Cueros bovinos y bufalinos provenientes de frigoríficos sudamericanos, comercializados con curtiembres en China, Europa e India. Logística integral, clasificación de calidad y gestión aduanera.",
-    "card2.cat":"Alimentos & Ingredientes","card2.desc":"Ingredientes alimentarios especiales para el mercado premium. Foco actual: matcha japonés distribuido a cadenas de café y operadores de food service en América Latina bajo la marca HISA MATCHA.",
+    "card2.cat":"Alimentos & Ingredientes","card2.desc":"Ingredientes alimentarios especiales para el mercado premium. Foco actual: matcha japonés distribuido a cadenas de café y operadores de food service en América Latina bajo la marca Kura Matcha.",
     "card3.cat":"Tecnología","card3.desc":"Infraestructura financiera para operadores en mercados emergentes. Producto actual: plataforma de contabilidad y PnL diseñada para ALYCs argentinas y mesas de trading boutique.",
     "process.title":"Cómo\ntrabajamos.","process.sub":"Sin manuales corporativos. Operamos con estructura mínima, velocidad máxima y presencia directa en cada mercado que entramos.",
     "step1.title":"Identificamos el espacio","step1.desc":"Buscamos mercados donde la asimetría de información genera ineficiencias de precio — commodities, geografías o cadenas de suministro que los jugadores institucionales ignoran.",
@@ -1199,7 +1223,7 @@ const i18n = {
     "portfolio.sub":"Chaque activité repose sur le même principe — identifier les marchés fragmentés et sous-servis, et exécuter avec rapidité.",
     "card.live":"Actif","card.building":"En cours",
     "card1.cat":"Matières Premières","card1.desc":"Peaux bovines et bubalines issues de frigoríficos sud-américains, commercialisées auprès de tanneries en Chine, Europe et Inde. Logistique complète, contrôle qualité et dédouanement.",
-    "card2.cat":"Alimentation & Ingrédients","card2.desc":"Ingrédients alimentaires de spécialité pour le marché premium. Focus actuel : matcha japonais distribué aux chaînes de café et opérateurs de restauration en Amérique latine sous la marque HISA MATCHA.",
+    "card2.cat":"Alimentation & Ingrédients","card2.desc":"Ingrédients alimentaires de spécialité pour le marché premium. Focus actuel : matcha japonais distribué aux chaînes de café et opérateurs de restauration en Amérique latine sous la marque Kura Matcha.",
     "card3.cat":"Technologie","card3.desc":"Infrastructure financière pour les opérateurs des marchés émergents. Produit actuel : plateforme de comptabilité et PnL conçue pour les ALYCs argentines et les desks de trading boutique.",
     "process.title":"Notre\nméthode.","process.sub":"Pas de manuel d'entreprise. Nous opérons avec légèreté, rapidité et présence directe sur chaque marché que nous intégrons.",
     "step1.title":"Identifier l'opportunité","step1.desc":"Nous cherchons les marchés où l'asymétrie d'information crée des inefficiences de prix — commodités, géographies ou chaînes logistiques ignorées par les acteurs institutionnels.",
@@ -1245,5 +1269,11 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 </script>
+
+<a href="https://wa.me/13392139573" target="_blank" class="whatsapp-fab" aria-label="WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
 </body>
 </html>
