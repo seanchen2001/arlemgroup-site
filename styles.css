@@ -563,8 +563,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   gap: 0;
   border: 1px solid var(--gray-300);
   background: var(--white);
-  flex: 1 1 auto;
-  min-height: 0;
 }
 
 @media (min-width: 900px) {
@@ -583,7 +581,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
     linear-gradient(to bottom, rgba(26, 23, 20, 0.04) 1px, transparent 1px);
   background-size: 40px 40px;
   overflow: hidden;
-  min-height: 0;
 }
 
 @media (min-width: 900px) {
