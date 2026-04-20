@@ -4,7 +4,7 @@
 
 (function () {
   const regions = window.REGIONS || [];
-  const WHATSAPP_NUMBER = '541156670631';
+  const WHATSAPP_NUMBER = '5491156670631';
 
   // Flatten blends with their region, in display order.
   const blends = [];
@@ -133,8 +133,6 @@
     const { region, blend, index } = entry;
     const n = String(index + 1).padStart(2, '0');
     const img = imageFor(blend, index);
-    const priceLine = blend.price ? `USD ${blend.price} / kg` : 'A consultar';
-
     overlayEls.img.src = img;
     overlayEls.img.alt = `${blend.name} · ${region.name}`;
     overlayEls.title.textContent = blend.name;
@@ -151,7 +149,7 @@
     `;
 
     overlayEls.pricing.innerHTML = `
-      <span>Precio · <strong>${priceLine}</strong></span>
+      <span>Disponibilidad · <strong>Consultar</strong></span>
       <span>MOQ · <strong>${blend.moq}</strong></span>
     `;
 

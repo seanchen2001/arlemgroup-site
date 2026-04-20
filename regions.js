@@ -15,7 +15,7 @@ window.REGIONS = [
       {
         id: 'blend-shizuoka-maki',
         name: 'Maki',
-        price: 125,
+        price: null,
         moq: '1 kg',
         cosecha: '2da y 3ra cosecha · 2026',
         variedades: 'Yabukita · Tsuyuhikari · Okumidori',
