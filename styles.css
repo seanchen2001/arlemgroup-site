@@ -565,7 +565,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   background: var(--white);
   flex: 1 1 auto;
   min-height: 0;
-  overflow: hidden;
 }
 
 @media (min-width: 900px) {
@@ -685,6 +684,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   flex-direction: column;
   background: var(--white);
   position: relative;
+  overflow-y: auto;
 }
 
 .panel__close {
