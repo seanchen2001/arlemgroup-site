@@ -383,7 +383,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   font-weight: 500;
   letter-spacing: -0.04em;
   line-height: 0.86;
-  font-size: clamp(4.5rem, 18vw, 14rem);
+  font-size: clamp(3rem, 11vw, 9rem);
 }
 
 .hero__descriptor {
@@ -554,6 +554,30 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 
 .map-section .section-head { margin-bottom: 0; gap: 0.9rem; }
 .map-section .h-section { font-size: clamp(1.4rem, 2.5vw, 2rem); }
+.contact .h-section { font-size: clamp(2rem, 4.5vw, 3.5rem); }
+
+/* Floating WhatsApp button */
+.wa-float {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.65rem 1rem;
+  border-radius: 2px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  transition: opacity 0.2s;
+}
+.wa-float:hover { opacity: 0.88; }
 .map-section .lede { font-size: clamp(0.88rem, 1.1vw, 1rem); }
 
 .map-layout {
@@ -1170,7 +1194,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 }
 
 .about-story {
-  padding: var(--pad-y) var(--pad-x);
+  padding: clamp(1.5rem, 3vw, 2.5rem) var(--pad-x);
   background: var(--white);
 }
 
@@ -1529,7 +1553,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 .catalog-cta {
   background: var(--ink);
   color: var(--white);
-  padding: var(--pad-y) var(--pad-x);
+  padding: clamp(1.5rem, 3vw, 2.5rem) var(--pad-x);
 }
 
 .catalog-cta__grid {
