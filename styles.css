@@ -1561,7 +1561,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
    fit via flex-shrink and aspect-ratio'd media blocks, so the user sees
    exactly one screen per section and the fixed nav never overlays text. */
 .hero,
-.map-section,
 .contact,
 .about-hero,
 .about-story,
