@@ -562,6 +562,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   gap: 0;
   border: 1px solid var(--gray-300);
   background: var(--white);
+  flex: 1 1 auto;
 }
 
 @media (min-width: 900px) {
@@ -1571,6 +1572,12 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+.map-section {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Reserve space for the fixed nav at the top of every section that
