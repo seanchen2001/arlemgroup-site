@@ -119,10 +119,6 @@
         }
       });
     });
-
-    if (window.KURA_MATCHA && typeof window.KURA_MATCHA.animatePanelOpen === 'function') {
-      window.KURA_MATCHA.animatePanelOpen(panelBodyEl);
-    }
   }
 
   function hideTooltip() {
