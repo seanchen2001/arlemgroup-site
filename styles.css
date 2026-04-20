@@ -554,30 +554,6 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 
 .map-section .section-head { margin-bottom: 0; gap: 0.9rem; }
 .map-section .h-section { font-size: clamp(1.4rem, 2.5vw, 2rem); }
-.contact .h-section { font-size: clamp(2rem, 4.5vw, 3.5rem); }
-
-/* Floating WhatsApp button */
-.wa-float {
-  position: fixed;
-  bottom: 1.5rem;
-  left: 1.5rem;
-  z-index: 999;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #25D366;
-  color: #fff;
-  text-decoration: none;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.65rem 1rem;
-  border-radius: 2px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-  transition: opacity 0.2s;
-}
-.wa-float:hover { opacity: 0.88; }
 .map-section .lede { font-size: clamp(0.88rem, 1.1vw, 1rem); }
 
 .map-layout {
@@ -1587,14 +1563,19 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 .hero,
 .contact,
 .about-hero,
-.about-story,
 .values,
-.applications,
-.catalog-cta {
+.applications {
   height: 100svh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+}
+
+.about-story,
+.catalog-cta {
+  display: flex;
+  flex-direction: column;
+  height: auto;
 }
 
 .map-section {
@@ -1634,10 +1615,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   .map-section,
   .contact,
   .about-hero,
-  .about-story,
   .values,
-  .applications,
-  .catalog-cta {
+  .applications {
     height: auto;
     min-height: 100svh;
     overflow: visible;
