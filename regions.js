@@ -54,17 +54,6 @@ window.REGIONS = [
         notas: 'Espinaca joven, cáscara de cacao, pasto seco. Umami profundo con amargor elegante. Referencia para latte premium y servicio ceremonial.',
         uso: 'Ceremonial · Latte premium · Single origin'
       },
-      {
-        id: 'blend-kyoto-kai',
-        name: 'Kai',
-        price: null,
-        moq: 'A consultar',
-        cosecha: '1ra cosecha · 2026',
-        variedades: 'Okumidori',
-        proceso: 'Sombreado tradicional (tana)',
-        notas: 'Matcha ceremonial balanceado con notas vegetales suaves y final limpio. Textura sedosa. Versátil para servicio batido y latte premium.',
-        uso: 'Ceremonial · Latte premium · Single origin'
-      }
     ]
   },
   {
@@ -105,17 +94,6 @@ window.REGIONS = [
         notas: 'Fruta de hueso, crema fresca, pasto dulce. Umami pronunciado con frescura frutal. Perfil de altura, cosecha temprana. Referencia premium de la región.',
         uso: 'Ceremonial · Latte premium · Single origin'
       },
-      {
-        id: 'blend-kagoshima-tsune',
-        name: 'Tsune',
-        price: null,
-        moq: 'A consultar',
-        cosecha: '2da cosecha · 2026',
-        variedades: 'Yabukita',
-        proceso: 'Cultivo a pleno sol',
-        notas: 'Matcha de servicio diario, alto volumen. Verde claro con perfil suave. Dulzor gentil, amargor mínimo. Mezcla bien en lattes y bebidas frías.',
-        uso: 'Latte · Food service · Bebidas frías'
-      }
     ]
   }
 ];
