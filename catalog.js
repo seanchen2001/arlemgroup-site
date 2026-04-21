@@ -28,7 +28,7 @@
   const imageFor = (blend) => (CODENAMES[blend.id] || {}).img  || 'public/ichi.png';
 
   /* ---------- Featured blends shown in the rack ---------- */
-  const FEATURED_IDS = ['blend-shizuoka-maki','blend-kansai-ichi','blend-kyoto-kai','blend-kagoshima-tsuyu','blend-kagoshima-tsune'];
+  const FEATURED_IDS = ['blend-shizuoka-maki','blend-shizuoka-rin','blend-kyoto-haku','blend-kansai-ichi','blend-kagoshima-tsuyu'];
   const featured = FEATURED_IDS
     .map((id) => blends.find((p) => p.blend.id === id))
     .filter(Boolean);
