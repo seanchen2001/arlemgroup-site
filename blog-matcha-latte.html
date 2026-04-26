@@ -67,29 +67,15 @@
 
     /* ── Layout ── */
     .post-body {
-      max-width: 80rem;
+      max-width: 48rem;
       margin: 0 auto;
       padding: clamp(3rem, 7vw, 6rem) var(--pad-x);
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: clamp(3rem, 6vw, 5rem);
-    }
-    @media (min-width: 900px) {
-      .post-body { grid-template-columns: 1fr 1fr; align-items: start; }
-    }
-
-    /* ── Video ── */
-    .post-videos {
       display: flex;
       flex-direction: column;
-      gap: 1px;
+      gap: 2.5rem;
     }
-    @media (min-width: 900px) {
-      .post-videos {
-        position: sticky;
-        top: calc(var(--nav-h) + 2rem);
-      }
-    }
+
+    /* ── Video inline ── */
     .post-video-wrap {
       border-radius: 2px;
       overflow: hidden;
@@ -268,85 +254,91 @@
 <!-- ── BODY ── -->
 <div class="post-body">
 
-  <!-- VIDEOS -->
-  <div class="post-videos">
-    <div class="post-video-wrap">
-      <div style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,250,246,0.45);background:var(--ink);padding:0.5rem 0.75rem;">— Mezclar con leche</div>
-      <video class="post-video" autoplay muted loop playsinline>
-        <source src="public/matcha-latte-mix.mp4" type="video/mp4" />
-      </video>
-    </div>
-    <div class="post-video-wrap">
-      <div style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,250,246,0.45);background:var(--ink);padding:0.5rem 0.75rem;">— Técnica de whisk</div>
-      <video class="post-video" autoplay muted loop playsinline>
-        <source src="public/matcha-whisk.mp4" type="video/mp4" />
-      </video>
-    </div>
+  <!-- INGREDIENTES -->
+  <div>
+    <span class="post-block__label">Ingredientes · Para 1 vaso</span>
+    <ul class="post-ingredients">
+      <li>2 g de matcha ceremonial o de primera cosecha (1 cucharadita al ras)</li>
+      <li>60 ml de agua caliente a 70–75 °C (nunca hirviendo)</li>
+      <li>180 ml de leche de avena, entera o de almendras</li>
+      <li>Hielo para versión fría, o leche vaporizada para versión caliente</li>
+      <li>Sirope de agave o miel, opcional</li>
+    </ul>
   </div>
 
-  <!-- CONTENT -->
-  <div class="post-content">
+  <hr class="post-divider" />
 
-    <div>
-      <span class="post-block__label">Ingredientes · Para 1 vaso</span>
-      <ul class="post-ingredients">
-        <li>2 g de matcha ceremonial o de primera cosecha (1 cucharadita al ras)</li>
-        <li>60 ml de agua caliente a 70–75 °C (nunca hirviendo)</li>
-        <li>180 ml de leche de avena, entera o de almendras</li>
-        <li>Hielo para versión fría, o leche vaporizada para versión caliente</li>
-        <li>Sirope de agave o miel, opcional</li>
-      </ul>
-    </div>
+  <!-- VIDEO 1: WHISK -->
+  <div class="post-video-wrap">
+    <div style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,250,246,0.45);background:var(--ink);padding:0.5rem 0.75rem;">— Técnica de whisk</div>
+    <video class="post-video" autoplay muted loop playsinline>
+      <source src="public/matcha-whisk.mp4" type="video/mp4" />
+    </video>
+  </div>
 
-    <hr class="post-divider" />
-
-    <div>
-      <span class="post-block__label">Paso a paso</span>
-      <div class="post-steps">
-        <div class="post-step">
-          <span class="post-step__num">01</span>
-          <p class="post-step__text"><strong>Tamizá el polvo.</strong> Pasá el matcha por un tamiz fino directo al vaso o bowl. Evitá grumos desde el inicio — el matcha se apelmaza con la humedad del ambiente.</p>
-        </div>
-        <div class="post-step">
-          <span class="post-step__num">02</span>
-          <p class="post-step__text"><strong>Agregá el agua caliente.</strong> Usá 60 ml a 70–75 °C. El agua demasiado caliente quema los compuestos del matcha y genera un amargor innecesario. Un termómetro de barra resuelve esto.</p>
-        </div>
-        <div class="post-step">
-          <span class="post-step__num">03</span>
-          <p class="post-step__text"><strong>Emulsioná hasta espumar.</strong> Con un batidor eléctrico o chasen (batidor de bambú), batí en movimientos de W o zig-zag por 20–30 segundos hasta obtener una espuma verde uniforme sin grumos.</p>
-        </div>
-        <div class="post-step">
-          <span class="post-step__num">04</span>
-          <p class="post-step__text"><strong>Agregá la leche.</strong> Para versión fría: llenás el vaso con hielo, volcás la leche y luego el shot de matcha encima. Para versión caliente: vaporizá la leche a 60 °C y vertí sobre el matcha emulsionado.</p>
-        </div>
-        <div class="post-step">
-          <span class="post-step__num">05</span>
-          <p class="post-step__text"><strong>Servir de inmediato.</strong> El matcha emulsionado se asienta en minutos. No prepares con antelación — la textura y el color cambian.</p>
-        </div>
+  <!-- PASOS 01–03 -->
+  <div>
+    <span class="post-block__label">Paso a paso</span>
+    <div class="post-steps">
+      <div class="post-step">
+        <span class="post-step__num">01</span>
+        <p class="post-step__text"><strong>Tamizá el polvo.</strong> Pasá el matcha por un tamiz fino directo al vaso o bowl. Evitá grumos desde el inicio — el matcha se apelmaza con la humedad del ambiente.</p>
+      </div>
+      <div class="post-step">
+        <span class="post-step__num">02</span>
+        <p class="post-step__text"><strong>Agregá el agua caliente.</strong> Usá 60 ml a 70–75 °C. El agua demasiado caliente quema los compuestos del matcha y genera un amargor innecesario. Un termómetro de barra resuelve esto.</p>
+      </div>
+      <div class="post-step">
+        <span class="post-step__num">03</span>
+        <p class="post-step__text"><strong>Emulsioná hasta espumar.</strong> Con un batidor eléctrico o chasen (batidor de bambú), batí en movimientos de W o zig-zag por 20–30 segundos hasta obtener una espuma verde uniforme sin grumos.</p>
       </div>
     </div>
-
-    <div class="post-tip-box">
-      <span class="post-tip-box__title">— Tips de barra</span>
-      <ul>
-        <li>La calidad del matcha define el 80% del resultado. Un polvo de segunda cosecha va a amargar más, independientemente de la técnica.</li>
-        <li>La leche de avena barista es la que mejor sostiene la emulsión y complementa el umami del matcha sin taparlo.</li>
-        <li>Si tu cliente pide sin azúcar, probá con matcha de primera cosecha — el dulzor natural es suficiente.</li>
-      </ul>
-    </div>
-
-    <div class="post-cta">
-      <a href="catalogo.html" class="btn btn--solid">
-        <span class="btn__label">Ver blends disponibles</span>
-        <span class="btn__arrow">→</span>
-      </a>
-      <a href="https://wa.me/5491156670631?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista" target="_blank" rel="noopener" class="btn btn--ghost">
-        <span class="btn__label">Consultar por volumen</span>
-        <span class="btn__arrow">↗</span>
-      </a>
-    </div>
-
   </div>
+
+  <!-- VIDEO 2: MEZCLAR CON LECHE -->
+  <div class="post-video-wrap">
+    <div style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,250,246,0.45);background:var(--ink);padding:0.5rem 0.75rem;">— Mezclar con leche</div>
+    <video class="post-video" autoplay muted loop playsinline>
+      <source src="public/matcha-latte-mix.mp4" type="video/mp4" />
+    </video>
+  </div>
+
+  <!-- PASOS 04–05 -->
+  <div class="post-steps">
+    <div class="post-step">
+      <span class="post-step__num">04</span>
+      <p class="post-step__text"><strong>Agregá la leche.</strong> Para versión fría: llenás el vaso con hielo, volcás la leche y luego el shot de matcha encima. Para versión caliente: vaporizá la leche a 60 °C y vertí sobre el matcha emulsionado.</p>
+    </div>
+    <div class="post-step">
+      <span class="post-step__num">05</span>
+      <p class="post-step__text"><strong>Servir de inmediato.</strong> El matcha emulsionado se asienta en minutos. No prepares con antelación — la textura y el color cambian.</p>
+    </div>
+  </div>
+
+  <hr class="post-divider" />
+
+  <!-- TIPS -->
+  <div class="post-tip-box">
+    <span class="post-tip-box__title">— Tips de barra</span>
+    <ul>
+      <li>La calidad del matcha define el 80% del resultado. Un polvo de segunda cosecha va a amargar más, independientemente de la técnica.</li>
+      <li>La leche de avena barista es la que mejor sostiene la emulsión y complementa el umami del matcha sin taparlo.</li>
+      <li>Si tu cliente pide sin azúcar, probá con matcha de primera cosecha — el dulzor natural es suficiente.</li>
+    </ul>
+  </div>
+
+  <!-- CTA -->
+  <div class="post-cta">
+    <a href="catalogo.html" class="btn btn--solid">
+      <span class="btn__label">Ver blends disponibles</span>
+      <span class="btn__arrow">→</span>
+    </a>
+    <a href="https://wa.me/5491156670631?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista" target="_blank" rel="noopener" class="btn btn--ghost">
+      <span class="btn__label">Consultar por volumen</span>
+      <span class="btn__arrow">↗</span>
+    </a>
+  </div>
+
 </div>
 
 <!-- ── NEXT ── -->
