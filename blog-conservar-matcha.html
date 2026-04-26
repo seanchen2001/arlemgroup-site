@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cómo conservar el matcha fresco | Kura Matcha Argentina</title>
+  <meta name="description" content="Guía de conservación de matcha para cafés y baristas. Oxígeno, luz y humedad son los enemigos. El protocolo para mantener el color, aroma y perfil intactos." />
+  <meta name="keywords" content="como conservar matcha, matcha fresco, almacenamiento matcha, matcha oxidado, conservacion matcha cafe" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.arlemgroup.com/blog-conservar-matcha.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kura Matcha" />
+  <meta property="og:url" content="https://www.arlemgroup.com/blog-conservar-matcha.html" />
+  <meta property="og:title" content="Cómo conservar el matcha fresco | Kura Matcha" />
+  <meta property="og:description" content="El protocolo de almacenamiento para mantener color, aroma y perfil del matcha intactos." />
+  <meta property="og:locale" content="es_AR" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%234A6741'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .post-hero {
+      background: var(--ink);
+      color: var(--white);
+      padding: calc(var(--nav-h) + clamp(3rem, 8vw, 5rem)) var(--pad-x) clamp(2.5rem, 5vw, 4rem);
+    }
+    .post-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(253,250,246,0.45);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 180ms;
+    }
+    .post-hero__back:hover { color: var(--white); }
+    .post-hero__tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--matcha);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .post-hero__title {
+      font-family: var(--font-sans);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--white);
+      max-width: 18ch;
+    }
+    .post-hero__intro {
+      font-size: clamp(0.98rem, 1.3vw, 1.1rem);
+      line-height: 1.7;
+      color: rgba(253,250,246,0.65);
+      margin-top: 1.5rem;
+      max-width: 54ch;
+    }
+
+    .post-body {
+      max-width: 80rem;
+      margin: 0 auto;
+      padding: clamp(3rem, 7vw, 6rem) var(--pad-x);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(3rem, 6vw, 5rem);
+    }
+    @media (min-width: 900px) {
+      .post-body {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+        direction: rtl; /* video right, text left */
+      }
+      .post-body > * { direction: ltr; }
+    }
+
+    .post-video-wrap {
+      position: sticky;
+      top: calc(var(--nav-h) + 2rem);
+      border-radius: 2px;
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .post-video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+    }
+    @media (max-width: 899px) {
+      .post-video-wrap { position: static; }
+      .post-video { aspect-ratio: 4/3; }
+    }
+
+    .post-content { display: flex; flex-direction: column; gap: 2rem; }
+    .post-divider { border: none; border-top: 1px solid var(--gray-300); margin: 0; }
+
+    .post-block__label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .post-steps { display: flex; flex-direction: column; gap: 1.5rem; }
+    .post-step {
+      display: grid;
+      grid-template-columns: 2.5rem 1fr;
+      gap: 0.75rem;
+      align-items: start;
+    }
+    .post-step__num {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--matcha);
+      padding-top: 0.2rem;
+    }
+    .post-step__text { font-size: 0.93rem; line-height: 1.7; color: var(--ink); }
+    .post-step__text strong { font-weight: 600; }
+
+    .post-tip-box {
+      background: var(--ink);
+      color: var(--white);
+      padding: 1.75rem;
+      border-radius: 2px;
+    }
+    .post-tip-box__title {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--matcha);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .post-tip-box ul { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .post-tip-box li {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: rgba(253,250,246,0.8);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .post-tip-box li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--matcha);
+      font-size: 0.75rem;
+    }
+
+    .post-signals {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .post-signals li {
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+      font-size: 0.92rem;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .post-signals li::before {
+      content: '';
+      display: inline-block;
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: #c0392b;
+      flex-shrink: 0;
+      margin-top: 0.45rem;
+    }
+
+    .post-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .post-next {
+      background: var(--paper);
+      border-top: 1px solid var(--gray-300);
+      padding: 2rem var(--pad-x);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .post-next__label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+    }
+    .post-next__link {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .post-next__link:hover { color: var(--matcha); }
+
+    .post-foot {
+      background: var(--ink);
+      color: var(--white);
+      padding: 2rem var(--pad-x);
+    }
+  </style>
+  <script>
+    (function () {
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-anime');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+<nav class="nav nav--solid-dark" aria-label="Main">
+  <a href="index.html" class="nav__brand">Kura Matcha</a>
+  <div class="nav__links">
+    <a href="index.html" class="nav__link">Inicio</a>
+    <a href="catalogo.html" class="nav__link">Catálogo</a>
+    <a href="about.html" class="nav__link">Marca</a>
+    <a href="blog.html" class="nav__link is-active">Blog</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="post-hero">
+  <a href="blog.html" class="post-hero__back">← Blog</a>
+  <span class="post-hero__tag">02 · Conservación</span>
+  <h1 class="post-hero__title">Cómo conservar el matcha fresco</h1>
+  <p class="post-hero__intro">El matcha es uno de los ingredientes más delicados de la barra. Una vez abierto, el oxígeno, la luz y la humedad degradan rápidamente su color, aroma y perfil.</p>
+</header>
+
+<!-- ── BODY ── -->
+<div class="post-body">
+
+  <div style="background:var(--ink); display:flex; flex-direction:column; justify-content:space-between; aspect-ratio:4/5; padding:2.5rem; box-sizing:border-box; position:sticky; top:calc(var(--nav-h) + 2rem); border-radius:2px;">
+    <span style="font-family:var(--font-mono);font-size:0.62rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(253,250,246,0.35);">— Kura Matcha · Guía de conservación</span>
+    <div>
+      <p style="font-family:var(--font-sans);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;color:var(--white);margin-bottom:1.5rem;">"Un matcha mal conservado no es matcha — es pasto seco."</p>
+      <div style="display:flex;flex-direction:column;gap:0.75rem;">
+        <div style="display:flex;align-items:center;gap:1rem;padding:0.75rem 0;border-top:1px solid rgba(253,250,246,0.1);">
+          <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--matcha);text-transform:uppercase;flex-shrink:0;">Vida útil</span>
+          <span style="font-family:var(--font-sans);font-size:0.88rem;color:rgba(253,250,246,0.7);">6–8 semanas abierto · bien conservado</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;padding:0.75rem 0;border-top:1px solid rgba(253,250,246,0.1);">
+          <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--matcha);text-transform:uppercase;flex-shrink:0;">Temperatura</span>
+          <span style="font-family:var(--font-sans);font-size:0.88rem;color:rgba(253,250,246,0.7);">15–20 °C · lejos del calor</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;padding:0.75rem 0;border-top:1px solid rgba(253,250,246,0.1);">
+          <span style="font-family:var(--font-mono);font-size:0.65rem;letter-spacing:0.1em;color:var(--matcha);text-transform:uppercase;flex-shrink:0;">Envase</span>
+          <span style="font-family:var(--font-sans);font-size:0.88rem;color:rgba(253,250,246,0.7);">Hermético · opaco · sin olores</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="post-content">
+
+    <div>
+      <span class="post-block__label">Los 4 enemigos del matcha</span>
+      <div class="post-steps">
+        <div class="post-step">
+          <span class="post-step__num">01</span>
+          <p class="post-step__text"><strong>Oxígeno.</strong> La oxidación es el proceso más dañino. Una vez abierto el envase, el polvo empieza a perder sus compuestos volátiles. Cerrá herméticamente después de cada uso.</p>
+        </div>
+        <div class="post-step">
+          <span class="post-step__num">02</span>
+          <p class="post-step__text"><strong>Luz directa.</strong> La clorofila — responsable del verde vibrante — se degrada con la exposición lumínica. Guardá el matcha en un recipiente opaco o en un cajón cerrado.</p>
+        </div>
+        <div class="post-step">
+          <span class="post-step__num">03</span>
+          <p class="post-step__text"><strong>Humedad.</strong> El matcha absorbe humedad del ambiente y se apelmaza, perdiendo solubilidad. Si tu barra es húmeda, usá porciones diarias y guardá el stock en un recipiente con sello doble.</p>
+        </div>
+        <div class="post-step">
+          <span class="post-step__num">04</span>
+          <p class="post-step__text"><strong>Calor y olores fuertes.</strong> No guardés el matcha cerca de la máquina de café o especias. Absorbe aromas y el calor acelera la oxidación.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="post-tip-box">
+      <span class="post-tip-box__title">— Protocolo de almacenamiento</span>
+      <ul>
+        <li>Recipiente hermético de vidrio oscuro o lata de hojalata, alejado de la luz.</li>
+        <li>Temperatura ambiente fresca (15–20 °C). La heladera introduce humedad al abrir y cerrar — evitala para uso diario.</li>
+        <li>Para stock a largo plazo (más de 2 meses): freezer en bolsa sellada al vacío.</li>
+        <li>Un matcha bien conservado mantiene su perfil hasta 6–8 semanas después de abierto.</li>
+        <li>Rotá el stock: primero in, primero out. El matcha viejo no mejora.</li>
+      </ul>
+    </div>
+
+    <hr class="post-divider" />
+
+    <div>
+      <span class="post-block__label">Señales de que el matcha perdió calidad</span>
+      <ul class="post-signals">
+        <li>Color verde opaco o amarillento — oxidación avanzada</li>
+        <li>Olor a heno seco o plano, sin notas dulces ni vegetales</li>
+        <li>Sabor excesivamente amargo sin cuerpo ni umami</li>
+        <li>Grumos que no se disuelven ni con batido intenso</li>
+      </ul>
+    </div>
+
+    <div class="post-cta">
+      <a href="catalogo.html" class="btn btn--solid">
+        <span class="btn__label">Ver blends disponibles</span>
+        <span class="btn__arrow">→</span>
+      </a>
+      <a href="https://wa.me/5491156670631?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista" target="_blank" rel="noopener" class="btn btn--ghost">
+        <span class="btn__label">Consultar por volumen</span>
+        <span class="btn__arrow">↗</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── NEXT ── -->
+<div class="post-next">
+  <span class="post-next__label">Artículo anterior</span>
+  <a href="blog-matcha-latte.html" class="post-next__link">
+    ← Cómo preparar un matcha latte
+  </a>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="post-foot">
+  <div class="footer">
+    <div class="footer__meta">
+      <span>© 2026 · Kura Matcha</span>
+      <span>Importación directa · Japón</span>
+    </div>
+    <div class="footer__meta">
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="blog.html">Blog</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5491156670631?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.406c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.838L.057 23.852a.5.5 0 0 0 .614.614l6.093-1.452A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.95 0-3.775-.525-5.338-1.437l-.382-.223-3.968.945.963-3.88-.246-.4A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
+<script src="scripts.js"></script>
+<script src="animations.js"></script>
+</body>
+</html>

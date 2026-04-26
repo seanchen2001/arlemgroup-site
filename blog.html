@@ -3,28 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ideas con Matcha · Las Creaciones Más Creativas del Mundo | Kura Matcha</title>
-  <meta name="description" content="Las preparaciones de matcha más originales del mundo: desde Shanghai hasta Nueva York. Inspiración para cafés y baristas que trabajan con matcha de calidad." />
-  <meta name="keywords" content="recetas matcha, ideas matcha latte, matcha creativo, matcha cafés del mundo, matcha bebidas originales, inspiración matcha barra" />
+  <title>Blog & Ideas · Matcha en Barra | Kura Matcha Argentina</title>
+  <meta name="description" content="Guías prácticas de matcha para baristas y cafés, más las creaciones más originales del mundo. Técnica, conservación e inspiración." />
+  <meta name="keywords" content="como preparar matcha latte, como conservar matcha, matcha barra, recetas matcha argentina, ideas matcha cafés" />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://www.arlemgroup.com/ideas.html" />
+  <link rel="canonical" href="https://www.arlemgroup.com/blog.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kura Matcha" />
-  <meta property="og:url" content="https://www.arlemgroup.com/ideas.html" />
-  <meta property="og:title" content="Ideas con Matcha · Las Creaciones Más Creativas del Mundo | Kura Matcha" />
-  <meta property="og:description" content="Las preparaciones de matcha más originales del mundo. Inspiración para cafés y baristas que trabajan con matcha de calidad." />
+  <meta property="og:url" content="https://www.arlemgroup.com/blog.html" />
+  <meta property="og:title" content="Blog & Ideas · Matcha en Barra | Kura Matcha Argentina" />
+  <meta property="og:description" content="Guías de preparación y conservación de matcha, más las creaciones más originales del mundo." />
   <meta property="og:locale" content="es_AR" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Ideas con Matcha · Las más creativas del mundo | Kura Matcha" />
-  <meta name="twitter:description" content="Las preparaciones de matcha más originales del mundo. Inspiración para cafés y baristas." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%234A6741'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* ── Ideas page ── */
-    .ideas-hero {
+    /* ── Hero ── */
+    .bi-hero {
       background: var(--ink);
       color: var(--white);
       padding: calc(var(--nav-h) + clamp(3rem, 8vw, 6rem)) var(--pad-x) clamp(2.5rem, 5vw, 4rem);
@@ -32,25 +30,132 @@
       flex-direction: column;
       gap: 1.5rem;
     }
-
-    .ideas-hero__meta {
+    .bi-hero__meta {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
     }
-
-    .ideas-hero__body {
-      max-width: 52ch;
-    }
-
-    .ideas-hero__body p {
+    .bi-hero__body p {
       font-size: clamp(1rem, 1.3vw, 1.15rem);
       line-height: 1.6;
       color: rgba(253,250,246,0.65);
       margin-top: 1.25rem;
+      max-width: 52ch;
     }
 
-    /* ── Grid ── */
+    /* ══ BLOG SECTION ══ */
+    .blog-section {
+      padding: clamp(3rem, 6vw, 5rem) var(--pad-x);
+      background: var(--white);
+    }
+    .blog-section__head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .blog-section__label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+    }
+    .blog-section__count {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+    }
+
+    /* Blog post cards */
+    .blog-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--gray-300);
+    }
+    .blog-card {
+      display: grid;
+      grid-template-columns: 3rem 1fr auto;
+      gap: 1.5rem 2rem;
+      align-items: center;
+      background: var(--white);
+      padding: 2rem 1.5rem;
+      text-decoration: none;
+      color: var(--ink);
+      cursor: pointer;
+      transition: background 180ms ease;
+    }
+    .blog-card:hover { background: var(--paper); }
+    @media (max-width: 600px) {
+      .blog-card {
+        grid-template-columns: 2.5rem 1fr;
+        grid-template-rows: auto auto;
+      }
+      .blog-card__arrow { display: none; }
+    }
+
+    .blog-card__no {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: var(--matcha);
+      align-self: start;
+      padding-top: 0.2rem;
+    }
+    .blog-card__body { display: flex; flex-direction: column; gap: 0.4rem; }
+    .blog-card__tag {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+    }
+    .blog-card__title {
+      font-family: var(--font-sans);
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+      color: var(--ink);
+    }
+    .blog-card__excerpt {
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--gray-500);
+      margin-top: 0.25rem;
+      max-width: 60ch;
+    }
+    .blog-card__arrow {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      color: var(--matcha);
+      align-self: center;
+      flex-shrink: 0;
+    }
+
+    /* ══ SEPARATOR ══ */
+    .bi-separator {
+      padding: clamp(1.5rem, 3vw, 2.5rem) var(--pad-x);
+      background: var(--ink);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .bi-separator__label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(253,250,246,0.4);
+    }
+
+    /* ══ IDEAS SECTION ══ */
     .ideas-grid {
       padding: clamp(2.5rem, 5vw, 4rem) var(--pad-x);
       background: var(--paper);
@@ -59,16 +164,13 @@
       gap: 1px;
       background-color: var(--gray-300);
     }
-
     @media (min-width: 640px) {
       .ideas-grid { grid-template-columns: repeat(2, 1fr); }
     }
-
     @media (min-width: 1024px) {
       .ideas-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
-    /* ── Card ── */
     .idea-card {
       background: var(--white);
       display: flex;
@@ -76,26 +178,19 @@
       cursor: default;
       transition: background 200ms ease;
     }
-
     .idea-card:hover { background: var(--paper); }
-
     .idea-card__img {
       aspect-ratio: 4 / 3;
       overflow: hidden;
       background: var(--gray-100);
     }
-
     .idea-card__img img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 500ms cubic-bezier(0.2,0.7,0.2,1);
     }
-
-    .idea-card:hover .idea-card__img img {
-      transform: scale(1.04);
-    }
-
+    .idea-card:hover .idea-card__img img { transform: scale(1.04); }
     .idea-card__body {
       padding: 1.25rem 1.5rem 1.5rem;
       display: flex;
@@ -103,7 +198,6 @@
       gap: 0.4rem;
       flex: 1;
     }
-
     .idea-card__no {
       font-family: var(--font-mono);
       font-size: 0.65rem;
@@ -111,7 +205,6 @@
       text-transform: uppercase;
       color: var(--gray-500);
     }
-
     .idea-card__title {
       font-family: var(--font-sans);
       font-size: clamp(1rem, 1.4vw, 1.15rem);
@@ -121,7 +214,6 @@
       color: var(--ink);
       margin-top: 0.1rem;
     }
-
     .idea-card__shop {
       font-family: var(--font-mono);
       font-size: 0.72rem;
@@ -130,7 +222,6 @@
       color: var(--matcha);
       margin-top: 0.25rem;
     }
-
     .idea-card__location {
       font-family: var(--font-mono);
       font-size: 0.68rem;
@@ -138,7 +229,6 @@
       text-transform: uppercase;
       color: var(--gray-500);
     }
-
     .idea-card__ingredients {
       font-size: 0.82rem;
       color: var(--gray-500);
@@ -149,7 +239,7 @@
     }
 
     /* ── Footer ── */
-    .ideas-foot {
+    .bi-foot {
       background: var(--ink);
       color: var(--white);
       padding: 2rem var(--pad-x);
@@ -171,28 +261,64 @@
     <a href="index.html" class="nav__link">Inicio</a>
     <a href="catalogo.html" class="nav__link">Catálogo</a>
     <a href="about.html" class="nav__link">Marca</a>
-    <a href="blog.html" class="nav__link">Blog</a>
-    <a href="ideas.html" class="nav__link is-active">Ideas</a>
+    <a href="blog.html" class="nav__link is-active">Blog</a>
   </div>
 </nav>
 
 <!-- ── HERO ── -->
-<header class="ideas-hero">
-  <div class="ideas-hero__meta">
-    <span class="mono-label" style="color:rgba(253,250,246,0.4);">Ideas · Edición 001</span>
+<header class="bi-hero">
+  <div class="bi-hero__meta">
+    <span class="mono-label" style="color:rgba(253,250,246,0.4);">Blog & Ideas · Edición 001</span>
     <span class="mono-label" style="color:rgba(253,250,246,0.4);">Global · 2026</span>
   </div>
   <hr class="rule rule--light" />
-  <div class="ideas-hero__body">
-    <h1 class="h-section" style="color:var(--white);">Las más creativas.</h1>
-    <p>Las preparaciones de matcha más originales del mundo — de Shanghai a Nueva York. Ideas que demuestran por qué el matcha de calidad cambia todo lo que sale de la barra.</p>
+  <div class="bi-hero__body">
+    <h1 class="h-section" style="color:var(--white);">Del polvo a la taza.</h1>
+    <p>Guías prácticas para baristas e inspiración de los mejores cafés del mundo.</p>
   </div>
 </header>
 
-<!-- ── GRID ── -->
+<!-- ══ BLOG ══ -->
+<section class="blog-section">
+  <div class="blog-section__head">
+    <span class="blog-section__label">— Blog · Guías de barra</span>
+    <span class="blog-section__count">02 artículos</span>
+  </div>
+
+  <div class="blog-cards">
+
+    <a href="blog-matcha-latte.html" class="blog-card">
+      <span class="blog-card__no">01</span>
+      <div class="blog-card__body">
+        <span class="blog-card__tag">Preparación</span>
+        <h2 class="blog-card__title">Cómo preparar un matcha latte</h2>
+        <p class="blog-card__excerpt">Temperatura del agua, técnica de emulsión y elección del blend. El método que usamos para un latte sin amargor.</p>
+      </div>
+      <span class="blog-card__arrow">→</span>
+    </a>
+
+    <a href="blog-conservar-matcha.html" class="blog-card">
+      <span class="blog-card__no">02</span>
+      <div class="blog-card__body">
+        <span class="blog-card__tag">Conservación</span>
+        <h2 class="blog-card__title">Cómo conservar el matcha fresco</h2>
+        <p class="blog-card__excerpt">Oxígeno, luz y humedad son los enemigos. El protocolo de almacenamiento para preservar color, aroma y perfil.</p>
+      </div>
+      <span class="blog-card__arrow">→</span>
+    </a>
+
+  </div>
+</section>
+
+<!-- ── SEPARATOR ── -->
+<div class="bi-separator">
+  <span class="bi-separator__label">— Ideas · Las más creativas del mundo</span>
+  <span class="bi-separator__label">Global · 2026</span>
+</div>
+
+<!-- ══ IDEAS GRID ══ -->
 <div class="ideas-grid">
 
-  <!-- 01 -->
   <article class="idea-card">
     <div class="idea-card__img">
       <img src="https://obj.shine.cn/files/2026/04/07/a08821a1-ffaf-4f96-a1c8-be9ba86ef37e_0.jpg"
@@ -207,7 +333,6 @@
     </div>
   </article>
 
-  <!-- 02 -->
   <article class="idea-card">
     <div class="idea-card__img">
       <img src="https://www.ohhowcivilized.com/wp-content/uploads/2018/08/0818-matcha-tea-rose-latte-13.jpg"
@@ -222,11 +347,10 @@
     </div>
   </article>
 
-  <!-- 03 -->
   <article class="idea-card">
     <div class="idea-card__img">
       <img src="https://www.ohhowcivilized.com/wp-content/uploads/2018/03/matcha-butterfly-1.jpg"
-           alt="Matcha Butterfly Pea Flower Lemonade" loading="lazy" />
+           alt="Butterfly Pea Matcha Lemonade" loading="lazy" />
     </div>
     <div class="idea-card__body">
       <span class="idea-card__no">03</span>
@@ -237,7 +361,6 @@
     </div>
   </article>
 
-  <!-- 04 -->
   <article class="idea-card">
     <div class="idea-card__img">
       <img src="public/blankstreet-khloud.jpg"
@@ -252,7 +375,6 @@
     </div>
   </article>
 
-  <!-- 05 -->
   <article class="idea-card">
     <div class="idea-card__img">
       <img src="https://www.ohhowcivilized.com/wp-content/uploads/2013/02/0218-matcha-white-hot-chocolate-3.jpg"
@@ -267,11 +389,10 @@
     </div>
   </article>
 
-
 </div>
 
 <!-- ── FOOTER ── -->
-<footer class="ideas-foot">
+<footer class="bi-foot">
   <div class="footer">
     <div class="footer__meta">
       <span>© 2026 · Kura Matcha</span>
