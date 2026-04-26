@@ -139,20 +139,28 @@
 
     /* ══ SEPARATOR ══ */
     .bi-separator {
-      padding: clamp(1.5rem, 3vw, 2.5rem) var(--pad-x);
+      padding: clamp(3rem, 6vw, 5rem) var(--pad-x);
       background: var(--ink);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
+      flex-direction: column;
+      gap: 1rem;
+      border-top: 1px solid rgba(253,250,246,0.1);
+      border-bottom: 1px solid rgba(253,250,246,0.1);
     }
-    .bi-separator__label {
+    .bi-separator__tag {
       font-family: var(--font-mono);
       font-size: 0.65rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: rgba(253,250,246,0.4);
+      color: rgba(253,250,246,0.55);
+    }
+    .bi-separator__label {
+      font-family: var(--font-sans);
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--white);
     }
 
     /* ══ IDEAS SECTION ══ */
@@ -263,6 +271,9 @@
     <a href="about.html" class="nav__link">Marca</a>
     <a href="blog.html" class="nav__link is-active">Blog</a>
   </div>
+    <div class="nav__action">
+      <a href="https://wa.me/5491156670631?text=Hola%2C%20quiero%20trabajar%20con%20Kura%20Matcha" target="_blank" rel="noopener" class="nav__action-btn">Trabajá con nosotros</a>
+    </div>
 </nav>
 
 <!-- ── HERO ── -->
@@ -312,8 +323,8 @@
 
 <!-- ── SEPARATOR ── -->
 <div class="bi-separator">
-  <span class="bi-separator__label">— Ideas · Las más creativas del mundo</span>
-  <span class="bi-separator__label">Global · 2026</span>
+  <span class="bi-separator__tag">— Ideas · Global · 2026</span>
+  <span class="bi-separator__label">Las más creativas del mundo.</span>
 </div>
 
 <!-- ══ IDEAS GRID ══ -->
