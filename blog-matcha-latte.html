@@ -79,9 +79,18 @@
     }
 
     /* ── Video ── */
+    .post-videos {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    @media (min-width: 900px) {
+      .post-videos {
+        position: sticky;
+        top: calc(var(--nav-h) + 2rem);
+      }
+    }
     .post-video-wrap {
-      position: sticky;
-      top: calc(var(--nav-h) + 2rem);
       border-radius: 2px;
       overflow: hidden;
       background: var(--ink);
@@ -91,9 +100,6 @@
       display: block;
       aspect-ratio: 16/9;
       object-fit: cover;
-    }
-    @media (max-width: 899px) {
-      .post-video-wrap { position: static; }
     }
 
     /* ── Content ── */
@@ -221,6 +227,15 @@
       color: var(--white);
       padding: 2rem var(--pad-x);
     }
+
+    /* ── Mobile fixes ── */
+    @media (max-width: 640px) {
+      .post-body {
+        padding: clamp(2rem, 5vw, 3rem) var(--pad-x);
+        gap: 2rem;
+      }
+      .post-hero__title { font-size: clamp(1.7rem, 7vw, 2.5rem); }
+    }
   </style>
   <script>
     (function () {
@@ -254,14 +269,14 @@
 <div class="post-body">
 
   <!-- VIDEOS -->
-  <div style="display:flex; flex-direction:column; gap:1px; position:sticky; top:calc(var(--nav-h) + 2rem);">
-    <div class="post-video-wrap" style="position:static;">
+  <div class="post-videos">
+    <div class="post-video-wrap">
       <div style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,250,246,0.45);background:var(--ink);padding:0.5rem 0.75rem;">— Mezclar con leche</div>
       <video class="post-video" autoplay muted loop playsinline>
         <source src="public/matcha-latte-mix.mp4" type="video/mp4" />
       </video>
     </div>
-    <div class="post-video-wrap" style="position:static;">
+    <div class="post-video-wrap">
       <div style="font-family:var(--font-mono);font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(253,250,246,0.45);background:var(--ink);padding:0.5rem 0.75rem;">— Técnica de whisk</div>
       <video class="post-video" autoplay muted loop playsinline>
         <source src="public/matcha-whisk.mp4" type="video/mp4" />
