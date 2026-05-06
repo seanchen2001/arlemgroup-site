@@ -1775,7 +1775,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 
 .rack {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   gap: clamp(0.75rem, 1.2vw, 1.25rem);
   padding: 0 var(--pad-x);
   overflow-x: auto;
