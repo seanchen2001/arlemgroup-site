@@ -1792,7 +1792,7 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
 .card {
   flex: 0 0 auto;
   width: clamp(180px, 18vw, 260px);
-  aspect-ratio: 7 / 12;
+  aspect-ratio: 3 / 4;
   scroll-snap-align: start;
   position: relative;
   background: var(--white);
