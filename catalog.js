@@ -17,7 +17,7 @@
      matching the filename of its powder-stroke image in /public. */
   const CODENAMES = {
     'blend-shizuoka-maki':    { code: 'MAKI',  img: 'public/maki.png'  },
-    'blend-shizuoka-rin':     { code: 'RIN',   img: 'public/maki.png'  },
+    'blend-shizuoka-rin':     { code: 'RIN',   img: 'public/sei.png'   },
     'blend-kyoto-haku':       { code: 'HAKU',  img: 'public/kai.png'   },
     'blend-kyoto-kai':        { code: 'KAI',   img: 'public/kai.png'   },
     'blend-kansai-ichi':      { code: 'ICHI',  img: 'public/ichi.png'  },
