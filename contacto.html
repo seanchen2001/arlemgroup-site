@@ -233,7 +233,7 @@
       </button>
     </form>
 
-    <p class="contact-split__fine">Al enviar abriremos WhatsApp con tu información lista para mandar. Solo confirmás.</p>
+    <p class="contact-split__fine">Al enviar se abre tu cliente de mail con todo listo. Solo mandás.</p>
   </div>
 
   <!-- RIGHT · WhatsApp secundario -->
@@ -287,10 +287,11 @@
     const blend  = params.get('blend');
     const region = params.get('region');
 
-    let msg = `Hola, me gustaría coordinar una visita con muestras.\n\nCafé: ${cafe}\nNombre: ${nombre}\nTeléfono: ${tel}`;
-    if (blend) msg += `\nBlend de interés: ${blend}${region ? ` (${region})` : ''}`;
+    let body = `Café: ${cafe}\nNombre: ${nombre}\nTeléfono: ${tel}`;
+    if (blend) body += `\nBlend de interés: ${blend}${region ? ` (${region})` : ''}`;
 
-    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+    const subject = `Visita con muestras · ${cafe}`;
+    window.location.href = `mailto:seanc@kuramatcha.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 </script>
 
