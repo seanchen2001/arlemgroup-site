@@ -158,7 +158,7 @@
       <span>MOQ · <strong>${blend.moq}</strong></span>
     `;
 
-    const consultHref = `index.html?blend=${encodeURIComponent(blend.name)}&region=${encodeURIComponent(region.name)}#contacto`;
+    const consultHref = `contacto.html?blend=${encodeURIComponent(blend.name)}&region=${encodeURIComponent(region.name)}`;
     overlayEls.consult.setAttribute('href', consultHref);
 
     const waText = encodeURIComponent(`Hola, consulta por "${blend.name}" (${region.name}).`);

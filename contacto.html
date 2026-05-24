@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto · Kura Matcha</title>
+  <meta name="description" content="Trabajá con Kura Matcha. Solicitá una visita con muestras en CABA y GBA, o consultá directamente por WhatsApp." />
+  <meta name="robots" content="noindex" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%234A6741'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ── Layout ── */
+    .contact-split {
+      min-height: calc(100vh - var(--nav-h));
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 720px) {
+      .contact-split { grid-template-columns: 1fr; }
+      .contact-split__panel--primary { order: -1; }
+    }
+
+    /* ── Panels ── */
+    .contact-split__panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 6vw, 5rem);
+    }
+
+    .contact-split__panel--secondary {
+      background: var(--paper);
+      border-right: 1px solid var(--gray-300);
+    }
+
+    .contact-split__panel--primary {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    /* ── Eyebrow ── */
+    .contact-split__tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: var(--track);
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-split__panel--secondary .contact-split__tag { color: var(--gray-500); }
+    .contact-split__panel--primary   .contact-split__tag { color: rgba(253,250,246,0.5); }
+
+    /* ── Heading ── */
+    .contact-split__title {
+      font-family: var(--font-serif, Georgia, serif);
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-split__panel--secondary .contact-split__title { color: var(--ink); }
+    .contact-split__panel--primary   .contact-split__title { color: var(--white); }
+
+    /* ── Body copy ── */
+    .contact-split__body {
+      font-size: 0.95rem;
+      line-height: 1.65;
+      max-width: 38ch;
+      margin-bottom: 2.25rem;
+    }
+
+    .contact-split__panel--secondary .contact-split__body { color: var(--gray-700); }
+    .contact-split__panel--primary   .contact-split__body { color: rgba(253,250,246,0.7); }
+
+    /* ── WA secondary button ── */
+    .contact-split__wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: var(--track-tight);
+      text-transform: uppercase;
+      color: var(--ink);
+      border: 1px solid var(--ink);
+      padding: 0.85rem 1.5rem;
+      text-decoration: none;
+      transition: background 200ms ease, color 200ms ease;
+      width: fit-content;
+    }
+    .contact-split__wa-btn:hover {
+      background: var(--ink);
+      color: var(--white);
+    }
+    .contact-split__wa-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+    /* ── Form ── */
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+
+    .contact-form__field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .contact-form__label {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: var(--track);
+      text-transform: uppercase;
+      color: rgba(253,250,246,0.5);
+    }
+
+    .contact-form__input {
+      background: rgba(253,250,246,0.07);
+      border: 1px solid rgba(253,250,246,0.18);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      padding: 0.75rem 1rem;
+      outline: none;
+      transition: border-color 180ms ease, background 180ms ease;
+      border-radius: 0;
+      -webkit-appearance: none;
+    }
+    .contact-form__input::placeholder { color: rgba(253,250,246,0.3); }
+    .contact-form__input:focus {
+      border-color: rgba(253,250,246,0.55);
+      background: rgba(253,250,246,0.11);
+    }
+
+    .contact-form__submit {
+      margin-top: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      letter-spacing: var(--track-tight);
+      text-transform: uppercase;
+      background: var(--matcha);
+      color: var(--white);
+      border: none;
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      transition: background 200ms ease;
+      width: 100%;
+    }
+    .contact-form__submit:hover { background: var(--matcha-dark); }
+    .contact-form__submit svg { width: 16px; height: 16px; }
+
+    /* ── Fine print ── */
+    .contact-split__fine {
+      margin-top: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.04em;
+      color: rgba(253,250,246,0.35);
+      line-height: 1.6;
+    }
+
+    /* ── Blend param badge (when coming from catalog) ── */
+    .contact-blend-badge {
+      display: none;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: var(--track);
+      text-transform: uppercase;
+      color: var(--matcha);
+      border: 1px solid rgba(74,103,65,0.4);
+      background: rgba(74,103,65,0.08);
+      padding: 0.4rem 0.75rem;
+      margin-bottom: 1.5rem;
+      width: fit-content;
+    }
+    .contact-blend-badge.is-visible { display: flex; }
+  </style>
+</head>
+<body>
+
+<nav class="nav nav--light" aria-label="Main">
+  <a href="index.html" class="nav__brand">Kura Matcha</a>
+  <div class="nav__links">
+    <a href="index.html" class="nav__link">Inicio</a>
+    <a href="catalogo.html" class="nav__link">Catálogo</a>
+    <a href="about.html" class="nav__link">Marca</a>
+    <a href="blog.html" class="nav__link">Blog</a>
+  </div>
+  <div class="nav__action">
+    <a href="contacto.html" class="nav__action-btn is-active">Trabajá con nosotros</a>
+  </div>
+</nav>
+
+<!-- ── SPLIT LAYOUT ── -->
+<div class="contact-split">
+
+  <!-- LEFT · WhatsApp secundario -->
+  <div class="contact-split__panel contact-split__panel--secondary">
+    <span class="contact-split__tag">Contacto directo</span>
+    <h1 class="contact-split__title">Hablar con un representante.</h1>
+    <p class="contact-split__body">Para consultas sobre blends, volumen, precios o disponibilidad. Respondemos en 24 h hábiles.</p>
+    <a id="wa-link" href="https://wa.me/5491156670631?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista" target="_blank" rel="noopener" class="contact-split__wa-btn">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.838L.057 23.852a.5.5 0 0 0 .614.614l6.093-1.452A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.95 0-3.775-.525-5.338-1.437l-.382-.223-3.968.945.963-3.88-.246-.4A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+      Abrir WhatsApp
+    </a>
+  </div>
+
+  <!-- RIGHT · Visita con muestras (primario) -->
+  <div class="contact-split__panel contact-split__panel--primary">
+    <span class="contact-split__tag">CABA y GBA · Sin cargo</span>
+
+    <!-- Badge cuando viene del catálogo con un blend específico -->
+    <div class="contact-blend-badge" id="blend-badge">
+      <span id="blend-badge-text"></span>
+    </div>
+
+    <h2 class="contact-split__title">Recibir una visita con muestras.</h2>
+    <p class="contact-split__body">Un representante visita tu café con muestras de todos los blends disponibles. Coordinamos según tu disponibilidad, sin compromiso de compra.</p>
+
+    <form class="contact-form" id="visit-form" novalidate>
+      <div class="contact-form__field">
+        <label class="contact-form__label" for="cafe-name">Nombre del café</label>
+        <input class="contact-form__input" type="text" id="cafe-name" name="cafe" placeholder="Ej: Café San Telmo" required />
+      </div>
+      <div class="contact-form__field">
+        <label class="contact-form__label" for="contact-name">Tu nombre</label>
+        <input class="contact-form__input" type="text" id="contact-name" name="nombre" placeholder="Ej: Martina García" required />
+      </div>
+      <div class="contact-form__field">
+        <label class="contact-form__label" for="contact-phone">Teléfono</label>
+        <input class="contact-form__input" type="tel" id="contact-phone" name="telefono" placeholder="Ej: 11 5555 1234" required />
+      </div>
+      <button type="submit" class="contact-form__submit">
+        Solicitar visita
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </form>
+
+    <p class="contact-split__fine">Al enviar abriremos WhatsApp con tu información lista para mandar. Solo confirmás.</p>
+  </div>
+
+</div>
+
+<!-- ── WhatsApp FAB ── -->
+<a class="wa-fab" href="https://wa.me/5491156670631?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.838L.057 23.852a.5.5 0 0 0 .614.614l6.093-1.452A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.95 0-3.775-.525-5.338-1.437l-.382-.223-3.968.945.963-3.88-.246-.4A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script>
+  const WA = '5491156670631';
+
+  // Si viene del catálogo con ?blend=X, personalizar el mensaje y mostrar badge
+  (function () {
+    const params = new URLSearchParams(window.location.search);
+    const blend  = params.get('blend');
+    const region = params.get('region');
+
+    if (blend) {
+      const badge = document.getElementById('blend-badge');
+      const badgeText = document.getElementById('blend-badge-text');
+      badgeText.textContent = region ? `Blend ${blend} · ${region}` : `Blend ${blend}`;
+      badge.classList.add('is-visible');
+
+      const waMsg = encodeURIComponent(`Hola, consulta mayorista por el blend "${blend}"${region ? ` (${region})` : ''}.`);
+      document.getElementById('wa-link').href = `https://wa.me/${WA}?text=${waMsg}`;
+    }
+  })();
+
+  // Formulario de visita → WhatsApp prefilled
+  document.getElementById('visit-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    const cafe   = document.getElementById('cafe-name').value.trim();
+    const nombre = document.getElementById('contact-name').value.trim();
+    const tel    = document.getElementById('contact-phone').value.trim();
+
+    if (!cafe || !nombre || !tel) return;
+
+    const params = new URLSearchParams(window.location.search);
+    const blend  = params.get('blend');
+    const region = params.get('region');
+
+    let msg = `Hola, me gustaría coordinar una visita con muestras.\n\nCafé: ${cafe}\nNombre: ${nombre}\nTeléfono: ${tel}`;
+    if (blend) msg += `\nBlend de interés: ${blend}${region ? ` (${region})` : ''}`;
+
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
+  });
+</script>
+
+</body>
+</html>
