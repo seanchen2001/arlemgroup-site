@@ -226,12 +226,10 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   gap: 0.5rem;
 }
 
-.nav__brand::before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background: var(--matcha);
-  display: inline-block;
+.nav__brand img {
+  height: 28px;
+  width: auto;
+  display: block;
 }
 
 .nav__links {
