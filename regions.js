@@ -86,7 +86,7 @@ window.REGIONS = [
       {
         id: 'blend-aichi-shinhojicha',
         name: 'Shin Hojicha',
-        price: '$85 / kg',
+        price: null,
         moq: '1 kg',
         cosecha: '1ra y 2da cosecha · 2026',
         variedades: 'Yabukita',

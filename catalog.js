@@ -26,7 +26,7 @@
     'blend-kagoshima-tsune':  { code: 'TSUNE', img: 'public/tsune.png' },
   };
   const codeFor  = (blend) => (CODENAMES[blend.id] || {}).code || '—';
-  const imageFor = (blend) => (CODENAMES[blend.id] || {}).img  || 'public/ichi.png';
+  const imageFor = (blend) => { const e = CODENAMES[blend.id]; return e ? (e.img ?? null) : 'public/ichi.png'; };
 
   /* ---------- Featured blends shown in the rack ---------- */
   const FEATURED_IDS = ['blend-shizuoka-maki','blend-shizuoka-rin','blend-kyoto-haku','blend-kansai-ichi','blend-kagoshima-tsuyu','blend-aichi-shinhojicha'];
@@ -56,9 +56,7 @@
           <span class="card__label">${code}</span>
           <span class="card__rule" aria-hidden="true"></span>
         </div>
-        <div class="card__image">
-          <img src="${img}" alt="" loading="lazy" />
-        </div>
+        ${img ? `<div class="card__image"><img src="${img}" alt="" loading="lazy" /></div>` : `<div class="card__image card__image--empty"></div>`}
         <span class="card__sr">${p.blend.name} · ${p.region.name}</span>
       `;
 
@@ -134,8 +132,14 @@
     const { region, blend, index } = entry;
     const n = String(index + 1).padStart(2, '0');
     const img = imageFor(blend, index);
-    overlayEls.img.src = img;
-    overlayEls.img.alt = `${blend.name} · ${region.name}`;
+    if (img) {
+      overlayEls.img.src = img;
+      overlayEls.img.alt = `${blend.name} · ${region.name}`;
+      overlayEls.img.style.display = '';
+    } else {
+      overlayEls.img.src = '';
+      overlayEls.img.style.display = 'none';
+    }
     overlayEls.title.textContent = blend.name;
     overlayEls.sub.textContent = `${region.name} · ${blend.proceso}`;
     overlayEls.no.textContent = `Nº ${n} · ${region.name}`;
