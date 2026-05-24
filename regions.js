@@ -77,6 +77,26 @@ window.REGIONS = [
     ]
   },
   {
+    id: 'aichi',
+    name: 'Aichi',
+    coord: '35.1802°N · 136.9066°E',
+    prefectures: ['Aichi'],
+    headline: 'Hojicha en polvo de tostado suave. Prefectura central.',
+    blends: [
+      {
+        id: 'blend-aichi-shinhojicha',
+        name: 'Shin Hojicha',
+        price: '$85 / kg',
+        moq: '1 kg',
+        cosecha: '1ra y 2da cosecha · 2026',
+        variedades: 'Yabukita',
+        proceso: 'Tostado suave · Hojicha en polvo',
+        notas: 'Arroz tostado y heno en la entrada, con notas verdes frescas que todavía se perciben claramente. Calidez limpia al final, sin el caramelo profundo de un tostado oscuro. Menor cafeína que el matcha. Funciona muy bien en latte caliente o frío.',
+        uso: 'Latte caliente · Latte frío'
+      }
+    ]
+  },
+  {
     id: 'kagoshima',
     name: 'Kagoshima',
     coord: '31.5602°N · 130.5581°E',

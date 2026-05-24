@@ -21,6 +21,7 @@
     'blend-kyoto-haku':       { code: 'HAKU',  img: 'public/kai.png'   },
     'blend-kyoto-kai':        { code: 'KAI',   img: 'public/kai.png'   },
     'blend-kansai-ichi':      { code: 'ICHI',  img: 'public/ichi.png'  },
+    'blend-aichi-shinhojicha': { code: 'SHIN',  img: null              },
     'blend-kagoshima-tsuyu':  { code: 'TSUYU', img: 'public/sei.png'   },
     'blend-kagoshima-tsune':  { code: 'TSUNE', img: 'public/tsune.png' },
   };
@@ -28,7 +29,7 @@
   const imageFor = (blend) => (CODENAMES[blend.id] || {}).img  || 'public/ichi.png';
 
   /* ---------- Featured blends shown in the rack ---------- */
-  const FEATURED_IDS = ['blend-shizuoka-maki','blend-shizuoka-rin','blend-kyoto-haku','blend-kansai-ichi','blend-kagoshima-tsuyu'];
+  const FEATURED_IDS = ['blend-shizuoka-maki','blend-shizuoka-rin','blend-kyoto-haku','blend-kansai-ichi','blend-kagoshima-tsuyu','blend-aichi-shinhojicha'];
   const featured = FEATURED_IDS
     .map((id) => blends.find((p) => p.blend.id === id))
     .filter(Boolean);
