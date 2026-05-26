@@ -112,16 +112,18 @@
     }
 
     /* ══ GALLERY ══ */
-    /* Half-card width for centering: clamp(130px, 14vw, 190px)  */
-    /* padding-inline centers first and last card in viewport    */
+    /* Center the SECOND card on initial load.
+       padding-left = 50vw - 1.5×cardWidth - 1 gap
+       Card width = clamp(260px, 28vw, 380px) → 1.5× = clamp(390px, 42vw, 570px)
+       On narrow viewports the calc goes negative → fallback to 1.5rem            */
     .cat-gallery {
       overflow-x: auto;
       scroll-snap-type: x mandatory;
-      scroll-padding-inline: calc(50vw - clamp(130px, 14vw, 190px));
+      scroll-padding-inline: 50%;
       -webkit-overflow-scrolling: touch;
       scrollbar-width: none;
-      padding-left: calc(50vw - clamp(130px, 14vw, 190px));
-      padding-right: calc(50vw - clamp(130px, 14vw, 190px));
+      padding-left:  max(1.5rem, calc(50vw - clamp(390px, 42vw, 570px) - 1rem));
+      padding-right: max(1.5rem, calc(50vw - clamp(130px, 14vw, 190px)));
     }
     .cat-gallery::-webkit-scrollbar { display: none; }
 
