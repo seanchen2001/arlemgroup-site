@@ -1,0 +1,420 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cuando las exportaciones superan la producción: el problema del matcha falso | Kura Matcha</title>
+  <meta name="description" content="Los volúmenes exportados como 'matcha' ya superan la producción real de tencha en Japón. Qué significa eso para los cafés y cómo protegerse." />
+  <meta name="keywords" content="matcha falso, matcha adulterado, tencha producción japón, exportaciones matcha, matcha calidad cafe, proveedor matcha confiable" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.arlemgroup.com/blog-fake-matcha.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Kura Matcha" />
+  <meta property="og:url" content="https://www.arlemgroup.com/blog-fake-matcha.html" />
+  <meta property="og:title" content="Cuando las exportaciones superan la producción: el problema del matcha falso" />
+  <meta property="og:description" content="El volumen exportado como matcha ya supera la producción real de tencha en Japón. Qué significa para tu café y cómo protegerse." />
+  <meta property="og:image" content="https://www.arlemgroup.com/public/fake-matcha.jpg" />
+  <meta property="og:locale" content="es_AR" />
+  <link rel="icon" type="image/png" href="public/kura-logo.png?v=2" />
+  <link rel="apple-touch-icon" href="public/kura-logo.png?v=2" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .post-hero {
+      background: var(--ink);
+      color: var(--white);
+      padding: calc(var(--nav-h) + clamp(3rem, 8vw, 5rem)) var(--pad-x) clamp(2.5rem, 5vw, 4rem);
+    }
+    .post-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(253,250,246,0.45);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: color 180ms;
+    }
+    .post-hero__back:hover { color: var(--white); }
+    .post-hero__tag {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--matcha);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .post-hero__title {
+      font-family: var(--font-sans);
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--white);
+      max-width: 22ch;
+    }
+    .post-hero__intro {
+      font-size: clamp(0.98rem, 1.3vw, 1.1rem);
+      line-height: 1.7;
+      color: rgba(253,250,246,0.65);
+      margin-top: 1.5rem;
+      max-width: 54ch;
+    }
+    .post-hero__date {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(253,250,246,0.35);
+      margin-top: 2rem;
+    }
+
+    /* ── Layout ── */
+    .post-body {
+      max-width: 48rem;
+      margin: 0 auto;
+      padding: clamp(3rem, 7vw, 6rem) var(--pad-x);
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+
+    /* ── Hero image ── */
+    .post-img-wrap {
+      overflow: hidden;
+      background: var(--ink);
+    }
+    .post-img-wrap img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ── Content ── */
+    .post-content { display: flex; flex-direction: column; gap: 2rem; }
+    .post-divider { border: none; border-top: 1px solid var(--gray-300); margin: 0; }
+
+    .post-block__label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .post-p {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: var(--ink);
+    }
+
+    .post-h2 {
+      font-family: var(--font-sans);
+      font-size: clamp(1.2rem, 2vw, 1.45rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── Takeaways box ── */
+    .post-takeaways {
+      background: var(--paper);
+      border-left: 3px solid var(--matcha);
+      padding: 1.5rem 1.75rem;
+    }
+    .post-takeaways__title {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--matcha);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .post-takeaways ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .post-takeaways li {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--ink);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .post-takeaways li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--matcha);
+      font-size: 0.75rem;
+    }
+
+    /* ── Questions box ── */
+    .post-tip-box {
+      background: var(--ink);
+      color: var(--white);
+      padding: 1.75rem;
+    }
+    .post-tip-box__title {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--matcha);
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .post-tip-box ol {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      counter-reset: questions;
+    }
+    .post-tip-box li {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: rgba(253,250,246,0.85);
+      padding-left: 2rem;
+      position: relative;
+      counter-increment: questions;
+    }
+    .post-tip-box li::before {
+      content: '0' counter(questions);
+      position: absolute;
+      left: 0;
+      color: var(--matcha);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      top: 0.2rem;
+    }
+
+    /* ── Substitutes list ── */
+    .post-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .post-list li {
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: var(--ink);
+      padding-left: 1.25rem;
+      position: relative;
+    }
+    .post-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gray-500);
+      font-size: 0.85rem;
+    }
+
+    .post-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .post-next {
+      background: var(--paper);
+      border-top: 1px solid var(--gray-300);
+      padding: 2rem var(--pad-x);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .post-next__label {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+    }
+    .post-next__link {
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--ink);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .post-next__link:hover { color: var(--matcha); }
+
+    .post-foot {
+      background: var(--ink);
+      color: var(--white);
+      padding: 2rem var(--pad-x);
+    }
+
+    @media (max-width: 640px) {
+      .post-body { padding: clamp(2rem, 5vw, 3rem) var(--pad-x); gap: 2rem; }
+      .post-hero__title { font-size: clamp(1.7rem, 7vw, 2.5rem); }
+    }
+  </style>
+  <script>
+    (function () {
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.documentElement.classList.add('js-anime');
+      }
+    })();
+  </script>
+</head>
+<body>
+
+<nav class="nav nav--solid-dark" aria-label="Main">
+  <a href="index.html" class="nav__brand"><img src="public/kura-logo.png" alt="Kura Matcha" /></a>
+  <div class="nav__links">
+    <a href="index.html" class="nav__link">Inicio</a>
+    <a href="catalogo.html" class="nav__link">Catálogo</a>
+    <a href="about.html" class="nav__link">Marca</a>
+    <a href="blog.html" class="nav__link is-active">Blog</a>
+  </div>
+  <div class="nav__action">
+    <a href="contacto.html" class="nav__action-btn">Trabajá con nosotros</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<header class="post-hero">
+  <a href="blog.html" class="post-hero__back">← Blog</a>
+  <span class="post-hero__tag">03 · Cultura</span>
+  <h1 class="post-hero__title">Cuando las exportaciones superan la producción: el matcha falso en tu estante</h1>
+  <p class="post-hero__intro">Los volúmenes exportados como "matcha" ya superan la producción real de tencha en Japón. El riesgo para tu café no es el precio — es la reputación.</p>
+  <p class="post-hero__date">Mayo 2026</p>
+</header>
+
+<!-- ── BODY ── -->
+<div class="post-body">
+
+  <!-- IMAGEN PRINCIPAL -->
+  <div class="post-img-wrap">
+    <img src="public/fake-matcha.jpg" alt="Matcha adulterado en bolsas genéricas" loading="eager" />
+  </div>
+
+  <!-- INTRO -->
+  <div class="post-content">
+    <p class="post-p">Un dato enterrado en el diálogo estratégico T4IS 2026, cubierto por PR TIMES, debería hacerle pausar a cualquier dueño de café specialty. Los analistas estiman que, cuando cierren los números de exportación de 2025, el volumen de polvo enviado desde Japón etiquetado como "matcha" va a superar el tencha — la hoja sombreada y vaporizada que realmente se convierte en matcha — producido físicamente en Japón ese año. La matemática no cierra. Algo más está circulando por el canal con la misma etiqueta, y buena parte está llegando a las alacenas de los cafés.</p>
+  </div>
+
+  <hr class="post-divider" />
+
+  <!-- TAKEAWAYS -->
+  <div class="post-takeaways">
+    <span class="post-takeaways__title">Puntos clave</span>
+    <ul>
+      <li>Los volúmenes de exportación de "matcha en polvo" de 2025 superan la producción real de tencha en Japón — parte de lo que está saliendo no es matcha de verdad.</li>
+      <li>Etiquetas como "matcha Uji" se convirtieron en marketing sin trazabilidad real — el origen se puede pegar en una bolsa sin consecuencias.</li>
+      <li>El sourcing por cultivar específico, prefectura y año de cosecha es lo que separa un menú de matcha serio de un menú de polvo verde genérico.</li>
+    </ul>
+  </div>
+
+  <hr class="post-divider" />
+
+  <!-- SECCIÓN 1 -->
+  <div>
+    <h2 class="post-h2">La matemática entre exportación y producción</h2>
+    <p class="post-p">La producción de tencha está limitada por la física. Necesita campos sombreados, una ventana de cosecha específica, un horno tencha-ro para el secado y molinos de piedra que rinden entre 30 y 40 gramos por hora. Nada de eso escala en seis meses. Los precios del tencha alcanzando máximos históricos en Kyoto, Shizuoka y Kagoshima son el síntoma de un techo de oferta, no de una presión pasajera.</p>
+    <p class="post-p" style="margin-top:1rem;">La demanda de exportación escala tan rápido como alguien esté dispuesto a embolsar y enviar un polvo. La lectura del panel T4IS es que la brecha entre esas dos curvas — tencha real saliendo de la parte trasera de un molino de piedra versus "matcha en polvo" cargado en contenedores de exportación — se amplió lo suficiente como para que los números dejen de cuadrar. Una fracción real de lo que sale como matcha en 2025 nunca fue tencha.</p>
+  </div>
+
+  <!-- SECCIÓN 2 -->
+  <div>
+    <h2 class="post-h2">Qué hay realmente en la bolsa</h2>
+    <p class="post-p">Los sustitutos no son exóticos. Son tés verdes ordinarios molidos lo suficientemente fino como para parecerse al matcha. El diálogo identificó tres patrones:</p>
+    <ul class="post-list" style="margin-top:1.25rem;">
+      <li><strong>Sencha o bancha sin sombrear</strong> molido a un tamaño de partícula similar al matcha. El color aguanta unas semanas; el sabor nunca lo hace.</li>
+      <li><strong>Sencha cultivado en una prefectura, procesado en otra</strong> y re-embolsado con el nombre de una región famosa en el frente.</li>
+      <li><strong>Hoja no japonesa</strong> — frecuentemente china — terminada en Japón y etiquetada con una vaga frase "producido en Japón" que pasa la aduana.</li>
+    </ul>
+    <p class="post-p" style="margin-top:1.25rem;">Ninguno de estos es tencha. Ninguno sabe a tencha cuando se bate con agua a 70 °C y se tira en un latte de 350 ml. El borde herbáceo y seco que un barista percibe en un "matcha" que llega fuera de especificación es, generalmente, uno de estos polvos.</p>
+  </div>
+
+  <!-- SECCIÓN 3 -->
+  <div>
+    <h2 class="post-h2">Por qué esto es un problema del café, no de trivia de sourcing</h2>
+    <p class="post-p">El menú de matcha de un café es un contrato de confianza con el cliente. Alguien pide un matcha latte porque tiene una idea de cómo debería saber — dulce, vegetal, un final umami limpio, sin astringencia. Cuando esa barra baja, los clientes no escriben una reseña de Google explicando el contenido de L-teanina de la hoja correctamente sombreada. Dejan de pedir. Se van al café de al lado.</p>
+    <p class="post-p" style="margin-top:1rem;">Comprar matcha al precio spot durante un gap de oferta le pone todas las fichas en contra al barista que trabaja detrás de la barra. El producto se abarata porque el contenido se diluye. Lo inverso también es cierto: los cafés que salen de este período con una identidad de matcha estable son los que pidieron región, cultivar y año de cosecha en la ficha técnica, y rechazaron bolsas que no podían nombrar los tres.</p>
+  </div>
+
+  <hr class="post-divider" />
+
+  <!-- PREGUNTAS -->
+  <div class="post-tip-box">
+    <span class="post-tip-box__title">Tres preguntas para hacerle a tu proveedor este trimestre</span>
+    <ol>
+      <li><strong>¿Qué prefectura cultivó la hoja de este lote y qué fábrica la procesó?</strong> Son incómodas de responder si el proveedor compra a través de brokers. Son fáciles si no lo hace.</li>
+      <li><strong>¿Qué cultivar?</strong> Yabukita, Saemidori, Okumidori, o un blend con nombre. Un proveedor serio lo sabe de memoria.</li>
+      <li><strong>¿Qué año de cosecha y qué flush?</strong> Primera cosecha 2026, segunda cosecha, o remanente de un año anterior. Si la respuesta es vaga, la bolsa compite por precio — no por lo que hay adentro.</li>
+    </ol>
+  </div>
+
+  <!-- SECCIÓN 4 – KURA -->
+  <div>
+    <h2 class="post-h2">Cómo lo pensamos en Kura Matcha</h2>
+    <p class="post-p">Kura Matcha importa directo del origen en Shizuoka, Kagoshima, Aichi y Kyoto, y cada SKU está etiquetado con región, cultivar, año de cosecha y notas de cata. Eso no es un adorno de marketing — es el registro operativo de dónde vino la hoja y qué hay realmente en la bolsa. En un año en que el volumen de exportación está por superar la producción real de tencha, la disciplina de nombrar los cuatro datos es la diferencia entre vender matcha y vender polvo con forma de matcha.</p>
+    <p class="post-p" style="margin-top:1rem;">Si estás auditando tu proveedor actual frente al problema del matcha falso este trimestre, pedí una muestra y probá un matcha de tencha de cultivar único al lado de la bolsa que tenés hoy en la barra.</p>
+  </div>
+
+  <hr class="post-divider" />
+
+  <!-- CTA -->
+  <div class="post-cta">
+    <a href="catalogo.html" class="btn btn--solid">
+      <span class="btn__label">Ver catálogo</span>
+      <span class="btn__arrow">→</span>
+    </a>
+    <a href="contacto.html" class="btn btn--ghost">
+      <span class="btn__label">Solicitar muestras</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- ── SIGUIENTE ARTÍCULO ── -->
+<div class="post-next">
+  <div>
+    <span class="post-next__label">Seguir leyendo</span>
+    <a href="blog-matcha-latte.html" class="post-next__link">Cómo preparar un matcha latte perfecto →</a>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer class="post-foot">
+  <div class="footer">
+    <div class="footer__meta">
+      <span>© 2026 · Kura Matcha</span>
+      <span>Importación directa · Japón</span>
+    </div>
+    <div class="footer__meta">
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Catálogo</a>
+      <a href="about.html">Marca</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-fab" href="https://wa.me/5491156670631?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.838L.057 23.852a.5.5 0 0 0 .614.614l6.093-1.452A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.95 0-3.775-.525-5.338-1.437l-.382-.223-3.968.945.963-3.88-.246-.4A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+<script src="scripts.js"></script>
+</body>
+</html>
