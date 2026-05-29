@@ -1163,7 +1163,7 @@
         if (!usd) return;
         priceDiv.innerHTML = cardPriceHTML(usd);
       }
-      priceDiv.style.display = '';
+      priceDiv.style.display = 'block';
     });
   }
 
@@ -1179,27 +1179,44 @@
       if (!usd) { block.style.display = 'none'; return; }
       inner.innerHTML = modalPriceHTML(usd);
     }
-    block.style.display = '';
+    block.style.display = 'block';
   };
   window.__arPriceReady = false;
 
-  // ── Fetch geo + FX in parallel ──
-  var geoURL = 'https://ipapi.co/json/';
-  var fxURL  = 'https://api.bluelytics.com.ar/v2/latest';
+  // ── Geo detection: try ip-api.com first, fallback to ipapi.co ──
+  function detectAR() {
+    return fetch('https://ip-api.com/json/?fields=countryCode')
+      .then(function (r) { return r.json(); })
+      .then(function (d) { return d && d.countryCode === 'AR'; })
+      .catch(function () {
+        // fallback
+        return fetch('https://ipapi.co/country/')
+          .then(function (r) { return r.text(); })
+          .then(function (t) { return t.trim() === 'AR'; })
+          .catch(function () { return false; });
+      });
+  }
 
-  Promise.all([
-    fetch(geoURL).then(function (r) { return r.json(); }).catch(function () { return null; }),
-    fetch(fxURL).then(function (r)  { return r.json(); }).catch(function () { return null; })
-  ]).then(function (results) {
-    var geo = results[0];
-    var fx  = results[1];
+  // ── FX: bluelytics oficial mid ──
+  function fetchFX() {
+    return fetch('https://api.bluelytics.com.ar/v2/latest')
+      .then(function (r) { return r.json(); })
+      .then(function (d) {
+        if (d && d.oficial && d.oficial.value_avg) return d.oficial.value_avg;
+        return null;
+      })
+      .catch(function () { return null; });
+  }
 
-    if (!geo || geo.country_code !== 'AR') return;
-    if (!fx || !fx.oficial || !fx.oficial.value_avg) return;
+  // ── Bootstrap ──
+  Promise.all([detectAR(), fetchFX()]).then(function (results) {
+    var isAR = results[0];
+    var mid  = results[1];
 
-    fxMid = fx.oficial.value_avg;
+    if (!isAR || !mid) return;
+
+    fxMid = mid;
     window.__arPriceReady = true;
-
     injectCards();
   });
 })();
