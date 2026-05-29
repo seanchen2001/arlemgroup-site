@@ -1118,13 +1118,12 @@
   window.__arPriceReady = false;
   window.__geoDone      = false;
 
-  // ── Geo detection: try ip-api.com first, fallback to ipapi.co ──
+  // ── Geo detection: api.country.is (HTTPS, free, no key) → fallback ipapi.co ──
   function detectAR() {
-    return fetch('https://ip-api.com/json/?fields=countryCode')
+    return fetch('https://api.country.is/')
       .then(function (r) { return r.json(); })
-      .then(function (d) { return d && d.countryCode === 'AR'; })
+      .then(function (d) { return d && d.country === 'AR'; })
       .catch(function () {
-        // fallback
         return fetch('https://ipapi.co/country/')
           .then(function (r) { return r.text(); })
           .then(function (t) { return t.trim() === 'AR'; })
