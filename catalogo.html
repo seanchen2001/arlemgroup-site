@@ -668,6 +668,7 @@
         data-spec-harvest="1ra y 2da cosecha"
         data-img="https://balhvstcvuposhbedliu.supabase.co/storage/v1/object/public/product-photos/ON-1/1778821362813-shin-hojicha-clean-blue-bg.png"
         data-contact="contacto.html?blend=Shin+Hojicha&region=Aichi"
+        data-no-bars="true"
       >
         <div class="cat-card__img">
           <img src="https://balhvstcvuposhbedliu.supabase.co/storage/v1/object/public/product-photos/ON-1/1778821362813-shin-hojicha-clean-blue-bg.png" alt="Shin Hojicha" loading="lazy" />
@@ -868,10 +869,16 @@
     document.getElementById('modal-desc').textContent    = d.desc    || '';
 
     // Bars
-    setBar('bar-umami',       'val-umami',       parseInt(d.umami)       || 0);
-    setBar('bar-astringency', 'val-astringency', parseInt(d.astringency) || 0);
-    setBar('bar-bitterness',  'val-bitterness',  parseInt(d.bitterness)  || 0);
-    setBar('bar-sweetness',   'val-sweetness',   parseInt(d.sweetness)   || 0);
+    const barsSection = document.querySelector('.cat-modal__bars');
+    if (d.noBars === 'true') {
+      barsSection.style.display = 'none';
+    } else {
+      barsSection.style.display = '';
+      setBar('bar-umami',       'val-umami',       parseInt(d.umami)       || 0);
+      setBar('bar-astringency', 'val-astringency', parseInt(d.astringency) || 0);
+      setBar('bar-bitterness',  'val-bitterness',  parseInt(d.bitterness)  || 0);
+      setBar('bar-sweetness',   'val-sweetness',   parseInt(d.sweetness)   || 0);
+    }
 
     // Specs
     document.getElementById('spec-region').textContent   = d.specRegion   || '';
@@ -887,12 +894,14 @@
     document.body.style.overflow = 'hidden';
 
     // Animate bars after a tick
-    setTimeout(() => {
-      setBar('bar-umami',       'val-umami',       parseInt(d.umami)       || 0);
-      setBar('bar-astringency', 'val-astringency', parseInt(d.astringency) || 0);
-      setBar('bar-bitterness',  'val-bitterness',  parseInt(d.bitterness)  || 0);
-      setBar('bar-sweetness',   'val-sweetness',   parseInt(d.sweetness)   || 0);
-    }, 30);
+    if (d.noBars !== 'true') {
+      setTimeout(() => {
+        setBar('bar-umami',       'val-umami',       parseInt(d.umami)       || 0);
+        setBar('bar-astringency', 'val-astringency', parseInt(d.astringency) || 0);
+        setBar('bar-bitterness',  'val-bitterness',  parseInt(d.bitterness)  || 0);
+        setBar('bar-sweetness',   'val-sweetness',   parseInt(d.sweetness)   || 0);
+      }, 30);
+    }
   }
 
   function closeModal() {
