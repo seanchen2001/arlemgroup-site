@@ -219,6 +219,7 @@
     }
 
     .cat-card__specs {
+      margin-top: auto;
       padding-top: 1rem;
       border-top: 1px solid var(--gray-100);
       display: flex;
@@ -446,65 +447,6 @@
       color: var(--white);
     }
 
-    /* ══ PRICE BLOCK — card ══ */
-    .cat-card__foot {
-      margin-top: auto;
-    }
-
-    .cat-price {
-      display: none; /* revealed by JS only for AR */
-      padding: 0.7rem 0;
-      border-bottom: 1px solid var(--gray-100);
-      margin-bottom: 0.1rem;
-    }
-
-    .cat-price__usd {
-      font-family: var(--font-sans);
-      font-size: clamp(1.05rem, 1.4vw, 1.2rem);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      line-height: 1.2;
-    }
-    .cat-price__usd small {
-      font-family: var(--font-mono);
-      font-size: 0.56rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gray-400);
-      margin-left: 0.2rem;
-    }
-
-    .cat-price__ars {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      color: var(--gray-500);
-      letter-spacing: 0.03em;
-      margin-top: 0.2rem;
-    }
-
-    .cat-price__250 {
-      font-family: var(--font-mono);
-      font-size: 0.65rem;
-      font-weight: 500;
-      color: var(--matcha);
-      margin-top: 0.3rem;
-      letter-spacing: 0.02em;
-    }
-    .cat-price__250 small {
-      color: var(--gray-400);
-      font-weight: 400;
-    }
-
-    .cat-price__request {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-400);
-    }
-
     /* ══ PRICE BLOCK — modal ══ */
     .cat-modal__price {
       display: none; /* revealed by JS */
@@ -692,14 +634,11 @@
           <span class="cat-card__region">Shizuoka · 2da y 3ra cosecha</span>
           <h2 class="cat-card__name">Maki</h2>
           <p class="cat-card__flavor">Chicoria · Nuez verde · Pradera silvestre</p>
-          <div class="cat-card__foot">
-            <div class="cat-price"></div>
-            <dl class="cat-card__specs">
+          <dl class="cat-card__specs">
               <div class="cat-card__spec"><dt>Cultivar</dt><dd>Yabukita · Okumidori</dd></div>
               <div class="cat-card__spec"><dt>MOQ</dt><dd>250 g</dd></div>
               <div class="cat-card__spec"><dt>Ideal para</dt><dd>Latte · Repostería</dd></div>
-            </dl>
-          </div>
+          </dl>
         </div>
       </div>
 
@@ -745,14 +684,11 @@
           <span class="cat-card__region">Shizuoka · 1ra cosecha</span>
           <h2 class="cat-card__name">Rin</h2>
           <p class="cat-card__flavor">Pasto joven · Umami clásico</p>
-          <div class="cat-card__foot">
-            <div class="cat-price"></div>
-            <dl class="cat-card__specs">
+          <dl class="cat-card__specs">
               <div class="cat-card__spec"><dt>Cultivar</dt><dd>Yabukita (blend)</dd></div>
               <div class="cat-card__spec"><dt>MOQ</dt><dd>250 g</dd></div>
               <div class="cat-card__spec"><dt>Ideal para</dt><dd>Latte · Menú de autor</dd></div>
-            </dl>
-          </div>
+          </dl>
         </div>
       </div>
 
@@ -777,14 +713,11 @@
           <span class="cat-card__region">Kansai · 1ra cosecha</span>
           <h2 class="cat-card__name">Ichi</h2>
           <p class="cat-card__flavor">Crema dulce · Almendra verde · Chocolate blanco</p>
-          <div class="cat-card__foot">
-            <div class="cat-price"></div>
-            <dl class="cat-card__specs">
+          <dl class="cat-card__specs">
               <div class="cat-card__spec"><dt>Cultivar</dt><dd>Yabukita (blend)</dd></div>
               <div class="cat-card__spec"><dt>MOQ</dt><dd>A consultar</dd></div>
               <div class="cat-card__spec"><dt>Ideal para</dt><dd>Latte premium · Carta de autor</dd></div>
-            </dl>
-          </div>
+          </dl>
         </div>
       </div>
 
@@ -810,14 +743,11 @@
           <span class="cat-card__region">Aichi · 1ra y 2da cosecha · Hojicha</span>
           <h2 class="cat-card__name">Shin Hojicha</h2>
           <p class="cat-card__flavor">Arroz tostado · Heno · Calidez limpia</p>
-          <div class="cat-card__foot">
-            <div class="cat-price"></div>
-            <dl class="cat-card__specs">
+          <dl class="cat-card__specs">
               <div class="cat-card__spec"><dt>Cultivar</dt><dd>Yabukita</dd></div>
               <div class="cat-card__spec"><dt>MOQ</dt><dd>250 g</dd></div>
               <div class="cat-card__spec"><dt>Ideal para</dt><dd>Latte caliente · Frío</dd></div>
-            </dl>
-          </div>
+          </dl>
         </div>
       </div>
 
@@ -863,14 +793,11 @@
           <span class="cat-card__region">Kagoshima · 1ra cosecha</span>
           <h2 class="cat-card__name">Tsuyu</h2>
           <p class="cat-card__flavor">Fruta de carozo · Umami sedoso</p>
-          <div class="cat-card__foot">
-            <div class="cat-price"></div>
-            <dl class="cat-card__specs">
+          <dl class="cat-card__specs">
               <div class="cat-card__spec"><dt>Cultivar</dt><dd>Saemidori · Yutakamidori · Tsuyuhikari</dd></div>
               <div class="cat-card__spec"><dt>MOQ</dt><dd>250 g</dd></div>
               <div class="cat-card__spec"><dt>Ideal para</dt><dd>Ceremonial · Single origin</dd></div>
-            </dl>
-          </div>
+          </dl>
         </div>
       </div>
 
@@ -895,14 +822,11 @@
           <span class="cat-card__region">Uji (Kyoto) · 1ra cosecha</span>
           <h2 class="cat-card__name">Haku</h2>
           <p class="cat-card__flavor">Crema fresca · Arveja dulce · Umami persistente</p>
-          <div class="cat-card__foot">
-            <div class="cat-price"></div>
-            <dl class="cat-card__specs">
+          <dl class="cat-card__specs">
               <div class="cat-card__spec"><dt>Cultivar</dt><dd>Samidori · Okumidori</dd></div>
               <div class="cat-card__spec"><dt>MOQ</dt><dd>A consultar</dd></div>
               <div class="cat-card__spec"><dt>Ideal para</dt><dd>Ceremonial · Single origin</dd></div>
-            </dl>
-          </div>
+          </dl>
         </div>
       </div>
 
@@ -1124,18 +1048,6 @@
     }).format(Math.round(n));
   }
 
-  // ── Card price HTML ──
-  function cardPriceHTML(usd) {
-    var arsKg  = usd * fxMid;
-    var ars250 = arsKg / 4;
-    var usd250 = Math.round(usd / 4);
-    return (
-      '<p class="cat-price__usd">USD ' + usd + '<small>/kg</small></p>' +
-      '<p class="cat-price__ars">ARS ' + fmtARS(arsKg) + ' /kg</p>' +
-      '<p class="cat-price__250">ARS ' + fmtARS(ars250) + '<small> · 250 g</small></p>'
-    );
-  }
-
   // ── Modal price HTML ──
   function modalPriceHTML(usd) {
     var arsKg  = usd * fxMid;
@@ -1148,23 +1060,6 @@
         '<p class="cat-modal__price-row">USD ' + usd250 + ' · ARS <span>' + fmtARS(ars250) + '</span> / 250 g</p>' +
       '</div>'
     );
-  }
-
-  // ── Inject prices into all cards ──
-  function injectCards() {
-    document.querySelectorAll('.cat-card').forEach(function (card) {
-      var priceDiv = card.querySelector('.cat-price');
-      if (!priceDiv) return;
-
-      if (card.dataset.priceRequest === 'true') {
-        priceDiv.innerHTML = '<p class="cat-price__request">A pedido</p>';
-      } else {
-        var usd = parseInt(card.dataset.priceUsd, 10);
-        if (!usd) return;
-        priceDiv.innerHTML = cardPriceHTML(usd);
-      }
-      priceDiv.style.display = 'block';
-    });
   }
 
   // ── Modal helper (called by openModal) ──
@@ -1217,7 +1112,6 @@
 
     fxMid = mid;
     window.__arPriceReady = true;
-    injectCards();
   });
 })();
 </script>
