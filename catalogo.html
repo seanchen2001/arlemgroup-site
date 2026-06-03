@@ -310,13 +310,18 @@
 
     .cat-modal__body {
       overflow-y: auto;
+      min-height: 0;        /* lets grid cell respect parent max-height */
+      max-height: 90vh;     /* independent constraint so scroll triggers */
       padding: 2.25rem 2rem;
       display: flex;
       flex-direction: column;
       gap: 0;
     }
     @media (max-width: 640px) {
-      .cat-modal__body { padding: 1.5rem; }
+      .cat-modal__body {
+        padding: 1.5rem;
+        max-height: calc(95vh - 56.25vw); /* 95vh panel − image (4:3 ratio) */
+      }
     }
 
     .cat-modal__tier {
