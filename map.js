@@ -48,7 +48,6 @@
 
     const blendsHtml = region.blends
       .map((b) => {
-        const priceLine = b.price ? `USD ${b.price} / kg` : 'Precio a consultar';
         return `
           <div class="blend-row" data-blend="${b.id}">
             <button class="blend-row__trigger" type="button" data-toggle="${b.id}">
@@ -69,7 +68,7 @@
                     <div class="blend-card__notes-text">${b.notas}</div>
                   </div>
                   <div class="blend-card__meta">
-                    <span>Precio · <strong>${priceLine}</strong></span>
+                    <span>Disponibilidad · <strong>Consultar</strong></span>
                     <span>MOQ · <strong>${b.moq}</strong></span>
                   </div>
                   <button type="button" class="btn btn--ghost-dark blend-card__cta"

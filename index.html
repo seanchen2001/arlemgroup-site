@@ -8,6 +8,10 @@
   <meta name="keywords" content="matcha mayorista Argentina, matcha japonés Argentina, matcha al por mayor, matcha importado Argentina, matcha para cafés Argentina, matcha food service, proveedor matcha Argentina, matcha ceremonial Argentina, matcha Uji, matcha Kagoshima" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.arlemgroup.com/" />
+  <!-- Geo targeting Argentina -->
+  <meta name="geo.region" content="AR" />
+  <meta name="geo.placename" content="Argentina" />
+  <meta name="ICBM" content="-34.6037, -58.3816" />
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kura Matcha" />
@@ -15,13 +19,14 @@
   <meta property="og:title" content="Matcha Mayorista en Argentina · Importación Directa desde Japón | Kura Matcha" />
   <meta property="og:description" content="Matcha japonés importado directamente para cafés, roasteries y food service en Argentina. Blends de Kyoto, Shizuoka y Kagoshima." />
   <meta property="og:locale" content="es_AR" />
+  <meta property="og:image" content="https://www.arlemgroup.com/public/maki.png" />
+  <meta property="og:image:alt" content="Matcha japonés mayorista Kura Matcha Argentina" />
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Matcha Mayorista en Argentina | Kura Matcha" />
   <meta name="twitter:description" content="Matcha japonés importado directamente para cafés, roasteries y food service en Argentina." />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="icon" type="image/png" sizes="32x32" href="public/kura-logo.png" />
-  <link rel="apple-touch-icon" href="public/kura-logo.png" />
+  <meta name="twitter:image" content="https://www.arlemgroup.com/public/maki.png" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%234A6741'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
@@ -31,11 +36,19 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "LocalBusiness"],
         "@id": "https://www.arlemgroup.com/#organization",
         "name": "Kura Matcha",
         "url": "https://www.arlemgroup.com/",
+        "logo": "https://www.arlemgroup.com/public/maki.png",
+        "image": "https://www.arlemgroup.com/public/maki.png",
         "description": "Importador mayorista de matcha japonés en Argentina. Importación directa desde Japón para cafés, roasteries y food service.",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "AR",
+          "addressLocality": "Buenos Aires"
+        },
         "areaServed": {
           "@type": "Country",
           "name": "Argentina"
@@ -56,7 +69,73 @@
         "url": "https://www.arlemgroup.com/",
         "name": "Kura Matcha",
         "publisher": { "@id": "https://www.arlemgroup.com/#organization" },
-        "inLanguage": "es-AR"
+        "inLanguage": "es-AR",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://www.arlemgroup.com/catalogo.html?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.arlemgroup.com/#webpage",
+        "url": "https://www.arlemgroup.com/",
+        "name": "Matcha Mayorista en Argentina · Importación Directa desde Japón | Kura Matcha",
+        "description": "Kura Matcha importa matcha japonés directamente desde Japón para cafés, roasteries y food service en Argentina.",
+        "inLanguage": "es-AR",
+        "isPartOf": { "@id": "https://www.arlemgroup.com/#website" },
+        "about": { "@id": "https://www.arlemgroup.com/#organization" },
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.arlemgroup.com/" }
+          ]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Dónde comprar matcha mayorista en Argentina?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kura Matcha es importador directo de matcha japonés en Argentina. Trabajamos con cafés, roasteries y food service con importación directa desde Kyoto, Shizuoka y Kagoshima. Consultá por nuestros blends en arlemgroup.com."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuál es el MOQ mínimo para comprar matcha al por mayor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El MOQ mínimo de nuestro blend Maki (Shizuoka) es de 1 kg. Para los demás blends premium el MOQ se consulta según volumen y blend elegido."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué matcha es mejor para cafeterías y lattes?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Para matcha latte en cafeterías recomendamos el blend Maki (Shizuoka, cultivo a pleno sol) o Rin, ideales por su cuerpo vegetal, color verde profundo estable y rendimiento en leche. Para un latte premium single origin, el blend Haku (Kyoto) o Tsuyu (Kagoshima) son la referencia."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuál es la diferencia entre matcha ceremonial y matcha para cafés?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El matcha ceremonial (primera cosecha, sombreado tradicional) tiene umami profundo y se consume puro o en lattes premium. El matcha para cafés (segunda y tercera cosecha, a pleno sol) tiene mayor cuerpo, color estable bajo leche y mejor relación precio-rendimiento para operaciones de volumen."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Kura Matcha hace importación directa desde Japón?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí. Kura Matcha importa directamente desde productores en Kyoto (Uji), Shizuoka y Kagoshima, sin distribuidores intermedios, garantizando trazabilidad completa y consistencia entre lotes."
+            }
+          }
+        ]
       }
     ]
   }
@@ -69,39 +148,11 @@
       }
     })();
   </script>
-<style>
-  /* ── Loading screen ── */
-  #kura-loader {
-    position: fixed;
-    inset: 0;
-    background: #141410;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.7s ease;
-  }
-  #kura-loader.fade-out { opacity: 0; pointer-events: none; }
-  #kura-loader img {
-    width: 72px;
-    height: 72px;
-    opacity: 0;
-    animation: loader-fade-in 0.5s ease forwards;
-  }
-  @keyframes loader-fade-in {
-    to { opacity: 1; }
-  }
-</style>
-  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
-<div id="kura-loader" aria-hidden="true">
-  <img src="public/kura-logo.png" alt="" />
-</div>
-
 
 <nav class="nav nav--light" aria-label="Main">
-  <a href="index.html" class="nav__brand"><img src="public/kura-logo.png" alt="Kura Matcha" /></a>
+  <a href="index.html" class="nav__brand">Kura Matcha</a>
   <div class="nav__links">
     <a href="index.html" class="nav__link is-active">Inicio</a>
     <a href="catalogo.html" class="nav__link">Catálogo</a>
@@ -109,7 +160,7 @@
     <a href="blog.html" class="nav__link">Blog</a>
   </div>
     <div class="nav__action">
-      <a href="contacto.html" class="nav__action-btn">Trabajá con nosotros</a>
+      <a href="https://wa.me/5491156670631?text=Hola%2C%20quiero%20trabajar%20con%20Kura%20Matcha" target="_blank" rel="noopener" class="nav__action-btn">Trabajá con nosotros</a>
     </div>
 </nav>
 
@@ -125,10 +176,10 @@
   </div>
 
   <div class="hero__main">
-    <span class="hero__wordmark">Kura Matcha</span>
+    <span class="hero__wordmark" aria-hidden="true">Kura Matcha</span>
     <div class="hero__descriptor">
       <span class="hero__descriptor-line" aria-hidden="true"></span>
-      <span class="hero__descriptor-text">Matcha mayorista · Importación directa desde Japón</span>
+      <h1 class="hero__descriptor-text">Matcha mayorista · Importación directa desde Japón</h1>
     </div>
     <div class="hero__actions">
       <a href="catalogo.html" class="btn btn--solid">
@@ -215,7 +266,7 @@
       <div class="form__notice" id="form-notice">Blend preseleccionado · <span data-blend-echo></span></div>
 
       <div class="contact__actions" style="margin-top:1.5rem;">
-        <a id="contact-wa" href="contacto.html" class="btn btn--solid">
+        <a id="contact-wa" href="https://wa.me/5491156670631?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista" target="_blank" rel="noopener" class="btn btn--solid">
           <span class="btn__label">Escribir por WhatsApp</span>
           <span class="btn__arrow">↗</span>
         </a>
@@ -236,7 +287,7 @@
   </footer>
 </section>
 
-<a class="wa-fab" href="https://wa.me/5491156670631?text=Hola%21+Consulta+mayorista+Kura+Matcha.%0A%0ANombre%3A+%0ACaf%C3%A9%2FTienda+%28opcional%29%3A+%0AConsulta%3A+" target="_blank" rel="noopener" aria-label="WhatsApp">
+<a class="wa-fab" href="https://wa.me/5491156670631?text=Hola%2C%20consulta%20sobre%20matcha%20mayorista" target="_blank" rel="noopener" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.838L.057 23.852a.5.5 0 0 0 .614.614l6.093-1.452A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.95 0-3.775-.525-5.338-1.437l-.382-.223-3.968.945.963-3.88-.246-.4A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </a>
 
@@ -247,16 +298,5 @@
 <script src="scripts.js"></script>
 <script src="animations.js"></script>
 <script src="map.js"></script>
-
-<script>
-  window.addEventListener('load', function () {
-    var loader = document.getElementById('kura-loader');
-    if (!loader) return;
-    setTimeout(function () {
-      loader.classList.add('fade-out');
-      setTimeout(function () { loader.style.display = 'none'; }, 750);
-    }, 300);
-  });
-</script>
 </body>
 </html>

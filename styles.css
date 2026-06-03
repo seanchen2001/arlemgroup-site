@@ -1987,8 +1987,8 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   .blend-overlay__inner {
     grid-template-columns: 1fr 1.1fr;
     gap: clamp(2rem, 4vw, 5rem);
-    align-items: center;
-    overflow: hidden;
+    align-items: start;
+    overflow-y: auto;
   }
 }
 
