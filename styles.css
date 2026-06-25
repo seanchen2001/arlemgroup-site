@@ -1708,16 +1708,43 @@ button { font: inherit; background: none; border: none; cursor: pointer; color: 
   .wa-fab { transition: none; }
 }
 
-.footer__ig {
+.ig-fab {
+  position: fixed;
+  right: calc(clamp(1rem, 2.5vw, 2rem) + 56px + 12px);
+  bottom: clamp(1rem, 2.5vw, 2rem);
+  z-index: 90;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285aeb 90%);
+  color: #fff;
   display: inline-flex;
   align-items: center;
-  color: inherit;
-  opacity: 0.6;
-  transition: opacity 180ms ease;
+  justify-content: center;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.15),
+    0 10px 30px rgba(26, 23, 20, 0.22);
+  transition: transform 220ms cubic-bezier(.16,1,.3,1), box-shadow 220ms ease;
   text-decoration: none;
 }
 
-.footer__ig:hover { opacity: 1; }
+.ig-fab svg { width: 26px; height: 26px; display: block; }
+
+.ig-fab:hover {
+  transform: translateY(-2px) scale(1.035);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.18),
+    0 18px 40px rgba(26, 23, 20, 0.3);
+}
+
+@media (max-width: 640px) {
+  .ig-fab { width: 52px; height: 52px; right: calc(clamp(1rem, 2.5vw, 2rem) + 52px + 12px); }
+  .ig-fab svg { width: 24px; height: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ig-fab { transition: none; }
+}
 
 /* ====================================================================
    CATALOG · TARJETERO — section 01 (replaces old catalog-hero)
