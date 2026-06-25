@@ -340,9 +340,14 @@
 
     <form class="contact-form" id="visit-form" novalidate>
       <div class="contact-form__field">
-        <label class="contact-form__label" for="cafe-name">Nombre del café</label>
+        <label class="contact-form__label" for="cafe-name">Cafetería</label>
         <input class="contact-form__input" type="text" id="cafe-name" name="cafe"
           placeholder="Ej: Café San Telmo" required autocomplete="organization" />
+      </div>
+      <div class="contact-form__field">
+        <label class="contact-form__label" for="contact-address">Dirección</label>
+        <input class="contact-form__input" type="text" id="contact-address" name="direccion"
+          placeholder="Ej: Thames 1600, Palermo" required autocomplete="street-address" />
       </div>
       <div class="contact-form__field">
         <label class="contact-form__label" for="contact-name">Tu nombre</label>
@@ -350,9 +355,9 @@
           placeholder="Ej: Martina García" required autocomplete="name" />
       </div>
       <div class="contact-form__field">
-        <label class="contact-form__label" for="contact-phone">Teléfono</label>
-        <input class="contact-form__input" type="tel" id="contact-phone" name="telefono"
-          placeholder="Ej: 11 5555 1234" required autocomplete="tel" />
+        <label class="contact-form__label" for="contact-consulta">Consulta</label>
+        <textarea class="contact-form__input" id="contact-consulta" name="consulta"
+          rows="3" placeholder="¿Qué blends te interesan? ¿Cuándo disponés?" style="resize:vertical"></textarea>
       </div>
       <button type="submit" class="contact-form__submit">
         Solicitar visita
@@ -446,17 +451,19 @@
   // Formulario → mailto
   document.getElementById('visit-form').addEventListener('submit', function (e) {
     e.preventDefault();
-    const cafe   = document.getElementById('cafe-name').value.trim();
-    const nombre = document.getElementById('contact-name').value.trim();
-    const tel    = document.getElementById('contact-phone').value.trim();
-    if (!cafe || !nombre || !tel) return;
+    const cafe      = document.getElementById('cafe-name').value.trim();
+    const direccion = document.getElementById('contact-address').value.trim();
+    const nombre    = document.getElementById('contact-name').value.trim();
+    const consulta  = document.getElementById('contact-consulta').value.trim();
+    if (!cafe || !direccion || !nombre) return;
 
     const params = new URLSearchParams(window.location.search);
     const blend  = params.get('blend');
     const region = params.get('region');
 
-    let body = `Café: ${cafe}\nNombre: ${nombre}\nTeléfono: ${tel}`;
-    if (blend) body += `\nBlend de interés: ${blend}${region ? ` (${region})` : ''}`;
+    let body = `Cafetería: ${cafe}\nDirección: ${direccion}\nNombre: ${nombre}`;
+    if (consulta) body += `\nConsulta: ${consulta}`;
+    if (blend)    body += `\nBlend de interés: ${blend}${region ? ` (${region})` : ''}`;
 
     const subject = `Visita con muestras · ${cafe}`;
     window.location.href =
