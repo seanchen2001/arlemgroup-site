@@ -452,78 +452,6 @@
       color: var(--white);
     }
 
-    /* ══ PRICE BLOCK — modal ══ */
-    .cat-modal__price {
-      display: none; /* revealed by JS */
-      background: var(--gray-100, #f5f4f1);
-      border-radius: 6px;
-      padding: 1rem 1.25rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .cat-modal__price-label {
-      font-family: var(--font-mono);
-      font-size: 0.58rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--matcha);
-      margin-bottom: 0.6rem;
-    }
-
-    .cat-modal__price-main {
-      font-family: var(--font-sans);
-      font-size: 1.6rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--ink);
-      line-height: 1;
-    }
-    .cat-modal__price-main small {
-      font-family: var(--font-mono);
-      font-size: 0.6rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--gray-400);
-      margin-left: 0.25rem;
-    }
-
-    .cat-modal__price-rows {
-      display: flex;
-      gap: 1.25rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .cat-modal__price-row {
-      font-family: var(--font-mono);
-      font-size: 0.62rem;
-      color: var(--gray-500);
-      letter-spacing: 0.03em;
-    }
-    .cat-modal__price-row span {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    .cat-modal__price-request {
-      font-family: var(--font-mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--gray-500);
-    }
-
-    .cat-modal__price-ref {
-      font-family: var(--font-mono);
-      font-size: 0.56rem;
-      letter-spacing: 0.06em;
-      color: var(--gray-400);
-      margin-top: 0.6rem;
-      padding-top: 0.6rem;
-      border-top: 1px solid rgba(0,0,0,0.07);
-    }
-
     /* Close button */
     .cat-modal__close {
       position: absolute;
@@ -641,7 +569,6 @@
         data-spec-harvest="2da y 3ra cosecha"
         data-img="https://balhvstcvuposhbedliu.supabase.co/storage/v1/object/public/product-photos/OC-1/1778487634749-7d52ddf9-5590-4a7a-816a-34f4261bdd0a-2026-05-11-matcha-glass-hero-bright-v2-png.png"
         data-contact="contacto.html?blend=Maki&region=Shizuoka"
-        data-price-usd="270"
         data-spec-moq="250 g"
       >
         <div class="cat-card__img">
@@ -692,7 +619,6 @@
         data-spec-harvest="1ra cosecha"
         data-img="https://balhvstcvuposhbedliu.supabase.co/storage/v1/object/public/product-photos/K-1/1778249127228-8ab5ff98-01ea-4ac3-94a3-2ffb66bfe324-2026-05-08-rin-jpg.jpg"
         data-contact="contacto.html?blend=Rin&region=Shizuoka"
-        data-price-usd="400"
         data-spec-moq="250 g"
       >
         <div class="cat-card__img">
@@ -722,7 +648,6 @@
         data-spec-harvest="1ra cosecha"
         data-img="https://balhvstcvuposhbedliu.supabase.co/storage/v1/object/public/product-photos/SC-3/1778488121942-f33076ba-9151-4b09-9965-d0781f791c5f-2026-05-11-ichi-matcha-jpg.jpg"
         data-contact="contacto.html?blend=Ichi&region=Kansai"
-        data-price-request="true"
         data-spec-moq="A consultar"
       >
         <div class="cat-card__img">
@@ -753,7 +678,6 @@
         data-img="https://balhvstcvuposhbedliu.supabase.co/storage/v1/object/public/product-photos/ON-1/1778821362813-shin-hojicha-clean-blue-bg.png"
         data-contact="contacto.html?blend=Shin+Hojicha&region=Aichi"
         data-no-bars="true"
-        data-price-usd="250"
         data-spec-moq="250 g"
       >
         <div class="cat-card__img">
@@ -804,7 +728,6 @@
         data-spec-harvest="1ra cosecha"
         data-img="https://balhvstcvuposhbedliu.supabase.co/storage/v1/object/public/product-photos/IM-1/1778820858935-tsuyu-clean-paper-bg.png"
         data-contact="contacto.html?blend=Tsuyu&region=Kagoshima"
-        data-price-usd="450"
         data-spec-moq="250 g"
       >
         <div class="cat-card__img">
@@ -834,7 +757,6 @@
         data-spec-harvest="1ra cosecha"
         data-img="https://balhvstcvuposhbedliu.supabase.co/storage/v1/object/public/product-photos/HK-2/1778493006900-9981e5fb-323e-4764-8643-25a59072795a-haku-matcha-upload-jpg.jpg"
         data-contact="contacto.html?blend=Haku&region=Kyoto"
-        data-price-request="true"
         data-spec-moq="A consultar"
       >
         <div class="cat-card__img">
@@ -872,12 +794,6 @@
       <h2 class="cat-modal__name" id="modal-name"></h2>
       <p class="cat-modal__flavor" id="modal-flavor"></p>
       <p class="cat-modal__desc" id="modal-desc"></p>
-
-      <!-- Price block — shown only for AR users -->
-      <div class="cat-modal__price" id="modal-price">
-        <p class="cat-modal__price-label">Precio mayorista</p>
-        <div id="modal-price-inner"></div>
-      </div>
 
       <div class="cat-modal__bars">
         <p class="cat-modal__section-label">Perfil de sabor</p>
@@ -984,19 +900,14 @@
     document.getElementById('spec-cultivar').textContent = d.specCultivar || '';
     document.getElementById('spec-harvest').textContent  = d.specHarvest  || '';
 
-    // MOQ — "A consultar" for non-AR visitors once geo resolves
+    // MOQ
     const moqEl = document.getElementById('spec-moq');
     if (moqEl) {
-      moqEl.textContent = (window.__geoDone && !window.__arPriceReady)
-        ? 'A consultar'
-        : (d.specMoq || 'A consultar');
+      moqEl.textContent = d.specMoq || 'A consultar';
     }
 
     // CTA
     document.getElementById('modal-cta').href = d.contact || 'contacto.html';
-
-    // Price — always call __fillModalPrice; it decides what to show based on geo state
-    window.__fillModalPrice(d);
 
     // Show
     modal.classList.add('is-open');
@@ -1059,109 +970,5 @@
 </script>
 
 
-<!-- ══ GEOLOCATION + LIVE FX PRICE MODULE ══
-     Shows USD + ARS (dólar oficial mid) prices only to AR visitors.
-     APIs: ipapi.co (geo) · bluelytics.com.ar (FX)
-     Falls back silently — non-AR or API-error → prices stay hidden.
--->
-<script>
-(function () {
-  var fxMid = null; // ARS per USD, oficial mid
-
-  // ── Formatting helpers ──
-  function fmtARS(n) {
-    return new Intl.NumberFormat('es-AR', {
-      style: 'decimal',
-      maximumFractionDigits: 0
-    }).format(Math.round(n));
-  }
-
-  // ── Modal price HTML (AR only) ──
-  function modalPriceHTML(usd) {
-    var arsKg  = usd * fxMid;
-    var ars250 = arsKg / 4;
-    var usd250 = Math.round(usd / 4);
-    var fxDisplay = fxMid.toLocaleString('es-AR'); // e.g. "1.400"
-    return (
-      '<p class="cat-modal__price-main">USD ' + usd + '<small>/kg</small></p>' +
-      '<div class="cat-modal__price-rows">' +
-        '<p class="cat-modal__price-row">ARS <span>' + fmtARS(arsKg) + '</span> /kg</p>' +
-        '<p class="cat-modal__price-row">USD ' + usd250 + ' · ARS <span>' + fmtARS(ars250) + '</span> / 250 g</p>' +
-      '</div>' +
-      '<p class="cat-modal__price-ref">T/C ref. ARS ' + fxDisplay + ' · dólar oficial · actualizado hoy</p>'
-    );
-  }
-
-  // ── Modal helper — always called by openModal ──
-  window.__fillModalPrice = function (d) {
-    var block = document.getElementById('modal-price');
-    var inner = document.getElementById('modal-price-inner');
-    if (!block || !inner) return;
-
-    if (!window.__geoDone) {
-      // Geo still loading — hide
-      block.style.display = 'none';
-      return;
-    }
-
-    if (!window.__arPriceReady) {
-      // Non-AR visitor
-      inner.innerHTML = '<p class="cat-modal__price-request">A consultar</p>';
-      block.style.display = 'block';
-      return;
-    }
-
-    // AR visitor
-    if (d.priceRequest === 'true') {
-      inner.innerHTML = '<p class="cat-modal__price-request">A pedido</p>';
-    } else {
-      var usd = parseInt(d.priceUsd, 10);
-      if (!usd) { block.style.display = 'none'; return; }
-      inner.innerHTML = modalPriceHTML(usd);
-    }
-    block.style.display = 'block';
-  };
-
-  window.__arPriceReady = false;
-  window.__geoDone      = false;
-
-  // ── Geo detection: api.country.is (HTTPS, free, no key) → fallback ipapi.co ──
-  function detectAR() {
-    return fetch('https://api.country.is/')
-      .then(function (r) { return r.json(); })
-      .then(function (d) { return d && d.country === 'AR'; })
-      .catch(function () {
-        return fetch('https://ipapi.co/country/')
-          .then(function (r) { return r.text(); })
-          .then(function (t) { return t.trim() === 'AR'; })
-          .catch(function () { return false; });
-      });
-  }
-
-  // ── FX: bluelytics oficial mid ──
-  function fetchFX() {
-    return fetch('https://api.bluelytics.com.ar/v2/latest')
-      .then(function (r) { return r.json(); })
-      .then(function (d) {
-        if (d && d.oficial && d.oficial.value_avg) return d.oficial.value_avg;
-        return null;
-      })
-      .catch(function () { return null; });
-  }
-
-  // ── Bootstrap ──
-  Promise.all([detectAR(), fetchFX()]).then(function (results) {
-    var isAR = results[0];
-    var mid  = results[1];
-
-    window.__geoDone = true; // geo resolved — non-AR can now show "A consultar"
-
-    if (isAR && mid) {
-      fxMid = Math.round(mid / 10) * 10; // round to nearest 10: 1404 → 1400
-      window.__arPriceReady = true;
-    }
-  });
-})();
-</script>
 </body>
 </html>
