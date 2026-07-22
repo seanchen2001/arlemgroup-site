@@ -35,6 +35,7 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       background: var(--crema);
       color: var(--bosque);
@@ -75,6 +76,7 @@
     }
     .brand img { width: 30px; height: 30px; }
     .brand__suki { font-family: var(--serif); font-weight: 600; font-size: 1rem; letter-spacing: 0.14em; }
+    .brand__suki-img { width: auto !important; height: 26px !important; display: block; }
     .brand__sep { width: 1px; height: 20px; background: var(--bosque-soft); }
     .brand__site {
       margin-left: auto;
@@ -120,6 +122,29 @@
       max-width: 34ch;
       position: relative; z-index: 2;
     }
+
+    .hero__cta {
+      margin-top: 1.4rem;
+      display: inline-flex; align-items: center; gap: 0.75rem;
+      font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--crema); background: var(--bosque);
+      border: 1px solid var(--bosque);
+      padding: 0.9rem 1.6rem;
+      text-decoration: none;
+      position: relative; overflow: hidden; z-index: 2;
+      transition: color 350ms ease;
+    }
+    .hero__cta span { position: relative; z-index: 2; }
+    .hero__cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--polvo);
+      transform: translateY(101%);
+      transition: transform 420ms cubic-bezier(.2,.7,.2,1);
+    }
+    .hero__cta:hover::before, .hero__cta:active::before { transform: translateY(0); }
+    .hero__cta:hover, .hero__cta:active { color: var(--tinta); }
 
     .powder {
       position: absolute; pointer-events: none; z-index: 1;
@@ -280,10 +305,11 @@
 
   <!-- Marca -->
   <header class="brand">
-    <span class="brand__suki">SUKI</span>
+    <img class="brand__suki-img" src="public/suki-logo.png" alt="SUKI" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'" />
+    <span class="brand__suki" style="display:none">SUKI</span>
     <span class="brand__sep" aria-hidden="true"></span>
     <img src="public/kura-logo.png" alt="Kura Matcha" />
-    <a class="brand__site" href="index.html">kuramatcha</a>
+    <a class="brand__site" href="index.html">volver a kura matcha</a>
   </header>
 
   <!-- Hero -->
@@ -294,7 +320,8 @@
       <span class="word">Ceremonia</span>
       <span class="word"><em>del té</em></span>
     </h1>
-    <p class="hero__sub rv">Una cata guiada para descubrir el matcha por dentro — y una buena excusa para compartir la mesa.</p>
+    <p class="hero__sub rv">Una cata guiada para descubrir el matcha y sus propiedades.</p>
+    <a class="hero__cta rv" data-d="1" href="#reservar"><span>Anotarme</span><span aria-hidden="true">↓</span></a>
     <div class="powder powder--hero" aria-hidden="true"><img src="public/maki.png" alt="" /></div>
   </section>
 
@@ -303,7 +330,7 @@
     <div class="list__item rv"><span class="list__no">/ 01</span><span class="list__txt">Preparación y cuidado del matcha</span></div>
     <div class="list__item rv" data-d="1"><span class="list__no">/ 02</span><span class="list__txt">3 matchas y 1 hojicha en cata</span></div>
     <div class="list__item rv" data-d="2"><span class="list__no">/ 03</span><span class="list__txt">Maridajes tradicionales</span></div>
-    <div class="list__item rv" data-d="2"><span class="list__no">/ 04</span><span class="list__txt">Una mesa compartida, para conocer gente alrededor del té</span></div>
+    <div class="list__item rv" data-d="2"><span class="list__no">/ 04</span><span class="list__txt">Una mesa compartida para conocer gente</span></div>
   </section>
 
   <!-- Detalles -->
@@ -318,12 +345,12 @@
   </section>
 
   <!-- Formulario -->
-  <section class="form-box">
+  <section class="form-box" id="reservar">
     <div class="halftone" aria-hidden="true"></div>
 
     <form id="rsvp" action="https://formsubmit.co/seanc@kuramatcha.com" method="POST">
       <h2 class="form__title rv">Reservá tu lugar</h2>
-      <p class="form__hint rv">Dejanos tus datos y te confirmamos por WhatsApp.</p>
+      <p class="form__hint rv">Dejanos tus datos y te confirmamos ni bien tengamos la fecha decidida.</p>
 
       <!-- Config FormSubmit -->
       <input type="hidden" name="_subject" value="Nueva reserva · Ceremonia del té" />
