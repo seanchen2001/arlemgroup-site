@@ -69,6 +69,15 @@
       padding: clamp(1.25rem, 4vw, 2rem) clamp(1.35rem, 5vw, 2rem) 3.5rem;
     }
 
+    /* Primera pantalla: llena 100svh y reparte el aire; el form arranca en la siguiente */
+    .fold {
+      min-height: calc(100svh - clamp(1.25rem, 4vw, 2rem));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: clamp(1.25rem, 4vw, 2rem);
+    }
+
     /* ── Marca ── */
     .brand {
       display: flex; align-items: center; gap: 0.7rem;
@@ -303,6 +312,8 @@
 
 <div class="wrap">
 
+  <div class="fold">
+
   <!-- Marca -->
   <header class="brand">
     <img class="brand__suki-img" src="public/suki.png" alt="SUKI" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'" />
@@ -342,6 +353,8 @@
     </div>
     <p class="facts__note">Fechas indicativas — confirmamos por WhatsApp</p>
   </section>
+
+  </div><!-- /fold -->
 
   <!-- Formulario -->
   <section class="form-box" id="reservar">
