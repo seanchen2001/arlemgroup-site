@@ -66,13 +66,13 @@
       position: relative;
       max-width: 36rem;
       margin: 0 auto;
-      padding: clamp(1.75rem, 6vw, 3rem) clamp(1.35rem, 5vw, 2rem) 3.5rem;
+      padding: clamp(1.25rem, 4vw, 2rem) clamp(1.35rem, 5vw, 2rem) 3.5rem;
     }
 
     /* ── Marca ── */
     .brand {
       display: flex; align-items: center; gap: 0.7rem;
-      margin-bottom: clamp(2.5rem, 9vw, 4rem);
+      margin-bottom: clamp(1.5rem, 5vw, 2.5rem);
     }
     .brand img { width: 30px; height: 30px; }
     .brand__suki { font-family: var(--serif); font-weight: 600; font-size: 1rem; letter-spacing: 0.14em; }
@@ -86,7 +86,7 @@
     }
 
     /* ── Hero compacto ── */
-    .hero { position: relative; margin-bottom: clamp(2.5rem, 8vw, 3.5rem); }
+    .hero { position: relative; margin-bottom: clamp(1.5rem, 5vw, 2.5rem); }
     .hero .halftone { top: -18%; right: -22%; width: 70vw; height: 70vw; max-width: 420px; max-height: 420px; }
 
     .hero__eyebrow {
@@ -94,7 +94,7 @@
       font-size: clamp(0.58rem, 2.8vw, 0.68rem);
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 1.25rem;
+      margin-bottom: 0.9rem;
       display: flex; align-items: center; gap: 0.75rem;
     }
     .hero__eyebrow::before { content: ''; width: 1.75rem; height: 1px; background: var(--bosque); flex-shrink: 0; }
@@ -124,7 +124,7 @@
     }
 
     .hero__cta {
-      margin-top: 1.4rem;
+      margin-top: 1.25rem;
       display: inline-flex; align-items: center; gap: 0.75rem;
       font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.18em;
       text-transform: uppercase;
@@ -154,22 +154,22 @@
     .powder--hero { width: clamp(150px, 38vw, 240px); right: -12%; top: 42%; transform: rotate(-14deg); opacity: 0.85; }
 
     /* ── Qué incluye ── */
-    .list { margin-bottom: clamp(2.5rem, 8vw, 3.5rem); }
+    .list { margin-bottom: clamp(1.5rem, 5vw, 2.5rem); }
     .list__item {
       display: flex; align-items: baseline; gap: 1rem;
-      padding: 0.95rem 0;
+      padding: 0.65rem 0;
       border-top: 1px solid var(--bosque-soft);
     }
     .list__item:last-child { border-bottom: 1px solid var(--bosque-soft); }
     .list__no { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; color: var(--polvo); flex-shrink: 0; }
-    .list__txt { font-family: var(--serif); font-weight: 500; font-size: clamp(1.1rem, 4.5vw, 1.3rem); line-height: 1.3; }
+    .list__txt { font-family: var(--serif); font-weight: 500; font-size: clamp(1rem, 4vw, 1.2rem); line-height: 1.3; }
 
     /* ── Detalles ── */
     .facts {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 1.25rem 1rem;
-      margin-bottom: 0.9rem;
+      gap: 0.9rem 1rem;
+      margin-bottom: 0.75rem;
     }
     .fact__k {
       font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.18em;
@@ -320,28 +320,27 @@
       <span class="word">Ceremonia</span>
       <span class="word"><em>del té</em></span>
     </h1>
-    <p class="hero__sub rv">Una cata guiada para descubrir el matcha y sus propiedades.</p>
-    <a class="hero__cta rv" data-d="1" href="#reservar"><span>Anotarme</span><span aria-hidden="true">↓</span></a>
+    <a class="hero__cta" href="#reservar"><span>Anotarme</span><span aria-hidden="true">↓</span></a>
     <div class="powder powder--hero" aria-hidden="true"><img src="public/maki.png" alt="" /></div>
   </section>
 
   <!-- Qué incluye -->
   <section class="list">
-    <div class="list__item rv"><span class="list__no">/ 01</span><span class="list__txt">Preparación y cuidado del matcha</span></div>
-    <div class="list__item rv" data-d="1"><span class="list__no">/ 02</span><span class="list__txt">3 matchas y 1 hojicha en cata</span></div>
-    <div class="list__item rv" data-d="2"><span class="list__no">/ 03</span><span class="list__txt">Maridajes tradicionales</span></div>
-    <div class="list__item rv" data-d="2"><span class="list__no">/ 04</span><span class="list__txt">Una mesa compartida para conocer gente</span></div>
+    <div class="list__item"><span class="list__no">/ 01</span><span class="list__txt">Preparación y cuidado del matcha</span></div>
+    <div class="list__item"><span class="list__no">/ 02</span><span class="list__txt">3 matchas y 1 hojicha en cata</span></div>
+    <div class="list__item"><span class="list__no">/ 03</span><span class="list__txt">Maridajes tradicionales</span></div>
+    <div class="list__item"><span class="list__no">/ 04</span><span class="list__txt">Una mesa compartida para conocer gente</span></div>
   </section>
 
   <!-- Detalles -->
   <section>
     <div class="facts">
-      <div class="rv"><span class="fact__k">Fechas</span><span class="fact__v">Sáb 29 ago · Sáb 5 sep</span></div>
-      <div class="rv" data-d="1"><span class="fact__k">Hora</span><span class="fact__v">10:30 am</span></div>
-      <div class="rv"><span class="fact__k">Lugar</span><span class="fact__v">Barrio Chino, Buenos Aires</span></div>
-      <div class="rv" data-d="1"><span class="fact__k">Cupos</span><span class="fact__v">20 por turno</span></div>
+      <div><span class="fact__k">Fechas</span><span class="fact__v">Sáb 29 ago · Sáb 5 sep</span></div>
+      <div><span class="fact__k">Hora</span><span class="fact__v">10:30 am</span></div>
+      <div><span class="fact__k">Lugar</span><span class="fact__v">Barrio Chino, Buenos Aires</span></div>
+      <div><span class="fact__k">Cupos</span><span class="fact__v">20 por turno</span></div>
     </div>
-    <p class="facts__note rv">Fechas indicativas — confirmamos por WhatsApp</p>
+    <p class="facts__note">Fechas indicativas — confirmamos por WhatsApp</p>
   </section>
 
   <!-- Formulario -->
