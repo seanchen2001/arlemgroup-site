@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Matcha Tasting Ceremony · Cata de Matcha | SUKI × Kura Matcha</title>
+  <meta name="description" content="Una experiencia para descubrir y comparar matchas de distintas regiones de Japón, moderada por Malena Higashi. SUKI × Kura Matcha. Reservá tu lugar." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.arlemgroup.com/cata.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kura Matcha" />
+  <meta property="og:url" content="https://www.arlemgroup.com/cata.html" />
+  <meta property="og:title" content="Matcha Tasting Ceremony · Cata de Matcha" />
+  <meta property="og:description" content="Descubrí y compará matchas de distintas regiones de Japón, con maridajes seleccionados. Moderada por Malena Higashi. SUKI × Kura." />
+  <meta property="og:locale" content="es_AR" />
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="public/kura-logo.png" />
+  <link rel="apple-touch-icon" href="public/kura-logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet" />
+  <style>
+    /* ═══════════════════════════════════════════════════════
+       MATCHA TASTING CEREMONY — invitación digital
+       Paleta y aire del poster: crema, verde bosque, polvo vivo
+       ═══════════════════════════════════════════════════════ */
+    :root {
+      --crema: #EFE9DA;
+      --crema-2: #E9E2D0;
+      --bosque: #2E5231;
+      --bosque-soft: rgba(46, 82, 49, 0.55);
+      --polvo: #86A93B;
+      --tinta: #1f2d1f;
+      --rust: #B5451D;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+      --mono: 'DM Mono', ui-monospace, monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--crema);
+      color: var(--bosque);
+      font-family: var(--sans);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: var(--bosque); color: var(--crema); }
+
+    /* ── Grano de papel (textura impresa) ── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 60;
+      opacity: 0.05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ── Trama de medios tonos (halftone) ── */
+    .halftone {
+      position: absolute;
+      pointer-events: none;
+      background-image: radial-gradient(var(--bosque) 1.1px, transparent 1.1px);
+      background-size: 9px 9px;
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 72%);
+              mask-image: radial-gradient(ellipse at center, black 30%, transparent 72%);
+      opacity: 0.16;
+    }
+
+    /* ── Barra superior mínima ── */
+    .topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.1rem clamp(1.25rem, 4vw, 2.5rem);
+      z-index: 50;
+      mix-blend-mode: multiply;
+    }
+    .topbar__brand { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; }
+    .topbar__brand img { width: 34px; height: 34px; display: block; }
+    .topbar__suki {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.05rem;
+      letter-spacing: 0.14em;
+      color: var(--bosque);
+    }
+    .topbar__sep { width: 1px; height: 22px; background: var(--bosque-soft); }
+    .topbar__link {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bosque);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 200ms ease;
+      padding-bottom: 2px;
+    }
+    .topbar__link:hover { border-color: var(--bosque); }
+
+    /* ── Línea serpenteante (se dibuja al cargar) ── */
+    .meander {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: visible;
+    }
+    .meander path {
+      fill: none;
+      stroke: var(--bosque);
+      stroke-width: 1.4;
+      opacity: 0.65;
+    }
+
+    /* ═══ HERO ═══ */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(6rem, 12vh, 9rem) clamp(1.5rem, 6vw, 5rem) clamp(3rem, 8vh, 5rem);
+      overflow: hidden;
+    }
+
+    .hero .halftone--tl { top: -12%; right: -8%; width: 55vw; height: 55vw; max-width: 640px; max-height: 640px; }
+    .hero .halftone--bl { bottom: -18%; left: -12%; width: 45vw; height: 45vw; max-width: 480px; max-height: 480px; opacity: 0.1; }
+
+    .hero__eyebrow {
+      font-family: var(--mono);
+      font-size: clamp(0.6rem, 1.4vw, 0.72rem);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--bosque);
+      margin-bottom: clamp(1.5rem, 4vh, 2.75rem);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .hero__eyebrow::before { content: ''; width: 2.5rem; height: 1px; background: var(--bosque); }
+
+    .hero__title {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(3.2rem, 12.5vw, 10rem);
+      line-height: 0.98;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+      color: var(--bosque);
+      position: relative;
+      z-index: 2;
+    }
+    .hero__title .word { display: block; overflow: hidden; }
+    .hero__title .char {
+      display: inline-block;
+      transform: translateY(110%);
+      opacity: 0;
+    }
+    .no-motion .hero__title .char { transform: none; opacity: 1; }
+
+    .hero__sub {
+      margin-top: clamp(1.75rem, 5vh, 3rem);
+      max-width: 34ch;
+      position: relative;
+      z-index: 2;
+    }
+    .hero__sub-label {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(0.95rem, 2vw, 1.15rem);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--tinta);
+      margin-bottom: 0.75rem;
+    }
+    .hero__sub p {
+      font-size: clamp(0.98rem, 2vw, 1.12rem);
+      line-height: 1.65;
+      color: var(--tinta);
+      opacity: 0.85;
+    }
+
+    .hero__scroll {
+      position: absolute;
+      bottom: 2rem;
+      right: clamp(1.5rem, 6vw, 5rem);
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bosque);
+      writing-mode: vertical-rl;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+    .hero__scroll::after {
+      content: '';
+      width: 1px;
+      height: 3.5rem;
+      background: var(--bosque);
+      animation: scroll-pulse 2.2s ease-in-out infinite;
+      transform-origin: top;
+    }
+    @keyframes scroll-pulse {
+      0%, 100% { transform: scaleY(0.35); opacity: 0.4; }
+      50% { transform: scaleY(1); opacity: 1; }
+    }
+
+    /* Polvo de matcha — parallax */
+    .powder {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      will-change: transform;
+    }
+    .powder img { width: 100%; height: auto; display: block; }
+    .powder--hero {
+      width: clamp(280px, 42vw, 620px);
+      right: -6%;
+      bottom: -4%;
+      transform: rotate(-12deg);
+      mix-blend-mode: multiply;
+      opacity: 0.92;
+    }
+
+    /* ═══ SECCIONES ═══ */
+    .section {
+      position: relative;
+      padding: clamp(4rem, 12vh, 8rem) clamp(1.5rem, 6vw, 5rem);
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+
+    .section__label {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--bosque-soft);
+      display: block;
+      margin-bottom: 1.5rem;
+    }
+
+    .section__title {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(1.9rem, 4.5vw, 3.2rem);
+      line-height: 1.1;
+      color: var(--bosque);
+      max-width: 22ch;
+    }
+
+    /* Reveal on scroll */
+    .rv { opacity: 0; transform: translateY(26px); transition: opacity 900ms cubic-bezier(.2,.7,.2,1), transform 900ms cubic-bezier(.2,.7,.2,1); }
+    .rv.in { opacity: 1; transform: none; }
+    .rv[data-d="1"] { transition-delay: 120ms; }
+    .rv[data-d="2"] { transition-delay: 240ms; }
+    .rv[data-d="3"] { transition-delay: 360ms; }
+    .no-motion .rv { opacity: 1; transform: none; transition: none; }
+
+    /* ── La experiencia ── */
+    .exp__grid {
+      margin-top: clamp(2.5rem, 6vh, 4rem);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: clamp(1.5rem, 4vw, 3rem);
+    }
+    .exp__item { border-top: 1px solid var(--bosque-soft); padding-top: 1.25rem; }
+    .exp__no {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.18em;
+      color: var(--polvo);
+      display: block;
+      margin-bottom: 0.85rem;
+    }
+    .exp__item h3 {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: 1.25rem;
+      color: var(--bosque);
+      margin-bottom: 0.6rem;
+    }
+    .exp__item p { font-size: 0.92rem; line-height: 1.65; color: var(--tinta); opacity: 0.8; }
+
+    /* ── Moderadora ── */
+    .host {
+      background: var(--bosque);
+      color: var(--crema);
+      max-width: none;
+      overflow: hidden;
+    }
+    .host__inner {
+      max-width: 72rem;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    @media (max-width: 720px) { .host__inner { grid-template-columns: 1fr; } }
+    .host .section__label { color: rgba(239, 233, 218, 0.55); }
+    .host__name {
+      font-family: var(--serif);
+      font-weight: 600;
+      font-size: clamp(2.2rem, 5vw, 3.6rem);
+      line-height: 1.05;
+    }
+    .host__body p { font-size: 0.98rem; line-height: 1.7; opacity: 0.85; margin-bottom: 1rem; }
+    .host .halftone {
+      background-image: radial-gradient(var(--crema) 1.1px, transparent 1.1px);
+      opacity: 0.12;
+      top: -30%; right: -10%;
+      width: 50vw; height: 50vw;
+      max-width: 560px; max-height: 560px;
+    }
+
+    /* ── Detalles ── */
+    .details__list {
+      margin-top: clamp(2rem, 5vh, 3rem);
+      border-top: 1px solid var(--bosque-soft);
+    }
+    .details__row {
+      display: grid;
+      grid-template-columns: minmax(110px, 200px) 1fr;
+      gap: 1.5rem;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid var(--bosque-soft);
+      align-items: baseline;
+    }
+    .details__key {
+      font-family: var(--mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bosque-soft);
+    }
+    .details__val {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+      color: var(--bosque);
+    }
+    .details__val small {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--polvo);
+      margin-left: 0.75rem;
+    }
+
+    /* ── RSVP ── */
+    .rsvp { text-align: center; padding-bottom: clamp(5rem, 14vh, 9rem); }
+    .rsvp .section__title { margin: 0 auto 2.5rem; }
+    .rsvp__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--crema);
+      background: var(--bosque);
+      border: 1px solid var(--bosque);
+      padding: 1.25rem 2.5rem;
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      transition: color 350ms ease;
+    }
+    .rsvp__btn span { position: relative; z-index: 2; }
+    .rsvp__btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--polvo);
+      transform: translateY(101%);
+      transition: transform 420ms cubic-bezier(.2,.7,.2,1);
+    }
+    .rsvp__btn:hover::before { transform: translateY(0); }
+    .rsvp__btn:hover { color: var(--tinta); }
+    .rsvp__note {
+      margin-top: 1.5rem;
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--bosque-soft);
+    }
+
+    .powder--rsvp {
+      width: clamp(240px, 34vw, 480px);
+      left: -8%;
+      bottom: 2%;
+      transform: rotate(14deg) scaleX(-1);
+      mix-blend-mode: multiply;
+      opacity: 0.8;
+    }
+
+    /* ── Pie ── */
+    .foot {
+      border-top: 1px solid var(--bosque-soft);
+      padding: 1.75rem clamp(1.5rem, 6vw, 5rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .foot__brand { display: flex; align-items: center; gap: 0.85rem; }
+    .foot__brand img { width: 30px; height: 30px; }
+    .foot__suki { font-family: var(--serif); font-weight: 600; letter-spacing: 0.14em; }
+    .foot span, .foot a {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--bosque);
+      text-decoration: none;
+    }
+    .foot a:hover { text-decoration: underline; text-underline-offset: 3px; }
+  </style>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+
+<!-- ── Barra superior ── -->
+<header class="topbar">
+  <a class="topbar__brand" href="index.html" aria-label="Kura Matcha">
+    <span class="topbar__suki">SUKI</span>
+    <span class="topbar__sep" aria-hidden="true"></span>
+    <img src="public/kura-logo.png" alt="Kura Matcha" />
+  </a>
+  <a class="topbar__link" href="catalogo.html">kuramatcha → catálogo</a>
+</header>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="halftone halftone--tl" aria-hidden="true"></div>
+  <div class="halftone halftone--bl" aria-hidden="true"></div>
+
+  <svg class="meander" viewBox="0 0 1200 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path id="meander-path" d="M 640 -40 C 560 120, 860 180, 780 320 C 700 460, 380 420, 340 560 C 300 700, 620 720, 760 820 C 860 890, 1040 880, 1180 940" />
+  </svg>
+
+  <p class="hero__eyebrow rv">SUKI × Kura · Invitación</p>
+
+  <h1 class="hero__title" id="title">
+    <span class="word">Matcha</span>
+    <span class="word">Tasting</span>
+    <span class="word">Ceremony</span>
+  </h1>
+
+  <div class="hero__sub rv" data-d="2">
+    <p class="hero__sub-label">Cata de matcha</p>
+    <p>Una experiencia para descubrir y comparar distintos matchas de distintas regiones de Japón, acompañados con cositas ricas especialmente seleccionadas.</p>
+  </div>
+
+  <div class="powder powder--hero" data-parallax="0.12" aria-hidden="true">
+    <img src="public/maki.png" alt="" />
+  </div>
+
+  <a class="hero__scroll" href="#experiencia">Deslizá</a>
+</section>
+
+<!-- ═══ LA EXPERIENCIA ═══ -->
+<section class="section" id="experiencia">
+  <span class="section__label rv">01 · La experiencia</span>
+  <h2 class="section__title rv" data-d="1">Cuatro regiones de Japón, lado a lado, en una misma mesa.</h2>
+
+  <div class="exp__grid">
+    <div class="exp__item rv" data-d="1">
+      <span class="exp__no">/ 01</span>
+      <h3>Cata comparada</h3>
+      <p>Probás matchas de distintas regiones y cosechas, uno al lado del otro, para entender qué cambia entre un origen y otro: color, textura, umami, dulzor.</p>
+    </div>
+    <div class="exp__item rv" data-d="2">
+      <span class="exp__no">/ 02</span>
+      <h3>Preparación en vivo</h3>
+      <p>Cada matcha se prepara frente a vos, al estilo tradicional — chawan, chasen y agua a temperatura justa. Vas a ver (y probar) la diferencia.</p>
+    </div>
+    <div class="exp__item rv" data-d="3">
+      <span class="exp__no">/ 03</span>
+      <h3>Maridajes seleccionados</h3>
+      <p>Cositas ricas especialmente elegidas para acompañar cada perfil: lo dulce, lo tostado y lo herbal en diálogo con la taza.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MODERADORA ═══ -->
+<section class="section host">
+  <div class="halftone" aria-hidden="true"></div>
+  <div class="host__inner">
+    <div>
+      <span class="section__label rv">02 · Moderada por</span>
+      <h2 class="host__name rv" data-d="1">Malena Higashi</h2>
+    </div>
+    <div class="host__body rv" data-d="2">
+      <p>La cata está guiada de principio a fin: qué mirar en el color, cómo batir, qué buscar en nariz y en boca, y por qué cada región de Japón produce un matcha distinto.</p>
+      <p>No hace falta saber nada de matcha — solo venir con curiosidad.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DETALLES ═══ -->
+<section class="section">
+  <span class="section__label rv">03 · Detalles</span>
+  <h2 class="section__title rv" data-d="1">La ceremonia</h2>
+
+  <div class="details__list">
+    <div class="details__row rv">
+      <span class="details__key">Fecha</span>
+      <span class="details__val">A confirmar <small>· Muy pronto</small></span>
+    </div>
+    <div class="details__row rv" data-d="1">
+      <span class="details__key">Hora</span>
+      <span class="details__val">A confirmar</span>
+    </div>
+    <div class="details__row rv" data-d="2">
+      <span class="details__key">Lugar</span>
+      <span class="details__val">Buenos Aires <small>· A confirmar</small></span>
+    </div>
+    <div class="details__row rv" data-d="3">
+      <span class="details__key">Cupos</span>
+      <span class="details__val">Limitados <small>· Reservá el tuyo</small></span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RSVP ═══ -->
+<section class="section rsvp">
+  <div class="powder powder--rsvp" data-parallax="0.08" aria-hidden="true">
+    <img src="public/sei.png" alt="" />
+  </div>
+  <span class="section__label rv">04 · Reservas</span>
+  <h2 class="section__title rv" data-d="1">Los lugares son limitados. El matcha, también.</h2>
+  <a class="rsvp__btn rv" data-d="2" href="https://wa.me/5491156670631?text=Hola%21+Quiero+reservar+para+la+Cata+de+Matcha+%28SUKI+x+Kura%29.%0A%0ANombre%3A+%0ALugares%3A+" target="_blank" rel="noopener">
+    <span>Reservar mi lugar</span>
+    <span aria-hidden="true">→</span>
+  </a>
+  <p class="rsvp__note rv" data-d="3">Reservas por WhatsApp · Respuesta en el día</p>
+</section>
+
+<!-- ── Pie ── -->
+<footer class="foot">
+  <div class="foot__brand">
+    <span class="foot__suki">SUKI</span>
+    <span class="topbar__sep" aria-hidden="true"></span>
+    <img src="public/kura-logo.png" alt="Kura Matcha" />
+  </div>
+  <span>Matcha Tasting Ceremony · 2026</span>
+  <a href="index.html">kuramatcha.com</a>
+</footer>
+
+<script>
+(function () {
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduced) { document.documentElement.classList.add('no-motion'); }
+
+  /* ── Título: reveal letra por letra ── */
+  var title = document.getElementById('title');
+  if (title) {
+    title.querySelectorAll('.word').forEach(function (word) {
+      var text = word.textContent;
+      word.textContent = '';
+      for (var i = 0; i < text.length; i++) {
+        var c = document.createElement('span');
+        c.className = 'char';
+        c.textContent = text[i];
+        word.appendChild(c);
+      }
+    });
+    if (!reduced) {
+      var chars = title.querySelectorAll('.char');
+      chars.forEach(function (c, i) {
+        c.style.transition = 'transform 950ms cubic-bezier(.16,1,.3,1) ' + (200 + i * 38) + 'ms, opacity 600ms ease ' + (200 + i * 38) + 'ms';
+      });
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          chars.forEach(function (c) { c.style.transform = 'translateY(0)'; c.style.opacity = '1'; });
+        });
+      });
+    }
+  }
+
+  /* ── Línea serpenteante: dibujo al cargar ── */
+  var path = document.getElementById('meander-path');
+  if (path && !reduced) {
+    var len = path.getTotalLength();
+    path.style.strokeDasharray = len;
+    path.style.strokeDashoffset = len;
+    path.getBoundingClientRect(); // force layout
+    path.style.transition = 'stroke-dashoffset 3200ms cubic-bezier(.4,0,.2,1) 500ms';
+    path.style.strokeDashoffset = '0';
+  }
+
+  /* ── Reveals on scroll ── */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.15 });
+  document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+
+  /* ── Parallax del polvo ── */
+  if (!reduced) {
+    var items = Array.prototype.slice.call(document.querySelectorAll('[data-parallax]'));
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var y = window.scrollY;
+        items.forEach(function (el) {
+          var speed = parseFloat(el.dataset.parallax) || 0.1;
+          var base = el.dataset.baseTransform || (el.dataset.baseTransform = getComputedStyle(el).transform === 'none' ? '' : getComputedStyle(el).transform);
+          el.style.transform = 'translate3d(0,' + (-y * speed) + 'px,0) ' + (el.classList.contains('powder--hero') ? 'rotate(-12deg)' : 'rotate(14deg) scaleX(-1)');
+        });
+        ticking = false;
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+})();
+</script>
+</body>
+</html>
