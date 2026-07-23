@@ -57,7 +57,7 @@
       font-size: 0.6rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: #86A93B;
+      color: #2E5231;
       white-space: nowrap;
     }
     .cata-promo__main { flex: 1; min-width: 240px; }
@@ -94,6 +94,82 @@
     .cata-promo__cta .cata-promo__arrow { transition: transform 250ms ease; }
     .cata-promo:hover .cata-promo__cta { background: #2E5231; color: #EFE9DA; }
     .cata-promo:hover .cata-promo__arrow { transform: translateX(4px); }
+
+    /* ── Pop-up · Ceremonia del té (primera visita) ── */
+    .cata-pop {
+      position: fixed; inset: 0; z-index: 9000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.5rem;
+      background: rgba(20, 20, 16, 0.55);
+      opacity: 0;
+      transition: opacity 350ms ease;
+    }
+    .cata-pop.is-open { opacity: 1; }
+    .cata-pop__card {
+      position: relative;
+      background: #EFE9DA;
+      color: #2E5231;
+      max-width: 400px;
+      width: 100%;
+      padding: 2.5rem 2rem 2rem;
+      border: 1px solid rgba(46, 82, 49, 0.3);
+      text-align: center;
+      transform: translateY(18px);
+      transition: transform 420ms cubic-bezier(.2,.7,.2,1);
+      overflow: hidden;
+    }
+    .cata-pop.is-open .cata-pop__card { transform: translateY(0); }
+    .cata-pop__card::before {
+      content: '';
+      position: absolute; top: -30%; right: -25%;
+      width: 60%; aspect-ratio: 1;
+      background-image: radial-gradient(#2E5231 1.1px, transparent 1.1px);
+      background-size: 9px 9px;
+      -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 72%);
+              mask-image: radial-gradient(ellipse at center, black 30%, transparent 72%);
+      opacity: 0.15;
+      pointer-events: none;
+    }
+    .cata-pop__close {
+      position: absolute; top: 0.85rem; right: 0.85rem;
+      width: 38px; height: 38px;
+      display: flex; align-items: center; justify-content: center;
+      background: none; border: none; cursor: pointer;
+      color: #2E5231; font-size: 1rem;
+      transition: transform 200ms ease;
+    }
+    .cata-pop__close:hover { transform: rotate(90deg); }
+    .cata-pop__label {
+      font-family: var(--font-mono);
+      font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: #2E5231;
+      display: block; margin-bottom: 1rem;
+    }
+    .cata-pop__title {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-weight: 600;
+      font-size: 2.1rem;
+      line-height: 1.02;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+    }
+    .cata-pop__title em { font-style: italic; font-weight: 500; text-transform: none; }
+    .cata-pop__sub {
+      font-family: var(--font-sans);
+      font-size: 0.88rem; line-height: 1.6;
+      color: rgba(31, 45, 31, 0.8);
+      margin-bottom: 1.5rem;
+    }
+    .cata-pop__cta {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      font-family: var(--font-mono);
+      font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: #EFE9DA; background: #2E5231; border: 1px solid #2E5231;
+      padding: 0.95rem 1.8rem;
+      text-decoration: none;
+      transition: background 250ms ease, color 250ms ease;
+    }
+    .cata-pop__cta:hover { background: #86A93B; border-color: #86A93B; color: #1f2d1f; }
   </style>
   <script type="application/ld+json">
   {
@@ -342,9 +418,9 @@
       <div class="form__notice" id="form-notice">Blend preseleccionado · <span data-blend-echo></span></div>
 
       <div class="contact__actions" style="margin-top:1.5rem;">
-        <a id="contact-wa" href="https://wa.me/5491156670631?text=Hola%21+Consulta+mayorista+Kura+Matcha.%0A%0ANombre%3A+%0ACaf%C3%A9%2FTienda+%28opcional%29%3A+%0AConsulta%3A+" target="_blank" rel="noopener" class="btn btn--solid">
-          <span class="btn__label">Escribir por WhatsApp</span>
-          <span class="btn__arrow">↗</span>
+        <a href="contacto.html" class="btn btn--solid">
+          <span class="btn__label">Trabajá con nosotros</span>
+          <span class="btn__arrow">→</span>
         </a>
       </div>
     </div>
@@ -369,6 +445,17 @@
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12 0C5.373 0 0 5.373 0 12c0 2.123.554 4.112 1.523 5.838L.057 23.852a.5.5 0 0 0 .614.614l6.093-1.452A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.95 0-3.775-.525-5.338-1.437l-.382-.223-3.968.945.963-3.88-.246-.4A9.96 9.96 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </a>
 
+<!-- ── Pop-up · Ceremonia del té (solo primera visita) ── -->
+<div class="cata-pop" id="cata-pop" role="dialog" aria-modal="true" aria-labelledby="cata-pop-title" hidden>
+  <div class="cata-pop__card">
+    <button class="cata-pop__close" id="cata-pop-close" aria-label="Cerrar">✕</button>
+    <span class="cata-pop__label">SUKI × Kura Matcha × Malena Higashi</span>
+    <h3 class="cata-pop__title" id="cata-pop-title">Ceremonia <em>del té</em></h3>
+    <p class="cata-pop__sub">Cata de matcha y maridajes tradicionales en Barrio Chino, Buenos Aires. Sáb 29 ago y sáb 5 sep, 10:30 am · 20 cupos por turno.</p>
+    <a class="cata-pop__cta" href="cata.html">Reservar mi lugar <span aria-hidden="true">→</span></a>
+  </div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script src="https://unpkg.com/topojson-client@3/dist/topojson-client.min.js"></script>
@@ -376,5 +463,41 @@
 <script src="scripts.js"></script>
 <script src="animations.js"></script>
 <script src="map.js"></script>
+
+<script>
+/* Pop-up Ceremonia del té — solo la primera visita, se cierra con la ✕ */
+(function () {
+  var KEY = 'kura-cata-pop-v1';
+  try { if (localStorage.getItem(KEY)) return; } catch (e) { return; }
+
+  var pop = document.getElementById('cata-pop');
+  var closeBtn = document.getElementById('cata-pop-close');
+  if (!pop || !closeBtn) return;
+
+  function remember() { try { localStorage.setItem(KEY, '1'); } catch (e) {} }
+
+  function dismiss() {
+    remember();
+    pop.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(function () { pop.hidden = true; }, 360);
+  }
+
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      pop.hidden = false;
+      requestAnimationFrame(function () { pop.classList.add('is-open'); });
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }, 1800); // espera a que termine el loader
+  });
+
+  closeBtn.addEventListener('click', dismiss);
+  pop.querySelector('.cata-pop__cta').addEventListener('click', remember);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !pop.hidden) dismiss();
+  });
+})();
+</script>
 </body>
 </html>
