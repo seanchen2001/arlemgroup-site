@@ -360,33 +360,30 @@
   <section class="form-box" id="reservar">
     <div class="halftone" aria-hidden="true"></div>
 
-    <form id="rsvp" action="https://formsubmit.co/seanc@kuramatcha.com" method="POST">
+    <form id="rsvp" action="https://script.google.com/macros/s/AKfycbwcI92YqAVO7dieC_toGGTfDURq2eKajUzrkdrk52k5OX6Znvn7tOMa6DIbfdwo2P64Yw/exec" method="POST">
       <h2 class="form__title rv">Reservá tu lugar</h2>
       <p class="form__hint rv">Dejanos tus datos y te confirmamos ni bien tengamos la fecha decidida.</p>
 
-      <!-- Config FormSubmit -->
-      <input type="hidden" name="_subject" value="Nueva reserva · Ceremonia del té" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://kuramatcha.com/cata.html?ok=1" />
+      <!-- Trampa anti-spam: invisible para personas, tentadora para bots -->
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+      <input type="hidden" name="origen" value="cata.html" />
 
       <div class="field rv">
         <label for="f-nombre">Nombre</label>
-        <input id="f-nombre" type="text" name="Nombre" placeholder="Tu nombre" required autocomplete="name" />
+        <input id="f-nombre" type="text" name="nombre" placeholder="Tu nombre" required autocomplete="name" />
       </div>
 
       <div class="field rv" data-d="1">
         <label for="f-wa">WhatsApp</label>
-        <input id="f-wa" type="tel" name="WhatsApp" placeholder="11 1234 5678" required autocomplete="tel" inputmode="tel" />
+        <input id="f-wa" type="tel" name="whatsapp" placeholder="11 1234 5678" required autocomplete="tel" inputmode="tel" />
       </div>
 
       <div class="field rv" data-d="2">
         <label>¿Qué fecha te queda mejor?</label>
         <div class="pills">
-          <label class="pill"><input type="radio" name="Fecha preferida" value="Sábado 29 de agosto · 10:30" required /><span>Sáb 29 de agosto · 10:30</span></label>
-          <label class="pill"><input type="radio" name="Fecha preferida" value="Sábado 5 de septiembre · 10:30" /><span>Sáb 5 de septiembre · 10:30</span></label>
-          <label class="pill"><input type="radio" name="Fecha preferida" value="Cualquiera de las dos" /><span>Cualquiera me sirve</span></label>
+          <label class="pill"><input type="radio" name="fecha" value="Sábado 29 de agosto · 10:30" required /><span>Sáb 29 de agosto · 10:30</span></label>
+          <label class="pill"><input type="radio" name="fecha" value="Sábado 5 de septiembre · 10:30" /><span>Sáb 5 de septiembre · 10:30</span></label>
+          <label class="pill"><input type="radio" name="fecha" value="Cualquiera de las dos" /><span>Cualquiera me sirve</span></label>
         </div>
       </div>
 
@@ -448,7 +445,9 @@
   }, { rootMargin: '0px 0px -6% 0px', threshold: 0.1 });
   document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
 
-  /* Envío del form — AJAX sin salir de la página, con fallback a POST normal */
+  /* Envío del form — POST al Apps Script, sin salir de la página */
+  var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwcI92YqAVO7dieC_toGGTfDURq2eKajUzrkdrk52k5OX6Znvn7tOMa6DIbfdwo2P64Yw/exec';
+
   var form = document.getElementById('rsvp');
   var okBox = document.getElementById('ok');
   var btn = form.querySelector('.form__btn');
@@ -459,38 +458,34 @@
     okBox.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'center' });
   }
 
-  // Volviendo del fallback POST (?ok=1)
-  if (new URLSearchParams(location.search).get('ok') === '1') showOk();
-
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     if (!form.reportValidity()) return;
     btn.disabled = true;
     btn.querySelector('span').textContent = 'Enviando…';
 
-    var data = {
-      Nombre: document.getElementById('f-nombre').value,
-      WhatsApp: document.getElementById('f-wa').value,
-      'Fecha preferida': (form.querySelector('input[name="Fecha preferida"]:checked') || {}).value || '',
-      _subject: 'Nueva reserva · Ceremonia del té',
-      _template: 'table',
-      _captcha: 'false'
-    };
-
-    fetch('https://formsubmit.co/ajax/seanc@kuramatcha.com', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data)
-    }).then(function (r) {
-      if (!r.ok) throw new Error('bad status');
-      return r.json();
-    }).then(function () {
-      showOk();
-    }).catch(function () {
-      // Fallback: POST clásico (redirige y vuelve con ?ok=1)
-      form.removeEventListener('submit', arguments.callee);
-      HTMLFormElement.prototype.submit.call(form);
+    // urlencoded = "simple request": no dispara preflight CORS
+    var body = new URLSearchParams({
+      nombre: document.getElementById('f-nombre').value,
+      whatsapp: document.getElementById('f-wa').value,
+      fecha: (form.querySelector('input[name="fecha"]:checked') || {}).value || '',
+      origen: 'cata.html',
+      _honey: form.querySelector('input[name="_honey"]').value
     });
+
+    fetch(ENDPOINT, { method: 'POST', body: body })
+      .then(function () { showOk(); })
+      .catch(function () {
+        // Si el navegador bloquea leer la respuesta, reenviamos opaco:
+        // el POST igual llega y la fila se escribe.
+        fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: body })
+          .then(function () { showOk(); })
+          .catch(function () {
+            btn.disabled = false;
+            btn.querySelector('span').textContent = 'Reintentar';
+            alert('No pudimos enviar tu reserva. Probá de nuevo o escribinos por WhatsApp.');
+          });
+      });
   });
 })();
 </script>
