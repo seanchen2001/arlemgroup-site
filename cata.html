@@ -69,13 +69,14 @@
       padding: clamp(1.25rem, 4vw, 2rem) clamp(1.35rem, 5vw, 2rem) 3.5rem;
     }
 
-    /* Primera pantalla: llena 100svh y reparte el aire; el form arranca en la siguiente */
+    /* Primera pantalla: llena el alto real y reparte el aire; el form arranca en la siguiente */
     .fold {
-      min-height: calc(100svh - clamp(1.25rem, 4vw, 2rem));
+      min-height: calc(100vh - clamp(1.25rem, 4vw, 2rem));
+      min-height: calc(100dvh - clamp(1.25rem, 4vw, 2rem)); /* sigue a la barra del navegador */
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding-bottom: clamp(1.25rem, 4vw, 2rem);
+      padding-bottom: clamp(1.5rem, 5vw, 2rem);
     }
 
     /* ── Marca ── */
@@ -100,8 +101,8 @@
 
     .hero__eyebrow {
       font-family: var(--mono);
-      font-size: clamp(0.58rem, 2.8vw, 0.68rem);
-      letter-spacing: 0.18em;
+      font-size: clamp(0.62rem, 3vw, 0.7rem);
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       margin-bottom: 0.9rem;
       display: flex; align-items: center; gap: 0.75rem;
@@ -111,7 +112,7 @@
     .hero__title {
       font-family: var(--serif);
       font-weight: 600;
-      font-size: clamp(2.5rem, 12.5vw, 5.5rem);
+      font-size: clamp(2.9rem, 14.5vw, 5.5rem);
       line-height: 0.99;
       text-transform: uppercase;
       letter-spacing: 0.01em;
@@ -166,12 +167,12 @@
     .list { margin-bottom: clamp(1.5rem, 5vw, 2.5rem); }
     .list__item {
       display: flex; align-items: baseline; gap: 1rem;
-      padding: 0.65rem 0;
+      padding: 0.8rem 0;
       border-top: 1px solid var(--bosque-soft);
     }
     .list__item:last-child { border-bottom: 1px solid var(--bosque-soft); }
-    .list__no { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.14em; color: var(--polvo); flex-shrink: 0; }
-    .list__txt { font-family: var(--serif); font-weight: 500; font-size: clamp(1rem, 4vw, 1.2rem); line-height: 1.3; }
+    .list__no { font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.14em; color: var(--polvo); flex-shrink: 0; }
+    .list__txt { font-family: var(--serif); font-weight: 500; font-size: clamp(1.12rem, 4.7vw, 1.3rem); line-height: 1.3; }
 
     /* ── Detalles ── */
     .facts {
@@ -185,7 +186,7 @@
       text-transform: uppercase; color: var(--bosque-soft);
       display: block; margin-bottom: 0.35rem;
     }
-    .fact__v { font-family: var(--serif); font-weight: 500; font-size: clamp(1.02rem, 4.2vw, 1.2rem); line-height: 1.25; }
+    .fact__v { font-family: var(--serif); font-weight: 500; font-size: clamp(1.12rem, 4.5vw, 1.28rem); line-height: 1.25; }
     .facts__note {
       font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--bosque-soft);
@@ -193,7 +194,7 @@
     }
 
     /* ── Formulario ── */
-    .form-box { position: relative; }
+    .form-box { position: relative; margin-top: clamp(1.5rem, 6vw, 3rem); }
     .form-box .halftone { bottom: -22%; left: -28%; width: 60vw; height: 60vw; max-width: 340px; max-height: 340px; opacity: 0.1; }
 
     .form__title {
