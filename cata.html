@@ -10,9 +10,19 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kura Matcha" />
   <meta property="og:url" content="https://www.arlemgroup.com/cata.html" />
-  <meta property="og:title" content="Ceremonia del té · SUKI × Kura × Malena Higashi" />
-  <meta property="og:description" content="3 matchas y 1 hojicha, maridajes tradicionales y una mesa compartida. Barrio Chino, Buenos Aires. 20 cupos por turno." />
+  <meta property="og:title" content="Cata de té · SUKI × Kura × Malena Higashi" />
+  <meta property="og:description" content="Cata de matcha y maridajes tradicionales en Barrio Chino, Buenos Aires. Sáb 5 de septiembre, 10:30 am · 20 cupos por turno." />
   <meta property="og:locale" content="es_AR" />
+  <meta property="og:image" content="https://www.arlemgroup.com/public/cata-og.jpg" />
+  <meta property="og:image:secure_url" content="https://www.arlemgroup.com/public/cata-og.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Cata de té · SUKI × Kura Matcha × Malena Higashi" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cata de té · SUKI × Kura × Malena Higashi" />
+  <meta name="twitter:description" content="Cata de matcha y maridajes tradicionales en Barrio Chino, Buenos Aires. Sáb 5 de septiembre, 10:30 am." />
+  <meta name="twitter:image" content="https://www.arlemgroup.com/public/cata-og.jpg" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="public/kura-logo.png" />
   <link rel="apple-touch-icon" href="public/kura-logo.png" />
@@ -306,6 +316,116 @@
     .rv[data-d="1"] { transition-delay: 100ms; }
     .rv[data-d="2"] { transition-delay: 200ms; }
     .no-motion .rv { opacity: 1; transform: none; transition: none; }
+
+    /* ── Compartir: llamada ── */
+    .share-cta {
+      text-align: center;
+      margin-top: clamp(3rem, 9vw, 4.5rem);
+      padding-top: clamp(2rem, 6vw, 3rem);
+      border-top: 1px solid var(--bosque-soft);
+    }
+    .share-cta__text {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 4.5vw, 1.35rem);
+      color: var(--bosque);
+      margin-bottom: 1.25rem;
+    }
+    .share-cta__btn {
+      display: inline-flex; align-items: center; gap: 0.7rem;
+      font-family: var(--mono);
+      font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--bosque);
+      background: transparent;
+      border: 1.5px solid var(--bosque);
+      padding: 0.9rem 1.8rem;
+      cursor: pointer;
+      transition: background 250ms ease, color 250ms ease;
+    }
+    .share-cta__btn:hover { background: var(--bosque); color: var(--crema); }
+
+    /* ── Pop-up · carta ── */
+    .share-pop {
+      position: fixed; inset: 0; z-index: 9500;
+      display: flex; align-items: center; justify-content: center;
+      padding: 1.25rem;
+      background: rgba(20, 20, 16, 0.55);
+      opacity: 0; transition: opacity 320ms ease;
+    }
+    .share-pop.is-open { opacity: 1; }
+    .share-pop[hidden] { display: none; }
+
+    .letter {
+      position: relative;
+      background:
+        repeating-linear-gradient(45deg, rgba(46,82,49,0.025) 0 10px, transparent 10px 20px),
+        var(--crema);
+      width: 100%; max-width: 380px;
+      padding: 3.25rem 1.75rem 2rem;
+      border: 1px solid rgba(46,82,49,0.35);
+      box-shadow: 0 24px 60px rgba(20,20,16,0.28);
+      transform: translateY(20px) scale(0.98);
+      transition: transform 380ms cubic-bezier(.2,.7,.2,1);
+      text-align: center;
+    }
+    .share-pop.is-open .letter { transform: none; }
+    /* marco interno tipo papel de carta */
+    .letter::before {
+      content: '';
+      position: absolute; inset: 10px;
+      border: 1px solid rgba(46,82,49,0.22);
+      pointer-events: none;
+    }
+    /* sello de lacre con el logo */
+    .letter__seal {
+      position: absolute; top: -26px; left: 50%; transform: translateX(-50%);
+      width: 54px; height: 54px; border-radius: 50%;
+      background: var(--bosque);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 16px rgba(20,20,16,0.25);
+    }
+    .letter__seal img { width: 30px; height: 30px; }
+    .letter__close {
+      position: absolute; top: 0.6rem; right: 0.7rem;
+      width: 34px; height: 34px; border: none; background: none; cursor: pointer;
+      color: var(--bosque); font-size: 0.95rem;
+      transition: transform 200ms ease; z-index: 2;
+    }
+    .letter__close:hover { transform: rotate(90deg); }
+    .letter__eyebrow {
+      font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--bosque-soft);
+      margin-bottom: 0.6rem;
+    }
+    .letter__title {
+      font-family: var(--serif); font-weight: 600;
+      font-size: 1.7rem; line-height: 1.05; color: var(--bosque);
+      margin-bottom: 0.5rem;
+    }
+    .letter__title em { font-style: italic; font-weight: 500; }
+    .letter__sub {
+      font-size: 0.82rem; line-height: 1.5; color: var(--tinta); opacity: 0.8;
+      margin-bottom: 1.5rem;
+    }
+    .letter__options { display: flex; flex-direction: column; gap: 0.55rem; }
+    .share-opt {
+      display: flex; align-items: center; gap: 0.85rem;
+      width: 100%;
+      font-family: var(--sans); font-size: 0.9rem; font-weight: 500;
+      color: var(--tinta);
+      background: rgba(46,82,49,0.05);
+      border: 1px solid rgba(46,82,49,0.18);
+      padding: 0.85rem 1.1rem;
+      cursor: pointer; text-decoration: none;
+      transition: background 200ms ease, border-color 200ms ease;
+      text-align: left;
+    }
+    .share-opt:hover { background: rgba(46,82,49,0.1); border-color: var(--bosque-soft); }
+    .share-opt__ico {
+      width: 20px; height: 20px; flex-shrink: 0; color: var(--bosque);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .share-opt__ico svg { width: 20px; height: 20px; display: block; }
+    .share-opt[hidden] { display: none; }
   </style>
   <script defer src="/_vercel/insights/script.js"></script>
 </head>
@@ -395,8 +515,17 @@
     <div class="ok" id="ok" role="status">
       <div class="ok__mark" aria-hidden="true">✦</div>
       <h2>¡Reserva enviada!</h2>
-      <p>Te escribimos por WhatsApp para confirmar tu lugar.<br />Nos vemos en la ceremonia.</p>
+      <p>Te escribimos por WhatsApp para confirmar tu lugar.<br />Nos vemos en la cata.</p>
     </div>
+  </section>
+
+  <!-- Compartir -->
+  <section class="share-cta">
+    <p class="share-cta__text">¿Conocés a alguien que le gustaría?</p>
+    <button type="button" class="share-cta__btn" id="share-open">
+      <span>Compartir la invitación</span>
+      <span aria-hidden="true">✉</span>
+    </button>
   </section>
 
   <!-- Pie -->
@@ -406,6 +535,107 @@
   </footer>
 
 </div>
+
+<!-- ── Pop-up carta · compartir ── -->
+<div class="share-pop" id="share-pop" role="dialog" aria-modal="true" aria-labelledby="share-title" hidden>
+  <div class="letter">
+    <div class="letter__seal" aria-hidden="true"><img src="public/kura-logo.png" alt="" /></div>
+    <button class="letter__close" id="share-close" aria-label="Cerrar">✕</button>
+    <p class="letter__eyebrow">Estás invitado</p>
+    <h3 class="letter__title" id="share-title">Cata <em>de té</em></h3>
+    <p class="letter__sub">Pasala a quien quieras invitar a la mesa.</p>
+
+    <div class="letter__options">
+      <button type="button" class="share-opt" id="opt-native" hidden>
+        <span class="share-opt__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg></span>
+        <span>Compartir…</span>
+      </button>
+      <a class="share-opt" id="opt-wa" href="#" target="_blank" rel="noopener">
+        <span class="share-opt__ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg></span>
+        <span>WhatsApp</span>
+      </a>
+      <button type="button" class="share-opt" id="opt-copy">
+        <span class="share-opt__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></span>
+        <span id="opt-copy-label">Copiar link</span>
+      </button>
+      <a class="share-opt" id="opt-mail" href="#">
+        <span class="share-opt__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+        <span>Email</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Compartir · pop-up carta */
+(function () {
+  var SHARE_URL  = 'https://kuramatcha.com/cata.html';
+  var SHARE_TITLE = 'Cata de té · SUKI × Kura × Malena Higashi';
+  var SHARE_TEXT = 'Te invito a la Cata de té 🍵 SUKI × Kura Matcha × Malena Higashi. Cata de matcha y maridajes en Barrio Chino, sáb 5 de septiembre 10:30. Reservá tu lugar:';
+
+  var pop   = document.getElementById('share-pop');
+  var openB = document.getElementById('share-open');
+  var closeB = document.getElementById('share-close');
+  if (!pop || !openB) return;
+
+  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Enlaces de cada opción
+  document.getElementById('opt-wa').href =
+    'https://wa.me/?text=' + encodeURIComponent(SHARE_TEXT + ' ' + SHARE_URL);
+  document.getElementById('opt-mail').href =
+    'mailto:?subject=' + encodeURIComponent('Cata de té · SUKI × Kura') +
+    '&body=' + encodeURIComponent(SHARE_TEXT + '\n\n' + SHARE_URL);
+
+  // Compartir nativo (móvil): solo si el navegador lo soporta
+  var nativeBtn = document.getElementById('opt-native');
+  if (navigator.share) {
+    nativeBtn.hidden = false;
+    nativeBtn.addEventListener('click', function () {
+      navigator.share({ title: SHARE_TITLE, text: SHARE_TEXT, url: SHARE_URL }).catch(function () {});
+    });
+  }
+
+  // Copiar link
+  var copyBtn = document.getElementById('opt-copy');
+  var copyLabel = document.getElementById('opt-copy-label');
+  copyBtn.addEventListener('click', function () {
+    var done = function () {
+      copyLabel.textContent = '¡Copiado!';
+      setTimeout(function () { copyLabel.textContent = 'Copiar link'; }, 2000);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(SHARE_URL).then(done).catch(fallbackCopy);
+    } else { fallbackCopy(); }
+    function fallbackCopy() {
+      var t = document.createElement('textarea');
+      t.value = SHARE_URL; t.style.position = 'fixed'; t.style.opacity = '0';
+      document.body.appendChild(t); t.select();
+      try { document.execCommand('copy'); done(); } catch (e) {}
+      document.body.removeChild(t);
+    }
+  });
+
+  function openPop() {
+    pop.hidden = false;
+    requestAnimationFrame(function () { pop.classList.add('is-open'); });
+    document.body.style.overflow = 'hidden';
+    closeB.focus();
+  }
+  function closePop() {
+    pop.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(function () { pop.hidden = true; }, reduced ? 0 : 340);
+  }
+
+  openB.addEventListener('click', openPop);
+  closeB.addEventListener('click', closePop);
+  pop.addEventListener('click', function (e) { if (e.target === pop) closePop(); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !pop.hidden) closePop();
+  });
+})();
+</script>
 
 <script>
 (function () {
