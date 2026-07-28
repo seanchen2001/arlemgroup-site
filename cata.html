@@ -98,11 +98,29 @@
     .brand__suki { font-family: var(--serif); font-weight: 600; font-size: 1rem; letter-spacing: 0.14em; }
     .brand__suki-img { width: auto !important; height: 30px !important; display: block; }
     .brand__sep { width: 1px; height: 20px; background: var(--bosque-soft); }
-    .brand__site {
+    .brand__actions {
       margin-left: auto;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .brand__site {
       font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.16em;
       text-transform: uppercase; color: var(--bosque); text-decoration: none;
       opacity: 0.7;
+    }
+    .brand__share {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.16em;
+      text-transform: uppercase; color: var(--bosque);
+      background: transparent; border: 1px solid var(--bosque-soft);
+      padding: 0.5rem 0.8rem; cursor: pointer;
+      transition: background 220ms ease, color 220ms ease, border-color 220ms ease;
+    }
+    .brand__share svg { width: 14px; height: 14px; display: block; }
+    .brand__share:hover { background: var(--bosque); color: var(--crema); border-color: var(--bosque); }
+    @media (max-width: 430px) {
+      .brand__actions { gap: 0.65rem; }
+      .brand__share__label { display: none; } /* en pantallas chicas queda solo el ícono */
+      .brand__share { padding: 0.5rem; }
     }
 
     /* ── Hero compacto ── */
@@ -441,7 +459,13 @@
     <span class="brand__suki" style="display:none">SUKI</span>
     <span class="brand__sep" aria-hidden="true"></span>
     <img src="public/kura-logo.png" alt="Kura Matcha" />
-    <a class="brand__site" href="index.html">volver a kura matcha</a>
+    <div class="brand__actions">
+      <button type="button" class="brand__share" id="share-open-top" aria-label="Compartir la invitación">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.6" y1="13.5" x2="15.4" y2="17.5"/><line x1="15.4" y1="6.5" x2="8.6" y2="10.5"/></svg>
+        <span class="brand__share__label">Compartir</span>
+      </button>
+      <a class="brand__site" href="index.html">volver a kura matcha</a>
+    </div>
   </header>
 
   <!-- Hero -->
@@ -574,9 +598,9 @@
   var SHARE_TEXT = 'Te invito a la Cata de té 🍵 SUKI × Kura Matcha × Malena Higashi. Cata de matcha y maridajes en Barrio Chino, sáb 5 de septiembre 10:30. Reservá tu lugar:';
 
   var pop   = document.getElementById('share-pop');
-  var openB = document.getElementById('share-open');
+  var openBtns = document.querySelectorAll('#share-open, #share-open-top');
   var closeB = document.getElementById('share-close');
-  if (!pop || !openB) return;
+  if (!pop || !openBtns.length) return;
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -628,7 +652,7 @@
     setTimeout(function () { pop.hidden = true; }, reduced ? 0 : 340);
   }
 
-  openB.addEventListener('click', openPop);
+  openBtns.forEach(function (b) { b.addEventListener('click', openPop); });
   closeB.addEventListener('click', closePop);
   pop.addEventListener('click', function (e) { if (e.target === pop) closePop(); });
   document.addEventListener('keydown', function (e) {
