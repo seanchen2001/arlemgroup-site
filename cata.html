@@ -4,14 +4,14 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ceremonia del té · SUKI × Kura Matcha</title>
-  <meta name="description" content="Cata de matcha y maridajes tradicionales en Barrio Chino, Buenos Aires. Fecha tentativa: sábado 5 de septiembre (sujeto a cambio), 10:30 am. 20 cupos por turno. Reservá tu lugar." />
+  <meta name="description" content="Cata de matcha y maridajes tradicionales en Barrio Chino, Buenos Aires. Fecha tentativa: sábado 12 de septiembre (sujeto a cambio), 10:30 am. 20 cupos por turno. Reservá tu lugar." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.arlemgroup.com/cata.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Kura Matcha" />
   <meta property="og:url" content="https://www.arlemgroup.com/cata.html" />
   <meta property="og:title" content="Cata de té · SUKI × Kura" />
-  <meta property="og:description" content="Cata de matcha y maridajes tradicionales en Barrio Chino, Buenos Aires. Fecha tentativa: sáb 5 de septiembre (sujeto a cambio), 10:30 am · 20 cupos por turno." />
+  <meta property="og:description" content="Cata de matcha y maridajes tradicionales en Barrio Chino, Buenos Aires. Fecha tentativa: sáb 12 de septiembre (sujeto a cambio), 10:30 am · 20 cupos por turno." />
   <meta property="og:locale" content="es_AR" />
   <meta property="og:image" content="https://www.arlemgroup.com/public/cata-og.jpg" />
   <meta property="og:image:secure_url" content="https://www.arlemgroup.com/public/cata-og.jpg" />
@@ -21,7 +21,7 @@
   <meta property="og:image:alt" content="Cata de té · SUKI × Kura Matcha" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Cata de té · SUKI × Kura" />
-  <meta name="twitter:description" content="Cata de matcha y maridajes tradicionales en Barrio Chino, Buenos Aires. Fecha tentativa: sáb 5 de septiembre (sujeto a cambio), 10:30 am." />
+  <meta name="twitter:description" content="Cata de matcha y maridajes tradicionales en Barrio Chino, Buenos Aires. Fecha tentativa: sáb 12 de septiembre (sujeto a cambio), 10:30 am." />
   <meta name="twitter:image" content="https://www.arlemgroup.com/public/cata-og.jpg" />
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link rel="icon" type="image/png" sizes="32x32" href="public/kura-logo.png" />
@@ -140,8 +140,8 @@
     .hero__title {
       font-family: var(--serif);
       font-weight: 600;
-      font-size: clamp(2.9rem, 14.5vw, 5.5rem);
-      line-height: 0.99;
+      font-size: clamp(2.4rem, 11.5vw, 4rem);
+      line-height: 1;
       text-transform: uppercase;
       letter-spacing: 0.01em;
       position: relative; z-index: 2;
@@ -203,22 +203,23 @@
     .list__txt { font-family: var(--serif); font-weight: 500; font-size: clamp(1.12rem, 4.7vw, 1.3rem); line-height: 1.3; }
 
     /* ── Detalles ── */
+    /* ── Parte 2 · Detalles (centrado) ── */
+    .detalles { text-align: center; margin-top: clamp(2.5rem, 8vw, 4rem); }
     .facts {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.9rem 1rem;
-      margin-bottom: 0.75rem;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
     }
     .fact__k {
-      font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--bosque-soft);
-      display: block; margin-bottom: 0.35rem;
+      font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--bosque);
+      display: block; margin-bottom: 0.3rem;
     }
-    .fact__v { font-family: var(--serif); font-weight: 500; font-size: clamp(1.12rem, 4.5vw, 1.28rem); line-height: 1.25; }
+    .fact__v { font-family: var(--serif); font-weight: 500; font-size: clamp(1.18rem, 4.6vw, 1.35rem); line-height: 1.25; color: var(--bosque); }
     .facts__note {
       font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.1em;
       text-transform: uppercase; color: var(--bosque-soft);
-      margin-bottom: clamp(2.5rem, 8vw, 3.5rem);
+      margin-bottom: clamp(2rem, 7vw, 3rem);
     }
 
     /* ── Formulario ── */
@@ -305,9 +306,12 @@
 
     /* Info / política */
     .info { margin-top: clamp(2rem, 6vw, 2.75rem); }
-    .info__item { border-top: 1px solid var(--bosque-soft); padding-top: 1rem; margin-bottom: 1.15rem; }
-    .info__k { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--polvo); display: block; margin-bottom: 0.45rem; }
-    .info__t { font-size: 0.9rem; line-height: 1.6; color: var(--tinta); opacity: 0.85; }
+    .info__item { border-top: 1px solid var(--bosque-soft); padding-top: 1.1rem; margin-bottom: 1.35rem; }
+    .info__k { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bosque); font-weight: 500; display: block; margin-bottom: 0.5rem; }
+    .info__t { font-size: 0.9rem; line-height: 1.6; color: var(--tinta); opacity: 0.9; max-width: 44ch; margin: 0 auto; }
+    /* Pago dentro del éxito del formulario */
+    .ok .pay { text-align: left; margin-top: 1.75rem; }
+    .ok .pay__hint, .ok .pay__title, .ok .pay__price { display: none; }
 
     /* Fecha: pills */
     .pills { display: flex; flex-direction: column; gap: 0.6rem; }
@@ -541,31 +545,43 @@
     <div class="list__item"><span class="list__no">/ 04</span><span class="list__txt">Una mesa compartida para conocer gente</span></div>
   </section>
 
-  <!-- Detalles -->
-  <section>
+  </div><!-- /fold -->
+
+  <!-- ═══ Parte 2 · Detalles + info (centrado) ═══ -->
+  <section class="detalles">
     <div class="facts">
-      <div><span class="fact__k">Fecha tentativa</span><span class="fact__v">Sáb 5 de septiembre</span></div>
+      <div><span class="fact__k">Fecha tentativa</span><span class="fact__v">Sáb 12 de septiembre</span></div>
       <div><span class="fact__k">Hora</span><span class="fact__v">10:30 am</span></div>
       <div><span class="fact__k">Lugar</span><span class="fact__v">Barrio Chino, Buenos Aires</span></div>
       <div><span class="fact__k">Cupos</span><span class="fact__v">20 por turno</span></div>
       <div><span class="fact__k">Valor</span><span class="fact__v">$60.000 por persona</span></div>
     </div>
     <p class="facts__note">Fecha tentativa, sujeta a cambio — confirmamos por WhatsApp</p>
+
+    <div class="info">
+      <div class="info__item">
+        <span class="info__k">Antes de venir</span>
+        <p class="info__t">Para cuidar los aromas de la cata, te pedimos venir sin perfumes ni fragancias fuertes ese día.</p>
+      </div>
+      <div class="info__item">
+        <span class="info__k">Política de cancelación</span>
+        <p class="info__t">El pago confirma tu lugar. Si no podés asistir, avisanos hasta 48 hs antes y te reprogramamos para la próxima fecha o te devolvemos el importe. Con menos de 48 hs de aviso, podés transferir tu lugar a otra persona.</p>
+      </div>
+    </div>
   </section>
 
-  </div><!-- /fold -->
-
-  <!-- Formulario -->
+  <!-- ═══ Parte 3 · Formulario → (al enviar) datos de pago ═══ -->
   <section class="form-box" id="reservar">
     <div class="halftone" aria-hidden="true"></div>
 
     <form id="rsvp" action="https://script.google.com/macros/s/AKfycbwcI92YqAVO7dieC_toGGTfDURq2eKajUzrkdrk52k5OX6Znvn7tOMa6DIbfdwo2P64Yw/exec" method="POST">
       <h2 class="form__title rv">Reservá tu lugar</h2>
-      <p class="form__hint rv">Dejanos tus datos y te confirmamos ni bien tengamos la fecha decidida.</p>
+      <p class="form__hint rv">Completá tus datos y te mostramos cómo confirmar tu lugar.</p>
 
       <!-- Trampa anti-spam: invisible para personas, tentadora para bots -->
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
       <input type="hidden" name="origen" value="cata.html" />
+      <input type="hidden" name="fecha" value="Sábado 12 de septiembre · 10:30 (tentativa)" />
 
       <div class="field rv">
         <label for="f-nombre">Nombre</label>
@@ -575,14 +591,6 @@
       <div class="field rv" data-d="1">
         <label for="f-wa">WhatsApp</label>
         <input id="f-wa" type="tel" name="whatsapp" placeholder="11 1234 5678" required autocomplete="tel" inputmode="tel" />
-      </div>
-
-      <div class="field rv" data-d="2">
-        <label>¿Qué fecha te queda mejor?</label>
-        <div class="pills">
-          <label class="pill"><input type="radio" name="fecha" value="Sábado 5 de septiembre · 10:30 (tentativa)" required /><span>Sáb 5 de septiembre · 10:30 (tentativa)</span></label>
-          <label class="pill"><input type="radio" name="fecha" value="A confirmar / cualquiera" /><span>A confirmar / me es indistinto</span></label>
-        </div>
       </div>
 
       <div class="field rv" data-d="2">
@@ -607,36 +615,18 @@
       <p class="form__fine rv" data-d="2">20 cupos por turno · Al enviar aceptás los <a href="terminos.html">términos</a></p>
     </form>
 
-    <!-- Éxito -->
+    <!-- Éxito → datos para transferir -->
     <div class="ok" id="ok" role="status">
       <div class="ok__mark" aria-hidden="true">✦</div>
-      <h2>¡Reserva enviada!</h2>
-      <p>Te escribimos por WhatsApp para confirmar tu lugar.<br />Nos vemos en la cata.</p>
-    </div>
-  </section>
-
-  <!-- Precio y pago -->
-  <section class="pay-wrap">
-    <div class="pay">
-      <p class="pay__title">Valor de la cata</p>
-      <p class="pay__price">$60.000 <small>por persona</small></p>
-      <p class="pay__hint">Reservás tu lugar transfiriendo el valor. Después mandanos el comprobante y te confirmamos apenas quede definida la fecha.</p>
-      <div class="pay__rows">
-        <div class="pay__row"><span class="pay__k">Alias</span><span class="pay__v">somos.suki</span><button type="button" class="pay__copy" data-copy="somos.suki">Copiar</button></div>
-        <div class="pay__row"><span class="pay__k">CVU</span><span class="pay__v">0000003100040671252489</span><button type="button" class="pay__copy" data-copy="0000003100040671252489">Copiar</button></div>
-        <div class="pay__row"><span class="pay__k">Titular</span><span class="pay__v">SUKI Barrio Chino</span></div>
-      </div>
-      <p class="pay__send">Enviá el comprobante por <a href="https://wa.me/5491156670631?text=Hola%21+Te+paso+el+comprobante+de+la+Cata+de+t%C3%A9." target="_blank" rel="noopener">WhatsApp</a> o a <a href="mailto:somos.suki@gmail.com?subject=Comprobante%20Cata%20de%20t%C3%A9">somos.suki@gmail.com</a></p>
-    </div>
-
-    <div class="info">
-      <div class="info__item">
-        <span class="info__k">Antes de venir</span>
-        <p class="info__t">Para cuidar los aromas de la cata, te pedimos venir sin perfumes ni fragancias fuertes ese día.</p>
-      </div>
-      <div class="info__item">
-        <span class="info__k">Política de cancelación</span>
-        <p class="info__t">El pago confirma tu lugar. Si no podés asistir, avisanos hasta 48 hs antes y te reprogramamos para la próxima fecha o te devolvemos el importe. Con menos de 48 hs de aviso, podés transferir tu lugar a otra persona.</p>
+      <h2>¡Lugar reservado!</h2>
+      <p>Para confirmarlo, transferí <strong>$60.000</strong> y mandanos el comprobante.</p>
+      <div class="pay">
+        <div class="pay__rows">
+          <div class="pay__row"><span class="pay__k">Alias</span><span class="pay__v">somos.suki</span><button type="button" class="pay__copy" data-copy="somos.suki">Copiar</button></div>
+          <div class="pay__row"><span class="pay__k">CVU</span><span class="pay__v">0000003100040671252489</span><button type="button" class="pay__copy" data-copy="0000003100040671252489">Copiar</button></div>
+          <div class="pay__row"><span class="pay__k">Titular</span><span class="pay__v">SUKI Barrio Chino</span></div>
+        </div>
+        <p class="pay__send">Enviá el comprobante por <a href="https://wa.me/5491156670631?text=Hola%21+Te+paso+el+comprobante+de+la+Cata+de+t%C3%A9." target="_blank" rel="noopener">WhatsApp</a> o a <a href="mailto:somos.suki@gmail.com?subject=Comprobante%20Cata%20de%20t%C3%A9">somos.suki@gmail.com</a></p>
       </div>
     </div>
   </section>
@@ -693,7 +683,7 @@
 (function () {
   var SHARE_URL  = 'https://kuramatcha.com/cata.html';
   var SHARE_TITLE = 'Cata de té · SUKI × Kura';
-  var SHARE_TEXT = 'Te invito a la Cata de té 🍵 SUKI × Kura Matcha. Cata de matcha y maridajes en Barrio Chino. Fecha tentativa: sáb 5 de septiembre 10:30 (sujeto a cambio). Reservá tu lugar:';
+  var SHARE_TEXT = 'Te invito a la Cata de té 🍵 SUKI × Kura Matcha. Cata de matcha y maridajes en Barrio Chino. Fecha tentativa: sáb 12 de septiembre 10:30 (sujeto a cambio). Reservá tu lugar:';
 
   var pop   = document.getElementById('share-pop');
   var openBtns = document.querySelectorAll('#share-open, #share-open-top');
@@ -857,7 +847,7 @@
     var body = new URLSearchParams({
       nombre: document.getElementById('f-nombre').value,
       whatsapp: document.getElementById('f-wa').value,
-      fecha: (form.querySelector('input[name="fecha"]:checked') || {}).value || '',
+      fecha: (form.querySelector('input[name="fecha"]') || {}).value || '',
       interes: interes,
       origen: 'cata.html',
       _honey: form.querySelector('input[name="_honey"]').value
