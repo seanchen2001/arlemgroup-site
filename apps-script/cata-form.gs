@@ -20,7 +20,7 @@
 var HOJA        = 'Reservas';               // nombre de la pestaña
 var AVISAR_MAIL = true;                     // false = solo planilla, sin mail
 var MAIL_A      = 'seanc@kuramatcha.com';   // a quién avisar
-var ENCABEZADOS = ['Recibido', 'Nombre', 'WhatsApp', 'Fecha preferida', 'Origen'];
+var ENCABEZADOS = ['Recibido', 'Nombre', 'WhatsApp', 'Fecha preferida', 'Interés', 'Origen'];
 // ───────────────────────────────────────────────────────────────
 
 function doPost(e) {
@@ -45,6 +45,7 @@ function doPost(e) {
     var nombre   = (p.nombre   || '').toString().trim();
     var whatsapp = (p.whatsapp || '').toString().trim();
     var fecha    = (p.fecha    || '').toString().trim();
+    var interes  = (p.interes  || '').toString().trim();
     var origen   = (p.origen   || 'cata.html').toString().trim();
 
     // Honeypot anti-spam: si viene relleno, respondemos OK pero no guardamos.
@@ -55,7 +56,7 @@ function doPost(e) {
       return json({ result: 'error', message: 'Faltan datos' });
     }
 
-    hoja.appendRow([new Date(), nombre, whatsapp, fecha, origen]);
+    hoja.appendRow([new Date(), nombre, whatsapp, fecha, interes, origen]);
 
     if (AVISAR_MAIL) {
       try {
@@ -68,6 +69,7 @@ function doPost(e) {
             'Nombre:          ' + nombre,
             'WhatsApp:        ' + whatsapp,
             'Fecha preferida: ' + fecha,
+            'Le interesa:     ' + interes,
             '',
             'Planilla: ' + libro.getUrl()
           ].join('\n')

@@ -256,6 +256,59 @@
     .field input:focus { border-bottom-color: var(--bosque); }
     .field input::placeholder { color: rgba(46, 82, 49, 0.35); }
 
+    /* Dropdown */
+    .field select {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1.5px solid var(--bosque-soft);
+      font-family: var(--sans);
+      font-size: 1.05rem;
+      color: var(--tinta);
+      padding: 0.55rem 1.6rem 0.55rem 0.1rem;
+      border-radius: 0; outline: none; cursor: pointer;
+      transition: border-color 200ms ease;
+      -webkit-appearance: none; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232E5231' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat; background-position: right 0.15rem center; background-size: 15px;
+    }
+    .field select:focus { border-bottom-color: var(--bosque); }
+    .field select:invalid { color: rgba(46, 82, 49, 0.4); }
+    .field--other { display: none; margin-top: 1.1rem; }
+    .field--other.show { display: block; }
+
+    /* Precio y pago */
+    .pay-wrap { margin-top: clamp(2.5rem, 8vw, 3.5rem); }
+    .pay {
+      border: 1px solid var(--bosque-soft);
+      padding: 1.6rem 1.35rem;
+      background: rgba(46, 82, 49, 0.03);
+    }
+    .pay__title { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--bosque-soft); margin-bottom: 0.5rem; }
+    .pay__price { font-family: var(--serif); font-weight: 600; font-size: clamp(2rem, 8vw, 2.5rem); color: var(--bosque); line-height: 1; }
+    .pay__price small { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bosque-soft); margin-left: 0.6rem; }
+    .pay__hint { font-size: 0.86rem; line-height: 1.55; color: var(--tinta); opacity: 0.8; margin: 0.9rem 0 1.35rem; }
+    .pay__rows { display: flex; flex-direction: column; gap: 0.6rem; }
+    .pay__row { display: flex; align-items: center; gap: 0.75rem; border-top: 1px solid var(--bosque-soft); padding-top: 0.7rem; }
+    .pay__k { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bosque-soft); width: 62px; flex-shrink: 0; }
+    .pay__v { font-family: var(--sans); font-size: 0.95rem; font-weight: 500; color: var(--tinta); flex: 1; word-break: break-all; }
+    .pay__copy {
+      flex-shrink: 0; cursor: pointer;
+      border: 1px solid var(--bosque-soft); background: transparent; color: var(--bosque);
+      padding: 0.4rem 0.65rem;
+      font-family: var(--mono); font-size: 0.52rem; letter-spacing: 0.12em; text-transform: uppercase;
+      transition: background 200ms ease, color 200ms ease;
+    }
+    .pay__copy:hover { background: var(--bosque); color: var(--crema); }
+    .pay__send { margin-top: 1.15rem; font-size: 0.82rem; line-height: 1.55; color: var(--tinta); opacity: 0.85; }
+    .pay__send a { color: var(--bosque); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+    /* Info / política */
+    .info { margin-top: clamp(2rem, 6vw, 2.75rem); }
+    .info__item { border-top: 1px solid var(--bosque-soft); padding-top: 1rem; margin-bottom: 1.15rem; }
+    .info__k { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--polvo); display: block; margin-bottom: 0.45rem; }
+    .info__t { font-size: 0.9rem; line-height: 1.6; color: var(--tinta); opacity: 0.85; }
+
     /* Fecha: pills */
     .pills { display: flex; flex-direction: column; gap: 0.6rem; }
     .pill { position: relative; }
@@ -495,6 +548,7 @@
       <div><span class="fact__k">Hora</span><span class="fact__v">10:30 am</span></div>
       <div><span class="fact__k">Lugar</span><span class="fact__v">Barrio Chino, Buenos Aires</span></div>
       <div><span class="fact__k">Cupos</span><span class="fact__v">20 por turno</span></div>
+      <div><span class="fact__k">Valor</span><span class="fact__v">$60.000 por persona</span></div>
     </div>
     <p class="facts__note">Fecha tentativa, sujeta a cambio — confirmamos por WhatsApp</p>
   </section>
@@ -531,6 +585,24 @@
         </div>
       </div>
 
+      <div class="field rv" data-d="2">
+        <label for="f-interes">¿Qué te interesaría aprender del matcha?</label>
+        <select id="f-interes" name="interes" required>
+          <option value="" disabled selected>Elegí una opción</option>
+          <option>Prepararlo bien en casa (batido, temperatura, herramientas)</option>
+          <option>Reconocer calidad, origen y variedades</option>
+          <option>Maridajes y recetas para disfrutarlo</option>
+          <option>Implementarlo en mi negocio / cafetería</option>
+          <option>Sus propiedades y beneficios</option>
+          <option value="__otro">Otro (lo escribo yo)</option>
+        </select>
+      </div>
+
+      <div class="field field--other rv" id="interes-other-wrap">
+        <label for="f-interes-otro">Contanos qué te gustaría aprender</label>
+        <input id="f-interes-otro" type="text" name="interes_otro" placeholder="Tu interés" autocomplete="off" />
+      </div>
+
       <button class="form__btn rv" data-d="2" type="submit"><span>Reservar mi lugar</span><span aria-hidden="true">→</span></button>
       <p class="form__fine rv" data-d="2">20 cupos por turno · Al enviar aceptás los <a href="terminos.html">términos</a></p>
     </form>
@@ -540,6 +612,32 @@
       <div class="ok__mark" aria-hidden="true">✦</div>
       <h2>¡Reserva enviada!</h2>
       <p>Te escribimos por WhatsApp para confirmar tu lugar.<br />Nos vemos en la cata.</p>
+    </div>
+  </section>
+
+  <!-- Precio y pago -->
+  <section class="pay-wrap">
+    <div class="pay">
+      <p class="pay__title">Valor de la cata</p>
+      <p class="pay__price">$60.000 <small>por persona</small></p>
+      <p class="pay__hint">Reservás tu lugar transfiriendo el valor. Después mandanos el comprobante y te confirmamos apenas quede definida la fecha.</p>
+      <div class="pay__rows">
+        <div class="pay__row"><span class="pay__k">Alias</span><span class="pay__v">somos.suki</span><button type="button" class="pay__copy" data-copy="somos.suki">Copiar</button></div>
+        <div class="pay__row"><span class="pay__k">CVU</span><span class="pay__v">0000003100040671252489</span><button type="button" class="pay__copy" data-copy="0000003100040671252489">Copiar</button></div>
+        <div class="pay__row"><span class="pay__k">Titular</span><span class="pay__v">SUKI Barrio Chino</span></div>
+      </div>
+      <p class="pay__send">Enviá el comprobante por <a href="https://wa.me/5491156670631?text=Hola%21+Te+paso+el+comprobante+de+la+Cata+de+t%C3%A9." target="_blank" rel="noopener">WhatsApp</a> o a <a href="mailto:somos.suki@gmail.com?subject=Comprobante%20Cata%20de%20t%C3%A9">somos.suki@gmail.com</a></p>
+    </div>
+
+    <div class="info">
+      <div class="info__item">
+        <span class="info__k">Antes de venir</span>
+        <p class="info__t">Para cuidar los aromas de la cata, te pedimos venir sin perfumes ni fragancias fuertes ese día.</p>
+      </div>
+      <div class="info__item">
+        <span class="info__k">Política de cancelación</span>
+        <p class="info__t">El pago confirma tu lugar. Si no podés asistir, avisanos hasta 48 hs antes y te reprogramamos para la próxima fecha o te devolvemos el importe. Con menos de 48 hs de aviso, podés transferir tu lugar a otra persona.</p>
+      </div>
     </div>
   </section>
 
@@ -706,6 +804,36 @@
   var okBox = document.getElementById('ok');
   var btn = form.querySelector('.form__btn');
 
+  // Dropdown "Otro" → muestra/oculta y exige el texto libre
+  var interesSel = document.getElementById('f-interes');
+  var otherWrap = document.getElementById('interes-other-wrap');
+  var otherInput = document.getElementById('f-interes-otro');
+  interesSel.addEventListener('change', function () {
+    var isOther = interesSel.value === '__otro';
+    otherWrap.classList.toggle('show', isOther);
+    otherInput.required = isOther;
+    if (isOther) { otherInput.focus(); }
+  });
+
+  // Copiar alias / CVU
+  document.querySelectorAll('.pay__copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var val = b.getAttribute('data-copy');
+      var original = b.textContent;
+      var done = function () { b.textContent = '¡Copiado!'; setTimeout(function () { b.textContent = original; }, 1800); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(val).then(done).catch(fb);
+      } else { fb(); }
+      function fb() {
+        var t = document.createElement('textarea');
+        t.value = val; t.style.position = 'fixed'; t.style.opacity = '0';
+        document.body.appendChild(t); t.select();
+        try { document.execCommand('copy'); done(); } catch (e) {}
+        document.body.removeChild(t);
+      }
+    });
+  });
+
   function showOk() {
     form.style.display = 'none';
     okBox.classList.add('show');
@@ -718,11 +846,19 @@
     btn.disabled = true;
     btn.querySelector('span').textContent = 'Enviando…';
 
+    // Interés: si eligió "Otro", usamos el texto libre
+    var sel = document.getElementById('f-interes');
+    var interes = sel.value;
+    if (interes === '__otro') {
+      interes = (document.getElementById('f-interes-otro').value || '').trim() || 'Otro (sin especificar)';
+    }
+
     // urlencoded = "simple request": no dispara preflight CORS
     var body = new URLSearchParams({
       nombre: document.getElementById('f-nombre').value,
       whatsapp: document.getElementById('f-wa').value,
       fecha: (form.querySelector('input[name="fecha"]:checked') || {}).value || '',
+      interes: interes,
       origen: 'cata.html',
       _honey: form.querySelector('input[name="_honey"]').value
     });
