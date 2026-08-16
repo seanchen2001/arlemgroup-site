@@ -45,7 +45,7 @@
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
     body {
       background: var(--crema);
       color: var(--bosque);
@@ -86,7 +86,8 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding-bottom: clamp(1.5rem, 5vw, 2rem);
+      padding-bottom: clamp(0.5rem, 2vw, 1rem);
+      scroll-snap-align: start;
     }
 
     /* ── Marca ── */
@@ -204,7 +205,7 @@
 
     /* ── Detalles ── */
     /* ── Parte 2 · Detalles (centrado) ── */
-    .detalles { text-align: center; margin-top: clamp(2.5rem, 8vw, 4rem); }
+    .detalles { text-align: center; margin-top: clamp(1rem, 4vw, 1.75rem); scroll-snap-align: start; scroll-margin-top: 1rem; }
     .facts {
       display: flex; flex-direction: column; align-items: center;
       gap: 1rem;
@@ -223,7 +224,24 @@
     }
 
     /* ── Formulario ── */
-    .form-box { position: relative; margin-top: clamp(1.5rem, 6vw, 3rem); }
+    .form-box { position: relative; margin-top: clamp(1.5rem, 6vw, 3rem); scroll-snap-align: start; scroll-margin-top: 1rem; }
+
+    /* Rail de progreso · guía por las 3 secciones */
+    .progress {
+      position: fixed; right: clamp(0.4rem, 2.2vw, 1rem); top: 50%; transform: translateY(-50%);
+      z-index: 40; display: flex; flex-direction: column; gap: 0.6rem; align-items: center;
+    }
+    .progress__dot {
+      width: 24px; height: 24px; display: flex; align-items: center; justify-content: center;
+      background: none; border: none; cursor: pointer; padding: 0;
+    }
+    .progress__dot::before {
+      content: ''; width: 9px; height: 9px; border-radius: 50%;
+      border: 1.5px solid var(--bosque); background: transparent; opacity: 0.45;
+      transition: opacity 250ms ease, background 250ms ease, transform 250ms ease;
+    }
+    .progress__dot:hover::before { opacity: 0.9; }
+    .progress__dot.is-active::before { background: var(--bosque); opacity: 1; transform: scale(1.35); }
     .form-box .halftone { bottom: -22%; left: -28%; width: 60vw; height: 60vw; max-width: 340px; max-height: 340px; opacity: 0.1; }
 
     .form__title {
@@ -303,6 +321,8 @@
     .pay__copy:hover { background: var(--bosque); color: var(--crema); }
     .pay__send { margin-top: 1.15rem; font-size: 0.82rem; line-height: 1.55; color: var(--tinta); opacity: 0.85; }
     .pay__send a { color: var(--bosque); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+    .pay__doubt { margin-top: 0.9rem; padding-top: 0.9rem; border-top: 1px solid var(--bosque-soft); font-size: 0.8rem; line-height: 1.5; color: var(--tinta); opacity: 0.8; }
+    .pay__doubt a { color: var(--bosque); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 
     /* Info / política */
     .info { margin-top: clamp(2rem, 6vw, 2.75rem); }
@@ -506,9 +526,16 @@
 </head>
 <body>
 
+<!-- Rail · guía por las 3 secciones -->
+<nav class="progress" aria-label="Secciones de la invitación">
+  <button type="button" class="progress__dot is-active" data-target="p1" aria-label="Inicio"></button>
+  <button type="button" class="progress__dot" data-target="p2" aria-label="Detalles"></button>
+  <button type="button" class="progress__dot" data-target="reservar" aria-label="Reservar"></button>
+</nav>
+
 <div class="wrap">
 
-  <div class="fold">
+  <div class="fold" id="p1">
 
   <!-- Marca -->
   <header class="brand">
@@ -548,7 +575,7 @@
   </div><!-- /fold -->
 
   <!-- ═══ Parte 2 · Detalles + info (centrado) ═══ -->
-  <section class="detalles">
+  <section class="detalles" id="p2">
     <div class="facts">
       <div><span class="fact__k">Fecha tentativa</span><span class="fact__v">Sáb 12 de septiembre</span></div>
       <div><span class="fact__k">Hora</span><span class="fact__v">10:30 am</span></div>
@@ -627,6 +654,7 @@
           <div class="pay__row"><span class="pay__k">Titular</span><span class="pay__v">SUKI Barrio Chino</span></div>
         </div>
         <p class="pay__send">Enviá el comprobante por <a href="https://wa.me/5491156670631?text=Hola%21+Te+paso+el+comprobante+de+la+Cata+de+t%C3%A9." target="_blank" rel="noopener">WhatsApp</a> o a <a href="mailto:somos.suki@gmail.com?subject=Comprobante%20Cata%20de%20t%C3%A9">somos.suki@gmail.com</a></p>
+        <p class="pay__doubt">¿Alguna duda? <a href="https://wa.me/5491156670631?text=Hola%21+Tengo+una+consulta+sobre+la+Cata+de+t%C3%A9." target="_blank" rel="noopener">Escribinos por WhatsApp</a> y te ayudamos.</p>
       </div>
     </div>
   </section>
@@ -786,6 +814,27 @@
     });
   }, { rootMargin: '0px 0px -6% 0px', threshold: 0.1 });
   document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+
+  /* Rail de progreso · guía por las 3 secciones */
+  var railBtns = document.querySelectorAll('.progress__dot');
+  railBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var t = document.getElementById(b.getAttribute('data-target'));
+      if (t) t.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+  var railIO = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      railBtns.forEach(function (b) {
+        b.classList.toggle('is-active', b.getAttribute('data-target') === e.target.id);
+      });
+    });
+  }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+  ['p1', 'p2', 'reservar'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) railIO.observe(el);
+  });
 
   /* Envío del form — POST al Apps Script, sin salir de la página */
   var ENDPOINT = 'https://script.google.com/macros/s/AKfycbwcI92YqAVO7dieC_toGGTfDURq2eKajUzrkdrk52k5OX6Znvn7tOMa6DIbfdwo2P64Yw/exec';
